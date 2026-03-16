@@ -1,0 +1,12 @@
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\bin\Debug\net8.0\CEntidades.deps.json
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\bin\Debug\net8.0\CEntidades.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\bin\Debug\net8.0\CEntidades.pdb
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.AssemblyInfoInputs.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.AssemblyInfo.cs
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.csproj.CoreCompileInputs.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.sourcelink.json
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\refint\CEntidades.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\CEntidades.pdb
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CEntidades\obj\Debug\net8.0\ref\CEntidades.dll

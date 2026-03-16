@@ -1,0 +1,16 @@
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\bin\Debug\net8.0\CInfraestructura.deps.json
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\bin\Debug\net8.0\CInfraestructura.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\bin\Debug\net8.0\CInfraestructura.pdb
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\bin\Debug\net8.0\CEntidades.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\bin\Debug\net8.0\CEntidades.pdb
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.csproj.AssemblyReference.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.AssemblyInfoInputs.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.AssemblyInfo.cs
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.csproj.CoreCompileInputs.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.sourcelink.json
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraes.F5804007.Up2Date
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\refint\CInfraestructura.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\CInfraestructura.pdb
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CInfraestructura\obj\Debug\net8.0\ref\CInfraestructura.dll
