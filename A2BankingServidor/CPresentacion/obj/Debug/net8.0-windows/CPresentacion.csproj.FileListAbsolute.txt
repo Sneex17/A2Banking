@@ -12,7 +12,6 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\CDatos.pdb
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\CInfraestructura.pdb
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.csproj.AssemblyReference.cache
-C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.Form1.resources
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.csproj.GenerateResource.cache
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.AssemblyInfoInputs.cache
@@ -25,3 +24,9 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.pdb
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.genruntimeconfig.cache
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\ref\CPresentacion.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\FluentValidation.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\ReaLTaiizor.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.Login.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.MenuPrincipal.resources

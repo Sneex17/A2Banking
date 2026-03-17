@@ -9,10 +9,44 @@
       "CPresentacion/1.0.0": {
         "dependencies": {
           "CEntidades": "1.0.0",
-          "CNegocio": "1.0.0"
+          "CNegocio": "1.0.0",
+          "FontAwesome.Sharp": "6.6.0",
+          "ReaLTaiizor": "3.8.1.5"
         },
         "runtime": {
           "CPresentacion.dll": {}
+        }
+      },
+      "FluentValidation/12.1.1": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.1.0"
+          }
+        }
+      },
+      "FontAwesome.Sharp/6.6.0": {
+        "runtime": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {
+            "assemblyVersion": "6.6.0.0",
+            "fileVersion": "6.6.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.4": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.4.30916"
+          }
+        }
+      },
+      "ReaLTaiizor/3.8.1.5": {
+        "runtime": {
+          "lib/net8.0-windows7.0/ReaLTaiizor.dll": {
+            "assemblyVersion": "3.8.1.5",
+            "fileVersion": "3.8.1.5"
+          }
         }
       },
       "CDatos/1.0.0": {
@@ -36,7 +70,8 @@
       },
       "CInfraestructura/1.0.0": {
         "dependencies": {
-          "CEntidades": "1.0.0"
+          "CEntidades": "1.0.0",
+          "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
           "CInfraestructura.dll": {
@@ -49,7 +84,8 @@
         "dependencies": {
           "CDatos": "1.0.0",
           "CEntidades": "1.0.0",
-          "CInfraestructura": "1.0.0"
+          "CInfraestructura": "1.0.0",
+          "FluentValidation": "12.1.1"
         },
         "runtime": {
           "CNegocio.dll": {
@@ -65,6 +101,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentValidation/12.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
+      "path": "fluentvalidation/12.1.1",
+      "hashPath": "fluentvalidation.12.1.1.nupkg.sha512"
+    },
+    "FontAwesome.Sharp/6.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
+      "path": "fontawesome.sharp/6.6.0",
+      "hashPath": "fontawesome.sharp.6.6.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pdgNNMai3zv51W5aq268sujXUyx7SNdE2bj1wZcWjAQrKMFZV260lbqYop1d2GM67JI1huLRwxo9ZqnfF/lC6A==",
+      "path": "newtonsoft.json/13.0.4",
+      "hashPath": "newtonsoft.json.13.0.4.nupkg.sha512"
+    },
+    "ReaLTaiizor/3.8.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1CRzPDhCvGXgheFvqVt8SjMlS8pzWPDGFxqBokRJ/qm4v0dJ7Iu59ydcvaTnOkh+ZfTXdl7HowzKfkJIJqy9hA==",
+      "path": "realtaiizor/3.8.1.5",
+      "hashPath": "realtaiizor.3.8.1.5.nupkg.sha512"
     },
     "CDatos/1.0.0": {
       "type": "project",
