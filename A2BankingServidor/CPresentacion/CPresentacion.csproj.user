@@ -4,6 +4,9 @@
     <Compile Update="Plantillas\ucPlantilla.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ViewsUI\fmCapturarHuella.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ViewsUI\fmPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +17,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ViewsUI\UserControls\ucClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ViewsUI\UserControls\ucCuentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ViewsUI\UserControls\ucHome.cs">

@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|solutionrelative:cnegocio\\logicanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cpresentacion\\viewsui\\usercontrols\\ucclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\cpresentacion\\viewsui\\usercontrols\\ucclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\usercontrols\\ucclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -46,8 +46,7 @@
               "RelativeToolTip": "CNegocio\\GetPersonasServicio.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T14:27:29.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T14:27:29.783Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs",
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs",
               "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T14:26:41.493Z",
               "EditorCaption": ""
@@ -71,8 +70,7 @@
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs [Dise\u00F1o]",
               "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T14:26:18.048Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-03-18T14:26:18.048Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "CNegocio\\LogicaNegocio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T14:24:38.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T14:24:38.215Z"
             },
             {
               "$type": "Document",
@@ -97,8 +94,7 @@
               "RelativeToolTip": "CDatos\\Controllers\\RolController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAYwA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:09:24.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T04:09:24.49Z"
             }
           ]
         }
