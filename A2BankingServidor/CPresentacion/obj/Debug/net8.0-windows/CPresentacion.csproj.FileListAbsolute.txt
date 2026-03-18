@@ -84,3 +84,7 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.Plantillas.ucPlantilla.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.UserControls.ucHome.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.UserControls.ucUsuarios.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.UserControls.ucClientes.resources

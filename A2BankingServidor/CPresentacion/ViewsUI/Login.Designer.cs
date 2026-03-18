@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panelFondo = new Panel();
             label4 = new Label();
             label1 = new Label();
@@ -269,6 +270,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 461);
             Controls.Add(panelFondo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A2 Banking - Login";
