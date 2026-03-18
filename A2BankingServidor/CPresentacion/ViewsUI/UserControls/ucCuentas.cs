@@ -17,5 +17,14 @@ namespace CPresentacion.ViewsUI.UserControls
         {
             InitializeComponent();
         }
+
+        private void BuCapturarHuella_Click(object sender, EventArgs e)
+        {
+            fmCapturarHuella capturarHuella = new fmCapturarHuella();
+            capturarHuella.ShowDialog();
+
+            if (!string.IsNullOrEmpty(capturarHuella.TemplateBase64))
+                textbHuella.Text = capturarHuella.TemplateBase64;
+        }
     }
 }

@@ -48,6 +48,14 @@ namespace CPresentacion.ViewsUI
                 usuarios.Dock = DockStyle.Fill;
                 tabpUsuarios.Controls.Add(usuarios);
             }
+
+            if(controlMenuOpciones.SelectedTab == tabpCuentas 
+                && tabpCuentas.Controls.Count == 0)
+            {
+                ucCuentas cuentas = new ucCuentas();
+                cuentas.Dock = DockStyle.Fill;
+                tabpCuentas.Controls.Add(cuentas);
+            }
         }
     }
 }

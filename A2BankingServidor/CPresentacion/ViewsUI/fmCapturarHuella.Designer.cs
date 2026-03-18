@@ -33,13 +33,14 @@
             labelTexto = new Label();
             pbIcono = new FontAwesome.Sharp.IconPictureBox();
             panelConatiner = new Panel();
-            pbImagenHuella = new PictureBox();
-            BuIniciar = new ReaLTaiizor.Controls.CyberButton();
-            label1 = new Label();
-            label2 = new Label();
-            lbEstados = new Label();
-            barraProbreso = new ReaLTaiizor.Controls.CyberProgressBar();
+            lbCantidadMuestras = new Label();
             label4 = new Label();
+            barraProbreso = new ReaLTaiizor.Controls.CyberProgressBar();
+            lbEstados = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            BuIniciar = new ReaLTaiizor.Controls.CyberButton();
+            pbImagenHuella = new PictureBox();
             panelInformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
             panelConatiner.SuspendLayout();
@@ -84,6 +85,7 @@
             // panelConatiner
             // 
             panelConatiner.BackColor = Color.White;
+            panelConatiner.Controls.Add(lbCantidadMuestras);
             panelConatiner.Controls.Add(label4);
             panelConatiner.Controls.Add(barraProbreso);
             panelConatiner.Controls.Add(lbEstados);
@@ -97,90 +99,29 @@
             panelConatiner.Size = new Size(602, 448);
             panelConatiner.TabIndex = 2;
             // 
-            // pbImagenHuella
+            // lbCantidadMuestras
             // 
-            pbImagenHuella.Location = new Point(51, 71);
-            pbImagenHuella.Name = "pbImagenHuella";
-            pbImagenHuella.Size = new Size(312, 270);
-            pbImagenHuella.TabIndex = 4;
-            pbImagenHuella.TabStop = false;
+            lbCantidadMuestras.AutoSize = true;
+            lbCantidadMuestras.BackColor = Color.Transparent;
+            lbCantidadMuestras.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            lbCantidadMuestras.ForeColor = Color.Black;
+            lbCantidadMuestras.Location = new Point(375, 231);
+            lbCantidadMuestras.Name = "lbCantidadMuestras";
+            lbCantidadMuestras.Size = new Size(87, 22);
+            lbCantidadMuestras.TabIndex = 26;
+            lbCantidadMuestras.Text = "Cantidad";
             // 
-            // BuIniciar
+            // label4
             // 
-            BuIniciar.Alpha = 20;
-            BuIniciar.BackColor = Color.Transparent;
-            BuIniciar.Background = true;
-            BuIniciar.Background_WidthPen = 4F;
-            BuIniciar.BackgroundPen = true;
-            BuIniciar.ColorBackground = Color.FromArgb(77, 182, 198);
-            BuIniciar.ColorBackground_1 = Color.FromArgb(77, 182, 198);
-            BuIniciar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            BuIniciar.ColorBackground_Pen = Color.DarkGray;
-            BuIniciar.ColorLighting = Color.DarkGray;
-            BuIniciar.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            BuIniciar.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            BuIniciar.Cursor = Cursors.Hand;
-            BuIniciar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            BuIniciar.Effect_1 = true;
-            BuIniciar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            BuIniciar.Effect_1_Transparency = 25;
-            BuIniciar.Effect_2 = true;
-            BuIniciar.Effect_2_ColorBackground = Color.White;
-            BuIniciar.Effect_2_Transparency = 20;
-            BuIniciar.Font = new Font("Montserrat SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BuIniciar.ForeColor = Color.FromArgb(245, 245, 245);
-            BuIniciar.Lighting = false;
-            BuIniciar.LinearGradient_Background = false;
-            BuIniciar.LinearGradientPen = false;
-            BuIniciar.Location = new Point(401, 71);
-            BuIniciar.Name = "BuIniciar";
-            BuIniciar.PenWidth = 15;
-            BuIniciar.Rounding = true;
-            BuIniciar.RoundingInt = 70;
-            BuIniciar.Size = new Size(169, 50);
-            BuIniciar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            BuIniciar.TabIndex = 5;
-            BuIniciar.Tag = "Cyber";
-            BuIniciar.TextButton = "Iniciar";
-            BuIniciar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            BuIniciar.Timer_Effect_1 = 5;
-            BuIniciar.Timer_RGB = 300;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(51, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 22);
-            label1.TabIndex = 21;
-            label1.Text = "Imagen de la huella";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(51, 367);
-            label2.Name = "label2";
-            label2.Size = new Size(127, 22);
-            label2.TabIndex = 22;
-            label2.Text = "Estado actual:";
-            // 
-            // lbEstados
-            // 
-            lbEstados.AutoSize = true;
-            lbEstados.BackColor = Color.Transparent;
-            lbEstados.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
-            lbEstados.ForeColor = Color.Black;
-            lbEstados.Location = new Point(51, 392);
-            lbEstados.Name = "lbEstados";
-            lbEstados.Size = new Size(45, 22);
-            lbEstados.TabIndex = 23;
-            lbEstados.Text = "Text";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(375, 156);
+            label4.Name = "label4";
+            label4.Size = new Size(85, 22);
+            label4.TabIndex = 25;
+            label4.Text = "Probreso";
             // 
             // barraProbreso
             // 
@@ -225,17 +166,92 @@
             barraProbreso.Timer_RGB = 300;
             barraProbreso.Value = 0;
             // 
-            // label4
+            // lbEstados
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(375, 156);
-            label4.Name = "label4";
-            label4.Size = new Size(85, 22);
-            label4.TabIndex = 25;
-            label4.Text = "Probreso";
+            lbEstados.AutoSize = true;
+            lbEstados.BackColor = Color.Transparent;
+            lbEstados.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            lbEstados.ForeColor = Color.Black;
+            lbEstados.Location = new Point(51, 392);
+            lbEstados.Name = "lbEstados";
+            lbEstados.Size = new Size(45, 22);
+            lbEstados.TabIndex = 23;
+            lbEstados.Text = "Text";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(51, 367);
+            label2.Name = "label2";
+            label2.Size = new Size(127, 22);
+            label2.TabIndex = 22;
+            label2.Text = "Estado actual:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(51, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(174, 22);
+            label1.TabIndex = 21;
+            label1.Text = "Imagen de la huella";
+            // 
+            // BuIniciar
+            // 
+            BuIniciar.Alpha = 20;
+            BuIniciar.BackColor = Color.Transparent;
+            BuIniciar.Background = true;
+            BuIniciar.Background_WidthPen = 4F;
+            BuIniciar.BackgroundPen = true;
+            BuIniciar.ColorBackground = Color.FromArgb(77, 182, 198);
+            BuIniciar.ColorBackground_1 = Color.FromArgb(77, 182, 198);
+            BuIniciar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            BuIniciar.ColorBackground_Pen = Color.DarkGray;
+            BuIniciar.ColorLighting = Color.DarkGray;
+            BuIniciar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            BuIniciar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            BuIniciar.Cursor = Cursors.Hand;
+            BuIniciar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            BuIniciar.Effect_1 = true;
+            BuIniciar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            BuIniciar.Effect_1_Transparency = 25;
+            BuIniciar.Effect_2 = true;
+            BuIniciar.Effect_2_ColorBackground = Color.White;
+            BuIniciar.Effect_2_Transparency = 20;
+            BuIniciar.Font = new Font("Montserrat SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BuIniciar.ForeColor = Color.FromArgb(245, 245, 245);
+            BuIniciar.Lighting = false;
+            BuIniciar.LinearGradient_Background = false;
+            BuIniciar.LinearGradientPen = false;
+            BuIniciar.Location = new Point(401, 71);
+            BuIniciar.Name = "BuIniciar";
+            BuIniciar.PenWidth = 15;
+            BuIniciar.Rounding = true;
+            BuIniciar.RoundingInt = 70;
+            BuIniciar.Size = new Size(169, 50);
+            BuIniciar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            BuIniciar.TabIndex = 5;
+            BuIniciar.Tag = "Cyber";
+            BuIniciar.TextButton = "Iniciar";
+            BuIniciar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            BuIniciar.Timer_Effect_1 = 5;
+            BuIniciar.Timer_RGB = 300;
+            BuIniciar.Click += BuIniciar_Click;
+            // 
+            // pbImagenHuella
+            // 
+            pbImagenHuella.Location = new Point(51, 71);
+            pbImagenHuella.Name = "pbImagenHuella";
+            pbImagenHuella.Size = new Size(312, 270);
+            pbImagenHuella.SizeMode = PictureBoxSizeMode.Zoom;
+            pbImagenHuella.TabIndex = 4;
+            pbImagenHuella.TabStop = false;
             // 
             // fmCapturarHuella
             // 
@@ -270,5 +286,6 @@
         private Label label1;
         private ReaLTaiizor.Controls.CyberProgressBar barraProbreso;
         private Label label4;
+        private Label lbCantidadMuestras;
     }
 }

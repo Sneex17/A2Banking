@@ -31,4 +31,19 @@
     <ProjectReference Include="..\CNegocio\CNegocio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DPFPDevNET">
+      <HintPath>S:\Program Files\One Touch SDK\.NET\Bin\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET">
+      <HintPath>S:\Program Files\One Touch SDK\.NET\Bin\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET">
+      <HintPath>S:\Program Files\One Touch SDK\.NET\Bin\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPVerNET">
+      <HintPath>S:\Program Files\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

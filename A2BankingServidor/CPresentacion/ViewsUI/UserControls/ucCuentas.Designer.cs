@@ -41,7 +41,7 @@
             dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
             dungeonTextBox2 = new ReaLTaiizor.Controls.DungeonTextBox();
             label8 = new Label();
-            dungeonTextBox3 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbHuella = new ReaLTaiizor.Controls.DungeonTextBox();
             BuGuardar = new ReaLTaiizor.Controls.CyberButton();
             BuBuscarPersonas = new ReaLTaiizor.Controls.CyberButton();
             BuCapturarHuella = new ReaLTaiizor.Controls.CyberButton();
@@ -55,7 +55,7 @@
             panelContainer.Controls.Add(BuCapturarHuella);
             panelContainer.Controls.Add(BuGuardar);
             panelContainer.Controls.Add(BuBuscarPersonas);
-            panelContainer.Controls.Add(dungeonTextBox3);
+            panelContainer.Controls.Add(textbHuella);
             panelContainer.Controls.Add(label8);
             panelContainer.Controls.Add(dungeonTextBox2);
             panelContainer.Controls.Add(label7);
@@ -83,7 +83,7 @@
             panelContainer.Controls.SetChildIndex(label7, 0);
             panelContainer.Controls.SetChildIndex(dungeonTextBox2, 0);
             panelContainer.Controls.SetChildIndex(label8, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox3, 0);
+            panelContainer.Controls.SetChildIndex(textbHuella, 0);
             panelContainer.Controls.SetChildIndex(BuBuscarPersonas, 0);
             panelContainer.Controls.SetChildIndex(BuGuardar, 0);
             panelContainer.Controls.SetChildIndex(BuCapturarHuella, 0);
@@ -290,22 +290,22 @@
             label8.TabIndex = 31;
             label8.Text = "Código Huella";
             // 
-            // dungeonTextBox3
+            // textbHuella
             // 
-            dungeonTextBox3.BackColor = Color.Transparent;
-            dungeonTextBox3.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox3.EdgeColor = Color.White;
-            dungeonTextBox3.Font = new Font("Tahoma", 12F);
-            dungeonTextBox3.ForeColor = Color.Black;
-            dungeonTextBox3.Location = new Point(244, 267);
-            dungeonTextBox3.MaxLength = 32767;
-            dungeonTextBox3.Multiline = false;
-            dungeonTextBox3.Name = "dungeonTextBox3";
-            dungeonTextBox3.ReadOnly = false;
-            dungeonTextBox3.Size = new Size(169, 30);
-            dungeonTextBox3.TabIndex = 32;
-            dungeonTextBox3.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox3.UseSystemPasswordChar = false;
+            textbHuella.BackColor = Color.Transparent;
+            textbHuella.BorderColor = Color.FromArgb(180, 180, 180);
+            textbHuella.EdgeColor = Color.White;
+            textbHuella.Font = new Font("Tahoma", 12F);
+            textbHuella.ForeColor = Color.Black;
+            textbHuella.Location = new Point(244, 267);
+            textbHuella.MaxLength = 32767;
+            textbHuella.Multiline = false;
+            textbHuella.Name = "textbHuella";
+            textbHuella.ReadOnly = false;
+            textbHuella.Size = new Size(169, 30);
+            textbHuella.TabIndex = 32;
+            textbHuella.TextAlignment = HorizontalAlignment.Left;
+            textbHuella.UseSystemPasswordChar = false;
             // 
             // BuGuardar
             // 
@@ -429,6 +429,7 @@
             BuCapturarHuella.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuCapturarHuella.Timer_Effect_1 = 5;
             BuCapturarHuella.Timer_RGB = 300;
+            BuCapturarHuella.Click += BuCapturarHuella_Click;
             // 
             // ucCuentas
             // 
@@ -458,7 +459,7 @@
         private Label label2;
         private ReaLTaiizor.Controls.DungeonTextBox textbIdUsuario;
         private Label label8;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox3;
+        private ReaLTaiizor.Controls.DungeonTextBox textbHuella;
         private ReaLTaiizor.Controls.CyberButton BuCapturarHuella;
         private ReaLTaiizor.Controls.CyberButton BuGuardar;
         private ReaLTaiizor.Controls.CyberButton BuBuscarPersonas;

@@ -89,3 +89,9 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.UserControls.ucUsuarios.resources
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.UserControls.ucClientes.resources
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.fmPersonas.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\DPFPDevNET.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\DPFPEngNET.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\DPFPShrNET.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\DPFPVerNET.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.fmCapturarHuella.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.UserControls.ucCuentas.resources
