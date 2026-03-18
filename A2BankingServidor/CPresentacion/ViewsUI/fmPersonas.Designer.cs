@@ -30,17 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmPersonas));
             panelInformacion = new Panel();
+            labelTexto = new Label();
+            pbIcono = new FontAwesome.Sharp.IconPictureBox();
             panelConatiner = new Panel();
-            viewData = new DataGridView();
             comboOpciones = new ReaLTaiizor.Controls.AloneComboBox();
             label4 = new Label();
             textbFiltro = new ReaLTaiizor.Controls.DungeonTextBox();
-            labelTexto = new Label();
-            pbIcono = new FontAwesome.Sharp.IconPictureBox();
+            viewData = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Edad = new DataGridViewTextBoxColumn();
+            Sexo = new DataGridViewTextBoxColumn();
+            Ocupacion = new DataGridViewTextBoxColumn();
             panelInformacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
             panelConatiner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)viewData).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
             SuspendLayout();
             // 
             // panelInformacion
@@ -54,6 +59,30 @@
             panelInformacion.Size = new Size(784, 72);
             panelInformacion.TabIndex = 0;
             // 
+            // labelTexto
+            // 
+            labelTexto.AutoSize = true;
+            labelTexto.Font = new Font("Montserrat", 19F, FontStyle.Bold);
+            labelTexto.ForeColor = Color.White;
+            labelTexto.Location = new Point(107, 19);
+            labelTexto.Name = "labelTexto";
+            labelTexto.Size = new Size(140, 36);
+            labelTexto.TabIndex = 7;
+            labelTexto.Text = "Personas";
+            // 
+            // pbIcono
+            // 
+            pbIcono.BackColor = Color.Transparent;
+            pbIcono.IconChar = FontAwesome.Sharp.IconChar.Person;
+            pbIcono.IconColor = Color.White;
+            pbIcono.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            pbIcono.IconSize = 50;
+            pbIcono.Location = new Point(51, 11);
+            pbIcono.Name = "pbIcono";
+            pbIcono.Size = new Size(50, 50);
+            pbIcono.TabIndex = 6;
+            pbIcono.TabStop = false;
+            // 
             // panelConatiner
             // 
             panelConatiner.BackColor = Color.White;
@@ -66,14 +95,6 @@
             panelConatiner.Name = "panelConatiner";
             panelConatiner.Size = new Size(784, 439);
             panelConatiner.TabIndex = 1;
-            // 
-            // viewData
-            // 
-            viewData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            viewData.Location = new Point(49, 75);
-            viewData.Name = "viewData";
-            viewData.Size = new Size(686, 326);
-            viewData.TabIndex = 0;
             // 
             // comboOpciones
             // 
@@ -116,29 +137,40 @@
             textbFiltro.TextAlignment = HorizontalAlignment.Left;
             textbFiltro.UseSystemPasswordChar = false;
             // 
-            // labelTexto
+            // viewData
             // 
-            labelTexto.AutoSize = true;
-            labelTexto.Font = new Font("Montserrat", 19F, FontStyle.Bold);
-            labelTexto.ForeColor = Color.White;
-            labelTexto.Location = new Point(107, 19);
-            labelTexto.Name = "labelTexto";
-            labelTexto.Size = new Size(140, 36);
-            labelTexto.TabIndex = 7;
-            labelTexto.Text = "Personas";
+            viewData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            viewData.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Sexo, Ocupacion });
+            viewData.Location = new Point(49, 75);
+            viewData.Name = "viewData";
+            viewData.Size = new Size(686, 326);
+            viewData.TabIndex = 0;
+            viewData.CellDoubleClick += viewData_CellDoubleClick;
             // 
-            // pbIcono
+            // Id
             // 
-            pbIcono.BackColor = Color.Transparent;
-            pbIcono.IconChar = FontAwesome.Sharp.IconChar.House;
-            pbIcono.IconColor = Color.White;
-            pbIcono.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            pbIcono.IconSize = 50;
-            pbIcono.Location = new Point(51, 11);
-            pbIcono.Name = "pbIcono";
-            pbIcono.Size = new Size(50, 50);
-            pbIcono.TabIndex = 6;
-            pbIcono.TabStop = false;
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Edad
+            // 
+            Edad.HeaderText = "Edad";
+            Edad.Name = "Edad";
+            // 
+            // Sexo
+            // 
+            Sexo.HeaderText = "Sexo";
+            Sexo.Name = "Sexo";
+            // 
+            // Ocupacion
+            // 
+            Ocupacion.HeaderText = "Ocupacion";
+            Ocupacion.Name = "Ocupacion";
             // 
             // fmPersonas
             // 
@@ -153,10 +185,10 @@
             Text = "A2 Banking - Personas";
             panelInformacion.ResumeLayout(false);
             panelInformacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
             panelConatiner.ResumeLayout(false);
             panelConatiner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)viewData).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
             ResumeLayout(false);
         }
 
@@ -170,5 +202,10 @@
         private ReaLTaiizor.Controls.DungeonTextBox textbFiltro;
         public Label labelTexto;
         public FontAwesome.Sharp.IconPictureBox pbIcono;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Edad;
+        private DataGridViewTextBoxColumn Sexo;
+        private DataGridViewTextBoxColumn Ocupacion;
     }
 }

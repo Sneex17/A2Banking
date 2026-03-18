@@ -31,15 +31,15 @@
             BuBuscarPersonas = new ReaLTaiizor.Controls.CyberButton();
             BuGuardar = new ReaLTaiizor.Controls.CyberButton();
             label4 = new Label();
-            textbPassword = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbOcupacion = new ReaLTaiizor.Controls.DungeonTextBox();
             label5 = new Label();
-            textbUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbEdad = new ReaLTaiizor.Controls.DungeonTextBox();
             label3 = new Label();
             label1 = new Label();
             textbNombre = new ReaLTaiizor.Controls.DungeonTextBox();
             label2 = new Label();
-            textbIdUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
-            dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbIdTitular = new ReaLTaiizor.Controls.DungeonTextBox();
+            texbSexo = new ReaLTaiizor.Controls.DungeonTextBox();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
@@ -47,31 +47,31 @@
             // 
             // panelContainer
             // 
-            panelContainer.Controls.Add(dungeonTextBox1);
+            panelContainer.Controls.Add(texbSexo);
             panelContainer.Controls.Add(label4);
-            panelContainer.Controls.Add(textbPassword);
+            panelContainer.Controls.Add(textbOcupacion);
             panelContainer.Controls.Add(label5);
-            panelContainer.Controls.Add(textbUsuario);
+            panelContainer.Controls.Add(textbEdad);
             panelContainer.Controls.Add(label3);
             panelContainer.Controls.Add(label1);
             panelContainer.Controls.Add(textbNombre);
             panelContainer.Controls.Add(label2);
-            panelContainer.Controls.Add(textbIdUsuario);
+            panelContainer.Controls.Add(textbIdTitular);
             panelContainer.Controls.Add(BuGuardar);
             panelContainer.Controls.Add(BuBuscarPersonas);
             panelContainer.Controls.SetChildIndex(label6, 0);
             panelContainer.Controls.SetChildIndex(BuBuscarPersonas, 0);
             panelContainer.Controls.SetChildIndex(BuGuardar, 0);
-            panelContainer.Controls.SetChildIndex(textbIdUsuario, 0);
+            panelContainer.Controls.SetChildIndex(textbIdTitular, 0);
             panelContainer.Controls.SetChildIndex(label2, 0);
             panelContainer.Controls.SetChildIndex(textbNombre, 0);
             panelContainer.Controls.SetChildIndex(label1, 0);
             panelContainer.Controls.SetChildIndex(label3, 0);
-            panelContainer.Controls.SetChildIndex(textbUsuario, 0);
+            panelContainer.Controls.SetChildIndex(textbEdad, 0);
             panelContainer.Controls.SetChildIndex(label5, 0);
-            panelContainer.Controls.SetChildIndex(textbPassword, 0);
+            panelContainer.Controls.SetChildIndex(textbOcupacion, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox1, 0);
+            panelContainer.Controls.SetChildIndex(texbSexo, 0);
             // 
             // pbIcono
             // 
@@ -127,6 +127,7 @@
             BuBuscarPersonas.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuBuscarPersonas.Timer_Effect_1 = 5;
             BuBuscarPersonas.Timer_RGB = 300;
+            BuBuscarPersonas.Click += BuBuscarPersonas_Click;
             // 
             // BuGuardar
             // 
@@ -181,22 +182,23 @@
             label4.TabIndex = 27;
             label4.Text = "Ocupación";
             // 
-            // textbPassword
+            // textbOcupacion
             // 
-            textbPassword.BackColor = Color.Transparent;
-            textbPassword.BorderColor = Color.FromArgb(180, 180, 180);
-            textbPassword.EdgeColor = Color.White;
-            textbPassword.Font = new Font("Tahoma", 12F);
-            textbPassword.ForeColor = Color.Black;
-            textbPassword.Location = new Point(244, 196);
-            textbPassword.MaxLength = 32767;
-            textbPassword.Multiline = false;
-            textbPassword.Name = "textbPassword";
-            textbPassword.ReadOnly = false;
-            textbPassword.Size = new Size(169, 30);
-            textbPassword.TabIndex = 26;
-            textbPassword.TextAlignment = HorizontalAlignment.Left;
-            textbPassword.UseSystemPasswordChar = false;
+            textbOcupacion.BackColor = Color.Transparent;
+            textbOcupacion.BorderColor = Color.FromArgb(180, 180, 180);
+            textbOcupacion.EdgeColor = Color.White;
+            textbOcupacion.Enabled = false;
+            textbOcupacion.Font = new Font("Tahoma", 12F);
+            textbOcupacion.ForeColor = Color.Black;
+            textbOcupacion.Location = new Point(244, 196);
+            textbOcupacion.MaxLength = 32767;
+            textbOcupacion.Multiline = false;
+            textbOcupacion.Name = "textbOcupacion";
+            textbOcupacion.ReadOnly = false;
+            textbOcupacion.Size = new Size(169, 30);
+            textbOcupacion.TabIndex = 26;
+            textbOcupacion.TextAlignment = HorizontalAlignment.Left;
+            textbOcupacion.UseSystemPasswordChar = false;
             // 
             // label5
             // 
@@ -210,22 +212,23 @@
             label5.TabIndex = 25;
             label5.Text = "Edad";
             // 
-            // textbUsuario
+            // textbEdad
             // 
-            textbUsuario.BackColor = Color.Transparent;
-            textbUsuario.BorderColor = Color.FromArgb(180, 180, 180);
-            textbUsuario.EdgeColor = Color.White;
-            textbUsuario.Font = new Font("Tahoma", 12F);
-            textbUsuario.ForeColor = Color.Black;
-            textbUsuario.Location = new Point(244, 121);
-            textbUsuario.MaxLength = 32767;
-            textbUsuario.Multiline = false;
-            textbUsuario.Name = "textbUsuario";
-            textbUsuario.ReadOnly = false;
-            textbUsuario.Size = new Size(169, 30);
-            textbUsuario.TabIndex = 24;
-            textbUsuario.TextAlignment = HorizontalAlignment.Left;
-            textbUsuario.UseSystemPasswordChar = false;
+            textbEdad.BackColor = Color.Transparent;
+            textbEdad.BorderColor = Color.FromArgb(180, 180, 180);
+            textbEdad.EdgeColor = Color.White;
+            textbEdad.Enabled = false;
+            textbEdad.Font = new Font("Tahoma", 12F);
+            textbEdad.ForeColor = Color.Black;
+            textbEdad.Location = new Point(244, 121);
+            textbEdad.MaxLength = 32767;
+            textbEdad.Multiline = false;
+            textbEdad.Name = "textbEdad";
+            textbEdad.ReadOnly = false;
+            textbEdad.Size = new Size(169, 30);
+            textbEdad.TabIndex = 24;
+            textbEdad.TextAlignment = HorizontalAlignment.Left;
+            textbEdad.UseSystemPasswordChar = false;
             // 
             // label3
             // 
@@ -256,6 +259,7 @@
             textbNombre.BackColor = Color.Transparent;
             textbNombre.BorderColor = Color.FromArgb(180, 180, 180);
             textbNombre.EdgeColor = Color.White;
+            textbNombre.Enabled = false;
             textbNombre.Font = new Font("Tahoma", 12F);
             textbNombre.ForeColor = Color.Black;
             textbNombre.Location = new Point(52, 121);
@@ -280,40 +284,41 @@
             label2.TabIndex = 20;
             label2.Text = "Id titular";
             // 
-            // textbIdUsuario
+            // textbIdTitular
             // 
-            textbIdUsuario.BackColor = Color.Transparent;
-            textbIdUsuario.BorderColor = Color.FromArgb(180, 180, 180);
-            textbIdUsuario.EdgeColor = Color.White;
-            textbIdUsuario.Enabled = false;
-            textbIdUsuario.Font = new Font("Tahoma", 12F);
-            textbIdUsuario.ForeColor = Color.Black;
-            textbIdUsuario.Location = new Point(52, 55);
-            textbIdUsuario.MaxLength = 32767;
-            textbIdUsuario.Multiline = false;
-            textbIdUsuario.Name = "textbIdUsuario";
-            textbIdUsuario.ReadOnly = false;
-            textbIdUsuario.Size = new Size(169, 30);
-            textbIdUsuario.TabIndex = 19;
-            textbIdUsuario.TextAlignment = HorizontalAlignment.Left;
-            textbIdUsuario.UseSystemPasswordChar = false;
+            textbIdTitular.BackColor = Color.Transparent;
+            textbIdTitular.BorderColor = Color.FromArgb(180, 180, 180);
+            textbIdTitular.EdgeColor = Color.White;
+            textbIdTitular.Enabled = false;
+            textbIdTitular.Font = new Font("Tahoma", 12F);
+            textbIdTitular.ForeColor = Color.Black;
+            textbIdTitular.Location = new Point(52, 55);
+            textbIdTitular.MaxLength = 32767;
+            textbIdTitular.Multiline = false;
+            textbIdTitular.Name = "textbIdTitular";
+            textbIdTitular.ReadOnly = false;
+            textbIdTitular.Size = new Size(169, 30);
+            textbIdTitular.TabIndex = 19;
+            textbIdTitular.TextAlignment = HorizontalAlignment.Left;
+            textbIdTitular.UseSystemPasswordChar = false;
             // 
-            // dungeonTextBox1
+            // texbSexo
             // 
-            dungeonTextBox1.BackColor = Color.Transparent;
-            dungeonTextBox1.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox1.EdgeColor = Color.White;
-            dungeonTextBox1.Font = new Font("Tahoma", 12F);
-            dungeonTextBox1.ForeColor = Color.Black;
-            dungeonTextBox1.Location = new Point(52, 196);
-            dungeonTextBox1.MaxLength = 32767;
-            dungeonTextBox1.Multiline = false;
-            dungeonTextBox1.Name = "dungeonTextBox1";
-            dungeonTextBox1.ReadOnly = false;
-            dungeonTextBox1.Size = new Size(169, 30);
-            dungeonTextBox1.TabIndex = 28;
-            dungeonTextBox1.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox1.UseSystemPasswordChar = false;
+            texbSexo.BackColor = Color.Transparent;
+            texbSexo.BorderColor = Color.FromArgb(180, 180, 180);
+            texbSexo.EdgeColor = Color.White;
+            texbSexo.Enabled = false;
+            texbSexo.Font = new Font("Tahoma", 12F);
+            texbSexo.ForeColor = Color.Black;
+            texbSexo.Location = new Point(52, 196);
+            texbSexo.MaxLength = 32767;
+            texbSexo.Multiline = false;
+            texbSexo.Name = "texbSexo";
+            texbSexo.ReadOnly = false;
+            texbSexo.Size = new Size(169, 30);
+            texbSexo.TabIndex = 28;
+            texbSexo.TextAlignment = HorizontalAlignment.Left;
+            texbSexo.UseSystemPasswordChar = false;
             // 
             // ucClientes
             // 
@@ -332,15 +337,15 @@
 
         private ReaLTaiizor.Controls.CyberButton BuGuardar;
         private ReaLTaiizor.Controls.CyberButton BuBuscarPersonas;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.Controls.DungeonTextBox texbSexo;
         private Label label4;
-        private ReaLTaiizor.Controls.DungeonTextBox textbPassword;
+        private ReaLTaiizor.Controls.DungeonTextBox textbOcupacion;
         private Label label5;
-        private ReaLTaiizor.Controls.DungeonTextBox textbUsuario;
+        private ReaLTaiizor.Controls.DungeonTextBox textbEdad;
         private Label label3;
         private Label label1;
         private ReaLTaiizor.Controls.DungeonTextBox textbNombre;
         private Label label2;
-        private ReaLTaiizor.Controls.DungeonTextBox textbIdUsuario;
+        private ReaLTaiizor.Controls.DungeonTextBox textbIdTitular;
     }
 }

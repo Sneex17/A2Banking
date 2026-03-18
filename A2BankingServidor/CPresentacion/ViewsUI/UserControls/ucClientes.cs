@@ -17,5 +17,20 @@ namespace CPresentacion.ViewsUI.UserControls
         {
             InitializeComponent();
         }
+
+        private void BuBuscarPersonas_Click(object sender, EventArgs e)
+        {
+            fmPersonas personas = new fmPersonas();
+
+            personas.SeleccionarPersona += (persona) =>
+            {
+                textbIdTitular.Text = persona.id.ToString();
+                textbNombre.Text = persona.name.ToString();
+                textbEdad.Text = persona.age.ToString();
+                texbSexo.Text = persona.gender.ToString();
+                textbOcupacion.Text = persona.occupation.ToString(); 
+            };
+            personas.ShowDialog();
+        }
     }
 }
