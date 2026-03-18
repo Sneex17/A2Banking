@@ -69,7 +69,7 @@ GO
 CREATE TABLE Cuenta (
     CuentaId      INT            IDENTITY(1,1) PRIMARY KEY,
     BancoId       INT            NOT NULL,
-    NumeroCuenta  NVARCHAR(20)   NOT NULL UNIQUE,
+    NumeroCuenta  INT            NOT NULL UNIQUE,
     TitularId     INT            NOT NULL,
     Balance       DECIMAL(18,2)  NOT NULL DEFAULT 0,
     FechaCreacion DATE           NOT NULL DEFAULT GETDATE(),
@@ -110,11 +110,76 @@ CREATE TABLE Transferencia (
     Monto            DECIMAL(18,2) NOT NULL,
     Comision         DECIMAL(18,2) NOT NULL DEFAULT 0,
     Fecha            DATETIME      NOT NULL DEFAULT GETDATE(),
-    CONSTRAINT FK_Transferencia_Origen  FOREIGN KEY (CuentaOrigenId)  REFERENCES Cuenta(CuentaId),
-    CONSTRAINT FK_Transferencia_Destino FOREIGN KEY (CuentaDestinoId) REFERENCES Cuenta(CuentaId)
+    CONSTRAINT FK_Transferencia_Origen  FOREIGN KEY (CuentaOrigenId)  REFERENCES Cuenta(NumeroCuenta),
+    CONSTRAINT FK_Transferencia_Destino FOREIGN KEY (CuentaDestinoId) REFERENCES Cuenta(NumeroCuenta)
 );
 GO
 
+--martes 17/3/26
 
+select * from Rol
+select * from Usuario
+
+insert into Rol select 'Encargado/a de Depósitos', 'Personal que realiza los depositos de las cuentas'
+
+update rol set Nombre = 'Administrador General', Descripcion = 'Personal encargado del sistema bancario'  where rolid = 1
+go
+
+insert into Usuario select 1, 'Halveys', 'sa', 'sa'
+go
+
+
+create or alter proc spExisteUsuario
+(
+@NombreUsuario NVARCHAR(100),
+@Contrasena NVARCHAR(50)
+)
+as
+set nocount on
+begin
+declare @RolId int = 0
+select @RolId = ISNULL(RolId, 0) from usuario where NombreUsuario = @NombreUsuario and Contrasena = @Contrasena
+SELECT @RolId
+end
+go
+
+
+create proc spVerRoles
+as
+set nocount on
+begin
+select RolId, Nombre, Descripcion from Rol
+end
+go
+
+
+select * from Titular
+
+--Miercoles 17/3/26
+
+create proc spInsertarTitular
+(
+@TitularId int,
+@Nombre nvarchar(100),
+@Edad int,
+@Sexo char(1),
+@Ocupacion nvarchar(100)
+)
+as
+set nocount on
+begin
+insert into Titular select @TitularId, @Nombre, @Edad, @Sexo, @Ocupacion
+end
+go
+
+create proc spVerTitulares
+as
+set nocount on
+begin
+select TitularId, Nombre, Edad, Sexo, Ocupacion from Titular
+end
+go
+
+exec spVerTitulares
 
 

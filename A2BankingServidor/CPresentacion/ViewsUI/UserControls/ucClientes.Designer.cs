@@ -169,6 +169,7 @@
             BuGuardar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuGuardar.Timer_Effect_1 = 5;
             BuGuardar.Timer_RGB = 300;
+            BuGuardar.Click += BuGuardar_Click;
             // 
             // label4
             // 
