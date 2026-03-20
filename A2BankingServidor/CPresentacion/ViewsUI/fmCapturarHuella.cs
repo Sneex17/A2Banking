@@ -36,7 +36,7 @@ namespace CPresentacion.ViewsUI
             lbEstados.Text = "Coloque el dedo en el sensor...";
 
             _capture = new DPFP.Capture.Capture();
-            _capture.EventHandler = this;   // El mismo form maneja los eventos
+            _capture.EventHandler = this;   
             _capture.StartCapture();
         }
 
@@ -78,7 +78,7 @@ namespace CPresentacion.ViewsUI
                     barraProbreso.Value = 0;
                     BuIniciar.Enabled = true;
                 }));
-                ActualizarEstado("⚠ Dedo diferente. Inicie de nuevo con el mismo dedo.");
+                ActualizarEstado("Dedo diferente. Inicie de nuevo con el mismo dedo.");
                 return;
             }
 
@@ -91,7 +91,7 @@ namespace CPresentacion.ViewsUI
                     barraProbreso.Value = 0;
                     BuIniciar.Enabled = true;
                 }));
-                ActualizarEstado("⚠ Dedo diferente. Inicie de nuevo con el mismo dedo.");
+                ActualizarEstado("Dedo diferente. Inicie de nuevo con el mismo dedo.");
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace CPresentacion.ViewsUI
                 Invoke(new Action(() =>
                 {
                     barraProbreso.Value = 100;
-                    lbEstados.Text = "✔ Huella lista. Puede continuar.";
+                    lbEstados.Text = "Huella lista. Puede continuar.";
                 }));
             }
             else
@@ -141,7 +141,7 @@ namespace CPresentacion.ViewsUI
             => ActualizarEstado("Lector conectado.");
 
         public void OnReaderDisconnect(object capture, string reader)
-            => ActualizarEstado("⚠ Lector desconectado.");
+            => ActualizarEstado("Lector desconectado.");
 
         public void OnSampleQuality(object capture, string reader, CaptureFeedback feedback)
         {
@@ -150,7 +150,7 @@ namespace CPresentacion.ViewsUI
                 ActualizarEstado("Calidad baja, intente de nuevo.");
         }
 
-        // ── Helper ──────────────────────────────────────────────
+
         private void ActualizarEstado(string mensaje)
         {
             if (lbEstados.InvokeRequired)
