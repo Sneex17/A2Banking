@@ -1,4 +1,4 @@
-﻿using CNegocio.StatePattern;
+﻿using CEntidades.StatePattern;
 using System;
 using System.Collections.Generic;
 using System.Linq;

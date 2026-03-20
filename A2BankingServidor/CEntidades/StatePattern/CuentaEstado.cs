@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CNegocio.StatePattern
+namespace CEntidades.StatePattern
 {
     public class CuentaEstado
     {
-        private ICuentaEstados cuentaEstado;
+        public ICuentaEstados cuentaEstado {  get; private set; }
         public CuentaEstado()
         {
             cuentaEstado = new EstadoActiva();

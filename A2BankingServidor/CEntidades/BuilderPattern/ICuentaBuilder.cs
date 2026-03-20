@@ -1,4 +1,6 @@
-﻿using CNegocio.StatePattern;
+﻿
+
+using CEntidades.StatePattern;
 
 namespace CEntidades.BuilderPattern
 {
@@ -14,6 +16,5 @@ namespace CEntidades.BuilderPattern
         ICuentaBuilder conCodigoPin(int codigoPin);
         ICuentaBuilder conCodigoHuella(string codigoHuella);
         Cuenta Builder();
-
     }
 }

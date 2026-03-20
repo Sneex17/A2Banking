@@ -1,4 +1,4 @@
-﻿using CNegocio.StatePattern;
+﻿using CEntidades.StatePattern;
 
 namespace CEntidades.BuilderPattern
 {
@@ -54,20 +54,5 @@ namespace CEntidades.BuilderPattern
         {
             return _cuenta;
         }
-
-
-      
-
-       
-
-      
-
-     
-
-     
-
-       
-
-       
     }
 }

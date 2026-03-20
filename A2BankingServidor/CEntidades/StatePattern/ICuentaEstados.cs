@@ -1,4 +1,4 @@
-﻿namespace CNegocio.StatePattern
+﻿namespace CEntidades.StatePattern
 {
     public interface ICuentaEstados
     {

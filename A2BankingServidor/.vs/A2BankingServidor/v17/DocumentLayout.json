@@ -3,52 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cnegocio\\builderpattern\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|solutionrelative:cnegocio\\builderpattern\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6211119-5D98-4D75-8819-FF388F36F886}|CDatos\\CDatos.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cdatos\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6211119-5D98-4D75-8819-FF388F36F886}|CDatos\\CDatos.csproj|solutionrelative:cdatos\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cpresentacion\\viewsui\\fmcapturarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\fmcapturarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EC6E065-79E5-4C75-9C48-CF91C177566D}|CEntidades\\CEntidades.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\centidades\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EC6E065-79E5-4C75-9C48-CF91C177566D}|CEntidades\\CEntidades.csproj|solutionrelative:centidades\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EC6E065-79E5-4C75-9C48-CF91C177566D}|CEntidades\\CEntidades.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\centidades\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EC6E065-79E5-4C75-9C48-CF91C177566D}|CEntidades\\CEntidades.csproj|solutionrelative:centidades\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cnegocio\\statepattern\\cuentaestado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|solutionrelative:cnegocio\\statepattern\\cuentaestado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\cpresentacion\\viewsui\\usercontrols\\ucclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\usercontrols\\ucclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\cpresentacion\\viewsui\\fmcapturarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\fmcapturarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cpresentacion\\viewsui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\cpresentacion\\viewsui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\cpresentacion\\viewsui\\usercontrols\\uccuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\usercontrols\\uccuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cpresentacion\\viewsui\\usercontrols\\uccuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\usercontrols\\uccuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\cpresentacion\\viewsui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4EC6E065-79E5-4C75-9C48-CF91C177566D}|CEntidades\\CEntidades.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\centidades\\statepattern\\cuentaestado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EC6E065-79E5-4C75-9C48-CF91C177566D}|CEntidades\\CEntidades.csproj|solutionrelative:centidades\\statepattern\\cuentaestado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,149 +26,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Cuenta.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CNegocio\\BuilderPattern\\Cuenta.cs",
-              "RelativeDocumentMoniker": "CNegocio\\BuilderPattern\\Cuenta.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CNegocio\\BuilderPattern\\Cuenta.cs",
-              "RelativeToolTip": "CNegocio\\BuilderPattern\\Cuenta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T13:05:49.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Banco.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CEntidades\\Banco.cs",
-              "RelativeDocumentMoniker": "CEntidades\\Banco.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CEntidades\\Banco.cs",
-              "RelativeToolTip": "CEntidades\\Banco.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T13:02:10.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CEntidades\\Class1.cs",
-              "RelativeDocumentMoniker": "CEntidades\\Class1.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CEntidades\\Class1.cs",
-              "RelativeToolTip": "CEntidades\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T13:01:52.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CuentaEstado.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CNegocio\\StatePattern\\CuentaEstado.cs",
-              "RelativeDocumentMoniker": "CNegocio\\StatePattern\\CuentaEstado.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CNegocio\\StatePattern\\CuentaEstado.cs",
-              "RelativeToolTip": "CNegocio\\StatePattern\\CuentaEstado.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T12:43:13.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MenuPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\MenuPrincipal.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\MenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\MenuPrincipal.cs",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\MenuPrincipal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T18:39:42.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MenuPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\MenuPrincipal.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\MenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\MenuPrincipal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\MenuPrincipal.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T18:37:02.326Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ucCuentas.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T18:27:03.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ucCuentas.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucCuentas.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T18:26:59.38Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "fmCapturarHuella.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\fmCapturarHuella.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\fmCapturarHuella.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\fmCapturarHuella.cs",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\fmCapturarHuella.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Title": "CuentaEstado.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CEntidades\\StatePattern\\CuentaEstado.cs",
+              "RelativeDocumentMoniker": "CEntidades\\StatePattern\\CuentaEstado.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CEntidades\\StatePattern\\CuentaEstado.cs",
+              "RelativeToolTip": "CEntidades\\StatePattern\\CuentaEstado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T18:19:50.701Z",
+              "WhenOpened": "2026-03-20T13:43:30.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ucClientes.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucClientes.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "CuentaController.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CDatos\\Controllers\\CuentaController.cs",
+              "RelativeDocumentMoniker": "CDatos\\Controllers\\CuentaController.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CDatos\\Controllers\\CuentaController.cs",
+              "RelativeToolTip": "CDatos\\Controllers\\CuentaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T17:15:13.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Login.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\Login.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\Login.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\Login.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\Login.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T17:14:10.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "fmCapturarHuella.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\fmCapturarHuella.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\fmCapturarHuella.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\fmCapturarHuella.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\fmCapturarHuella.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T15:30:50.362Z"
+              "WhenOpened": "2026-03-20T13:35:44.691Z",
+              "EditorCaption": ""
             }
           ]
         }
