@@ -1,8 +1,8 @@
 namespace CPresentacion
 {
-    public partial class Form1 : Form
+    public partial class Cajero : Form
     {
-        public Form1()
+        public Cajero()
         {
             InitializeComponent();
         }
