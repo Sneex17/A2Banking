@@ -8,7 +8,6 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\bin\
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\bin\Debug\net8.0-windows\CEntidades.pdb
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\bin\Debug\net8.0-windows\CNegocio.pdb
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.csproj.AssemblyReference.cache
-C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.Form1.resources
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.csproj.GenerateResource.cache
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.AssemblyInfoInputs.cache
@@ -21,3 +20,5 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.pdb
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.genruntimeconfig.cache
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\ref\CPresentacion.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.Cajero.resources
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingCliente\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.Properties.Resources.resources
