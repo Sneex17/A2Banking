@@ -45,6 +45,7 @@
             pbButton2 = new PictureBox();
             pbButton1 = new PictureBox();
             panel1 = new Panel();
+            textb = new TextBox();
             panelContainer.SuspendLayout();
             panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbButtonEnter).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)pbButton3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButton2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButton1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelContainer
@@ -104,6 +106,7 @@
             pbButtonEnter.Size = new Size(114, 19);
             pbButtonEnter.TabIndex = 11;
             pbButtonEnter.TabStop = false;
+            pbButtonEnter.Click += pbButtonEnter_Click;
             // 
             // pbButtonClear
             // 
@@ -113,6 +116,7 @@
             pbButtonClear.Size = new Size(114, 19);
             pbButtonClear.TabIndex = 10;
             pbButtonClear.TabStop = false;
+            pbButtonClear.Click += pbButtonClear_Click;
             // 
             // pbButtonCancel
             // 
@@ -122,6 +126,7 @@
             pbButtonCancel.Size = new Size(100, 19);
             pbButtonCancel.TabIndex = 9;
             pbButtonCancel.TabStop = false;
+            pbButtonCancel.Click += pbButtonCancel_Click;
             // 
             // pbButton9
             // 
@@ -131,6 +136,7 @@
             pbButton9.Size = new Size(60, 19);
             pbButton9.TabIndex = 8;
             pbButton9.TabStop = false;
+            pbButton9.Click += pbButton9_Click;
             // 
             // pbButton0
             // 
@@ -140,6 +146,7 @@
             pbButton0.Size = new Size(60, 19);
             pbButton0.TabIndex = 3;
             pbButton0.TabStop = false;
+            pbButton0.Click += pbButton0_Click;
             // 
             // pbButton8
             // 
@@ -149,6 +156,7 @@
             pbButton8.Size = new Size(60, 19);
             pbButton8.TabIndex = 7;
             pbButton8.TabStop = false;
+            pbButton8.Click += pbButton8_Click;
             // 
             // pbButton7
             // 
@@ -158,6 +166,7 @@
             pbButton7.Size = new Size(60, 19);
             pbButton7.TabIndex = 6;
             pbButton7.TabStop = false;
+            pbButton7.Click += pbButton7_Click;
             // 
             // pbButton6
             // 
@@ -167,6 +176,7 @@
             pbButton6.Size = new Size(60, 19);
             pbButton6.TabIndex = 5;
             pbButton6.TabStop = false;
+            pbButton6.Click += pbButton6_Click;
             // 
             // pbButton5
             // 
@@ -176,6 +186,7 @@
             pbButton5.Size = new Size(60, 19);
             pbButton5.TabIndex = 4;
             pbButton5.TabStop = false;
+            pbButton5.Click += pbButton5_Click;
             // 
             // pbButton4
             // 
@@ -185,6 +196,7 @@
             pbButton4.Size = new Size(60, 19);
             pbButton4.TabIndex = 3;
             pbButton4.TabStop = false;
+            pbButton4.Click += pbButton4_Click;
             // 
             // pbButton3
             // 
@@ -194,6 +206,7 @@
             pbButton3.Size = new Size(60, 19);
             pbButton3.TabIndex = 2;
             pbButton3.TabStop = false;
+            pbButton3.Click += pbButton3_Click;
             // 
             // pbButton2
             // 
@@ -203,6 +216,7 @@
             pbButton2.Size = new Size(60, 19);
             pbButton2.TabIndex = 1;
             pbButton2.TabStop = false;
+            pbButton2.Click += pbButton2_Click;
             // 
             // pbButton1
             // 
@@ -212,13 +226,22 @@
             pbButton1.Size = new Size(60, 19);
             pbButton1.TabIndex = 0;
             pbButton1.TabStop = false;
+            pbButton1.Click += pbButton1_Click;
             // 
             // panel1
             // 
+            panel1.Controls.Add(textb);
             panel1.Location = new Point(56, 29);
             panel1.Name = "panel1";
             panel1.Size = new Size(631, 350);
             panel1.TabIndex = 0;
+            // 
+            // textb
+            // 
+            textb.Location = new Point(217, 129);
+            textb.Name = "textb";
+            textb.Size = new Size(294, 23);
+            textb.TabIndex = 0;
             // 
             // Cajero
             // 
@@ -245,6 +268,8 @@
             ((System.ComponentModel.ISupportInitialize)pbButton3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbButton2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbButton1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -266,5 +291,6 @@
         private PictureBox pbButtonEnter;
         private PictureBox pbButtonClear;
         private PictureBox pbButtonCancel;
+        private TextBox textb;
     }
 }
