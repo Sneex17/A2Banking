@@ -1,6 +1,6 @@
-﻿namespace CPresentacion
+﻿namespace CPresentacion.Views
 {
-    partial class Cajero
+    partial class CajeroMenu
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cajero));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CajeroMenu));
             panelContainer = new Panel();
+            pbBotonAyuda = new PictureBox();
+            pbBotonRetirar = new PictureBox();
+            pbBotonDepositar = new PictureBox();
+            pbBotonSalir = new PictureBox();
+            pbBotonTransferir = new PictureBox();
+            pbBotonSaldo = new PictureBox();
             panelBotones = new Panel();
             pbButtonEnter = new PictureBox();
             pbButtonClear = new PictureBox();
@@ -45,8 +51,24 @@
             pbButton2 = new PictureBox();
             pbButton1 = new PictureBox();
             panel1 = new Panel();
-            textb = new TextBox();
+            lbTextDestino = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            lbTextOpcion = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            textbCuentaDestino = new TextBox();
+            label1 = new Label();
+            textbCantidad = new TextBox();
             panelContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbBotonAyuda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonRetirar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonDepositar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonSalir).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonTransferir).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonSaldo).BeginInit();
             panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbButtonEnter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbButtonClear).BeginInit();
@@ -68,6 +90,12 @@
             // 
             panelContainer.BackgroundImage = Properties.Resources.Fondo_del_cajero1;
             panelContainer.BackgroundImageLayout = ImageLayout.Stretch;
+            panelContainer.Controls.Add(pbBotonAyuda);
+            panelContainer.Controls.Add(pbBotonRetirar);
+            panelContainer.Controls.Add(pbBotonDepositar);
+            panelContainer.Controls.Add(pbBotonSalir);
+            panelContainer.Controls.Add(pbBotonTransferir);
+            panelContainer.Controls.Add(pbBotonSaldo);
             panelContainer.Controls.Add(panelBotones);
             panelContainer.Controls.Add(panel1);
             panelContainer.Dock = DockStyle.Fill;
@@ -75,6 +103,72 @@
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(984, 661);
             panelContainer.TabIndex = 0;
+            // 
+            // pbBotonAyuda
+            // 
+            pbBotonAyuda.BackColor = Color.Transparent;
+            pbBotonAyuda.Cursor = Cursors.Hand;
+            pbBotonAyuda.Location = new Point(66, 302);
+            pbBotonAyuda.Name = "pbBotonAyuda";
+            pbBotonAyuda.Size = new Size(66, 27);
+            pbBotonAyuda.TabIndex = 17;
+            pbBotonAyuda.TabStop = false;
+            pbBotonAyuda.Click += pbBotonAyuda_Click;
+            // 
+            // pbBotonRetirar
+            // 
+            pbBotonRetirar.BackColor = Color.Transparent;
+            pbBotonRetirar.Cursor = Cursors.Hand;
+            pbBotonRetirar.Location = new Point(66, 267);
+            pbBotonRetirar.Name = "pbBotonRetirar";
+            pbBotonRetirar.Size = new Size(66, 27);
+            pbBotonRetirar.TabIndex = 16;
+            pbBotonRetirar.TabStop = false;
+            pbBotonRetirar.Click += pbBotonRetirar_Click;
+            // 
+            // pbBotonDepositar
+            // 
+            pbBotonDepositar.BackColor = Color.Transparent;
+            pbBotonDepositar.Cursor = Cursors.Hand;
+            pbBotonDepositar.Location = new Point(66, 234);
+            pbBotonDepositar.Name = "pbBotonDepositar";
+            pbBotonDepositar.Size = new Size(66, 27);
+            pbBotonDepositar.TabIndex = 15;
+            pbBotonDepositar.TabStop = false;
+            pbBotonDepositar.Click += pbBotonDepositar_Click;
+            // 
+            // pbBotonSalir
+            // 
+            pbBotonSalir.BackColor = Color.Transparent;
+            pbBotonSalir.Cursor = Cursors.Hand;
+            pbBotonSalir.Location = new Point(585, 303);
+            pbBotonSalir.Name = "pbBotonSalir";
+            pbBotonSalir.Size = new Size(66, 27);
+            pbBotonSalir.TabIndex = 14;
+            pbBotonSalir.TabStop = false;
+            pbBotonSalir.Click += pbBotonSalir_Click;
+            // 
+            // pbBotonTransferir
+            // 
+            pbBotonTransferir.BackColor = Color.Transparent;
+            pbBotonTransferir.Cursor = Cursors.Hand;
+            pbBotonTransferir.Location = new Point(585, 268);
+            pbBotonTransferir.Name = "pbBotonTransferir";
+            pbBotonTransferir.Size = new Size(66, 27);
+            pbBotonTransferir.TabIndex = 13;
+            pbBotonTransferir.TabStop = false;
+            pbBotonTransferir.Click += pbBotonTransferir_Click;
+            // 
+            // pbBotonSaldo
+            // 
+            pbBotonSaldo.BackColor = Color.Transparent;
+            pbBotonSaldo.Cursor = Cursors.Hand;
+            pbBotonSaldo.Location = new Point(585, 235);
+            pbBotonSaldo.Name = "pbBotonSaldo";
+            pbBotonSaldo.Size = new Size(66, 27);
+            pbBotonSaldo.TabIndex = 12;
+            pbBotonSaldo.TabStop = false;
+            pbBotonSaldo.Click += pbBotonSaldo_Click;
             // 
             // panelBotones
             // 
@@ -230,30 +324,149 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textb);
-            panel1.Location = new Point(56, 29);
+            panel1.Controls.Add(lbTextDestino);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(lbTextOpcion);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(textbCuentaDestino);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(textbCantidad);
+            panel1.Location = new Point(136, 29);
             panel1.Name = "panel1";
-            panel1.Size = new Size(631, 350);
+            panel1.Size = new Size(443, 350);
             panel1.TabIndex = 0;
             // 
-            // textb
+            // lbTextDestino
             // 
-            textb.Location = new Point(217, 129);
-            textb.Name = "textb";
-            textb.Size = new Size(294, 23);
-            textb.TabIndex = 0;
+            lbTextDestino.AutoSize = true;
+            lbTextDestino.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbTextDestino.Location = new Point(112, 154);
+            lbTextDestino.Name = "lbTextDestino";
+            lbTextDestino.Size = new Size(152, 21);
+            lbTextDestino.TabIndex = 10;
+            lbTextDestino.Text = "Cuenta de destino";
+            lbTextDestino.Visible = false;
             // 
-            // Cajero
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label8.Location = new Point(3, 279);
+            label8.Name = "label8";
+            label8.Size = new Size(59, 21);
+            label8.TabIndex = 9;
+            label8.Text = "Ayuda";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label7.Location = new Point(395, 280);
+            label7.Name = "label7";
+            label7.Size = new Size(45, 21);
+            label7.TabIndex = 8;
+            label7.Text = "Salir";
+            // 
+            // lbTextOpcion
+            // 
+            lbTextOpcion.AutoSize = true;
+            lbTextOpcion.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbTextOpcion.Location = new Point(112, 94);
+            lbTextOpcion.Name = "lbTextOpcion";
+            lbTextOpcion.Size = new Size(43, 21);
+            lbTextOpcion.TabIndex = 7;
+            lbTextOpcion.Text = "Text";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label5.Location = new Point(317, 244);
+            label5.Name = "label5";
+            label5.Size = new Size(123, 21);
+            label5.TabIndex = 6;
+            label5.Text = "Transferencias";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label4.Location = new Point(3, 244);
+            label4.Name = "label4";
+            label4.Size = new Size(66, 21);
+            label4.TabIndex = 5;
+            label4.Text = "Retiros";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label3.Location = new Point(144, 24);
+            label3.Name = "label3";
+            label3.Size = new Size(158, 21);
+            label3.TabIndex = 4;
+            label3.Text = "Cajero Automático";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label2.Location = new Point(3, 210);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 21);
+            label2.TabIndex = 3;
+            label2.Text = "Dépositos";
+            // 
+            // textbCuentaDestino
+            // 
+            textbCuentaDestino.BorderStyle = BorderStyle.FixedSingle;
+            textbCuentaDestino.Font = new Font("Montserrat", 12F, FontStyle.Bold);
+            textbCuentaDestino.Location = new Point(112, 178);
+            textbCuentaDestino.Name = "textbCuentaDestino";
+            textbCuentaDestino.Size = new Size(218, 27);
+            textbCuentaDestino.TabIndex = 2;
+            textbCuentaDestino.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label1.Location = new Point(386, 210);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 21);
+            label1.TabIndex = 1;
+            label1.Text = "Saldo";
+            // 
+            // textbCantidad
+            // 
+            textbCantidad.BorderStyle = BorderStyle.FixedSingle;
+            textbCantidad.Font = new Font("Montserrat", 12F, FontStyle.Bold);
+            textbCantidad.Location = new Point(112, 118);
+            textbCantidad.Name = "textbCantidad";
+            textbCantidad.Size = new Size(218, 27);
+            textbCantidad.TabIndex = 0;
+            // 
+            // CajeroMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 661);
             Controls.Add(panelContainer);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Cajero";
+            Name = "CajeroMenu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "A2 Banking - Cajero automatico";
+            Text = "A2 Banking - Menu";
             panelContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbBotonAyuda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonRetirar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonDepositar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonSalir).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonTransferir).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonSaldo).EndInit();
             panelBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbButtonEnter).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbButtonClear).EndInit();
@@ -291,6 +504,22 @@
         private PictureBox pbButtonEnter;
         private PictureBox pbButtonClear;
         private PictureBox pbButtonCancel;
-        private TextBox textb;
+        private TextBox textbCantidad;
+        private Label label3;
+        private Label label2;
+        private TextBox textbCuentaDestino;
+        private Label label1;
+        private Label label5;
+        private Label label4;
+        private Label lbTextOpcion;
+        private PictureBox pbBotonAyuda;
+        private PictureBox pbBotonRetirar;
+        private PictureBox pbBotonDepositar;
+        private PictureBox pbBotonSalir;
+        private PictureBox pbBotonTransferir;
+        private PictureBox pbBotonSaldo;
+        private Label label7;
+        private Label label8;
+        private Label lbTextDestino;
     }
 }

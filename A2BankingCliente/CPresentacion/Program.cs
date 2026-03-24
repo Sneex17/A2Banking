@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace CPresentacion
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace CPresentacion
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Cajero());
+            Application.Run(new CajeroInicio());
         }
     }
 }

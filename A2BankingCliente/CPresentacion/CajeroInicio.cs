@@ -1,11 +1,12 @@
 using CEntidades;
 using System.Media;
+using CPresentacion.Views;
 
 namespace CPresentacion
 {
-    public partial class Cajero : Form
+    public partial class CajeroInicio : Form
     {
-        public Cajero()
+        public CajeroInicio()
         {
             InitializeComponent();
         }
@@ -15,85 +16,129 @@ namespace CPresentacion
             player.SoundLocation = Sonido.GetSonido();
             player.Play();
         }
+        private void AddNumero(int numero)
+        {
+            if (textbNCuenta.Focused)
+            {
+                textbNCuenta.Text += numero;
+            }
+            if (textbCodigoPin.Focused)
+            {
+                textbCodigoPin.Text += numero;
+            }
+        }
 
         private void pbButton1_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 1;
+
+            AddNumero(1);
         }
 
         private void pbButton2_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 2;
+
+            AddNumero(2);
         }
 
         private void pbButton3_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 3;
+
+            AddNumero(3);
         }
 
         private void pbButton4_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 4;
+
+            AddNumero(4);
         }
 
         private void pbButton5_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 5;
+
+            AddNumero(5);
         }
 
         private void pbButton6_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 6;
+
+            AddNumero(6);
         }
 
         private void pbButton7_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 7;
+
+            AddNumero(7);
         }
 
         private void pbButton8_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 8;
+
+            AddNumero(8);
         }
 
         private void pbButton9_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 9;
+
+            AddNumero(9);
         }
 
         private void pbButton0_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text += 0;
+
+            AddNumero(0);
         }
 
         private void pbButtonCancel_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            textb.Text = string.Empty;
+
+            if (textbNCuenta.Focused)
+            {
+                textbNCuenta.Text = string.Empty;
+            }
+            if (textbCodigoPin.Focused)
+            {
+                textbCodigoPin.Text = string.Empty;
+            }
         }
 
         private void pbButtonClear_Click(object sender, EventArgs e)
         {
             SonidoBotones();
-            if(!string.IsNullOrWhiteSpace(textb.Text))
+
+            if (textbNCuenta.Focused)
             {
-                textb.Text = textb.Text.Remove(textb.TextLength - 1);
-            }    
+                if (!string.IsNullOrWhiteSpace(textbNCuenta.Text))
+                {
+                    textbNCuenta.Text = textbNCuenta.Text.Remove(textbNCuenta.TextLength - 1);
+                }
+            }
+            if (textbCodigoPin.Focused)
+            {
+                if (!string.IsNullOrWhiteSpace(textbCodigoPin.Text))
+                {
+                    textbCodigoPin.Text = textbCodigoPin.Text.Remove(textbCodigoPin.TextLength - 1);
+                }
+            }   
         }
 
         private void pbButtonEnter_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+
+            CajeroMenu cajeroMenu = new CajeroMenu();
+            cajeroMenu.Show();
+            this.Hide();
         }
     }
 }
