@@ -36,15 +36,16 @@
             label1 = new Label();
             textbIdTitular = new ReaLTaiizor.Controls.DungeonTextBox();
             label2 = new Label();
-            textbIdUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbIdCuenta = new ReaLTaiizor.Controls.DungeonTextBox();
             label7 = new Label();
-            dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
-            dungeonTextBox2 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbNumeroCuenta = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbEstadoCuenta = new ReaLTaiizor.Controls.DungeonTextBox();
             label8 = new Label();
             textbHuella = new ReaLTaiizor.Controls.DungeonTextBox();
             BuGuardar = new ReaLTaiizor.Controls.CyberButton();
             BuBuscarPersonas = new ReaLTaiizor.Controls.CyberButton();
             BuCapturarHuella = new ReaLTaiizor.Controls.CyberButton();
+            BuLimpiar = new ReaLTaiizor.Controls.CyberButton();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
@@ -56,14 +57,15 @@
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(BuLimpiar);
             panelContainer.Controls.Add(BuCapturarHuella);
             panelContainer.Controls.Add(BuGuardar);
             panelContainer.Controls.Add(BuBuscarPersonas);
             panelContainer.Controls.Add(textbHuella);
             panelContainer.Controls.Add(label8);
-            panelContainer.Controls.Add(dungeonTextBox2);
+            panelContainer.Controls.Add(textbEstadoCuenta);
             panelContainer.Controls.Add(label7);
-            panelContainer.Controls.Add(dungeonTextBox1);
+            panelContainer.Controls.Add(textbNumeroCuenta);
             panelContainer.Controls.Add(label4);
             panelContainer.Controls.Add(textbCodigoPin);
             panelContainer.Controls.Add(label5);
@@ -72,10 +74,10 @@
             panelContainer.Controls.Add(label1);
             panelContainer.Controls.Add(textbIdTitular);
             panelContainer.Controls.Add(label2);
-            panelContainer.Controls.Add(textbIdUsuario);
+            panelContainer.Controls.Add(textbIdCuenta);
             panelContainer.Margin = new Padding(3, 2, 3, 2);
             panelContainer.Controls.SetChildIndex(label6, 0);
-            panelContainer.Controls.SetChildIndex(textbIdUsuario, 0);
+            panelContainer.Controls.SetChildIndex(textbIdCuenta, 0);
             panelContainer.Controls.SetChildIndex(label2, 0);
             panelContainer.Controls.SetChildIndex(textbIdTitular, 0);
             panelContainer.Controls.SetChildIndex(label1, 0);
@@ -84,14 +86,15 @@
             panelContainer.Controls.SetChildIndex(label5, 0);
             panelContainer.Controls.SetChildIndex(textbCodigoPin, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox1, 0);
+            panelContainer.Controls.SetChildIndex(textbNumeroCuenta, 0);
             panelContainer.Controls.SetChildIndex(label7, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox2, 0);
+            panelContainer.Controls.SetChildIndex(textbEstadoCuenta, 0);
             panelContainer.Controls.SetChildIndex(label8, 0);
             panelContainer.Controls.SetChildIndex(textbHuella, 0);
             panelContainer.Controls.SetChildIndex(BuBuscarPersonas, 0);
             panelContainer.Controls.SetChildIndex(BuGuardar, 0);
             panelContainer.Controls.SetChildIndex(BuCapturarHuella, 0);
+            panelContainer.Controls.SetChildIndex(BuLimpiar, 0);
             // 
             // pbIcono
             // 
@@ -225,23 +228,23 @@
             label2.TabIndex = 18;
             label2.Text = "Id cuenta";
             // 
-            // textbIdUsuario
+            // textbIdCuenta
             // 
-            textbIdUsuario.BackColor = Color.Transparent;
-            textbIdUsuario.BorderColor = Color.FromArgb(180, 180, 180);
-            textbIdUsuario.EdgeColor = Color.White;
-            textbIdUsuario.Enabled = false;
-            textbIdUsuario.Font = new Font("Tahoma", 12F);
-            textbIdUsuario.ForeColor = Color.Black;
-            textbIdUsuario.Location = new Point(52, 55);
-            textbIdUsuario.MaxLength = 32767;
-            textbIdUsuario.Multiline = false;
-            textbIdUsuario.Name = "textbIdUsuario";
-            textbIdUsuario.ReadOnly = false;
-            textbIdUsuario.Size = new Size(169, 30);
-            textbIdUsuario.TabIndex = 17;
-            textbIdUsuario.TextAlignment = HorizontalAlignment.Left;
-            textbIdUsuario.UseSystemPasswordChar = false;
+            textbIdCuenta.BackColor = Color.Transparent;
+            textbIdCuenta.BorderColor = Color.FromArgb(180, 180, 180);
+            textbIdCuenta.EdgeColor = Color.White;
+            textbIdCuenta.Enabled = false;
+            textbIdCuenta.Font = new Font("Tahoma", 12F);
+            textbIdCuenta.ForeColor = Color.Black;
+            textbIdCuenta.Location = new Point(52, 55);
+            textbIdCuenta.MaxLength = 32767;
+            textbIdCuenta.Multiline = false;
+            textbIdCuenta.Name = "textbIdCuenta";
+            textbIdCuenta.ReadOnly = false;
+            textbIdCuenta.Size = new Size(169, 30);
+            textbIdCuenta.TabIndex = 17;
+            textbIdCuenta.TextAlignment = HorizontalAlignment.Left;
+            textbIdCuenta.UseSystemPasswordChar = false;
             // 
             // label7
             // 
@@ -255,41 +258,41 @@
             label7.TabIndex = 28;
             label7.Text = "Número";
             // 
-            // dungeonTextBox1
+            // textbNumeroCuenta
             // 
-            dungeonTextBox1.BackColor = Color.Transparent;
-            dungeonTextBox1.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox1.EdgeColor = Color.White;
-            dungeonTextBox1.Enabled = false;
-            dungeonTextBox1.Font = new Font("Tahoma", 12F);
-            dungeonTextBox1.ForeColor = Color.Black;
-            dungeonTextBox1.Location = new Point(244, 55);
-            dungeonTextBox1.MaxLength = 32767;
-            dungeonTextBox1.Multiline = false;
-            dungeonTextBox1.Name = "dungeonTextBox1";
-            dungeonTextBox1.ReadOnly = false;
-            dungeonTextBox1.Size = new Size(169, 30);
-            dungeonTextBox1.TabIndex = 27;
-            dungeonTextBox1.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox1.UseSystemPasswordChar = false;
+            textbNumeroCuenta.BackColor = Color.Transparent;
+            textbNumeroCuenta.BorderColor = Color.FromArgb(180, 180, 180);
+            textbNumeroCuenta.EdgeColor = Color.White;
+            textbNumeroCuenta.Enabled = false;
+            textbNumeroCuenta.Font = new Font("Tahoma", 12F);
+            textbNumeroCuenta.ForeColor = Color.Black;
+            textbNumeroCuenta.Location = new Point(244, 55);
+            textbNumeroCuenta.MaxLength = 32767;
+            textbNumeroCuenta.Multiline = false;
+            textbNumeroCuenta.Name = "textbNumeroCuenta";
+            textbNumeroCuenta.ReadOnly = false;
+            textbNumeroCuenta.Size = new Size(169, 30);
+            textbNumeroCuenta.TabIndex = 27;
+            textbNumeroCuenta.TextAlignment = HorizontalAlignment.Left;
+            textbNumeroCuenta.UseSystemPasswordChar = false;
             // 
-            // dungeonTextBox2
+            // textbEstadoCuenta
             // 
-            dungeonTextBox2.BackColor = Color.Transparent;
-            dungeonTextBox2.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox2.EdgeColor = Color.White;
-            dungeonTextBox2.Enabled = false;
-            dungeonTextBox2.Font = new Font("Tahoma", 12F);
-            dungeonTextBox2.ForeColor = Color.Black;
-            dungeonTextBox2.Location = new Point(52, 196);
-            dungeonTextBox2.MaxLength = 32767;
-            dungeonTextBox2.Multiline = false;
-            dungeonTextBox2.Name = "dungeonTextBox2";
-            dungeonTextBox2.ReadOnly = false;
-            dungeonTextBox2.Size = new Size(169, 30);
-            dungeonTextBox2.TabIndex = 29;
-            dungeonTextBox2.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox2.UseSystemPasswordChar = false;
+            textbEstadoCuenta.BackColor = Color.Transparent;
+            textbEstadoCuenta.BorderColor = Color.FromArgb(180, 180, 180);
+            textbEstadoCuenta.EdgeColor = Color.White;
+            textbEstadoCuenta.Enabled = false;
+            textbEstadoCuenta.Font = new Font("Tahoma", 12F);
+            textbEstadoCuenta.ForeColor = Color.Black;
+            textbEstadoCuenta.Location = new Point(52, 196);
+            textbEstadoCuenta.MaxLength = 32767;
+            textbEstadoCuenta.Multiline = false;
+            textbEstadoCuenta.Name = "textbEstadoCuenta";
+            textbEstadoCuenta.ReadOnly = false;
+            textbEstadoCuenta.Size = new Size(169, 30);
+            textbEstadoCuenta.TabIndex = 29;
+            textbEstadoCuenta.TextAlignment = HorizontalAlignment.Left;
+            textbEstadoCuenta.UseSystemPasswordChar = false;
             // 
             // label8
             // 
@@ -446,6 +449,48 @@
             BuCapturarHuella.Timer_RGB = 300;
             BuCapturarHuella.Click += BuCapturarHuella_Click;
             // 
+            // BuLimpiar
+            // 
+            BuLimpiar.Alpha = 20;
+            BuLimpiar.BackColor = Color.Transparent;
+            BuLimpiar.Background = true;
+            BuLimpiar.Background_WidthPen = 4F;
+            BuLimpiar.BackgroundPen = true;
+            BuLimpiar.ColorBackground = Color.Tan;
+            BuLimpiar.ColorBackground_1 = Color.Tan;
+            BuLimpiar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            BuLimpiar.ColorBackground_Pen = Color.DarkGray;
+            BuLimpiar.ColorLighting = Color.DarkGray;
+            BuLimpiar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            BuLimpiar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            BuLimpiar.Cursor = Cursors.Hand;
+            BuLimpiar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            BuLimpiar.Effect_1 = true;
+            BuLimpiar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            BuLimpiar.Effect_1_Transparency = 25;
+            BuLimpiar.Effect_2 = true;
+            BuLimpiar.Effect_2_ColorBackground = Color.White;
+            BuLimpiar.Effect_2_Transparency = 20;
+            BuLimpiar.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuLimpiar.ForeColor = Color.FromArgb(245, 245, 245);
+            BuLimpiar.Lighting = false;
+            BuLimpiar.LinearGradient_Background = false;
+            BuLimpiar.LinearGradientPen = false;
+            BuLimpiar.Location = new Point(585, 189);
+            BuLimpiar.Name = "BuLimpiar";
+            BuLimpiar.PenWidth = 15;
+            BuLimpiar.Rounding = true;
+            BuLimpiar.RoundingInt = 70;
+            BuLimpiar.Size = new Size(169, 43);
+            BuLimpiar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            BuLimpiar.TabIndex = 37;
+            BuLimpiar.Tag = "Cyber";
+            BuLimpiar.TextButton = "Limpiar campos";
+            BuLimpiar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            BuLimpiar.Timer_Effect_1 = 5;
+            BuLimpiar.Timer_RGB = 300;
+            BuLimpiar.Click += BuLimpiar_Click;
+            // 
             // ucCuentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -462,9 +507,9 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox2;
+        private ReaLTaiizor.Controls.DungeonTextBox textbEstadoCuenta;
         private Label label7;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.Controls.DungeonTextBox textbNumeroCuenta;
         private Label label4;
         private ReaLTaiizor.Controls.DungeonTextBox textbCodigoPin;
         private Label label5;
@@ -473,11 +518,12 @@
         private Label label1;
         private ReaLTaiizor.Controls.DungeonTextBox textbIdTitular;
         private Label label2;
-        private ReaLTaiizor.Controls.DungeonTextBox textbIdUsuario;
+        private ReaLTaiizor.Controls.DungeonTextBox textbIdCuenta;
         private Label label8;
         private ReaLTaiizor.Controls.DungeonTextBox textbHuella;
         private ReaLTaiizor.Controls.CyberButton BuCapturarHuella;
         private ReaLTaiizor.Controls.CyberButton BuGuardar;
         private ReaLTaiizor.Controls.CyberButton BuBuscarPersonas;
+        private ReaLTaiizor.Controls.CyberButton BuLimpiar;
     }
 }

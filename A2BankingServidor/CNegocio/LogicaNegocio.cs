@@ -9,27 +9,11 @@ namespace CNegocio
 {
     public class LogicaNegocio
     {
+        //Gestión de usuarios
         public static int UsuarioExiste(Usuario usuario)
         {
             return UsuarioController.ValidarUsuario(usuario);
         }
-
-        public static List<Rol> ListaRoles()
-        {
-            return RolController.VerRoles();
-        }
-
-        public static void CrearCuentas(Cuenta cuenta)
-        {
-            CuentaController.CrearCuenta(cuenta);
-        }
-
-        public static List<Titular> ListaTitulares()
-        {
-            return TitularController.VerTitulares();
-        }
-
-        //Gestión de usuarios
         public static DataTable ListaUsuarios()
         {
             return UsuarioController.ListaUsuarios();
@@ -42,8 +26,33 @@ namespace CNegocio
         {
             UsuarioController.ActualizarUsuario(usuario);
         }
+        public static List<Rol> ListaRoles()
+        {
+            return RolController.VerRoles();
+        }
 
 
+
+        //Gestión de las cuentas
+        public static void CrearCuentas(Cuenta cuenta)
+        {
+            CuentaController.CrearCuenta(cuenta);
+        }
+        public static List<Titular> ListaTitulares()
+        {
+            return TitularController.VerTitulares();
+        }
+        public static DataTable ListaCuentas()
+        {
+            return CuentaController.VerListaCuentas();
+        }
+        public static string GeneralNumeroCuenta()
+        {
+            var NuevoNumero = CuentaController.NumeroCuenta();
+            return Convert.ToString(NuevoNumero);
+        }
+
+        
 
     }
 }

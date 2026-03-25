@@ -25,6 +25,7 @@ namespace CDatos.Controllers
 
                 resultado = (int)comando.ExecuteScalar();
                 return resultado;
+                
             }
         }
 

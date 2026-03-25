@@ -1,4 +1,5 @@
-﻿using CEntidades.BuilderPattern;
+﻿using CEntidades;
+using CEntidades.BuilderPattern;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -7,6 +8,24 @@ namespace CDatos.Controllers
     public class CuentaController
     {
         private readonly static string _conexion = ConexionAppDB.ConnectionString;
+        
+        
+        public static DataTable VerListaCuentas()
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                var tablaCuentas = new DataTable();
+
+                var comando = new SqlCommand("spListaCuentas", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                var adapter = new SqlDataAdapter(comando);
+                adapter.Fill(tablaCuentas);
+
+                return tablaCuentas;
+            }
+        }
+        
         public static void CrearCuenta(Cuenta cuenta)
         {  
             using (var acceso = new SqlConnection(_conexion))
@@ -86,6 +105,20 @@ namespace CDatos.Controllers
 
                 resultado = comando.ExecuteNonQuery();
                 acceso.Close();
+            }
+        }
+
+        public static int NumeroCuenta()
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                int resultado;
+                acceso.Open();
+                var comando = new SqlCommand("spNumeroCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                resultado = (int)comando.ExecuteScalar();
+                return resultado;
             }
         }
     }
