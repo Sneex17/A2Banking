@@ -25,7 +25,13 @@
     <Compile Update="ViewsUI\UserControls\ucCuentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ViewsUI\UserControls\ucDepositos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ViewsUI\UserControls\ucHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ViewsUI\UserControls\ucRetiros.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ViewsUI\UserControls\ucUsuarios.cs">
