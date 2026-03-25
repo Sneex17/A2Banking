@@ -2,6 +2,7 @@
 using CEntidades.BuilderPattern;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CDatos.Controllers
 {
@@ -51,7 +52,7 @@ namespace CDatos.Controllers
         }
 
 
-        public static void DepositarBalance(Cuenta cuenta)
+        public static void DepositarBalance(Cuenta cuenta, int ClienteId, string Nombre)
         {
             using (var acceso = new SqlConnection(_conexion))
             {
@@ -62,15 +63,17 @@ namespace CDatos.Controllers
                 comando.CommandType = CommandType.StoredProcedure;
                 
                 comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
-                comando.Parameters.AddWithValue("@TitularId", cuenta.Titular.TitularId);
+                comando.Parameters.AddWithValue("@ClienteId", ClienteId);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
                 comando.Parameters.AddWithValue("@Balance", cuenta.Balance);
-
+                comando.Parameters.AddWithValue("@Fecha", DateTime.Now);
+                
                 resultado = comando.ExecuteNonQuery();
                 acceso.Close();
             }
         }
 
-        public static void RetirarBalance(Cuenta cuenta)
+        public static void RetirarBalance(Cuenta cuenta, int ClienteId, string Nombre)
         {
             using (var acceso = new SqlConnection(_conexion))
             {
@@ -81,8 +84,10 @@ namespace CDatos.Controllers
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
-                comando.Parameters.AddWithValue("@TitularId", cuenta.Titular.TitularId);
+                comando.Parameters.AddWithValue("@ClienteId", ClienteId);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
                 comando.Parameters.AddWithValue("@Balance", cuenta.Balance);
+                comando.Parameters.AddWithValue("@Fecha", DateTime.Today);
 
                 resultado = comando.ExecuteNonQuery();
                 acceso.Close();

@@ -49,12 +49,31 @@ namespace CPresentacion.ViewsUI
                 tabpUsuarios.Controls.Add(usuarios);
             }
 
+            //Vista de las cuentas
             if(controlMenuOpciones.SelectedTab == tabpCuentas 
                 && tabpCuentas.Controls.Count == 0)
             {
                 ucCuentas cuentas = new ucCuentas();
                 cuentas.Dock = DockStyle.Fill;
                 tabpCuentas.Controls.Add(cuentas);
+            }
+
+            //Vista para los dépositos
+            if(controlMenuOpciones.SelectedTab == tabpDepositos
+                && tabpDepositos.Controls.Count == 0)
+            {
+                ucDepositos depositos = new ucDepositos();
+                depositos.Dock = DockStyle.Fill;
+                tabpDepositos.Controls.Add(depositos);
+            }
+
+            //Vista para los retiros
+            if(controlMenuOpciones.SelectedTab == tabpRetiros
+                && tabpRetiros.Controls.Count == 0)
+            {
+                ucRetiros retiros = new ucRetiros();
+                retiros.Dock = DockStyle.Fill;
+                tabpRetiros.Controls.Add(retiros);
             }
         }
     }

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             label2 = new Label();
-            textbIdUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbIdCliente = new ReaLTaiizor.Controls.DungeonTextBox();
             label1 = new Label();
-            dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbNombreCliente = new ReaLTaiizor.Controls.DungeonTextBox();
             label3 = new Label();
-            dungeonTextBox2 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbNumeroCuenta = new ReaLTaiizor.Controls.DungeonTextBox();
             label4 = new Label();
-            dungeonTextBox3 = new ReaLTaiizor.Controls.DungeonTextBox();
+            texbIdCuenta = new ReaLTaiizor.Controls.DungeonTextBox();
             label5 = new Label();
-            dungeonTextBox4 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbCantidad = new ReaLTaiizor.Controls.DungeonTextBox();
             label7 = new Label();
-            dungeonTextBox5 = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbTitular = new ReaLTaiizor.Controls.DungeonTextBox();
             BuLimpiar = new ReaLTaiizor.Controls.CyberButton();
             BuBuscar = new ReaLTaiizor.Controls.CyberButton();
             BuAplicar = new ReaLTaiizor.Controls.CyberButton();
@@ -58,29 +58,29 @@
             panelContainer.Controls.Add(BuLimpiar);
             panelContainer.Controls.Add(BuBuscar);
             panelContainer.Controls.Add(label5);
-            panelContainer.Controls.Add(dungeonTextBox4);
+            panelContainer.Controls.Add(textbCantidad);
             panelContainer.Controls.Add(label7);
-            panelContainer.Controls.Add(dungeonTextBox5);
+            panelContainer.Controls.Add(textbTitular);
             panelContainer.Controls.Add(label3);
-            panelContainer.Controls.Add(dungeonTextBox2);
+            panelContainer.Controls.Add(textbNumeroCuenta);
             panelContainer.Controls.Add(label4);
-            panelContainer.Controls.Add(dungeonTextBox3);
+            panelContainer.Controls.Add(texbIdCuenta);
             panelContainer.Controls.Add(label1);
-            panelContainer.Controls.Add(dungeonTextBox1);
+            panelContainer.Controls.Add(textbNombreCliente);
             panelContainer.Controls.Add(label2);
-            panelContainer.Controls.Add(textbIdUsuario);
+            panelContainer.Controls.Add(textbIdCliente);
             panelContainer.Controls.SetChildIndex(label6, 0);
-            panelContainer.Controls.SetChildIndex(textbIdUsuario, 0);
+            panelContainer.Controls.SetChildIndex(textbIdCliente, 0);
             panelContainer.Controls.SetChildIndex(label2, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox1, 0);
+            panelContainer.Controls.SetChildIndex(textbNombreCliente, 0);
             panelContainer.Controls.SetChildIndex(label1, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox3, 0);
+            panelContainer.Controls.SetChildIndex(texbIdCuenta, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox2, 0);
+            panelContainer.Controls.SetChildIndex(textbNumeroCuenta, 0);
             panelContainer.Controls.SetChildIndex(label3, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox5, 0);
+            panelContainer.Controls.SetChildIndex(textbTitular, 0);
             panelContainer.Controls.SetChildIndex(label7, 0);
-            panelContainer.Controls.SetChildIndex(dungeonTextBox4, 0);
+            panelContainer.Controls.SetChildIndex(textbCantidad, 0);
             panelContainer.Controls.SetChildIndex(label5, 0);
             panelContainer.Controls.SetChildIndex(BuBuscar, 0);
             panelContainer.Controls.SetChildIndex(BuLimpiar, 0);
@@ -114,23 +114,23 @@
             label2.TabIndex = 18;
             label2.Text = "Id cliente";
             // 
-            // textbIdUsuario
+            // textbIdCliente
             // 
-            textbIdUsuario.BackColor = Color.Transparent;
-            textbIdUsuario.BorderColor = Color.FromArgb(180, 180, 180);
-            textbIdUsuario.EdgeColor = Color.White;
-            textbIdUsuario.Enabled = false;
-            textbIdUsuario.Font = new Font("Tahoma", 12F);
-            textbIdUsuario.ForeColor = Color.Black;
-            textbIdUsuario.Location = new Point(52, 40);
-            textbIdUsuario.MaxLength = 32767;
-            textbIdUsuario.Multiline = false;
-            textbIdUsuario.Name = "textbIdUsuario";
-            textbIdUsuario.ReadOnly = false;
-            textbIdUsuario.Size = new Size(169, 30);
-            textbIdUsuario.TabIndex = 17;
-            textbIdUsuario.TextAlignment = HorizontalAlignment.Left;
-            textbIdUsuario.UseSystemPasswordChar = false;
+            textbIdCliente.BackColor = Color.Transparent;
+            textbIdCliente.BorderColor = Color.FromArgb(180, 180, 180);
+            textbIdCliente.EdgeColor = Color.White;
+            textbIdCliente.Enabled = false;
+            textbIdCliente.Font = new Font("Tahoma", 12F);
+            textbIdCliente.ForeColor = Color.Black;
+            textbIdCliente.Location = new Point(52, 40);
+            textbIdCliente.MaxLength = 32767;
+            textbIdCliente.Multiline = false;
+            textbIdCliente.Name = "textbIdCliente";
+            textbIdCliente.ReadOnly = false;
+            textbIdCliente.Size = new Size(169, 30);
+            textbIdCliente.TabIndex = 17;
+            textbIdCliente.TextAlignment = HorizontalAlignment.Left;
+            textbIdCliente.UseSystemPasswordChar = false;
             // 
             // label1
             // 
@@ -144,23 +144,23 @@
             label1.TabIndex = 20;
             label1.Text = "Cliente";
             // 
-            // dungeonTextBox1
+            // textbNombreCliente
             // 
-            dungeonTextBox1.BackColor = Color.Transparent;
-            dungeonTextBox1.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox1.EdgeColor = Color.White;
-            dungeonTextBox1.Enabled = false;
-            dungeonTextBox1.Font = new Font("Tahoma", 12F);
-            dungeonTextBox1.ForeColor = Color.Black;
-            dungeonTextBox1.Location = new Point(227, 40);
-            dungeonTextBox1.MaxLength = 32767;
-            dungeonTextBox1.Multiline = false;
-            dungeonTextBox1.Name = "dungeonTextBox1";
-            dungeonTextBox1.ReadOnly = false;
-            dungeonTextBox1.Size = new Size(169, 30);
-            dungeonTextBox1.TabIndex = 19;
-            dungeonTextBox1.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox1.UseSystemPasswordChar = false;
+            textbNombreCliente.BackColor = Color.Transparent;
+            textbNombreCliente.BorderColor = Color.FromArgb(180, 180, 180);
+            textbNombreCliente.EdgeColor = Color.White;
+            textbNombreCliente.Enabled = false;
+            textbNombreCliente.Font = new Font("Tahoma", 12F);
+            textbNombreCliente.ForeColor = Color.Black;
+            textbNombreCliente.Location = new Point(227, 40);
+            textbNombreCliente.MaxLength = 32767;
+            textbNombreCliente.Multiline = false;
+            textbNombreCliente.Name = "textbNombreCliente";
+            textbNombreCliente.ReadOnly = false;
+            textbNombreCliente.Size = new Size(169, 30);
+            textbNombreCliente.TabIndex = 19;
+            textbNombreCliente.TextAlignment = HorizontalAlignment.Left;
+            textbNombreCliente.UseSystemPasswordChar = false;
             // 
             // label3
             // 
@@ -174,23 +174,23 @@
             label3.TabIndex = 24;
             label3.Text = "№ cuenta";
             // 
-            // dungeonTextBox2
+            // textbNumeroCuenta
             // 
-            dungeonTextBox2.BackColor = Color.Transparent;
-            dungeonTextBox2.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox2.EdgeColor = Color.White;
-            dungeonTextBox2.Enabled = false;
-            dungeonTextBox2.Font = new Font("Tahoma", 12F);
-            dungeonTextBox2.ForeColor = Color.Black;
-            dungeonTextBox2.Location = new Point(227, 105);
-            dungeonTextBox2.MaxLength = 32767;
-            dungeonTextBox2.Multiline = false;
-            dungeonTextBox2.Name = "dungeonTextBox2";
-            dungeonTextBox2.ReadOnly = false;
-            dungeonTextBox2.Size = new Size(169, 30);
-            dungeonTextBox2.TabIndex = 23;
-            dungeonTextBox2.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox2.UseSystemPasswordChar = false;
+            textbNumeroCuenta.BackColor = Color.Transparent;
+            textbNumeroCuenta.BorderColor = Color.FromArgb(180, 180, 180);
+            textbNumeroCuenta.EdgeColor = Color.White;
+            textbNumeroCuenta.Enabled = false;
+            textbNumeroCuenta.Font = new Font("Tahoma", 12F);
+            textbNumeroCuenta.ForeColor = Color.Black;
+            textbNumeroCuenta.Location = new Point(227, 105);
+            textbNumeroCuenta.MaxLength = 32767;
+            textbNumeroCuenta.Multiline = false;
+            textbNumeroCuenta.Name = "textbNumeroCuenta";
+            textbNumeroCuenta.ReadOnly = false;
+            textbNumeroCuenta.Size = new Size(169, 30);
+            textbNumeroCuenta.TabIndex = 23;
+            textbNumeroCuenta.TextAlignment = HorizontalAlignment.Left;
+            textbNumeroCuenta.UseSystemPasswordChar = false;
             // 
             // label4
             // 
@@ -204,23 +204,23 @@
             label4.TabIndex = 22;
             label4.Text = "Id cuenta";
             // 
-            // dungeonTextBox3
+            // texbIdCuenta
             // 
-            dungeonTextBox3.BackColor = Color.Transparent;
-            dungeonTextBox3.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox3.EdgeColor = Color.White;
-            dungeonTextBox3.Enabled = false;
-            dungeonTextBox3.Font = new Font("Tahoma", 12F);
-            dungeonTextBox3.ForeColor = Color.Black;
-            dungeonTextBox3.Location = new Point(52, 105);
-            dungeonTextBox3.MaxLength = 32767;
-            dungeonTextBox3.Multiline = false;
-            dungeonTextBox3.Name = "dungeonTextBox3";
-            dungeonTextBox3.ReadOnly = false;
-            dungeonTextBox3.Size = new Size(169, 30);
-            dungeonTextBox3.TabIndex = 21;
-            dungeonTextBox3.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox3.UseSystemPasswordChar = false;
+            texbIdCuenta.BackColor = Color.Transparent;
+            texbIdCuenta.BorderColor = Color.FromArgb(180, 180, 180);
+            texbIdCuenta.EdgeColor = Color.White;
+            texbIdCuenta.Enabled = false;
+            texbIdCuenta.Font = new Font("Tahoma", 12F);
+            texbIdCuenta.ForeColor = Color.Black;
+            texbIdCuenta.Location = new Point(52, 105);
+            texbIdCuenta.MaxLength = 32767;
+            texbIdCuenta.Multiline = false;
+            texbIdCuenta.Name = "texbIdCuenta";
+            texbIdCuenta.ReadOnly = false;
+            texbIdCuenta.Size = new Size(169, 30);
+            texbIdCuenta.TabIndex = 21;
+            texbIdCuenta.TextAlignment = HorizontalAlignment.Left;
+            texbIdCuenta.UseSystemPasswordChar = false;
             // 
             // label5
             // 
@@ -234,23 +234,22 @@
             label5.TabIndex = 28;
             label5.Text = "Cantidad";
             // 
-            // dungeonTextBox4
+            // textbCantidad
             // 
-            dungeonTextBox4.BackColor = Color.Transparent;
-            dungeonTextBox4.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox4.EdgeColor = Color.White;
-            dungeonTextBox4.Enabled = false;
-            dungeonTextBox4.Font = new Font("Tahoma", 12F);
-            dungeonTextBox4.ForeColor = Color.Black;
-            dungeonTextBox4.Location = new Point(227, 173);
-            dungeonTextBox4.MaxLength = 32767;
-            dungeonTextBox4.Multiline = false;
-            dungeonTextBox4.Name = "dungeonTextBox4";
-            dungeonTextBox4.ReadOnly = false;
-            dungeonTextBox4.Size = new Size(169, 30);
-            dungeonTextBox4.TabIndex = 27;
-            dungeonTextBox4.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox4.UseSystemPasswordChar = false;
+            textbCantidad.BackColor = Color.Transparent;
+            textbCantidad.BorderColor = Color.FromArgb(180, 180, 180);
+            textbCantidad.EdgeColor = Color.White;
+            textbCantidad.Font = new Font("Tahoma", 12F);
+            textbCantidad.ForeColor = Color.Black;
+            textbCantidad.Location = new Point(227, 173);
+            textbCantidad.MaxLength = 32767;
+            textbCantidad.Multiline = false;
+            textbCantidad.Name = "textbCantidad";
+            textbCantidad.ReadOnly = false;
+            textbCantidad.Size = new Size(169, 30);
+            textbCantidad.TabIndex = 27;
+            textbCantidad.TextAlignment = HorizontalAlignment.Left;
+            textbCantidad.UseSystemPasswordChar = false;
             // 
             // label7
             // 
@@ -264,23 +263,23 @@
             label7.TabIndex = 26;
             label7.Text = "Titular";
             // 
-            // dungeonTextBox5
+            // textbTitular
             // 
-            dungeonTextBox5.BackColor = Color.Transparent;
-            dungeonTextBox5.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox5.EdgeColor = Color.White;
-            dungeonTextBox5.Enabled = false;
-            dungeonTextBox5.Font = new Font("Tahoma", 12F);
-            dungeonTextBox5.ForeColor = Color.Black;
-            dungeonTextBox5.Location = new Point(52, 173);
-            dungeonTextBox5.MaxLength = 32767;
-            dungeonTextBox5.Multiline = false;
-            dungeonTextBox5.Name = "dungeonTextBox5";
-            dungeonTextBox5.ReadOnly = false;
-            dungeonTextBox5.Size = new Size(169, 30);
-            dungeonTextBox5.TabIndex = 25;
-            dungeonTextBox5.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox5.UseSystemPasswordChar = false;
+            textbTitular.BackColor = Color.Transparent;
+            textbTitular.BorderColor = Color.FromArgb(180, 180, 180);
+            textbTitular.EdgeColor = Color.White;
+            textbTitular.Enabled = false;
+            textbTitular.Font = new Font("Tahoma", 12F);
+            textbTitular.ForeColor = Color.Black;
+            textbTitular.Location = new Point(52, 173);
+            textbTitular.MaxLength = 32767;
+            textbTitular.Multiline = false;
+            textbTitular.Name = "textbTitular";
+            textbTitular.ReadOnly = false;
+            textbTitular.Size = new Size(169, 30);
+            textbTitular.TabIndex = 25;
+            textbTitular.TextAlignment = HorizontalAlignment.Left;
+            textbTitular.UseSystemPasswordChar = false;
             // 
             // BuLimpiar
             // 
@@ -322,6 +321,7 @@
             BuLimpiar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuLimpiar.Timer_Effect_1 = 5;
             BuLimpiar.Timer_RGB = 300;
+            BuLimpiar.Click += BuLimpiar_Click;
             // 
             // BuBuscar
             // 
@@ -330,8 +330,8 @@
             BuBuscar.Background = true;
             BuBuscar.Background_WidthPen = 4F;
             BuBuscar.BackgroundPen = true;
-            BuBuscar.ColorBackground = Color.Green;
-            BuBuscar.ColorBackground_1 = Color.Green;
+            BuBuscar.ColorBackground = Color.FromArgb(77, 182, 198);
+            BuBuscar.ColorBackground_1 = Color.FromArgb(77, 182, 198);
             BuBuscar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
             BuBuscar.ColorBackground_Pen = Color.DarkGray;
             BuBuscar.ColorLighting = Color.DarkGray;
@@ -363,6 +363,7 @@
             BuBuscar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuBuscar.Timer_Effect_1 = 5;
             BuBuscar.Timer_RGB = 300;
+            BuBuscar.Click += BuBuscar_Click;
             // 
             // BuAplicar
             // 
@@ -404,6 +405,7 @@
             BuAplicar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuAplicar.Timer_Effect_1 = 5;
             BuAplicar.Timer_RGB = 300;
+            BuAplicar.Click += BuAplicar_Click;
             // 
             // label8
             // 
@@ -450,17 +452,17 @@
         #endregion
 
         private Label label1;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.Controls.DungeonTextBox textbNombreCliente;
         private Label label2;
-        private ReaLTaiizor.Controls.DungeonTextBox textbIdUsuario;
+        private ReaLTaiizor.Controls.DungeonTextBox textbIdCliente;
         private Label label5;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox4;
+        private ReaLTaiizor.Controls.DungeonTextBox textbCantidad;
         private Label label7;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox5;
+        private ReaLTaiizor.Controls.DungeonTextBox textbTitular;
         private Label label3;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox2;
+        private ReaLTaiizor.Controls.DungeonTextBox textbNumeroCuenta;
         private Label label4;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox3;
+        private ReaLTaiizor.Controls.DungeonTextBox texbIdCuenta;
         private ReaLTaiizor.Controls.CyberButton BuAplicar;
         private ReaLTaiizor.Controls.CyberButton BuLimpiar;
         private ReaLTaiizor.Controls.CyberButton BuBuscar;

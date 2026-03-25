@@ -91,16 +91,25 @@ CREATE TABLE Deposito (
     CONSTRAINT FK_Deposito_Cuenta FOREIGN KEY (CuentaId) REFERENCES Cuenta(CuentaId)
 );
 GO
+ALTER TABLE Deposito
+ADD CONSTRAINT CHK_Cantidad CHECK (Cantidad > 0);
+go
 
 -- Retiro
 CREATE TABLE Retiro (
     RetiroId INT           IDENTITY(1,1) PRIMARY KEY,
     CuentaId INT           NOT NULL,
+    ClienteId INT          NOT NULL,
+    Nombre NVARCHAR(50)    NOT NULL,
     Fecha    DATETIME      NOT NULL DEFAULT GETDATE(),
     Cantidad DECIMAL(18,2) NOT NULL,
     CONSTRAINT FK_Retiro_Cuenta FOREIGN KEY (CuentaId) REFERENCES Cuenta(CuentaId)
 );
 GO
+ALTER TABLE Retiro
+ADD CONSTRAINT CHK_CantidadRetiro CHECK (Cantidad > 0);
+go
+
 
 -- Transferencia
 CREATE TABLE Transferencia (
@@ -346,5 +355,85 @@ begin
 select isnull(max(NumeroCuenta), 100000000) + 1
 from Cuenta 
 end
+go
+--transaciones
+
+--depositos
+
+create or alter proc spDepositarBalanceCuenta
+(
+@NumeroCuenta int,
+@ClienteId int,
+@Nombre nvarchar(50),
+@Balance decimal(18,2),
+@Fecha date
+)
+as
+set nocount on
+begin
+    begin try
+        begin tran
+            declare @CuentaId int
+
+            set @CuentaId = (select CuentaId from Cuenta where NumeroCuenta = @NumeroCuenta)
+
+            insert into Deposito values (@CuentaId, @ClienteId, @Nombre, @Fecha, @Balance)
+
+            declare @NewBalance decimal(18,2)
+
+            set @NewBalance = (select Balance from Cuenta where NumeroCuenta = @NumeroCuenta) + @Balance
+
+            update Cuenta set Balance = @NewBalance where NumeroCuenta = @NumeroCuenta
+        commit tran
+    end try
+    begin catch
+        rollback tran
+    end catch
+end
+go
 
 
+exec spDepositarBalanceCuenta @NumeroCuenta = 100000001, @ClienteId = 1, @Nombre = 'Homer Simpson', @Balance = 0, @Fecha = '2026-03-25'
+
+select * from Deposito
+
+
+--update Deposito set clienteid = 1, nombre = 'Homer Simpson'
+
+select * from Retiro
+go
+
+--retiros
+create or alter proc spRetirarBalanceCuenta
+(
+@NumeroCuenta int,
+@ClienteId int,
+@Nombre nvarchar(50),
+@Balance decimal(18,2),
+@Fecha date
+)
+as
+set nocount on
+begin
+    begin try
+        begin tran
+            declare @CuentaId int
+
+            set @CuentaId = (select CuentaId from Cuenta where NumeroCuenta = @NumeroCuenta)
+
+            insert into Retiro values (@CuentaId, @ClienteId, @Nombre, @Fecha, @Balance)
+
+            declare @NewBalance decimal(18,2)
+
+            set @NewBalance = (select Balance from Cuenta where NumeroCuenta = @NumeroCuenta) - @Balance
+
+            update Cuenta set Balance = @NewBalance where NumeroCuenta = @NumeroCuenta
+        commit tran
+    end try
+    begin catch
+        rollback tran
+    end catch
+end
+go
+
+select * from Retiro
