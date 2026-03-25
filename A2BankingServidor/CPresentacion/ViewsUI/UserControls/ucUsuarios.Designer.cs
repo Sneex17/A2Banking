@@ -34,10 +34,11 @@
             textbNombre = new ReaLTaiizor.Controls.DungeonTextBox();
             label3 = new Label();
             label4 = new Label();
-            this.textbPassword = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbPassword = new ReaLTaiizor.Controls.DungeonTextBox();
             label5 = new Label();
-            this.textbUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
             comboRoles = new ReaLTaiizor.Controls.AloneComboBox();
+            BuGuardar = new ReaLTaiizor.Controls.CyberButton();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
@@ -45,16 +46,29 @@
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(BuGuardar);
             panelContainer.Controls.Add(comboRoles);
             panelContainer.Controls.Add(label4);
-            panelContainer.Controls.Add(this.textbPassword);
+            panelContainer.Controls.Add(textbPassword);
             panelContainer.Controls.Add(label5);
-            panelContainer.Controls.Add(this.textbUsuario);
+            panelContainer.Controls.Add(textbUsuario);
             panelContainer.Controls.Add(label3);
             panelContainer.Controls.Add(label1);
             panelContainer.Controls.Add(textbNombre);
             panelContainer.Controls.Add(label2);
             panelContainer.Controls.Add(textbIdUsuario);
+            panelContainer.Controls.SetChildIndex(textbIdUsuario, 0);
+            panelContainer.Controls.SetChildIndex(label2, 0);
+            panelContainer.Controls.SetChildIndex(textbNombre, 0);
+            panelContainer.Controls.SetChildIndex(label1, 0);
+            panelContainer.Controls.SetChildIndex(label3, 0);
+            panelContainer.Controls.SetChildIndex(textbUsuario, 0);
+            panelContainer.Controls.SetChildIndex(label5, 0);
+            panelContainer.Controls.SetChildIndex(textbPassword, 0);
+            panelContainer.Controls.SetChildIndex(label4, 0);
+            panelContainer.Controls.SetChildIndex(comboRoles, 0);
+            panelContainer.Controls.SetChildIndex(label6, 0);
+            panelContainer.Controls.SetChildIndex(BuGuardar, 0);
             // 
             // pbIcono
             // 
@@ -150,20 +164,20 @@
             // 
             // textbPassword
             // 
-            this.textbPassword.BackColor = Color.Transparent;
-            this.textbPassword.BorderColor = Color.FromArgb(180, 180, 180);
-            this.textbPassword.EdgeColor = Color.White;
-            this.textbPassword.Font = new Font("Tahoma", 12F);
-            this.textbPassword.ForeColor = Color.Black;
-            this.textbPassword.Location = new Point(244, 205);
-            this.textbPassword.MaxLength = 32767;
-            this.textbPassword.Multiline = false;
-            this.textbPassword.Name = "textbPassword";
-            this.textbPassword.ReadOnly = false;
-            this.textbPassword.Size = new Size(169, 30);
-            this.textbPassword.TabIndex = 10;
-            this.textbPassword.TextAlignment = HorizontalAlignment.Left;
-            this.textbPassword.UseSystemPasswordChar = false;
+            textbPassword.BackColor = Color.Transparent;
+            textbPassword.BorderColor = Color.FromArgb(180, 180, 180);
+            textbPassword.EdgeColor = Color.White;
+            textbPassword.Font = new Font("Tahoma", 12F);
+            textbPassword.ForeColor = Color.Black;
+            textbPassword.Location = new Point(244, 205);
+            textbPassword.MaxLength = 32767;
+            textbPassword.Multiline = false;
+            textbPassword.Name = "textbPassword";
+            textbPassword.ReadOnly = false;
+            textbPassword.Size = new Size(169, 30);
+            textbPassword.TabIndex = 10;
+            textbPassword.TextAlignment = HorizontalAlignment.Left;
+            textbPassword.UseSystemPasswordChar = false;
             // 
             // label5
             // 
@@ -179,20 +193,20 @@
             // 
             // textbUsuario
             // 
-            this.textbUsuario.BackColor = Color.Transparent;
-            this.textbUsuario.BorderColor = Color.FromArgb(180, 180, 180);
-            this.textbUsuario.EdgeColor = Color.White;
-            this.textbUsuario.Font = new Font("Tahoma", 12F);
-            this.textbUsuario.ForeColor = Color.Black;
-            this.textbUsuario.Location = new Point(244, 130);
-            this.textbUsuario.MaxLength = 32767;
-            this.textbUsuario.Multiline = false;
-            this.textbUsuario.Name = "textbUsuario";
-            this.textbUsuario.ReadOnly = false;
-            this.textbUsuario.Size = new Size(169, 30);
-            this.textbUsuario.TabIndex = 8;
-            this.textbUsuario.TextAlignment = HorizontalAlignment.Left;
-            this.textbUsuario.UseSystemPasswordChar = false;
+            textbUsuario.BackColor = Color.Transparent;
+            textbUsuario.BorderColor = Color.FromArgb(180, 180, 180);
+            textbUsuario.EdgeColor = Color.White;
+            textbUsuario.Font = new Font("Tahoma", 12F);
+            textbUsuario.ForeColor = Color.Black;
+            textbUsuario.Location = new Point(244, 130);
+            textbUsuario.MaxLength = 32767;
+            textbUsuario.Multiline = false;
+            textbUsuario.Name = "textbUsuario";
+            textbUsuario.ReadOnly = false;
+            textbUsuario.Size = new Size(169, 30);
+            textbUsuario.TabIndex = 8;
+            textbUsuario.TextAlignment = HorizontalAlignment.Left;
+            textbUsuario.UseSystemPasswordChar = false;
             // 
             // comboRoles
             // 
@@ -205,6 +219,47 @@
             comboRoles.Name = "comboRoles";
             comboRoles.Size = new Size(169, 26);
             comboRoles.TabIndex = 12;
+            // 
+            // BuGuardar
+            // 
+            BuGuardar.Alpha = 20;
+            BuGuardar.BackColor = Color.Transparent;
+            BuGuardar.Background = true;
+            BuGuardar.Background_WidthPen = 4F;
+            BuGuardar.BackgroundPen = true;
+            BuGuardar.ColorBackground = Color.Green;
+            BuGuardar.ColorBackground_1 = Color.Green;
+            BuGuardar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            BuGuardar.ColorBackground_Pen = Color.DarkGray;
+            BuGuardar.ColorLighting = Color.DarkGray;
+            BuGuardar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            BuGuardar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            BuGuardar.Cursor = Cursors.Hand;
+            BuGuardar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            BuGuardar.Effect_1 = true;
+            BuGuardar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            BuGuardar.Effect_1_Transparency = 25;
+            BuGuardar.Effect_2 = true;
+            BuGuardar.Effect_2_ColorBackground = Color.White;
+            BuGuardar.Effect_2_Transparency = 20;
+            BuGuardar.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuGuardar.ForeColor = Color.FromArgb(245, 245, 245);
+            BuGuardar.Lighting = false;
+            BuGuardar.LinearGradient_Background = false;
+            BuGuardar.LinearGradientPen = false;
+            BuGuardar.Location = new Point(585, 39);
+            BuGuardar.Name = "BuGuardar";
+            BuGuardar.PenWidth = 15;
+            BuGuardar.Rounding = true;
+            BuGuardar.RoundingInt = 70;
+            BuGuardar.Size = new Size(169, 43);
+            BuGuardar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            BuGuardar.TabIndex = 35;
+            BuGuardar.Tag = "Cyber";
+            BuGuardar.TextButton = "Registrar";
+            BuGuardar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            BuGuardar.Timer_Effect_1 = 5;
+            BuGuardar.Timer_RGB = 300;
             // 
             // ucUsuarios
             // 
@@ -232,5 +287,6 @@
         private Label label1;
         private ReaLTaiizor.Controls.DungeonTextBox textbNombre;
         private ReaLTaiizor.Controls.AloneComboBox comboRoles;
+        private ReaLTaiizor.Controls.CyberButton BuGuardar;
     }
 }

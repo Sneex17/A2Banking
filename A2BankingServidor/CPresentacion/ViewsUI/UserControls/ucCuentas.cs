@@ -64,5 +64,10 @@ namespace CPresentacion.ViewsUI.UserControls
             textbCodigoPin.Text = "0x" + BitConverter.ToString(huella).Replace("-", "");
             //LogicaNegocio.CrearCuentas(cuenta);
         }
+
+        private void BuBuscarPersonas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

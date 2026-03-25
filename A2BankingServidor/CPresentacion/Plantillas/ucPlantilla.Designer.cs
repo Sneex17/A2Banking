@@ -112,6 +112,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelContainer);
             Controls.Add(panelInformacion);
+            MinimumSize = new Size(801, 603);
             Name = "ucPlantilla";
             Size = new Size(801, 603);
             panelInformacion.ResumeLayout(false);
