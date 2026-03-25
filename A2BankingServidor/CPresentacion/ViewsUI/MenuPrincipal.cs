@@ -13,10 +13,11 @@ namespace CPresentacion.ViewsUI
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal()
+        public MenuPrincipal(int rol)
         {
             InitializeComponent();
             Load += (s, e) => CargarHome();
+            Load += (s, e) => ControlResposabilidades(rol);
         }
 
         private void CargarHome()
@@ -27,6 +28,48 @@ namespace CPresentacion.ViewsUI
                 ucHome home = new ucHome();
                 home.Dock = DockStyle.Fill;
                 tabpHome.Controls.Add(home);
+            }
+        }
+
+        private void ControlResposabilidades(int rol)
+        {
+            switch (rol)
+            {
+                case 1:
+                    {
+                        tabpDepositos.Parent = null;
+                        tabpRetiros.Parent = null;
+                        tabpTranferencias.Parent = null;
+                    }
+                    break;
+                case 2:
+                    {
+                        tabpClientes.Parent = null;
+                        tabpCuentas.Parent = null;
+                        tabpTranferencias.Parent = null;
+                        tabpUsuarios.Parent = null;
+                        tabpDepositos.Parent = null;
+                    }
+                    break;
+                case 3:
+                    {
+                        tabpClientes.Parent = null;
+                        tabpCuentas.Parent = null;
+                        tabpUsuarios.Parent = null;
+                    }
+                    break;
+                case 4:
+                    {
+                        tabpClientes.Parent = null;
+                        tabpCuentas.Parent = null;
+                        tabpTranferencias.Parent = null;
+                        tabpUsuarios.Parent = null;
+                        tabpRetiros.Parent = null;
+                    }
+                    break;
+
+                default:
+                    break;
             }
         }
         private void controlMenuOpciones_SelectedIndexChanged(object sender, EventArgs e)

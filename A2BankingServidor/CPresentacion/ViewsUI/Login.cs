@@ -39,9 +39,10 @@ namespace CPresentacion
                 Contrasena = textbPassword.Text
             };
 
-            if(LogicaNegocio.UsuarioExiste(usuario) > 0)
+            int resultado = LogicaNegocio.UsuarioExiste(usuario);
+            if (resultado > 0)
             {
-                MenuPrincipal menu = new MenuPrincipal();
+                MenuPrincipal menu = new MenuPrincipal(resultado);
                 menu.Show();
                 this.Hide();
             }
