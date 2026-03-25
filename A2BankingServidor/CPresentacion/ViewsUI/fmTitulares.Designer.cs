@@ -104,6 +104,7 @@
             viewData.Name = "viewData";
             viewData.Size = new Size(686, 326);
             viewData.TabIndex = 0;
+            viewData.CellDoubleClick += viewData_CellDoubleClick;
             // 
             // panelInformacion
             // 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CEntidades;
+using CNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +15,30 @@ namespace CPresentacion.ViewsUI
 {
     public partial class fmTitulares : Form
     {
+        public event Action<Titular> SeleccionarTitular;
         public fmTitulares()
         {
             InitializeComponent();
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
+            viewData.DataSource = LogicaNegocio.ListaTitulares();
+        }
+
+        private void viewData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                var titular = new Titular()
+                {
+                    TitularId = Convert.ToInt32(viewData.Rows[e.RowIndex].Cells["TitularId"].Value),
+                    Nombre = viewData.Rows[e.RowIndex].Cells["Nombre"].Value.ToString()
+                };
+                SeleccionarTitular?.Invoke(titular);
+                this.Close();
+            }
         }
     }
 }

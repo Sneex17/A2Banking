@@ -31,10 +31,10 @@
             label4 = new Label();
             textbCodigoPin = new ReaLTaiizor.Controls.DungeonTextBox();
             label5 = new Label();
-            textbUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbNombreTitular = new ReaLTaiizor.Controls.DungeonTextBox();
             label3 = new Label();
             label1 = new Label();
-            textbNombre = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbIdTitular = new ReaLTaiizor.Controls.DungeonTextBox();
             label2 = new Label();
             textbIdUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
             label7 = new Label();
@@ -67,20 +67,20 @@
             panelContainer.Controls.Add(label4);
             panelContainer.Controls.Add(textbCodigoPin);
             panelContainer.Controls.Add(label5);
-            panelContainer.Controls.Add(textbUsuario);
+            panelContainer.Controls.Add(textbNombreTitular);
             panelContainer.Controls.Add(label3);
             panelContainer.Controls.Add(label1);
-            panelContainer.Controls.Add(textbNombre);
+            panelContainer.Controls.Add(textbIdTitular);
             panelContainer.Controls.Add(label2);
             panelContainer.Controls.Add(textbIdUsuario);
             panelContainer.Margin = new Padding(3, 2, 3, 2);
             panelContainer.Controls.SetChildIndex(label6, 0);
             panelContainer.Controls.SetChildIndex(textbIdUsuario, 0);
             panelContainer.Controls.SetChildIndex(label2, 0);
-            panelContainer.Controls.SetChildIndex(textbNombre, 0);
+            panelContainer.Controls.SetChildIndex(textbIdTitular, 0);
             panelContainer.Controls.SetChildIndex(label1, 0);
             panelContainer.Controls.SetChildIndex(label3, 0);
-            panelContainer.Controls.SetChildIndex(textbUsuario, 0);
+            panelContainer.Controls.SetChildIndex(textbNombreTitular, 0);
             panelContainer.Controls.SetChildIndex(label5, 0);
             panelContainer.Controls.SetChildIndex(textbCodigoPin, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
@@ -153,22 +153,23 @@
             label5.TabIndex = 23;
             label5.Text = "Nombre";
             // 
-            // textbUsuario
+            // textbNombreTitular
             // 
-            textbUsuario.BackColor = Color.Transparent;
-            textbUsuario.BorderColor = Color.FromArgb(180, 180, 180);
-            textbUsuario.EdgeColor = Color.White;
-            textbUsuario.Font = new Font("Tahoma", 12F);
-            textbUsuario.ForeColor = Color.Black;
-            textbUsuario.Location = new Point(244, 121);
-            textbUsuario.MaxLength = 32767;
-            textbUsuario.Multiline = false;
-            textbUsuario.Name = "textbUsuario";
-            textbUsuario.ReadOnly = false;
-            textbUsuario.Size = new Size(169, 30);
-            textbUsuario.TabIndex = 22;
-            textbUsuario.TextAlignment = HorizontalAlignment.Left;
-            textbUsuario.UseSystemPasswordChar = false;
+            textbNombreTitular.BackColor = Color.Transparent;
+            textbNombreTitular.BorderColor = Color.FromArgb(180, 180, 180);
+            textbNombreTitular.EdgeColor = Color.White;
+            textbNombreTitular.Enabled = false;
+            textbNombreTitular.Font = new Font("Tahoma", 12F);
+            textbNombreTitular.ForeColor = Color.Black;
+            textbNombreTitular.Location = new Point(244, 121);
+            textbNombreTitular.MaxLength = 32767;
+            textbNombreTitular.Multiline = false;
+            textbNombreTitular.Name = "textbNombreTitular";
+            textbNombreTitular.ReadOnly = false;
+            textbNombreTitular.Size = new Size(169, 30);
+            textbNombreTitular.TabIndex = 22;
+            textbNombreTitular.TextAlignment = HorizontalAlignment.Left;
+            textbNombreTitular.UseSystemPasswordChar = false;
             // 
             // label3
             // 
@@ -194,22 +195,23 @@
             label1.TabIndex = 20;
             label1.Text = "Id titular";
             // 
-            // textbNombre
+            // textbIdTitular
             // 
-            textbNombre.BackColor = Color.Transparent;
-            textbNombre.BorderColor = Color.FromArgb(180, 180, 180);
-            textbNombre.EdgeColor = Color.White;
-            textbNombre.Font = new Font("Tahoma", 12F);
-            textbNombre.ForeColor = Color.Black;
-            textbNombre.Location = new Point(52, 121);
-            textbNombre.MaxLength = 32767;
-            textbNombre.Multiline = false;
-            textbNombre.Name = "textbNombre";
-            textbNombre.ReadOnly = false;
-            textbNombre.Size = new Size(169, 30);
-            textbNombre.TabIndex = 19;
-            textbNombre.TextAlignment = HorizontalAlignment.Left;
-            textbNombre.UseSystemPasswordChar = false;
+            textbIdTitular.BackColor = Color.Transparent;
+            textbIdTitular.BorderColor = Color.FromArgb(180, 180, 180);
+            textbIdTitular.EdgeColor = Color.White;
+            textbIdTitular.Enabled = false;
+            textbIdTitular.Font = new Font("Tahoma", 12F);
+            textbIdTitular.ForeColor = Color.Black;
+            textbIdTitular.Location = new Point(52, 121);
+            textbIdTitular.MaxLength = 32767;
+            textbIdTitular.Multiline = false;
+            textbIdTitular.Name = "textbIdTitular";
+            textbIdTitular.ReadOnly = false;
+            textbIdTitular.Size = new Size(169, 30);
+            textbIdTitular.TabIndex = 19;
+            textbIdTitular.TextAlignment = HorizontalAlignment.Left;
+            textbIdTitular.UseSystemPasswordChar = false;
             // 
             // label2
             // 
@@ -276,6 +278,7 @@
             dungeonTextBox2.BackColor = Color.Transparent;
             dungeonTextBox2.BorderColor = Color.FromArgb(180, 180, 180);
             dungeonTextBox2.EdgeColor = Color.White;
+            dungeonTextBox2.Enabled = false;
             dungeonTextBox2.Font = new Font("Tahoma", 12F);
             dungeonTextBox2.ForeColor = Color.Black;
             dungeonTextBox2.Location = new Point(52, 196);
@@ -465,10 +468,10 @@
         private Label label4;
         private ReaLTaiizor.Controls.DungeonTextBox textbCodigoPin;
         private Label label5;
-        private ReaLTaiizor.Controls.DungeonTextBox textbUsuario;
+        private ReaLTaiizor.Controls.DungeonTextBox textbNombreTitular;
         private Label label3;
         private Label label1;
-        private ReaLTaiizor.Controls.DungeonTextBox textbNombre;
+        private ReaLTaiizor.Controls.DungeonTextBox textbIdTitular;
         private Label label2;
         private ReaLTaiizor.Controls.DungeonTextBox textbIdUsuario;
         private Label label8;

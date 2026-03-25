@@ -39,6 +39,7 @@
             textbUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
             comboRoles = new ReaLTaiizor.Controls.AloneComboBox();
             BuGuardar = new ReaLTaiizor.Controls.CyberButton();
+            BuLimpiar = new ReaLTaiizor.Controls.CyberButton();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
@@ -46,6 +47,7 @@
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(BuLimpiar);
             panelContainer.Controls.Add(BuGuardar);
             panelContainer.Controls.Add(comboRoles);
             panelContainer.Controls.Add(label4);
@@ -69,6 +71,7 @@
             panelContainer.Controls.SetChildIndex(comboRoles, 0);
             panelContainer.Controls.SetChildIndex(label6, 0);
             panelContainer.Controls.SetChildIndex(BuGuardar, 0);
+            panelContainer.Controls.SetChildIndex(BuLimpiar, 0);
             // 
             // pbIcono
             // 
@@ -260,6 +263,49 @@
             BuGuardar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuGuardar.Timer_Effect_1 = 5;
             BuGuardar.Timer_RGB = 300;
+            BuGuardar.Click += BuGuardar_Click;
+            // 
+            // BuLimpiar
+            // 
+            BuLimpiar.Alpha = 20;
+            BuLimpiar.BackColor = Color.Transparent;
+            BuLimpiar.Background = true;
+            BuLimpiar.Background_WidthPen = 4F;
+            BuLimpiar.BackgroundPen = true;
+            BuLimpiar.ColorBackground = Color.Tan;
+            BuLimpiar.ColorBackground_1 = Color.Tan;
+            BuLimpiar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            BuLimpiar.ColorBackground_Pen = Color.DarkGray;
+            BuLimpiar.ColorLighting = Color.DarkGray;
+            BuLimpiar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            BuLimpiar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            BuLimpiar.Cursor = Cursors.Hand;
+            BuLimpiar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            BuLimpiar.Effect_1 = true;
+            BuLimpiar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            BuLimpiar.Effect_1_Transparency = 25;
+            BuLimpiar.Effect_2 = true;
+            BuLimpiar.Effect_2_ColorBackground = Color.White;
+            BuLimpiar.Effect_2_Transparency = 20;
+            BuLimpiar.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuLimpiar.ForeColor = Color.FromArgb(245, 245, 245);
+            BuLimpiar.Lighting = false;
+            BuLimpiar.LinearGradient_Background = false;
+            BuLimpiar.LinearGradientPen = false;
+            BuLimpiar.Location = new Point(585, 88);
+            BuLimpiar.Name = "BuLimpiar";
+            BuLimpiar.PenWidth = 15;
+            BuLimpiar.Rounding = true;
+            BuLimpiar.RoundingInt = 70;
+            BuLimpiar.Size = new Size(169, 43);
+            BuLimpiar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            BuLimpiar.TabIndex = 36;
+            BuLimpiar.Tag = "Cyber";
+            BuLimpiar.TextButton = "Limpiar campos";
+            BuLimpiar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            BuLimpiar.Timer_Effect_1 = 5;
+            BuLimpiar.Timer_RGB = 300;
+            BuLimpiar.Click += BuLimpiar_Click;
             // 
             // ucUsuarios
             // 
@@ -288,5 +334,6 @@
         private ReaLTaiizor.Controls.DungeonTextBox textbNombre;
         private ReaLTaiizor.Controls.AloneComboBox comboRoles;
         private ReaLTaiizor.Controls.CyberButton BuGuardar;
+        private ReaLTaiizor.Controls.CyberButton BuLimpiar;
     }
 }

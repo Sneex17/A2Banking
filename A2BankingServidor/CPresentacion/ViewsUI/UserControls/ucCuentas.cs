@@ -67,7 +67,13 @@ namespace CPresentacion.ViewsUI.UserControls
 
         private void BuBuscarPersonas_Click(object sender, EventArgs e)
         {
-
+            fmTitulares titulares = new fmTitulares();
+            titulares.SeleccionarTitular += (titular) =>
+            {
+                textbIdTitular.Text = titular.TitularId.ToString();
+                textbNombreTitular.Text = titular.Nombre.ToString();
+            };
+            titulares.ShowDialog();
         }
     }
 }
