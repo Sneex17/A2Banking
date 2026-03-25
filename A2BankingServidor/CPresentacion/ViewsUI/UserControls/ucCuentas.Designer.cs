@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label4 = new Label();
-            textbPassword = new ReaLTaiizor.Controls.DungeonTextBox();
+            textbCodigoPin = new ReaLTaiizor.Controls.DungeonTextBox();
             label5 = new Label();
             textbUsuario = new ReaLTaiizor.Controls.DungeonTextBox();
             label3 = new Label();
@@ -61,7 +61,7 @@
             panelContainer.Controls.Add(label7);
             panelContainer.Controls.Add(dungeonTextBox1);
             panelContainer.Controls.Add(label4);
-            panelContainer.Controls.Add(textbPassword);
+            panelContainer.Controls.Add(textbCodigoPin);
             panelContainer.Controls.Add(label5);
             panelContainer.Controls.Add(textbUsuario);
             panelContainer.Controls.Add(label3);
@@ -77,7 +77,7 @@
             panelContainer.Controls.SetChildIndex(label3, 0);
             panelContainer.Controls.SetChildIndex(textbUsuario, 0);
             panelContainer.Controls.SetChildIndex(label5, 0);
-            panelContainer.Controls.SetChildIndex(textbPassword, 0);
+            panelContainer.Controls.SetChildIndex(textbCodigoPin, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
             panelContainer.Controls.SetChildIndex(dungeonTextBox1, 0);
             panelContainer.Controls.SetChildIndex(label7, 0);
@@ -91,15 +91,18 @@
             // pbIcono
             // 
             pbIcono.IconChar = FontAwesome.Sharp.IconChar.Wallet;
+            pbIcono.IconSize = 65;
+            pbIcono.Margin = new Padding(3, 5, 3, 5);
+            pbIcono.Size = new Size(65, 89);
             // 
             // labelTexto
             // 
-            labelTexto.Size = new Size(275, 36);
+            labelTexto.Size = new Size(342, 44);
             labelTexto.Text = "Gestión de cuentas";
             // 
             // label6
             // 
-            label6.Size = new Size(145, 22);
+            label6.Size = new Size(180, 27);
             label6.Text = "Lista de cuentas";
             // 
             // label4
@@ -108,28 +111,29 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(244, 171);
+            label4.Location = new Point(279, 228);
             label4.Name = "label4";
-            label4.Size = new Size(103, 22);
+            label4.Size = new Size(130, 27);
             label4.TabIndex = 25;
             label4.Text = "Código PIN";
             // 
-            // textbPassword
+            // textbCodigoPin
             // 
-            textbPassword.BackColor = Color.Transparent;
-            textbPassword.BorderColor = Color.FromArgb(180, 180, 180);
-            textbPassword.EdgeColor = Color.White;
-            textbPassword.Font = new Font("Tahoma", 12F);
-            textbPassword.ForeColor = Color.Black;
-            textbPassword.Location = new Point(244, 196);
-            textbPassword.MaxLength = 32767;
-            textbPassword.Multiline = false;
-            textbPassword.Name = "textbPassword";
-            textbPassword.ReadOnly = false;
-            textbPassword.Size = new Size(169, 30);
-            textbPassword.TabIndex = 24;
-            textbPassword.TextAlignment = HorizontalAlignment.Left;
-            textbPassword.UseSystemPasswordChar = false;
+            textbCodigoPin.BackColor = Color.Transparent;
+            textbCodigoPin.BorderColor = Color.FromArgb(180, 180, 180);
+            textbCodigoPin.EdgeColor = Color.White;
+            textbCodigoPin.Font = new Font("Tahoma", 12F);
+            textbCodigoPin.ForeColor = Color.Black;
+            textbCodigoPin.Location = new Point(279, 261);
+            textbCodigoPin.Margin = new Padding(3, 4, 3, 4);
+            textbCodigoPin.MaxLength = 32767;
+            textbCodigoPin.Multiline = false;
+            textbCodigoPin.Name = "textbCodigoPin";
+            textbCodigoPin.ReadOnly = false;
+            textbCodigoPin.Size = new Size(193, 35);
+            textbCodigoPin.TabIndex = 24;
+            textbCodigoPin.TextAlignment = HorizontalAlignment.Left;
+            textbCodigoPin.UseSystemPasswordChar = false;
             // 
             // label5
             // 
@@ -137,9 +141,9 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(244, 96);
+            label5.Location = new Point(279, 128);
             label5.Name = "label5";
-            label5.Size = new Size(78, 22);
+            label5.Size = new Size(96, 27);
             label5.TabIndex = 23;
             label5.Text = "Nombre";
             // 
@@ -150,12 +154,13 @@
             textbUsuario.EdgeColor = Color.White;
             textbUsuario.Font = new Font("Tahoma", 12F);
             textbUsuario.ForeColor = Color.Black;
-            textbUsuario.Location = new Point(244, 121);
+            textbUsuario.Location = new Point(279, 161);
+            textbUsuario.Margin = new Padding(3, 4, 3, 4);
             textbUsuario.MaxLength = 32767;
             textbUsuario.Multiline = false;
             textbUsuario.Name = "textbUsuario";
             textbUsuario.ReadOnly = false;
-            textbUsuario.Size = new Size(169, 30);
+            textbUsuario.Size = new Size(193, 35);
             textbUsuario.TabIndex = 22;
             textbUsuario.TextAlignment = HorizontalAlignment.Left;
             textbUsuario.UseSystemPasswordChar = false;
@@ -166,9 +171,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(52, 171);
+            label3.Location = new Point(59, 228);
             label3.Name = "label3";
-            label3.Size = new Size(67, 22);
+            label3.Size = new Size(82, 27);
             label3.TabIndex = 21;
             label3.Text = "Estado";
             // 
@@ -178,9 +183,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(52, 96);
+            label1.Location = new Point(59, 128);
             label1.Name = "label1";
-            label1.Size = new Size(82, 22);
+            label1.Size = new Size(100, 27);
             label1.TabIndex = 20;
             label1.Text = "Id titular";
             // 
@@ -191,12 +196,13 @@
             textbNombre.EdgeColor = Color.White;
             textbNombre.Font = new Font("Tahoma", 12F);
             textbNombre.ForeColor = Color.Black;
-            textbNombre.Location = new Point(52, 121);
+            textbNombre.Location = new Point(59, 161);
+            textbNombre.Margin = new Padding(3, 4, 3, 4);
             textbNombre.MaxLength = 32767;
             textbNombre.Multiline = false;
             textbNombre.Name = "textbNombre";
             textbNombre.ReadOnly = false;
-            textbNombre.Size = new Size(169, 30);
+            textbNombre.Size = new Size(193, 35);
             textbNombre.TabIndex = 19;
             textbNombre.TextAlignment = HorizontalAlignment.Left;
             textbNombre.UseSystemPasswordChar = false;
@@ -207,9 +213,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(52, 30);
+            label2.Location = new Point(59, 40);
             label2.Name = "label2";
-            label2.Size = new Size(88, 22);
+            label2.Size = new Size(110, 27);
             label2.TabIndex = 18;
             label2.Text = "Id cuenta";
             // 
@@ -221,12 +227,13 @@
             textbIdUsuario.Enabled = false;
             textbIdUsuario.Font = new Font("Tahoma", 12F);
             textbIdUsuario.ForeColor = Color.Black;
-            textbIdUsuario.Location = new Point(52, 55);
+            textbIdUsuario.Location = new Point(59, 73);
+            textbIdUsuario.Margin = new Padding(3, 4, 3, 4);
             textbIdUsuario.MaxLength = 32767;
             textbIdUsuario.Multiline = false;
             textbIdUsuario.Name = "textbIdUsuario";
             textbIdUsuario.ReadOnly = false;
-            textbIdUsuario.Size = new Size(169, 30);
+            textbIdUsuario.Size = new Size(193, 35);
             textbIdUsuario.TabIndex = 17;
             textbIdUsuario.TextAlignment = HorizontalAlignment.Left;
             textbIdUsuario.UseSystemPasswordChar = false;
@@ -237,9 +244,9 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(244, 30);
+            label7.Location = new Point(279, 40);
             label7.Name = "label7";
-            label7.Size = new Size(78, 22);
+            label7.Size = new Size(96, 27);
             label7.TabIndex = 28;
             label7.Text = "Número";
             // 
@@ -251,12 +258,13 @@
             dungeonTextBox1.Enabled = false;
             dungeonTextBox1.Font = new Font("Tahoma", 12F);
             dungeonTextBox1.ForeColor = Color.Black;
-            dungeonTextBox1.Location = new Point(244, 55);
+            dungeonTextBox1.Location = new Point(279, 73);
+            dungeonTextBox1.Margin = new Padding(3, 4, 3, 4);
             dungeonTextBox1.MaxLength = 32767;
             dungeonTextBox1.Multiline = false;
             dungeonTextBox1.Name = "dungeonTextBox1";
             dungeonTextBox1.ReadOnly = false;
-            dungeonTextBox1.Size = new Size(169, 30);
+            dungeonTextBox1.Size = new Size(193, 35);
             dungeonTextBox1.TabIndex = 27;
             dungeonTextBox1.TextAlignment = HorizontalAlignment.Left;
             dungeonTextBox1.UseSystemPasswordChar = false;
@@ -268,12 +276,13 @@
             dungeonTextBox2.EdgeColor = Color.White;
             dungeonTextBox2.Font = new Font("Tahoma", 12F);
             dungeonTextBox2.ForeColor = Color.Black;
-            dungeonTextBox2.Location = new Point(52, 196);
+            dungeonTextBox2.Location = new Point(59, 261);
+            dungeonTextBox2.Margin = new Padding(3, 4, 3, 4);
             dungeonTextBox2.MaxLength = 32767;
             dungeonTextBox2.Multiline = false;
             dungeonTextBox2.Name = "dungeonTextBox2";
             dungeonTextBox2.ReadOnly = false;
-            dungeonTextBox2.Size = new Size(169, 30);
+            dungeonTextBox2.Size = new Size(193, 35);
             dungeonTextBox2.TabIndex = 29;
             dungeonTextBox2.TextAlignment = HorizontalAlignment.Left;
             dungeonTextBox2.UseSystemPasswordChar = false;
@@ -284,9 +293,9 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(244, 242);
+            label8.Location = new Point(279, 323);
             label8.Name = "label8";
-            label8.Size = new Size(127, 22);
+            label8.Size = new Size(159, 27);
             label8.TabIndex = 31;
             label8.Text = "Código Huella";
             // 
@@ -297,12 +306,13 @@
             textbHuella.EdgeColor = Color.White;
             textbHuella.Font = new Font("Tahoma", 12F);
             textbHuella.ForeColor = Color.Black;
-            textbHuella.Location = new Point(244, 267);
+            textbHuella.Location = new Point(279, 356);
+            textbHuella.Margin = new Padding(3, 4, 3, 4);
             textbHuella.MaxLength = 32767;
             textbHuella.Multiline = false;
             textbHuella.Name = "textbHuella";
             textbHuella.ReadOnly = false;
-            textbHuella.Size = new Size(169, 30);
+            textbHuella.Size = new Size(193, 35);
             textbHuella.TabIndex = 32;
             textbHuella.TextAlignment = HorizontalAlignment.Left;
             textbHuella.UseSystemPasswordChar = false;
@@ -334,12 +344,13 @@
             BuGuardar.Lighting = false;
             BuGuardar.LinearGradient_Background = false;
             BuGuardar.LinearGradientPen = false;
-            BuGuardar.Location = new Point(585, 91);
+            BuGuardar.Location = new Point(669, 121);
+            BuGuardar.Margin = new Padding(3, 4, 3, 4);
             BuGuardar.Name = "BuGuardar";
             BuGuardar.PenWidth = 15;
             BuGuardar.Rounding = true;
             BuGuardar.RoundingInt = 70;
-            BuGuardar.Size = new Size(169, 43);
+            BuGuardar.Size = new Size(193, 57);
             BuGuardar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuGuardar.TabIndex = 34;
             BuGuardar.Tag = "Cyber";
@@ -347,6 +358,7 @@
             BuGuardar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuGuardar.Timer_Effect_1 = 5;
             BuGuardar.Timer_RGB = 300;
+            BuGuardar.Click += BuGuardar_Click;
             // 
             // BuBuscarPersonas
             // 
@@ -375,12 +387,13 @@
             BuBuscarPersonas.Lighting = false;
             BuBuscarPersonas.LinearGradient_Background = false;
             BuBuscarPersonas.LinearGradientPen = false;
-            BuBuscarPersonas.Location = new Point(585, 42);
+            BuBuscarPersonas.Location = new Point(669, 56);
+            BuBuscarPersonas.Margin = new Padding(3, 4, 3, 4);
             BuBuscarPersonas.Name = "BuBuscarPersonas";
             BuBuscarPersonas.PenWidth = 15;
             BuBuscarPersonas.Rounding = true;
             BuBuscarPersonas.RoundingInt = 70;
-            BuBuscarPersonas.Size = new Size(169, 43);
+            BuBuscarPersonas.Size = new Size(193, 57);
             BuBuscarPersonas.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuBuscarPersonas.TabIndex = 33;
             BuBuscarPersonas.Tag = "Cyber";
@@ -416,12 +429,13 @@
             BuCapturarHuella.Lighting = false;
             BuCapturarHuella.LinearGradient_Background = false;
             BuCapturarHuella.LinearGradientPen = false;
-            BuCapturarHuella.Location = new Point(585, 140);
+            BuCapturarHuella.Location = new Point(669, 187);
+            BuCapturarHuella.Margin = new Padding(3, 4, 3, 4);
             BuCapturarHuella.Name = "BuCapturarHuella";
             BuCapturarHuella.PenWidth = 15;
             BuCapturarHuella.Rounding = true;
             BuCapturarHuella.RoundingInt = 70;
-            BuCapturarHuella.Size = new Size(169, 43);
+            BuCapturarHuella.Size = new Size(193, 57);
             BuCapturarHuella.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuCapturarHuella.TabIndex = 35;
             BuCapturarHuella.Tag = "Cyber";
@@ -433,8 +447,9 @@
             // 
             // ucCuentas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Margin = new Padding(3, 5, 3, 5);
             Name = "ucCuentas";
             panelInformacion.ResumeLayout(false);
             panelInformacion.PerformLayout();
@@ -450,7 +465,7 @@
         private Label label7;
         private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
         private Label label4;
-        private ReaLTaiizor.Controls.DungeonTextBox textbPassword;
+        private ReaLTaiizor.Controls.DungeonTextBox textbCodigoPin;
         private Label label5;
         private ReaLTaiizor.Controls.DungeonTextBox textbUsuario;
         private Label label3;

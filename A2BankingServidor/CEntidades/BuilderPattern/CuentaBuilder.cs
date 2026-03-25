@@ -45,7 +45,7 @@ namespace CEntidades.BuilderPattern
             _cuenta.CodigoPin = codigoPin;
             return this;
         }
-        public ICuentaBuilder conCodigoHuella(string codigoHuella)
+        public ICuentaBuilder conCodigoHuella(byte[] codigoHuella)
         {
             _cuenta.CodigoHuella = codigoHuella;
             return this;

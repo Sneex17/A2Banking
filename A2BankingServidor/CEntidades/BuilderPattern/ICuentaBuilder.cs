@@ -14,7 +14,7 @@ namespace CEntidades.BuilderPattern
         ICuentaBuilder conFechaCreacion(DateTime fechaCreacion);
         ICuentaBuilder conEstado(CuentaEstado estado);
         ICuentaBuilder conCodigoPin(int codigoPin);
-        ICuentaBuilder conCodigoHuella(string codigoHuella);
+        ICuentaBuilder conCodigoHuella(byte[] codigoHuella);
         Cuenta Builder();
     }
 }

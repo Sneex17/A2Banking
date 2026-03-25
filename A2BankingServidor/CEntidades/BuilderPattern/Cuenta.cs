@@ -17,6 +17,6 @@ namespace CEntidades.BuilderPattern
         public DateTime FechaCreacion { get; set; }
         public CuentaEstado Estado { get; set; }
         public int CodigoPin { get; set; }
-        public string CodigoHuella { get; set; }
+        public byte[] CodigoHuella { get; set; }
     }
 }

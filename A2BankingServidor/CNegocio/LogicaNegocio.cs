@@ -1,6 +1,7 @@
 ﻿using CDatos;
 using CDatos.Controllers;
 using CEntidades;
+using CEntidades.BuilderPattern;
 
 namespace CNegocio
 {
@@ -16,6 +17,10 @@ namespace CNegocio
             return RolController.VerRoles();
         }
 
+        public static void CrearCuentas(Cuenta cuenta)
+        {
+            CuentaController.CrearCuenta(cuenta);
+        }
 
 
     }
