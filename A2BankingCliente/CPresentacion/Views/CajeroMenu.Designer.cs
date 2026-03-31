@@ -51,6 +51,7 @@
             pbButton2 = new PictureBox();
             pbButton1 = new PictureBox();
             panel1 = new Panel();
+            lbtextbClienteNombre = new Label();
             lbTextDestino = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -100,17 +101,19 @@
             panelContainer.Controls.Add(panel1);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 0);
+            panelContainer.Margin = new Padding(3, 4, 3, 4);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(984, 661);
+            panelContainer.Size = new Size(1125, 881);
             panelContainer.TabIndex = 0;
             // 
             // pbBotonAyuda
             // 
             pbBotonAyuda.BackColor = Color.Transparent;
             pbBotonAyuda.Cursor = Cursors.Hand;
-            pbBotonAyuda.Location = new Point(66, 302);
+            pbBotonAyuda.Location = new Point(75, 403);
+            pbBotonAyuda.Margin = new Padding(3, 4, 3, 4);
             pbBotonAyuda.Name = "pbBotonAyuda";
-            pbBotonAyuda.Size = new Size(66, 27);
+            pbBotonAyuda.Size = new Size(75, 36);
             pbBotonAyuda.TabIndex = 17;
             pbBotonAyuda.TabStop = false;
             pbBotonAyuda.Click += pbBotonAyuda_Click;
@@ -119,9 +122,10 @@
             // 
             pbBotonRetirar.BackColor = Color.Transparent;
             pbBotonRetirar.Cursor = Cursors.Hand;
-            pbBotonRetirar.Location = new Point(66, 267);
+            pbBotonRetirar.Location = new Point(75, 356);
+            pbBotonRetirar.Margin = new Padding(3, 4, 3, 4);
             pbBotonRetirar.Name = "pbBotonRetirar";
-            pbBotonRetirar.Size = new Size(66, 27);
+            pbBotonRetirar.Size = new Size(75, 36);
             pbBotonRetirar.TabIndex = 16;
             pbBotonRetirar.TabStop = false;
             pbBotonRetirar.Click += pbBotonRetirar_Click;
@@ -130,9 +134,10 @@
             // 
             pbBotonDepositar.BackColor = Color.Transparent;
             pbBotonDepositar.Cursor = Cursors.Hand;
-            pbBotonDepositar.Location = new Point(66, 234);
+            pbBotonDepositar.Location = new Point(75, 312);
+            pbBotonDepositar.Margin = new Padding(3, 4, 3, 4);
             pbBotonDepositar.Name = "pbBotonDepositar";
-            pbBotonDepositar.Size = new Size(66, 27);
+            pbBotonDepositar.Size = new Size(75, 36);
             pbBotonDepositar.TabIndex = 15;
             pbBotonDepositar.TabStop = false;
             pbBotonDepositar.Click += pbBotonDepositar_Click;
@@ -141,9 +146,10 @@
             // 
             pbBotonSalir.BackColor = Color.Transparent;
             pbBotonSalir.Cursor = Cursors.Hand;
-            pbBotonSalir.Location = new Point(585, 303);
+            pbBotonSalir.Location = new Point(669, 404);
+            pbBotonSalir.Margin = new Padding(3, 4, 3, 4);
             pbBotonSalir.Name = "pbBotonSalir";
-            pbBotonSalir.Size = new Size(66, 27);
+            pbBotonSalir.Size = new Size(75, 36);
             pbBotonSalir.TabIndex = 14;
             pbBotonSalir.TabStop = false;
             pbBotonSalir.Click += pbBotonSalir_Click;
@@ -152,9 +158,10 @@
             // 
             pbBotonTransferir.BackColor = Color.Transparent;
             pbBotonTransferir.Cursor = Cursors.Hand;
-            pbBotonTransferir.Location = new Point(585, 268);
+            pbBotonTransferir.Location = new Point(669, 357);
+            pbBotonTransferir.Margin = new Padding(3, 4, 3, 4);
             pbBotonTransferir.Name = "pbBotonTransferir";
-            pbBotonTransferir.Size = new Size(66, 27);
+            pbBotonTransferir.Size = new Size(75, 36);
             pbBotonTransferir.TabIndex = 13;
             pbBotonTransferir.TabStop = false;
             pbBotonTransferir.Click += pbBotonTransferir_Click;
@@ -163,9 +170,10 @@
             // 
             pbBotonSaldo.BackColor = Color.Transparent;
             pbBotonSaldo.Cursor = Cursors.Hand;
-            pbBotonSaldo.Location = new Point(585, 235);
+            pbBotonSaldo.Location = new Point(669, 313);
+            pbBotonSaldo.Margin = new Padding(3, 4, 3, 4);
             pbBotonSaldo.Name = "pbBotonSaldo";
-            pbBotonSaldo.Size = new Size(66, 27);
+            pbBotonSaldo.Size = new Size(75, 36);
             pbBotonSaldo.TabIndex = 12;
             pbBotonSaldo.TabStop = false;
             pbBotonSaldo.Click += pbBotonSaldo_Click;
@@ -187,17 +195,19 @@
             panelBotones.Controls.Add(pbButton2);
             panelBotones.Controls.Add(pbButton1);
             panelBotones.Dock = DockStyle.Bottom;
-            panelBotones.Location = new Point(0, 550);
+            panelBotones.Location = new Point(0, 733);
+            panelBotones.Margin = new Padding(3, 4, 3, 4);
             panelBotones.Name = "panelBotones";
-            panelBotones.Size = new Size(984, 111);
+            panelBotones.Size = new Size(1125, 148);
             panelBotones.TabIndex = 1;
             // 
             // pbButtonEnter
             // 
             pbButtonEnter.Cursor = Cursors.Hand;
-            pbButtonEnter.Location = new Point(509, 55);
+            pbButtonEnter.Location = new Point(582, 73);
+            pbButtonEnter.Margin = new Padding(3, 4, 3, 4);
             pbButtonEnter.Name = "pbButtonEnter";
-            pbButtonEnter.Size = new Size(114, 19);
+            pbButtonEnter.Size = new Size(130, 25);
             pbButtonEnter.TabIndex = 11;
             pbButtonEnter.TabStop = false;
             pbButtonEnter.Click += pbButtonEnter_Click;
@@ -205,9 +215,10 @@
             // pbButtonClear
             // 
             pbButtonClear.Cursor = Cursors.Hand;
-            pbButtonClear.Location = new Point(508, 35);
+            pbButtonClear.Location = new Point(581, 47);
+            pbButtonClear.Margin = new Padding(3, 4, 3, 4);
             pbButtonClear.Name = "pbButtonClear";
-            pbButtonClear.Size = new Size(114, 19);
+            pbButtonClear.Size = new Size(130, 25);
             pbButtonClear.TabIndex = 10;
             pbButtonClear.TabStop = false;
             pbButtonClear.Click += pbButtonClear_Click;
@@ -215,9 +226,10 @@
             // pbButtonCancel
             // 
             pbButtonCancel.Cursor = Cursors.Hand;
-            pbButtonCancel.Location = new Point(508, 13);
+            pbButtonCancel.Location = new Point(581, 17);
+            pbButtonCancel.Margin = new Padding(3, 4, 3, 4);
             pbButtonCancel.Name = "pbButtonCancel";
-            pbButtonCancel.Size = new Size(100, 19);
+            pbButtonCancel.Size = new Size(114, 25);
             pbButtonCancel.TabIndex = 9;
             pbButtonCancel.TabStop = false;
             pbButtonCancel.Click += pbButtonCancel_Click;
@@ -225,9 +237,10 @@
             // pbButton9
             // 
             pbButton9.Cursor = Cursors.Hand;
-            pbButton9.Location = new Point(418, 53);
+            pbButton9.Location = new Point(478, 71);
+            pbButton9.Margin = new Padding(3, 4, 3, 4);
             pbButton9.Name = "pbButton9";
-            pbButton9.Size = new Size(60, 19);
+            pbButton9.Size = new Size(69, 25);
             pbButton9.TabIndex = 8;
             pbButton9.TabStop = false;
             pbButton9.Click += pbButton9_Click;
@@ -235,9 +248,10 @@
             // pbButton0
             // 
             pbButton0.Cursor = Cursors.Hand;
-            pbButton0.Location = new Point(349, 77);
+            pbButton0.Location = new Point(399, 103);
+            pbButton0.Margin = new Padding(3, 4, 3, 4);
             pbButton0.Name = "pbButton0";
-            pbButton0.Size = new Size(60, 19);
+            pbButton0.Size = new Size(69, 25);
             pbButton0.TabIndex = 3;
             pbButton0.TabStop = false;
             pbButton0.Click += pbButton0_Click;
@@ -245,9 +259,10 @@
             // pbButton8
             // 
             pbButton8.Cursor = Cursors.Hand;
-            pbButton8.Location = new Point(351, 53);
+            pbButton8.Location = new Point(401, 71);
+            pbButton8.Margin = new Padding(3, 4, 3, 4);
             pbButton8.Name = "pbButton8";
-            pbButton8.Size = new Size(60, 19);
+            pbButton8.Size = new Size(69, 25);
             pbButton8.TabIndex = 7;
             pbButton8.TabStop = false;
             pbButton8.Click += pbButton8_Click;
@@ -255,9 +270,10 @@
             // pbButton7
             // 
             pbButton7.Cursor = Cursors.Hand;
-            pbButton7.Location = new Point(278, 53);
+            pbButton7.Location = new Point(318, 71);
+            pbButton7.Margin = new Padding(3, 4, 3, 4);
             pbButton7.Name = "pbButton7";
-            pbButton7.Size = new Size(60, 19);
+            pbButton7.Size = new Size(69, 25);
             pbButton7.TabIndex = 6;
             pbButton7.TabStop = false;
             pbButton7.Click += pbButton7_Click;
@@ -265,9 +281,10 @@
             // pbButton6
             // 
             pbButton6.Cursor = Cursors.Hand;
-            pbButton6.Location = new Point(418, 31);
+            pbButton6.Location = new Point(478, 41);
+            pbButton6.Margin = new Padding(3, 4, 3, 4);
             pbButton6.Name = "pbButton6";
-            pbButton6.Size = new Size(60, 19);
+            pbButton6.Size = new Size(69, 25);
             pbButton6.TabIndex = 5;
             pbButton6.TabStop = false;
             pbButton6.Click += pbButton6_Click;
@@ -275,9 +292,10 @@
             // pbButton5
             // 
             pbButton5.Cursor = Cursors.Hand;
-            pbButton5.Location = new Point(351, 31);
+            pbButton5.Location = new Point(401, 41);
+            pbButton5.Margin = new Padding(3, 4, 3, 4);
             pbButton5.Name = "pbButton5";
-            pbButton5.Size = new Size(60, 19);
+            pbButton5.Size = new Size(69, 25);
             pbButton5.TabIndex = 4;
             pbButton5.TabStop = false;
             pbButton5.Click += pbButton5_Click;
@@ -285,9 +303,10 @@
             // pbButton4
             // 
             pbButton4.Cursor = Cursors.Hand;
-            pbButton4.Location = new Point(285, 31);
+            pbButton4.Location = new Point(326, 41);
+            pbButton4.Margin = new Padding(3, 4, 3, 4);
             pbButton4.Name = "pbButton4";
-            pbButton4.Size = new Size(60, 19);
+            pbButton4.Size = new Size(69, 25);
             pbButton4.TabIndex = 3;
             pbButton4.TabStop = false;
             pbButton4.Click += pbButton4_Click;
@@ -295,9 +314,10 @@
             // pbButton3
             // 
             pbButton3.Cursor = Cursors.Hand;
-            pbButton3.Location = new Point(417, 13);
+            pbButton3.Location = new Point(477, 17);
+            pbButton3.Margin = new Padding(3, 4, 3, 4);
             pbButton3.Name = "pbButton3";
-            pbButton3.Size = new Size(60, 19);
+            pbButton3.Size = new Size(69, 25);
             pbButton3.TabIndex = 2;
             pbButton3.TabStop = false;
             pbButton3.Click += pbButton3_Click;
@@ -305,9 +325,10 @@
             // pbButton2
             // 
             pbButton2.Cursor = Cursors.Hand;
-            pbButton2.Location = new Point(351, 13);
+            pbButton2.Location = new Point(401, 17);
+            pbButton2.Margin = new Padding(3, 4, 3, 4);
             pbButton2.Name = "pbButton2";
-            pbButton2.Size = new Size(60, 19);
+            pbButton2.Size = new Size(69, 25);
             pbButton2.TabIndex = 1;
             pbButton2.TabStop = false;
             pbButton2.Click += pbButton2_Click;
@@ -315,15 +336,17 @@
             // pbButton1
             // 
             pbButton1.Cursor = Cursors.Hand;
-            pbButton1.Location = new Point(285, 13);
+            pbButton1.Location = new Point(326, 17);
+            pbButton1.Margin = new Padding(3, 4, 3, 4);
             pbButton1.Name = "pbButton1";
-            pbButton1.Size = new Size(60, 19);
+            pbButton1.Size = new Size(69, 25);
             pbButton1.TabIndex = 0;
             pbButton1.TabStop = false;
             pbButton1.Click += pbButton1_Click;
             // 
             // panel1
             // 
+            panel1.Controls.Add(lbtextbClienteNombre);
             panel1.Controls.Add(lbTextDestino);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
@@ -335,18 +358,29 @@
             panel1.Controls.Add(textbCuentaDestino);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(textbCantidad);
-            panel1.Location = new Point(136, 29);
+            panel1.Location = new Point(155, 39);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(443, 350);
+            panel1.Size = new Size(506, 467);
             panel1.TabIndex = 0;
+            // 
+            // lbtextbClienteNombre
+            // 
+            lbtextbClienteNombre.AutoSize = true;
+            lbtextbClienteNombre.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbtextbClienteNombre.Location = new Point(49, 73);
+            lbtextbClienteNombre.Name = "lbtextbClienteNombre";
+            lbtextbClienteNombre.Size = new Size(88, 26);
+            lbtextbClienteNombre.TabIndex = 11;
+            lbtextbClienteNombre.Text = "Cliente:";
             // 
             // lbTextDestino
             // 
             lbTextDestino.AutoSize = true;
             lbTextDestino.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            lbTextDestino.Location = new Point(112, 154);
+            lbTextDestino.Location = new Point(128, 205);
             lbTextDestino.Name = "lbTextDestino";
-            lbTextDestino.Size = new Size(152, 21);
+            lbTextDestino.Size = new Size(193, 26);
             lbTextDestino.TabIndex = 10;
             lbTextDestino.Text = "Cuenta de destino";
             lbTextDestino.Visible = false;
@@ -355,9 +389,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label8.Location = new Point(3, 279);
+            label8.Location = new Point(3, 372);
             label8.Name = "label8";
-            label8.Size = new Size(59, 21);
+            label8.Size = new Size(75, 26);
             label8.TabIndex = 9;
             label8.Text = "Ayuda";
             // 
@@ -365,9 +399,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label7.Location = new Point(395, 280);
+            label7.Location = new Point(451, 373);
             label7.Name = "label7";
-            label7.Size = new Size(45, 21);
+            label7.Size = new Size(56, 26);
             label7.TabIndex = 8;
             label7.Text = "Salir";
             // 
@@ -375,9 +409,9 @@
             // 
             lbTextOpcion.AutoSize = true;
             lbTextOpcion.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            lbTextOpcion.Location = new Point(112, 94);
+            lbTextOpcion.Location = new Point(128, 125);
             lbTextOpcion.Name = "lbTextOpcion";
-            lbTextOpcion.Size = new Size(43, 21);
+            lbTextOpcion.Size = new Size(54, 26);
             lbTextOpcion.TabIndex = 7;
             lbTextOpcion.Text = "Text";
             // 
@@ -385,9 +419,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label5.Location = new Point(317, 244);
+            label5.Location = new Point(362, 325);
             label5.Name = "label5";
-            label5.Size = new Size(123, 21);
+            label5.Size = new Size(158, 26);
             label5.TabIndex = 6;
             label5.Text = "Transferencias";
             // 
@@ -395,9 +429,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label4.Location = new Point(3, 244);
+            label4.Location = new Point(3, 325);
             label4.Name = "label4";
-            label4.Size = new Size(66, 21);
+            label4.Size = new Size(82, 26);
             label4.TabIndex = 5;
             label4.Text = "Retiros";
             // 
@@ -405,9 +439,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label3.Location = new Point(144, 24);
+            label3.Location = new Point(165, 32);
             label3.Name = "label3";
-            label3.Size = new Size(158, 21);
+            label3.Size = new Size(198, 26);
             label3.TabIndex = 4;
             label3.Text = "Cajero Automático";
             // 
@@ -415,9 +449,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label2.Location = new Point(3, 210);
+            label2.Location = new Point(3, 280);
             label2.Name = "label2";
-            label2.Size = new Size(89, 21);
+            label2.Size = new Size(111, 26);
             label2.TabIndex = 3;
             label2.Text = "Dépositos";
             // 
@@ -425,9 +459,10 @@
             // 
             textbCuentaDestino.BorderStyle = BorderStyle.FixedSingle;
             textbCuentaDestino.Font = new Font("Montserrat", 12F, FontStyle.Bold);
-            textbCuentaDestino.Location = new Point(112, 178);
+            textbCuentaDestino.Location = new Point(128, 237);
+            textbCuentaDestino.Margin = new Padding(3, 4, 3, 4);
             textbCuentaDestino.Name = "textbCuentaDestino";
-            textbCuentaDestino.Size = new Size(218, 27);
+            textbCuentaDestino.Size = new Size(249, 32);
             textbCuentaDestino.TabIndex = 2;
             textbCuentaDestino.Visible = false;
             // 
@@ -435,9 +470,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label1.Location = new Point(386, 210);
+            label1.Location = new Point(441, 280);
             label1.Name = "label1";
-            label1.Size = new Size(54, 21);
+            label1.Size = new Size(67, 26);
             label1.TabIndex = 1;
             label1.Text = "Saldo";
             // 
@@ -445,18 +480,21 @@
             // 
             textbCantidad.BorderStyle = BorderStyle.FixedSingle;
             textbCantidad.Font = new Font("Montserrat", 12F, FontStyle.Bold);
-            textbCantidad.Location = new Point(112, 118);
+            textbCantidad.Location = new Point(128, 157);
+            textbCantidad.Margin = new Padding(3, 4, 3, 4);
             textbCantidad.Name = "textbCantidad";
-            textbCantidad.Size = new Size(218, 27);
+            textbCantidad.Size = new Size(249, 32);
             textbCantidad.TabIndex = 0;
+            textbCantidad.Visible = false;
             // 
             // CajeroMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 661);
+            ClientSize = new Size(1125, 881);
             Controls.Add(panelContainer);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CajeroMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A2 Banking - Menu";
@@ -521,5 +559,6 @@
         private Label label7;
         private Label label8;
         private Label lbTextDestino;
+        private Label lbtextbClienteNombre;
     }
 }

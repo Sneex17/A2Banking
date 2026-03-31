@@ -1,11 +1,18 @@
 using CEntidades;
-using System.Media;
 using CPresentacion.Views;
+using Newtonsoft.Json;
+using System.Media;
+using System.Net.Http.Json;
+using System.Net.Sockets;
+using System.Text;
+using System.Text.Json.Serialization;
+using System.Windows.Forms;
 
 namespace CPresentacion
 {
     public partial class CajeroInicio : Form
     {
+        TcpClient cliente;
         public CajeroInicio()
         {
             InitializeComponent();
@@ -132,13 +139,78 @@ namespace CPresentacion
             }   
         }
 
-        private void pbButtonEnter_Click(object sender, EventArgs e)
+        private async void pbButtonEnter_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+            try
+            {
+                if(textbNCuenta.Text.Length != 9)
+                {
+                    
+                }
 
-            CajeroMenu cajeroMenu = new CajeroMenu();
-            cajeroMenu.Show();
-            this.Hide();
+                var cuenta = new Cuenta()
+                {
+                    NumeroCuenta = Convert.ToInt32(textbNCuenta.Text),
+                    CodigoPin = Convert.ToInt32(textbCodigoPin.Text)
+                };
+
+                cliente = new TcpClient();
+                await cliente.ConnectAsync("127.0.0.1", 1617);
+
+                NetworkStream network = cliente.GetStream();
+
+                string jsonCuenta = JsonConvert.SerializeObject(cuenta);
+                byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonCuenta);
+
+                //  enviar longitud
+                byte[] longitud = BitConverter.GetBytes(jsonBytes.Length);
+
+                await network.WriteAsync(longitud);
+                await network.WriteAsync(jsonBytes);
+
+                // ===== RECIBIR RESPUESTA =====
+
+                byte[] longitudBytes = new byte[4];
+                await network.ReadAsync(longitudBytes);
+
+                int totalBytes = BitConverter.ToInt32(longitudBytes);
+
+                byte[] buffer = new byte[totalBytes];
+                int totalLeido = 0;
+
+                while (totalLeido < totalBytes)
+                {
+                    int leido = await network.ReadAsync(
+                        buffer,
+                        totalLeido,
+                        totalBytes - totalLeido);
+
+                    totalLeido += leido;
+                }
+
+                string respuestaJson =
+                    Encoding.UTF8.GetString(buffer);
+
+                var respuesta =
+                    JsonConvert.DeserializeObject<Cuenta>(respuestaJson);
+
+                if (respuesta != null)
+                {
+                    new CajeroMenu(respuesta).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales no incorrecta", "Cajero",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

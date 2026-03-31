@@ -10,8 +10,14 @@ namespace CPresentacion
         {
             InitializeComponent();
             CargarComponenes();
+            Load += (s, e) => ServerRun();
         }
 
+        private async void ServerRun()
+        {
+            Servidor servidor = new Servidor();
+            servidor.IniciarServidor();
+        }
         private void CargarComponenes()
         {
             textbPassword.UseSystemPasswordChar = true;

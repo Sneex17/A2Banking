@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7Fy+rWUtT2g=",
+  "dgSpecHash": "4zsxvnyMR38=",
   "success": true,
   "projectFilePath": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\CPresentacion.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\xrami\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\xrami\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

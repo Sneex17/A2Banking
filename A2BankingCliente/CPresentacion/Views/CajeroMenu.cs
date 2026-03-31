@@ -7,9 +7,13 @@ namespace CPresentacion.Views
     public partial class CajeroMenu : Form
     {
         int controlValor = 0;
-        public CajeroMenu()
+        Cuenta cuenta = new Cuenta();
+        public CajeroMenu(Cuenta Cuenta)
         {
             InitializeComponent();
+            cuenta = Cuenta;
+            lbtextbClienteNombre
+            .Text = $"{cuenta.Titular.Nombre}";
         }
         private void SonidoBotones()
         {
@@ -180,12 +184,14 @@ namespace CPresentacion.Views
         private void pbBotonDepositar_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+            textbCantidad.Enabled = true;
             ControlOpciones(1, "Cantidad a dépositar");
         }
 
         private void pbBotonRetirar_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+            textbCantidad.Enabled = true;
             ControlOpciones(2, "Cantidad a retirar");
         }
 
@@ -198,11 +204,18 @@ namespace CPresentacion.Views
         private void pbBotonSaldo_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+
+            lbTextOpcion.Text = $"Balance disponible";
+            textbCantidad.Text = $"{cuenta.Balance}";
+            textbCantidad.Enabled = false;
+            lbTextDestino.Visible = false;
+            textbCuentaDestino.Visible = false;
         }
 
         private void pbBotonTransferir_Click(object sender, EventArgs e)
         {
-            SonidoBotones();       
+            SonidoBotones();
+            textbCantidad.Enabled = true;
             ControlOpciones(3, "Cantidad a transferir");
             lbTextDestino.Visible = true;
             textbCuentaDestino.Visible = true;

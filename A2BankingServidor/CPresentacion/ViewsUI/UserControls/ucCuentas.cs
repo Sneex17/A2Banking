@@ -113,7 +113,7 @@ namespace CPresentacion.ViewsUI.UserControls
                 .conCodigoPin(Convert.ToInt32(textbCodigoPin.Text))
                 .conCodigoHuella(Convert.FromBase64String(textbHuella.Text))
                 .Builder();
-            textbCodigoPin.Text = "0x" + BitConverter.ToString(huella).Replace("-", "");
+            //textbCodigoPin.Text = "0x" + BitConverter.ToString(huella).Replace("-", "");
             //LogicaNegocio.CrearCuentas(cuenta);
         }
 

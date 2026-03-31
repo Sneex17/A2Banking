@@ -437,3 +437,48 @@ end
 go
 
 select * from Retiro
+
+select * from Cuenta
+go
+--proc cuenta, cajero
+
+create or alter proc spCuentaExiste
+(
+@NumeroCuenta int,
+@CodigoPin int
+)
+as
+set nocount on
+begin
+select c.NumeroCuenta, c.Balance, t.Nombre from Cuenta as c
+inner join Titular as t on c.TitularId = t.TitularId
+where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) and EstadoId = 1
+end
+
+
+select * from vwListaUsuarios
+
+
+--Viernes 27/3/26
+select c.NumeroCuenta, c.Balance, t.Nombre from Cuenta as c
+inner join Titular as t on c.TitularId = t.TitularId
+where (NumeroCuenta = 1000000001 and CodigoPin = 1234) and EstadoId = 1
+
+select * from Cuenta
+
+
+SELECT c.*, t.Nombre 
+FROM Cuenta c
+LEFT JOIN Titular t ON c.TitularId = t.TitularId
+WHERE c.NumeroCuenta = 1000000001
+
+select * from Titular
+
+
+SELECT TitularId FROM Cuenta WHERE NumeroCuenta = 1000000001
+                                                  
+
+                                               select   len('100000001')
+
+-- ¿Existe ese TitularId en Titular?
+SELECT * FROM Titular WHERE TitularId = (el número que salió arriba)

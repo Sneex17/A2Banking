@@ -126,5 +126,36 @@ namespace CDatos.Controllers
                 return resultado;
             }
         }
+
+
+        public static Cuenta LoginCajero(Cuenta cuenta)
+        {
+            var cuentaExiste = new Cuenta();
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spCuentaExiste", acceso);
+                comando.CommandType= CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
+                comando.Parameters.AddWithValue("@CodigoPin", cuenta.CodigoPin);
+
+                var reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cuentaExiste = new Cuenta()
+                    {
+                        NumeroCuenta = reader.GetInt32(0),
+                        Balance = reader.GetDecimal(1),
+                        Titular = new Titular()
+                        {
+                            Nombre = reader.GetString(2)
+                        }
+                    };
+                }
+                reader.Close();
+            }
+            return cuentaExiste;
+        }
     }
 }
