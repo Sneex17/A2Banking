@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36930.0 d17.14
+VisualStudioVersion = 17.14.36930.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPresentacion", "CPresentacion\CPresentacion.csproj", "{948DE7D9-B34E-4458-9BE0-0DE33C438641}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEntidades", "CEntidades\CEntidades.csproj", "{4EC6E065-79E5-4C75-9C48-CF91C177566D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDatos", "CDatos\CDatos.csproj", "{A6211119-5D98-4D75-8819-FF388F36F886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTransferenciasCLR", "CTransferenciasCLR\CTransferenciasCLR.csproj", "{6F703FB9-B387-40AB-83C5-CDF0E197B519}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A6211119-5D98-4D75-8819-FF388F36F886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6211119-5D98-4D75-8819-FF388F36F886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6211119-5D98-4D75-8819-FF388F36F886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F703FB9-B387-40AB-83C5-CDF0E197B519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F703FB9-B387-40AB-83C5-CDF0E197B519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F703FB9-B387-40AB-83C5-CDF0E197B519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F703FB9-B387-40AB-83C5-CDF0E197B519}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

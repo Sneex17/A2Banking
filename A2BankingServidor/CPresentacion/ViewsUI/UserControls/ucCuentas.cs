@@ -114,7 +114,7 @@ namespace CPresentacion.ViewsUI.UserControls
                 .conCodigoHuella(Convert.FromBase64String(textbHuella.Text))
                 .Builder();
             //textbCodigoPin.Text = "0x" + BitConverter.ToString(huella).Replace("-", "");
-            //LogicaNegocio.CrearCuentas(cuenta);
+            LogicaNegocio.CrearCuentas(cuenta);
         }
 
         private void BuBuscarPersonas_Click(object sender, EventArgs e)

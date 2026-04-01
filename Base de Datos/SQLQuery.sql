@@ -482,3 +482,192 @@ SELECT TitularId FROM Cuenta WHERE NumeroCuenta = 1000000001
 
 -- ¿Existe ese TitularId en Titular?
 SELECT * FROM Titular WHERE TitularId = (el número que salió arriba)
+
+--Martes 31/3/26
+
+backup database A2BankibgDB
+to disk = 'S:\xrami\OneDrive - Universidad Central del Este\Trabajos de Base de Datos II ISW-212-1\Backups\BackupFull_A2bankingDB.bak'
+with init
+go
+
+--CLR
+sp_configure 'clr enabled',1
+go
+
+reconfigure
+go
+
+alter database A2BankibgDB set trustworthy on
+go
+
+create assembly ComisionTransferenciasCLR
+from 'C:\Users\xrami\OneDrive\Documentos\A2Banking\Base de Datos\SqlCLR\CTransferenciasCLR.dll'
+with permission_set = external_access
+go
+
+
+
+SELECT servicename, service_account
+FROM sys.dm_server_services;
+go
+
+SELECT *
+FROM sys.assembly_modules;
+
+SELECT name
+FROM sys.assemblies;
+go
+
+--funcion para aplicar la comision
+CREATE FUNCTION dbo.fnAplicarComision
+(
+    @monto DECIMAL(18,2),
+    @comision DECIMAL(5,4)
+)
+RETURNS DECIMAL(18,2)
+AS EXTERNAL NAME
+ComisionTransferenciasCLR.[CTransferenciasCLR.TransferenciaCLR].AplicarComision;
+GO
+
+--prueba
+
+declare @comision decimal(5,4) = 
+(select c.Cantidad from Banco as b 
+inner join Comision as c on b.ComisionId = c.ComisionId)
+
+select dbo.fnAplicarComision(100, @comision)
+go
+
+select * from Banco
+go
+select * from Transferencia
+go
+
+--tabla para las ganacias de los bancos
+create table GananciaComision
+(
+GanaciaId bigint primary key identity,
+BancoId int not null,
+Ganacia decimal(18,2) not null
+constraint FK_GananciaBanco foreign key (BancoId) references Banco(BancoId)
+)
+
+--proc para las trasferencias
+create or alter proc spTransferencias
+(
+@Monto decimal(18,2),
+@CuentaOrigen int,
+@CuentaDestino int,
+@Concepto nvarchar(max),
+@Fecha datetime
+)
+as
+set nocount on
+begin
+     begin try
+        begin tran
+         declare @MontoFinal decimal(18,2)
+         declare @Comision decimal(5,4)
+
+         set @Comision = 
+         (select s.Cantidad from Cuenta as c 
+         inner join Banco as b on c.BancoId =  b.BancoId
+         inner join Comision as s on b.ComisionId = s.ComisionId
+         where c.NumeroCuenta = @CuentaDestino
+         )
+         set @MontoFinal = dbo.fnAplicarComision(@Monto, @Comision)
+
+         --Retiro del dinero
+         declare @ClienteId int
+         declare @NombreTitular nvarchar(100)
+         declare @CuentaId int
+         declare @Balance decimal(18,2)
+
+         set @CuentaId = (select c.CuentaId from vwListaCuenta as c where NumeroCuenta = @CuentaOrigen)
+         set @ClienteId = (select c.TitularId from vwListaCuenta as c where NumeroCuenta = @CuentaOrigen)
+         set @NombreTitular = (select c.Nombre from vwListaCuenta as c where NumeroCuenta = @CuentaOrigen)
+         set @Balance = (select c.Balance from vwListaCuenta as c where NumeroCuenta = @CuentaOrigen)
+
+
+         --exec spRetirarBalanceCuenta @CuentaOrigen, @ClienteId, @NombreTitular, @Fecha, @MontoFinal
+
+         insert into Retiro select @CuentaId, @ClienteId, @NombreTitular, @Fecha, @MontoFinal
+         update Cuenta set Balance = (@Balance - @MontoFinal) where NumeroCuenta =  @CuentaOrigen
+
+
+         --Transferencia del dinero
+         insert into Transferencia select @CuentaOrigen, @CuentaDestino, @Monto, (@Monto * @Comision), @Fecha, @Concepto
+         --select * from Transferencia
+
+         --Deposito del dinero
+         set @CuentaId = (select c.CuentaId from vwListaCuenta as c where NumeroCuenta = @CuentaDestino)
+         set @ClienteId = (select c.TitularId from vwListaCuenta as c where NumeroCuenta = @CuentaDestino)
+         set @NombreTitular = (select c.Nombre from vwListaCuenta as c where NumeroCuenta = @CuentaDestino)
+         set @Balance = (select c.Balance from vwListaCuenta as c where NumeroCuenta = @CuentaDestino)
+
+         --exec spDepositarBalanceCuenta @CuentaDestino, @ClienteId, @NombreTitular, @Fecha, @Monto
+
+         insert into Deposito select @CuentaId, @ClienteId, @NombreTitular, @Fecha, @Monto
+         update Cuenta set Balance = (@Balance + @Monto) where NumeroCuenta = @CuentaDestino
+
+
+         declare @BancoId int
+         set @BancoId = (select BancoId from Cuenta where NumeroCuenta = @CuentaDestino)
+
+         insert into GananciaComision select @BancoId, (@Monto * @Comision)
+         
+
+        commit tran
+     end try
+     begin catch
+        rollback tran
+        throw
+        print @@error
+     end catch
+ end
+ go
+
+
+ --
+    select * from Transferencia
+     select * from vwListaCuenta
+     select * from Retiro
+     select * from Deposito
+     select * from GanaciaComisio
+     select * from Cuenta
+
+go
+
+INSERT INTO Comision VALUES (0.017, 'Tarifa del 1.7% para transferencias entre bancos diferentes');
+INSERT INTO Comision VALUES (0.025, 'Tarifa del 2.5% para transferencias entre bancos diferentes');
+INSERT INTO Comision VALUES (0.020, 'Tarifa del 2.0% para transferencias entre bancos diferentes');
+go
+INSERT INTO Banco VALUES ('Banco Popular Dominicano', 'Banco líder en servicios financieros del país', 'Santo Domingo', 1);
+INSERT INTO Banco VALUES ('Banco de Reservas', 'Banco estatal de la República Dominicana', 'Santo Domingo', 2);
+INSERT INTO Banco VALUES ('Scotiabank República Dominicana', 'Banco internacional con operaciones en RD', 'Santiago', 3);
+INSERT INTO Banco VALUES ('Banco Santa Cruz', 'Banco dominicano con enfoque en el sur del país', 'San Pedro de Macorís', 4);
+go
+
+
+--exec spTransferencias 1000, 
+
+
+select * from Cuenta
+select * from Banco
+select * from Comision
+
+
+
+exec spCrearCuenta 4, 100000006 ,26, 1000, '2026-03-31', 1, 3434, 0x00F88101C82AE3735CC0413709AB7170A51455928B5313CF2E319C4D5D254CB7546B16FC6DFA01FDDD498D0FCE64A9CEC098F36EBC13A45407C1A1241EA6C54E12DE91096C179BDE989AF482C7AAA40474EF9C758B2E5E974284B82906955B380527D4B62508A5672D290E05DA79914BF995F912060A4C4EF7C3E112E6AF8E2A5FCAFC2A855B47671C6E70312B35F852337F758910F296A5ACE6FD9CD75215E6872050BEA1C4044427B8C3CF5967328CFD8BEF599E234EB19E7BB703C24F785DC9D66AD9D73F2F5598CDA44A287FF91AB51820FD6B30F2620752F1C6393CD36D8789C1FCFAB22B93DF7A8631096AE250CE2CB24455C3711F3ABE8F88DE2427AE5C650288474260D57E8664139BF49D0CD8570817BFDB599E4B0FD3F21E9CB321740E83B98763211432665995F4C02C5BDF616C95D16498D641DA39C64D725B5609AE70D841654425140B1A2B3D315061F4273FD3FA9398B1FC890651FEFA0BFA37B9BBAA14B51EA9989BA2A569FDA7405AE05066FFE470C5F5497573E78C7504DD2236377D6F00F87F01C82AE3735CC0413709AB71304E155592A269A2162C3E39C7FE7F06083C92C4F7B94A948706379C777ACC897AD5DC846EFE2FA29E971BD970BD88DE0B749910BF4A69B35995EFDE3743CF1E1497CBA6DC311FC292A4D1B139128BA15C1F28B3F742EA4ECAF4607F8C31B6013151E240C321532D44D7B3941B3D2201AB7192E2ECF1A2BDBC831E9DB0B89A22EE064BCD15138C0F60C70A224D915F2F27D69D6D9A29362DBBD7121432C2C8F84EB9DE3B288C56654E37136B4D066459614AB89AA35973CAFE922A72A62ED2C776B75F4A74F4BDA6CB1D0F0F5706E8A88651908CF8F76E20C97081EE7EE281E3ECAEE098D9434A6BD10F0446F91F71B81F5015EDB09B46CC502FDF80CA38A18CF28C319628A56CEC015800D221A29B5DB5724B9DC34DD445EB7D0CA9DEF8BF7C56F030D39676CB402F5DB1A5AC3014BE06BC817993FCFF68BFDAECF35771C941B27305C1D246BBE487B1FA83D9C8683533DECE0EAD98106A902A75A332B0413C821A1CE3C7FED39A5A845C264665028C014F619C6F00F87E01C82AE3735CC0413709AB71B0B6145592218BC6840EB608631D2C1E23DBAEB1BBC060E6ED24172C34EEABC53E6667F8552E2ADC740254BDD0B7D2E5B3BD3E674342071059A6B90116345134AF121697BB2C97521434FC71BF4EE7A109AAEC7A52280BD4A6B9146051CB6C29514D345317E9D15F7272CB95B1A400892DD7BC820A29205B578F54376DDF026612AE26EB171EA38087CE8076D3123CDE62A1524E3926C6A116120BF84DB010A5BDF7B7362822AA9354FFC791B73E174BC7C923C5BEC1BFA310EFD8B7F28C5497D0B5E8747B07A693386A6F682BEB9581E8DEC0E0BA2AE2CD66698CD2B29D9CAA7933959D4104D0C9CCE64D6B4F76D87C2153A7191549ED62C5CD211484A1C946B454F16DBC8535C1B387E1402936064DE38DFD2C3499476ECBAD73524509F57F70A47A9CBE285F33B6AB204516A29B4566DF2F90C35F8534FC4ABB8B06B9833C067BCC83C90D218C63E84C7F26A749699A37BE7FF2AC3FD6CB406EE811E4918BC368122D8728EB4BA3B44187DC2A6253C76D256F00E88101C82AE3735CC0413709AB717040155592593A228F3F490E72BFE9ED78CC7FEC2B7F5B97554114329CE79111BE13AA269506A37DF2F15B193365808B8C71246DC6EE8610424D8E85562CF3174C4DDDEEE9F045B9C1A9484EEA9098FD5C6FDCE864362C17ABB801E7D4B803DEC0B088107286CD06605D9DC964AF76279030402D8D5C092339B6DBB3C1ACB99F9F01B953A3294E284B7B23A34FD4847DFBABE0FF562AF83B5D9AB49FCC3DFFE5C63BF5964AE470FDB91A574DEBDA6DAA02170B28071B4B04C3A98DA359E6602338DD8D97D27DBBDC769E15209ED8800EE630AD00189373AAD65F821715A0165A762C02839D688BC90F6E50D0CABAAF2FE7B4CB2573C788E00B767DC8A7AEC0593D6CB498F9AC18EAD237578384CC9CFAE317E5CB0303A106B96F3C69A4F3A405069FB1DBE61E5442A4C67E9F0352D84C3A3D1B3490EBA09620948A983EFC30EFE5E519061549A8F015B61F1F09FF37B045E2547A7A0D040979BEAE53479D659EB97394A717C10724D82B413BE560EA1CBB379E9289656FEB71010000B0FB13EB7101000048FC81EB7101000068FC81EB7101000068FC81EB7101000048FC81EB71010000C04E81EB7101000068EF81EB7101000068EF81EB7101000090F081EB71010000
+
+--pruebas de las transacciones
+
+exec spTransferencias 1000, 100000004, 100000006, 'Prueba de procedimiento de la transferencia entre cuentas', '2026-03-31'
+
+select * from Retiro
+select * from Transferencia
+select * from Deposito
+select * from GananciaComision
+
+
+select * from Titular

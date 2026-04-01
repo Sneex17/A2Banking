@@ -1,0 +1,6 @@
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CTransferenciasCLR\bin\Debug\CTransferenciasCLR.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CTransferenciasCLR\bin\Debug\CTransferenciasCLR.pdb
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CTransferenciasCLR\obj\Debug\CTransferenciasCLR.csproj.AssemblyReference.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CTransferenciasCLR\obj\Debug\CTransferenciasCLR.csproj.CoreCompileInputs.cache
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CTransferenciasCLR\obj\Debug\CTransferenciasCLR.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CTransferenciasCLR\obj\Debug\CTransferenciasCLR.pdb
