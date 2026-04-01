@@ -46,9 +46,11 @@
             BuBuscarPersonas = new ReaLTaiizor.Controls.CyberButton();
             BuCapturarHuella = new ReaLTaiizor.Controls.CyberButton();
             BuLimpiar = new ReaLTaiizor.Controls.CyberButton();
+            BuCapturarPIN = new FontAwesome.Sharp.IconPictureBox();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BuCapturarPIN).BeginInit();
             SuspendLayout();
             // 
             // panelInformacion
@@ -57,6 +59,7 @@
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(BuCapturarPIN);
             panelContainer.Controls.Add(BuLimpiar);
             panelContainer.Controls.Add(BuCapturarHuella);
             panelContainer.Controls.Add(BuGuardar);
@@ -95,6 +98,7 @@
             panelContainer.Controls.SetChildIndex(BuGuardar, 0);
             panelContainer.Controls.SetChildIndex(BuCapturarHuella, 0);
             panelContainer.Controls.SetChildIndex(BuLimpiar, 0);
+            panelContainer.Controls.SetChildIndex(BuCapturarPIN, 0);
             // 
             // pbIcono
             // 
@@ -132,6 +136,7 @@
             textbCodigoPin.BackColor = Color.Transparent;
             textbCodigoPin.BorderColor = Color.FromArgb(180, 180, 180);
             textbCodigoPin.EdgeColor = Color.White;
+            textbCodigoPin.Enabled = false;
             textbCodigoPin.Font = new Font("Tahoma", 12F);
             textbCodigoPin.ForeColor = Color.Black;
             textbCodigoPin.Location = new Point(244, 196);
@@ -491,6 +496,22 @@
             BuLimpiar.Timer_RGB = 300;
             BuLimpiar.Click += BuLimpiar_Click;
             // 
+            // BuCapturarPIN
+            // 
+            BuCapturarPIN.BackColor = Color.Transparent;
+            BuCapturarPIN.Cursor = Cursors.Hand;
+            BuCapturarPIN.ForeColor = Color.Gray;
+            BuCapturarPIN.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            BuCapturarPIN.IconColor = Color.Gray;
+            BuCapturarPIN.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BuCapturarPIN.IconSize = 50;
+            BuCapturarPIN.Location = new Point(419, 189);
+            BuCapturarPIN.Name = "BuCapturarPIN";
+            BuCapturarPIN.Size = new Size(50, 50);
+            BuCapturarPIN.TabIndex = 38;
+            BuCapturarPIN.TabStop = false;
+            BuCapturarPIN.Click += BuCapturarPIN_Click;
+            // 
             // ucCuentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -502,6 +523,7 @@
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BuCapturarPIN).EndInit();
             ResumeLayout(false);
         }
 
@@ -525,5 +547,6 @@
         private ReaLTaiizor.Controls.CyberButton BuGuardar;
         private ReaLTaiizor.Controls.CyberButton BuBuscarPersonas;
         private ReaLTaiizor.Controls.CyberButton BuLimpiar;
+        private FontAwesome.Sharp.IconPictureBox BuCapturarPIN;
     }
 }

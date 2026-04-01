@@ -118,6 +118,15 @@ namespace CPresentacion.ViewsUI
                 retiros.Dock = DockStyle.Fill;
                 tabpRetiros.Controls.Add(retiros);
             }
+
+            //Vista para las tranferencias
+            if(controlMenuOpciones.SelectedTab == tabpTranferencias
+                && tabpTranferencias.Controls.Count == 0)
+            {
+                ucTransferencias transferencias = new ucTransferencias();
+                transferencias.Dock = DockStyle.Fill;
+                tabpTranferencias.Controls.Add(transferencias);
+            }
         }
     }
 }

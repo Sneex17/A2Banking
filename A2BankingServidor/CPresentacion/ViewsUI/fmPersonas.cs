@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CEntidades;
+using CNegocio;
+using CPresentacion.DecoratorPattern;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CEntidades;
-using CNegocio;
 
 namespace CPresentacion.ViewsUI
 {
@@ -18,9 +19,19 @@ namespace CPresentacion.ViewsUI
         public fmPersonas()
         {
             InitializeComponent();
+            DecorarDatagrid();
             ListaPersona();
         }
 
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewData);
+        }
         private async void ListaPersona()
         {
             var lista = await GetPersonasServicio.GetPersonas();

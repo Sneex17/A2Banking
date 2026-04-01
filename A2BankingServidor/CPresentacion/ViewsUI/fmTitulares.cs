@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CNegocio;
+using CPresentacion.DecoratorPattern;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,8 +21,17 @@ namespace CPresentacion.ViewsUI
         {
             InitializeComponent();
             CargarDatos();
+            DecorarDatagrid();
         }
-
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewData);
+        }
         private void CargarDatos()
         {
             viewData.DataSource = LogicaNegocio.ListaTitulares();

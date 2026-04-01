@@ -137,5 +137,13 @@ namespace CPresentacion.ViewsUI.UserControls
             LimpiarTexbox();
             CambioOperacion(textbIdCuenta.Text);
         }
+
+        private void BuCapturarPIN_Click(object sender, EventArgs e)
+        {
+            fmCodigoPin codigoPin = new fmCodigoPin();
+            codigoPin.ShowDialog();
+
+            textbCodigoPin.Text = fmCodigoPin.CodigoPIN;
+        }
     }
 }

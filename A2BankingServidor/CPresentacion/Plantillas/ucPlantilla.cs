@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPresentacion.DecoratorPattern;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace CPresentacion.Plantillas
         public ucPlantilla()
         {
             InitializeComponent();
+            DecorarDatagrid();
+        }
+
+        private void DecorarDatagrid()
+        {
+            IDataGridDecorator estilo = new BordeDecorator(
+                            new SeleccionDecorator(
+                            new FilasAlternasDecorator(
+                            new HeaderDecorator(
+                            new DataGridBase()))));
+            estilo.Aplicar(viewDatos);
         }
     }
 }
