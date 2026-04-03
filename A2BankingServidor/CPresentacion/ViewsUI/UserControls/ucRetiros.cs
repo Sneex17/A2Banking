@@ -1,8 +1,10 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CNegocio.StrategyPattern;
 using CPresentacion.Plantillas;
+using QuestPDF.Fluent;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,8 +117,13 @@ namespace CPresentacion.ViewsUI.UserControls
 
                     viewDatos.DataSource = null;
                     LimpiarTextbox();
-                }
 
+                    /*var bank = new Bank();
+                    string ruta = bank.RutaRetiro;
+                    var data = LogicaNegocio.DataReciboRetiro();
+                    var recido = new ReciboRetiro(bank, data);
+                    recido.GeneratePdf(ruta);*/
+                }
             }
             catch (ControlExcepciones error)
             {

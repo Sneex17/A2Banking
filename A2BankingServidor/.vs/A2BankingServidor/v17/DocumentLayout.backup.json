@@ -7,28 +7,16 @@
       "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\usercontrols\\uctransferencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cinfraestructura\\recibosservicios\\reciboretiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|solutionrelative:cinfraestructura\\recibosservicios\\reciboretiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cinfraestructura\\recibosservicios\\recibodeposito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|solutionrelative:cinfraestructura\\recibosservicios\\recibodeposito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cnegocio\\logicanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8E11D35-375E-47F9-AC6A-C9EE0CB3E5A2}|CNegocio\\CNegocio.csproj|solutionrelative:cnegocio\\logicanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6211119-5D98-4D75-8819-FF388F36F886}|CDatos\\CDatos.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cdatos\\controllers\\transferenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6211119-5D98-4D75-8819-FF388F36F886}|CDatos\\CDatos.csproj|solutionrelative:cdatos\\controllers\\transferenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cinfraestructura\\recibosservicios\\recibotransferencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|solutionrelative:cinfraestructura\\recibosservicios\\recibotransferencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cinfraestructura\\enviargmail\\serviciogmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54AF1D58-6CA0-466A-A716-1C525C0245DE}|CInfraestructura\\CInfraestructura.csproj|solutionrelative:cinfraestructura\\enviargmail\\serviciogmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cpresentacion\\viewsui\\usercontrols\\uctransferencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\usercontrols\\uctransferencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingservidor\\cpresentacion\\viewsui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{948DE7D9-B34E-4458-9BE0-0DE33C438641}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\viewsui\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,93 +34,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReciboDeposito.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\RecibosServicios\\ReciboDeposito.cs",
-              "RelativeDocumentMoniker": "CInfraestructura\\RecibosServicios\\ReciboDeposito.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\RecibosServicios\\ReciboDeposito.cs",
-              "RelativeToolTip": "CInfraestructura\\RecibosServicios\\ReciboDeposito.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAmwGQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ucTransferencias.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
+              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs*",
+              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs*",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAuwLcAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T19:45:12.263Z",
+              "WhenOpened": "2026-04-03T21:15:12.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReciboRetiro.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\RecibosServicios\\ReciboRetiro.cs",
-              "RelativeDocumentMoniker": "CInfraestructura\\RecibosServicios\\ReciboRetiro.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\RecibosServicios\\ReciboRetiro.cs",
-              "RelativeToolTip": "CInfraestructura\\RecibosServicios\\ReciboRetiro.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAmwFkAAABiAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ucTransferencias.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
+              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T19:44:58.492Z",
+              "WhenOpened": "2026-04-03T21:15:08.111Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServicioGmail.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\EnviarGmail\\ServicioGmail.cs",
+              "RelativeDocumentMoniker": "CInfraestructura\\EnviarGmail\\ServicioGmail.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\EnviarGmail\\ServicioGmail.cs",
+              "RelativeToolTip": "CInfraestructura\\EnviarGmail\\ServicioGmail.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T20:20:23.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "LogicaNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CNegocio\\LogicaNegocio.cs",
-              "RelativeDocumentMoniker": "CNegocio\\LogicaNegocio.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CNegocio\\LogicaNegocio.cs",
-              "RelativeToolTip": "CNegocio\\LogicaNegocio.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAQwEoAAAA3AAAAAAAAAA==",
+              "Title": "MenuPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\MenuPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CPresentacion\\ViewsUI\\MenuPrincipal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T18:01:13.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TransferenciaController.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CDatos\\Controllers\\TransferenciaController.cs",
-              "RelativeDocumentMoniker": "CDatos\\Controllers\\TransferenciaController.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CDatos\\Controllers\\TransferenciaController.cs",
-              "RelativeToolTip": "CDatos\\Controllers\\TransferenciaController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAmwFgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T17:56:41.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ucTransferencias.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAuwLEAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T16:00:18.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ucTransferencias.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CPresentacion\\ViewsUI\\UserControls\\ucTransferencias.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T16:00:10.461Z",
+              "WhenOpened": "2026-04-03T20:18:56.924Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReciboTransferencia.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\RecibosServicios\\ReciboTransferencia.cs",
-              "RelativeDocumentMoniker": "CInfraestructura\\RecibosServicios\\ReciboTransferencia.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\RecibosServicios\\ReciboTransferencia.cs",
-              "RelativeToolTip": "CInfraestructura\\RecibosServicios\\ReciboTransferencia.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T15:48:36.741Z",
-              "EditorCaption": ""
             }
           ]
         }

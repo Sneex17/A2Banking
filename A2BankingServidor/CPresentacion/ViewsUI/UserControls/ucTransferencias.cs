@@ -1,5 +1,6 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.EnviarGmail;
 using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CPresentacion.Plantillas;
@@ -118,7 +119,7 @@ namespace CPresentacion.ViewsUI.UserControls
         private  void BuTransferir_Click(object sender, EventArgs e)
         {
             Settings.License = LicenseType.Community;
-            /*try
+            try
             {
                 if (string.IsNullOrWhiteSpace(textbCantidad.Text))
                 {
@@ -171,26 +172,14 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
 
 
-            var bank = new Bank();
+            /*var bank = new Bank();
+            string ruta = bank.RutaTrasnferencias;
             var data = LogicaNegocio.DataReciboTransferencia();
             var recido = new ReciboTransferencia(bank, data);
-            recido.GeneratePdf(bank.RutaTrasnferencias);
-
-            /*var bank = new Bank();
-            var data = LogicaNegocio.DataReciboDeposito();
-            var recido = new ReciboDeposito(bank, data);
-            recido.GeneratePdf(bank.RutaDeposito);*/
-
-            /*var bank = new Bank();
-            var data = LogicaNegocio.DataReciboRetiro();
-            var recido = new ReciboRetiro(bank, data);
-            recido.GeneratePdf(bank.RutaRetiro);*/
-
-
-
+            recido.GeneratePdf(ruta);*/
         }
     }
 }
