@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YsmjurWBXM0=",
+  "dgSpecHash": "WW+PRYfKkvQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingServidor\\CInfraestructura\\CInfraestructura.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\xrami\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+    "C:\\Users\\xrami\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
+    "C:\\Users\\xrami\\.nuget\\packages\\questpdf\\2026.2.4\\questpdf.2026.2.4.nupkg.sha512"
   ],
   "logs": []
 }

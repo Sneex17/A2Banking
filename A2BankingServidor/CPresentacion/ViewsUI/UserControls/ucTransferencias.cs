@@ -1,13 +1,20 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CPresentacion.Plantillas;
+using Microsoft.VisualBasic.ApplicationServices;
+using QuestPDF;
+using QuestPDF.Companion;
+using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +28,7 @@ namespace CPresentacion.ViewsUI.UserControls
         {
             InitializeComponent();
             CargarDatos();
+            
         }
 
         private void CargarDatos()
@@ -107,9 +115,10 @@ namespace CPresentacion.ViewsUI.UserControls
             return listaCuenats[0]["Nombre"].ToString();
         }
 
-        private void BuTransferir_Click(object sender, EventArgs e)
+        private  void BuTransferir_Click(object sender, EventArgs e)
         {
-            try
+            Settings.License = LicenseType.Community;
+            /*try
             {
                 if (string.IsNullOrWhiteSpace(textbCantidad.Text))
                 {
@@ -162,7 +171,26 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+
+
+            var bank = new Bank();
+            var data = LogicaNegocio.DataReciboTransferencia();
+            var recido = new ReciboTransferencia(bank, data);
+            recido.GeneratePdf(bank.RutaTrasnferencias);
+
+            /*var bank = new Bank();
+            var data = LogicaNegocio.DataReciboDeposito();
+            var recido = new ReciboDeposito(bank, data);
+            recido.GeneratePdf(bank.RutaDeposito);*/
+
+            /*var bank = new Bank();
+            var data = LogicaNegocio.DataReciboRetiro();
+            var recido = new ReciboRetiro(bank, data);
+            recido.GeneratePdf(bank.RutaRetiro);*/
+
+
+
         }
     }
 }

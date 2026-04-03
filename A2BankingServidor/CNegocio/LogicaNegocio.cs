@@ -62,6 +62,18 @@ namespace CNegocio
         {
             TransferenciaController.ProcesarTransferencia(transferencia);
         }
+        public static DataTable DataReciboTransferencia()
+        {
+            return TransferenciaController.ReciboTransferencias();
+        }
+        public static DataTable DataReciboDeposito()
+        {
+            return TransferenciaController.ReciboDeposito();
+        }
+        public static DataTable DataReciboRetiro()
+        {
+            return TransferenciaController.ReciboRetiro();
+        }
 
     }
 }

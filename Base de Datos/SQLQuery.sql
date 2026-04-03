@@ -690,3 +690,58 @@ as
 
 
  select * from GananciaComision
+ select * from banco
+ go
+
+ --proc para los recibos de las transferencias
+ create or alter proc spReciboTransferencia
+ as
+ set nocount on
+ begin
+ select t.TransferenciaId, ob.Nombre as BancoO, t.CuentaOrigenId, ot.Nombre as NombreO, 
+ db.Nombre as BancoD, t.CuentaDestinoId, dt.Nombre as NombreD, 
+  t.Monto, t.Comision, t.Concepto from Transferencia as t
+  inner join Cuenta as o on t.CuentaOrigenId = o.NumeroCuenta
+  inner join Cuenta as d on t.CuentaDestinoId = d.NumeroCuenta
+  inner join Titular as ot on o.TitularId = ot.TitularId
+  inner join Titular as dt on d.TitularId = dt.TitularId
+  inner join Banco as ob on o.BancoId = ob.BancoId
+  inner join Banco as db on d.BancoId = db.BancoId
+  where t.TransferenciaId = (select max(TransferenciaId) from Transferencia)
+ end
+ go
+
+
+ --proc para los recibos de los depositos
+ create or alter proc spReciboDeposito
+ as
+ set nocount on
+ begin
+ select d.DepositoId, d.ClienteId, d.Nombre as Cliente, 
+ c.NumeroCuenta, b.Nombre as Banco, d.Cantidad as Monto, d.Fecha
+ from Deposito as d
+ inner join Cuenta as c on d.CuentaId = c.CuentaId
+ inner join Banco as b on c.BancoId = b.BancoId
+ where d.DepositoId = (select max(DepositoId) from Deposito)
+ end
+ go
+
+
+  --proc para los recibos de los retiros
+ create or alter proc spReciboRetiro
+ as
+ set nocount on
+ begin
+ select r.RetiroId, r.ClienteId, r.Nombre as cliente, 
+ c.NumeroCuenta, r.Nombre as Banco, r.Cantidad as Monto, r.Fecha
+ from Retiro as r
+ inner join Cuenta as c on r.CuentaId = c.CuentaId
+ inner join Banco as b on c.BancoId = b.BancoId
+ where r.RetiroId = (select max(RetiroId) from Retiro)
+ end
+
+
+ select * from Deposito
+
+
+  
