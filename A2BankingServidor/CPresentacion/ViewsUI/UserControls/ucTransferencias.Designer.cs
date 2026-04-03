@@ -43,13 +43,19 @@
             rTextbConcepto = new ReaLTaiizor.Controls.DungeonRichTextBox();
             label8 = new Label();
             BuTransferir = new ReaLTaiizor.Controls.CyberButton();
+            pgBuBuscarOrigen = new FontAwesome.Sharp.IconPictureBox();
+            pgBuBuscarDestino = new FontAwesome.Sharp.IconPictureBox();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pgBuBuscarOrigen).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pgBuBuscarDestino).BeginInit();
             SuspendLayout();
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(pgBuBuscarDestino);
+            panelContainer.Controls.Add(pgBuBuscarOrigen);
             panelContainer.Controls.Add(BuTransferir);
             panelContainer.Controls.Add(label8);
             panelContainer.Controls.Add(rTextbConcepto);
@@ -65,7 +71,6 @@
             panelContainer.Controls.Add(textbRemitente);
             panelContainer.Controls.Add(label2);
             panelContainer.Controls.Add(textbCuentaOrigen);
-            panelContainer.Controls.SetChildIndex(label6, 0);
             panelContainer.Controls.SetChildIndex(textbCuentaOrigen, 0);
             panelContainer.Controls.SetChildIndex(label2, 0);
             panelContainer.Controls.SetChildIndex(textbRemitente, 0);
@@ -81,6 +86,9 @@
             panelContainer.Controls.SetChildIndex(rTextbConcepto, 0);
             panelContainer.Controls.SetChildIndex(label8, 0);
             panelContainer.Controls.SetChildIndex(BuTransferir, 0);
+            panelContainer.Controls.SetChildIndex(pgBuBuscarOrigen, 0);
+            panelContainer.Controls.SetChildIndex(label6, 0);
+            panelContainer.Controls.SetChildIndex(pgBuBuscarDestino, 0);
             // 
             // pbIcono
             // 
@@ -143,7 +151,6 @@
             textbCuentaOrigen.BackColor = Color.Transparent;
             textbCuentaOrigen.BorderColor = Color.FromArgb(180, 180, 180);
             textbCuentaOrigen.EdgeColor = Color.White;
-            textbCuentaOrigen.Enabled = false;
             textbCuentaOrigen.Font = new Font("Tahoma", 12F);
             textbCuentaOrigen.ForeColor = Color.Black;
             textbCuentaOrigen.Location = new Point(52, 41);
@@ -262,7 +269,6 @@
             textbCuentaDesino.BackColor = Color.Transparent;
             textbCuentaDesino.BorderColor = Color.FromArgb(180, 180, 180);
             textbCuentaDesino.EdgeColor = Color.White;
-            textbCuentaDesino.Enabled = false;
             textbCuentaDesino.Font = new Font("Tahoma", 12F);
             textbCuentaDesino.ForeColor = Color.Black;
             textbCuentaDesino.Location = new Point(52, 179);
@@ -283,10 +289,10 @@
             rTextbConcepto.EdgeColor = Color.White;
             rTextbConcepto.Font = new Font("Tahoma", 10F);
             rTextbConcepto.ForeColor = Color.FromArgb(76, 76, 76);
-            rTextbConcepto.Location = new Point(441, 41);
+            rTextbConcepto.Location = new Point(485, 41);
             rTextbConcepto.Name = "rTextbConcepto";
             rTextbConcepto.ReadOnly = false;
-            rTextbConcepto.Size = new Size(313, 100);
+            rTextbConcepto.Size = new Size(269, 100);
             rTextbConcepto.TabIndex = 41;
             rTextbConcepto.TextBackColor = Color.White;
             rTextbConcepto.WordWrap = true;
@@ -297,7 +303,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(438, 16);
+            label8.Location = new Point(485, 16);
             label8.Name = "label8";
             label8.Size = new Size(230, 22);
             label8.TabIndex = 42;
@@ -343,6 +349,37 @@
             BuTransferir.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuTransferir.Timer_Effect_1 = 5;
             BuTransferir.Timer_RGB = 300;
+            BuTransferir.Click += BuTransferir_Click;
+            // 
+            // pgBuBuscarOrigen
+            // 
+            pgBuBuscarOrigen.BackColor = Color.Transparent;
+            pgBuBuscarOrigen.ForeColor = Color.Gray;
+            pgBuBuscarOrigen.IconChar = FontAwesome.Sharp.IconChar.Search;
+            pgBuBuscarOrigen.IconColor = Color.Gray;
+            pgBuBuscarOrigen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            pgBuBuscarOrigen.IconSize = 39;
+            pgBuBuscarOrigen.Location = new Point(422, 41);
+            pgBuBuscarOrigen.Name = "pgBuBuscarOrigen";
+            pgBuBuscarOrigen.Size = new Size(39, 40);
+            pgBuBuscarOrigen.TabIndex = 44;
+            pgBuBuscarOrigen.TabStop = false;
+            pgBuBuscarOrigen.Click += pgBuBuscarOrigen_Click;
+            // 
+            // pgBuBuscarDestino
+            // 
+            pgBuBuscarDestino.BackColor = Color.Transparent;
+            pgBuBuscarDestino.ForeColor = Color.Gray;
+            pgBuBuscarDestino.IconChar = FontAwesome.Sharp.IconChar.Search;
+            pgBuBuscarDestino.IconColor = Color.Gray;
+            pgBuBuscarDestino.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            pgBuBuscarDestino.IconSize = 39;
+            pgBuBuscarDestino.Location = new Point(422, 179);
+            pgBuBuscarDestino.Name = "pgBuBuscarDestino";
+            pgBuBuscarDestino.Size = new Size(39, 40);
+            pgBuBuscarDestino.TabIndex = 45;
+            pgBuBuscarDestino.TabStop = false;
+            pgBuBuscarDestino.Click += pgBuBuscarDestino_Click;
             // 
             // ucTransferencias
             // 
@@ -354,6 +391,8 @@
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pgBuBuscarOrigen).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pgBuBuscarDestino).EndInit();
             ResumeLayout(false);
         }
 
@@ -374,5 +413,7 @@
         private Label label8;
         private ReaLTaiizor.Controls.DungeonRichTextBox rTextbConcepto;
         private ReaLTaiizor.Controls.CyberButton BuTransferir;
+        private FontAwesome.Sharp.IconPictureBox pgBuBuscarOrigen;
+        private FontAwesome.Sharp.IconPictureBox pgBuBuscarDestino;
     }
 }

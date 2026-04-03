@@ -50,19 +50,21 @@ namespace CPresentacion.ViewsUI.UserControls
 
         private async void CargarCuentas(string titulaid)
         {
-            await Task.Delay(1500);
-            var listaCuentaPorTirular = LogicaNegocio.ListaCuentas().Select($"TitularId = {titulaid}");
-            if (listaCuentaPorTirular.Length > 0)
+            if (!string.IsNullOrWhiteSpace(titulaid))
             {
-                viewDatos.DataSource = listaCuentaPorTirular.CopyToDataTable();
+                await Task.Delay(1500);
+                var listaCuentaPorTirular = LogicaNegocio.ListaCuentas().Select($"TitularId = {titulaid}");
+                if (listaCuentaPorTirular.Length > 0)
+                {
+                    viewDatos.DataSource = listaCuentaPorTirular.CopyToDataTable();
+                }
+                else
+                {
+                    MessageBox.Show($"{textbNombreTitular.Text} no es titular de ninguna cuenta en este banco", "Cuantas de banco",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTextbox();
+                }
             }
-            else
-            {
-                MessageBox.Show($"{textbNombreTitular.Text} no es titular de ninguna cuenta en este banco", "Cuantas de banco",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarTextbox();
-            }
-
         }
         private void viewData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

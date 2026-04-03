@@ -30,4 +30,13 @@ namespace CNegocio
                 .NotEmpty().WithErrorCode("Campo de contraseña vacío, debe de ingresar una contraseña");
         }
     }
+
+    public class ValidacionTransferencia : AbstractValidator<Transferencia>
+    {
+        public ValidacionTransferencia()
+        {
+            RuleFor(L => L.Balance)
+                .LessThanOrEqualTo(M => M.Monto).WithMessage("El monto a transferir debe ser menor o igual al balance actual");
+        }
+    }
 }

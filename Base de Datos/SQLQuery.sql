@@ -327,12 +327,12 @@ GO
 select * from Cuenta
 
 
-create view vwListaCuenta
+create or alter view vwListaCuenta
 with schemabinding
 as
 select c.CuentaId, b.Nombre as Banco, c.NumeroCuenta,
 c.TitularId, t.Nombre as Nombre, c.Balance, c.FechaCreacion, 
-e.Nombre as Estado, c.CodigoPin, c.CodigoHuella
+e.Nombre as Estado, c.CodigoPin
 from dbo.Cuenta as c
 inner join dbo.Banco as b on c.BancoId = b.BancoId
 inner join dbo.Titular as t on c.TitularId = t.TitularId
@@ -481,7 +481,7 @@ SELECT TitularId FROM Cuenta WHERE NumeroCuenta = 1000000001
                                                select   len('100000001')
 
 -- ¿Existe ese TitularId en Titular?
-SELECT * FROM Titular WHERE TitularId = (el número que salió arriba)
+--SELECT * FROM Titular WHERE TitularId = (el número que salió arriba)
 
 --Martes 31/3/26
 
@@ -633,7 +633,7 @@ begin
      select * from vwListaCuenta
      select * from Retiro
      select * from Deposito
-     select * from GanaciaComisio
+     select * from GananciaComision
      select * from Cuenta
 
 go
@@ -671,3 +671,22 @@ select * from GananciaComision
 
 
 select * from Titular
+go
+
+create proc spVerTransferencia
+as
+ set nocount on
+ begin
+ select TransferenciaId, CuentaOrigenId, CuentaDestinoId, 
+ Monto, Comision, Fecha, Concepto from Transferencia
+ end
+
+ --Viernes 2/4/26
+
+ select * from Transferencia
+
+
+ select * from vwListaCuenta
+
+
+ select * from GananciaComision

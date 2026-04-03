@@ -52,7 +52,16 @@ namespace CNegocio
             return Convert.ToString(NuevoNumero);
         }
 
-        
+        //Transferencias
+        public static List<Transferencia> ListaTransferencias()
+        {
+            return TransferenciaController.VerTransferencias();
+        }
+
+        public static void ProcesarTransferencia(Transferencia transferencia)
+        {
+            TransferenciaController.ProcesarTransferencia(transferencia);
+        }
 
     }
 }
