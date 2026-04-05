@@ -3,6 +3,7 @@ using CEntidades.BuilderPattern;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using CEntidades.StatePattern;
 
 namespace CDatos.Controllers
 {
@@ -183,7 +184,11 @@ namespace CDatos.Controllers
                         {
                             Nombre = reader.GetString(2)
                         },
-                        CodigoHuella = reader.GetSqlBytes(3).Value
+                        CodigoHuella = reader.GetSqlBytes(3).Value,
+                        Estado = new CuentaEstado()
+                        {
+                            IdEstado = reader.GetInt32(4)
+                        }
                     };
                 }
                 reader.Close();

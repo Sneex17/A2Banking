@@ -168,7 +168,11 @@ namespace CPresentacion.Views
 
                 case 2:
                     {
-
+                        if(Convert.ToDecimal(textbCantidad.Text) > cuenta.Balance)
+                        {
+                            lbTextDestino.Visible = true;
+                            lbTextDestino.Text = "No puede retirar".ToString();
+                        }
                     }
                     break;
 
@@ -184,6 +188,7 @@ namespace CPresentacion.Views
         private void pbBotonDepositar_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+            textbCantidad.Visible = true;
             textbCantidad.Enabled = true;
             ControlOpciones(1, "Cantidad a dépositar");
         }
@@ -191,6 +196,7 @@ namespace CPresentacion.Views
         private void pbBotonRetirar_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+            textbCantidad.Visible = true;
             textbCantidad.Enabled = true;
             ControlOpciones(2, "Cantidad a retirar");
         }
@@ -206,6 +212,7 @@ namespace CPresentacion.Views
             SonidoBotones();
 
             lbTextOpcion.Text = $"Balance disponible";
+            textbCantidad.Visible = true;
             textbCantidad.Text = $"{cuenta.Balance}";
             textbCantidad.Enabled = false;
             lbTextDestino.Visible = false;
@@ -215,6 +222,7 @@ namespace CPresentacion.Views
         private void pbBotonTransferir_Click(object sender, EventArgs e)
         {
             SonidoBotones();
+            textbCantidad.Visible = true;
             textbCantidad.Enabled = true;
             ControlOpciones(3, "Cantidad a transferir");
             lbTextDestino.Visible = true;

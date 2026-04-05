@@ -325,7 +325,7 @@ END
 GO
 
 select * from Cuenta
-
+go
 
 create or alter view vwListaCuenta
 with schemabinding
@@ -337,6 +337,7 @@ from dbo.Cuenta as c
 inner join dbo.Banco as b on c.BancoId = b.BancoId
 inner join dbo.Titular as t on c.TitularId = t.TitularId
 inner join dbo.Estado as e on c.EstadoId = e.EstadoID
+where c.BancoId = 1
 go
 
 create proc spListaCuentas
@@ -450,9 +451,9 @@ create or alter proc spCuentaExiste
 as
 set nocount on
 begin
-select c.NumeroCuenta, c.Balance, t.Nombre from Cuenta as c
+select c.NumeroCuenta, c.Balance, t.Nombre, c.CodigoHuella, c.EstadoId from Cuenta as c
 inner join Titular as t on c.TitularId = t.TitularId
-where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) and EstadoId = 1
+where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) --and EstadoId = 1
 end
 
 
@@ -742,6 +743,50 @@ as
 
 
  select * from Deposito
+ go
 
 
-  
+
+--Domingo 5/4/26
+--actualizar estado cuenta
+create proc spCambiarEstadoCuenta
+(
+@NumeroCuenta int,
+@EstadoId int
+)
+as set nocount on
+
+begin
+update Cuenta set EstadoId = @EstadoId where NumeroCuenta = @NumeroCuenta
+end
+go
+
+--actualizar Pin cuenta
+create proc spCambiarPinCuenta
+(
+@NumeroCuenta int,
+@CodigoPin int
+)
+as set nocount on
+begin
+update Cuenta set CodigoPin =  @CodigoPin where NumeroCuenta = @NumeroCuenta
+end
+go
+
+--actualizar Huella cuenta
+create proc spCambiarHuellaCuenta
+(
+@NumeroCuenta int,
+@CodigoHuella varbinary(max)
+)
+as set nocount on
+begin
+update Cuenta set CodigoHuella = @CodigoHuella where NumeroCuenta = @NumeroCuenta
+end
+go
+
+
+
+select * from Titular
+
+select * from Cuenta

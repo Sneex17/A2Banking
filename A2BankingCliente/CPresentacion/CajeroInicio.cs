@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
+using CNegocio;
 
 namespace CPresentacion
 {
@@ -146,7 +147,7 @@ namespace CPresentacion
             {
                 if(textbNCuenta.Text.Length != 9)
                 {
-                    
+                    throw new ControlExcepcion("Ingrese un numero de cuenta con 9 digitos");
                 }
 
                 var cuenta = new Cuenta()
@@ -197,6 +198,14 @@ namespace CPresentacion
 
                 if (respuesta != null)
                 {
+                    if(respuesta.Estado.IdEstado == 2)
+                    {
+                        throw new ControlExcepcion($"La cuenta {respuesta.NumeroCuenta} esta inactiva");
+                    }
+                    if (respuesta.Estado.IdEstado == 3)
+                    {
+                        throw new ControlExcepcion($"La cuenta {respuesta.NumeroCuenta} esta cancelada");
+                    }
                     new CajeroMenu(respuesta).Show();
                     this.Hide();
                 }
@@ -206,10 +215,15 @@ namespace CPresentacion
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (ControlExcepcion error)
             {
-
-                throw;
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
