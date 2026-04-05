@@ -13,19 +13,35 @@ using CPresentacion.Plantillas;
 
 namespace CPresentacion.ViewsUI.UserControls
 {
+    /// <summary>
+    /// Control de usuario para la gestión y registro de clientes (titulares) del sistema bancario.
+    /// Permite buscar personas desde un servicio externo, visualizar sus datos
+    /// y registrarlas como titulares mediante <see cref="GetPersonasServicio"/>.
+    /// Hereda de <see cref="ucPlantilla"/> como plantilla base de presentación.
+    /// </summary>
     public partial class ucClientes : ucPlantilla
     {
+        /// <summary>
+        /// Inicializa el control <see cref="ucClientes"/> y carga la lista de titulares
+        /// registrados en el sistema al iniciar el componente.
+        /// </summary>
         public ucClientes()
         {
             InitializeComponent();
             CargarDatos();
         }
-
+        /// <summary>
+        /// Obtiene la lista de titulares registrados mediante <see cref="GetPersonasServicio.ListaTitulares"/>
+        /// y la asigna como fuente de datos al <c>DataGridView</c> (viewDatos).
+        /// </summary>
         private void CargarDatos()
         {
             viewDatos.DataSource = GetPersonasServicio.ListaTitulares();
         }
-
+        /// <summary>
+        /// Limpia el contenido de todos los campos de texto del formulario,
+        /// dejándolos en su estado inicial (cadena vacía).
+        /// </summary>
         private void LimpiarTextbox()
         {
             textbIdTitular.Text = string.Empty;
@@ -34,6 +50,16 @@ namespace CPresentacion.ViewsUI.UserControls
             texbSexo.Text = string.Empty;
             textbOcupacion.Text = string.Empty;
         }
+        /// <summary>
+        /// Maneja el evento de clic del botón <c>BuBuscarPersonas</c>.
+        /// Abre el diálogo <see cref="fmPersonas"/> para buscar y seleccionar una persona
+        /// desde el servicio externo, cargando sus datos en los campos del formulario.
+        /// </summary>
+        /// <param name="sender">El botón que originó el evento.</param>
+        /// <param name="e">Argumentos estándar del evento de clic.</param>
+        /// <exception cref="Exception">
+        ///   Captura cualquier error inesperado al abrir o interactuar con el diálogo de búsqueda.
+        /// </exception>
         private void BuBuscarPersonas_Click(object sender, EventArgs e)
         {
             try
@@ -56,7 +82,23 @@ namespace CPresentacion.ViewsUI.UserControls
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /// <summary>
+        /// Maneja el evento de clic del botón <c>BuGuardar</c>.
+        /// Construye un objeto <see cref="Titular"/> con los datos del formulario y,
+        /// previa confirmación del usuario, lo registra en el sistema como nuevo cliente
+        /// mediante <see cref="GetPersonasServicio.NuevoTitular"/>.
+        /// </summary>
+        /// <remarks>
+        /// Tras un registro exitoso, recarga la tabla de clientes y limpia los campos del formulario.
+        /// </remarks>
+        /// <param name="sender">El botón que originó el evento.</param>
+        /// <param name="e">Argumentos estándar del evento de clic.</param>
+        /// <exception cref="ControlExcepciones">
+        ///   Se lanza cuando los datos del titular no superan las validaciones de negocio.
+        /// </exception>
+        /// <exception cref="Exception">
+        ///   Captura cualquier otro error inesperado durante el proceso de registro.
+        /// </exception>
         private void BuGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -84,12 +126,16 @@ namespace CPresentacion.ViewsUI.UserControls
                     LimpiarTextbox();
                 }
             }
-            catch (Exception error)
+            catch (ControlExcepciones error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            catch (Exception error)
+            {
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
         }
     }
 }
