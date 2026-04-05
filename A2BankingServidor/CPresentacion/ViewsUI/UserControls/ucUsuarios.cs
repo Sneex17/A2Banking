@@ -177,6 +177,8 @@ namespace CPresentacion.ViewsUI.UserControls
                         LogicaNegocio.AgregarUsuario(usuarios);
                         MessageBox.Show($"Usuario registrado con exito!", "Registro de usuario completo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Logger.Instance.Log($"Se registró un nuevo usuario al sistema: {usuarios.Nombre}");
                         CargarDatos();
                         LimpiarTexbox();
                         CambioOperacion(textbIdUsuario.Text);
@@ -203,6 +205,8 @@ namespace CPresentacion.ViewsUI.UserControls
                         LogicaNegocio.ActualizarUsuario(usuarios);
                         MessageBox.Show($"Datos del usuarios actualizados con exito!", "Actualización de usuario completo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Logger.Instance.Log($"Se actualizarón los datos del usuario: {usuarios.NombreUsuario}");
                         CargarDatos();
                         LimpiarTexbox();
                         CambioOperacion(textbIdUsuario.Text);
@@ -213,11 +217,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Errror en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}","Errror en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
     }

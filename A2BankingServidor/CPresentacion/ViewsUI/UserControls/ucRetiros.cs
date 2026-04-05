@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CPresentacion.ViewsUI.UserControls
 {
@@ -114,7 +115,7 @@ namespace CPresentacion.ViewsUI.UserControls
 
                     MessageBox.Show("Retiro realizado con exito!", "Retiro completado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    Logger.Instance.Log($"El cliente: {textbNombreTitular.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
                     viewDatos.DataSource = null;
                     LimpiarTextbox();
 
@@ -129,11 +130,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
     }

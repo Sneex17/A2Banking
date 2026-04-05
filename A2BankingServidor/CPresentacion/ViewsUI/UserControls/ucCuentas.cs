@@ -176,11 +176,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{errore.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
             catch (Exception errore)
             {
                 MessageBox.Show($"{errore.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
         }
         /// <summary>
@@ -219,6 +221,7 @@ namespace CPresentacion.ViewsUI.UserControls
                     .Builder();
 
                 LogicaNegocio.ActualizarPin(cuenta);
+                Logger.Instance.Log($"Se actualizó el código pin de la cuenta {cuenta.NumeroCuenta}");
             }
             else
             {
@@ -230,6 +233,7 @@ namespace CPresentacion.ViewsUI.UserControls
                     .Builder();
 
                 LogicaNegocio.ActualizarHuella(cuenta);
+                Logger.Instance.Log($"Se actualizó el código de huella de la cuenta {cuenta.NumeroCuenta}");
             }
 
         }
@@ -293,6 +297,7 @@ namespace CPresentacion.ViewsUI.UserControls
                         MessageBox.Show($"Cuenta: {textbNumeroCuenta.Text} creada con exito!",
                             "Creación de cuenta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        Logger.Instance.Log($"Se creó una nueva cuenta\nCuenta: {cuenta.NumeroCuenta}");
                         LimpiarTexbox();
                         CambioOperacion(textbIdCuenta.Text);
                         CargarDatos();
@@ -311,6 +316,8 @@ namespace CPresentacion.ViewsUI.UserControls
                         MessageBox.Show($"Datos de la cuenta: {textbNumeroCuenta.Text} actualizados con exito!",
                             "Actualización de cuenta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                        Logger.Instance.Log($"Se actualizarón los datos de la cuenta: {textbNumeroCuenta.Text}");
                         LimpiarTexbox();
                         CambioOperacion(textbIdCuenta.Text);
                         CargarDatos();
@@ -321,11 +328,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{errore.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
             catch (Exception errore)
             {
                 MessageBox.Show($"{errore.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
         }
         /// <summary>
@@ -374,6 +383,7 @@ namespace CPresentacion.ViewsUI.UserControls
                     MessageBox.Show($"Estado de la cuenta: {textbNumeroCuenta.Text} actualizado con exito!",
                         "Cambio de estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    Logger.Instance.Log($"Se cambio el estado de la cuenta: {textbNumeroCuenta.Text}\nEstados:\nAnterior: {textbEstadoCuenta.Text}\nNuevo: {cuenta.Estado.cuentaEstado.Nombre}");
                     LimpiarTexbox();
                     CambioOperacion(textbIdCuenta.Text);
                     CargarDatos();
@@ -383,11 +393,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{errore.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
             catch (Exception errore)
             {
                 MessageBox.Show($"{errore.Message}", "Error en la operación", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
             
         }

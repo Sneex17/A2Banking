@@ -67,6 +67,7 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 
@@ -100,7 +101,9 @@ namespace CPresentacion.ViewsUI.UserControls
 
                     MessageBox.Show("Déposito realizado con exito!", "Déposito completado", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
+                    Logger.Instance.Log($"El cliente: {textbNombreCliente.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
+
                     CargarCuentas();
                     LimpiarTextbox();
 
@@ -118,11 +121,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 

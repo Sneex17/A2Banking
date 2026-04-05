@@ -64,11 +64,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 
@@ -91,11 +93,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 
@@ -157,7 +161,7 @@ namespace CPresentacion.ViewsUI.UserControls
                     LogicaNegocio.ProcesarTransferencia(transferencia);
                     MessageBox.Show($"Transferencia completada con exito!", "Tranferencia bancaria",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    Logger.Instance.Log($"Se realizó una transferencia:\nCuenta: {transferencia.CuentaOrigenId}\nDestino: {transferencia.CuentaDestinoId}");
                     LimpiarTextBox();
 
                     CargarDatos();
@@ -167,11 +171,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
 
 

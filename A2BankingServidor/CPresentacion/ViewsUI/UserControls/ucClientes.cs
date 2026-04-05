@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CEntidades;
+using CNegocio;
+using CPresentacion.Plantillas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CEntidades;
-using CNegocio;
-using CPresentacion.Plantillas;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CPresentacion.ViewsUI.UserControls
 {
@@ -80,6 +81,7 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
         /// <summary>
@@ -122,6 +124,8 @@ namespace CPresentacion.ViewsUI.UserControls
                     MessageBox.Show("Cliente registrado con exito", "Registro de clientes",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    Logger.Instance.Log($"Se registró un nuevo cliente al sistema: {titular.Nombre}");
+
                     CargarDatos();
                     LimpiarTextbox();
                 }
@@ -130,11 +134,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }  
         }
     }

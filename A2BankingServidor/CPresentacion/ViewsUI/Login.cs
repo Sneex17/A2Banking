@@ -88,6 +88,7 @@ namespace CPresentacion
             int resultado = LogicaNegocio.UsuarioExiste(usuario);
             if (resultado > 0)
             {
+                Logger.Instance.Log($"Usuario {usuario.NombreUsuario} inició sesión en el sistema");
                 MenuPrincipal menu = new MenuPrincipal(resultado);
                 menu.Show();
                 this.Hide();
