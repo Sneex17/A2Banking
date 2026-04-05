@@ -103,10 +103,42 @@ namespace CDatos.Controllers
                 int resultado;
                 var comando = new SqlCommand("spCambiarEstadoCuenta", acceso);
                 comando.CommandType = CommandType.StoredProcedure;
-
                 comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
-                comando.Parameters.AddWithValue("@TitularId", cuenta.Titular.TitularId);
                 comando.Parameters.AddWithValue("@EstadoId", cuenta.Estado.cuentaEstado.EstadoID);
+
+                resultado = comando.ExecuteNonQuery();
+                acceso.Close();
+            }
+        }
+
+        public static void CambiarHuella(Cuenta cuenta)
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+
+                int resultado;
+                var comando = new SqlCommand("spCambiarHuellaCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
+                comando.Parameters.AddWithValue("@CodigoHuella", cuenta.CodigoHuella);
+
+                resultado = comando.ExecuteNonQuery();
+                acceso.Close();
+            }
+        }
+
+        public static void CambiarPIN(Cuenta cuenta)
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+
+                int resultado;
+                var comando = new SqlCommand("spCambiarPinCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
+                comando.Parameters.AddWithValue("@CodigoPin", cuenta.CodigoPin);
 
                 resultado = comando.ExecuteNonQuery();
                 acceso.Close();
@@ -150,7 +182,8 @@ namespace CDatos.Controllers
                         Titular = new Titular()
                         {
                             Nombre = reader.GetString(2)
-                        }
+                        },
+                        CodigoHuella = reader.GetSqlBytes(3).Value
                     };
                 }
                 reader.Close();

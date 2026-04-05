@@ -44,13 +44,20 @@
             textbHuella = new ReaLTaiizor.Controls.DungeonTextBox();
             BuGuardar = new ReaLTaiizor.Controls.CyberButton();
             BuBuscarPersonas = new ReaLTaiizor.Controls.CyberButton();
-            BuCapturarHuella = new ReaLTaiizor.Controls.CyberButton();
+            BuAplicar = new ReaLTaiizor.Controls.CyberButton();
             BuLimpiar = new ReaLTaiizor.Controls.CyberButton();
             BuCapturarPIN = new FontAwesome.Sharp.IconPictureBox();
+            BuCapturarHuella = new FontAwesome.Sharp.IconPictureBox();
+            GroupBoxEstados = new ReaLTaiizor.Controls.ThunderGroupBox();
+            rbCancelada = new RadioButton();
+            rbInactiva = new RadioButton();
+            rbActiva = new RadioButton();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BuCapturarPIN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BuCapturarHuella).BeginInit();
+            GroupBoxEstados.SuspendLayout();
             SuspendLayout();
             // 
             // panelInformacion
@@ -59,9 +66,11 @@
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(GroupBoxEstados);
+            panelContainer.Controls.Add(BuCapturarHuella);
             panelContainer.Controls.Add(BuCapturarPIN);
             panelContainer.Controls.Add(BuLimpiar);
-            panelContainer.Controls.Add(BuCapturarHuella);
+            panelContainer.Controls.Add(BuAplicar);
             panelContainer.Controls.Add(BuGuardar);
             panelContainer.Controls.Add(BuBuscarPersonas);
             panelContainer.Controls.Add(textbHuella);
@@ -96,9 +105,11 @@
             panelContainer.Controls.SetChildIndex(textbHuella, 0);
             panelContainer.Controls.SetChildIndex(BuBuscarPersonas, 0);
             panelContainer.Controls.SetChildIndex(BuGuardar, 0);
-            panelContainer.Controls.SetChildIndex(BuCapturarHuella, 0);
+            panelContainer.Controls.SetChildIndex(BuAplicar, 0);
             panelContainer.Controls.SetChildIndex(BuLimpiar, 0);
             panelContainer.Controls.SetChildIndex(BuCapturarPIN, 0);
+            panelContainer.Controls.SetChildIndex(BuCapturarHuella, 0);
+            panelContainer.Controls.SetChildIndex(GroupBoxEstados, 0);
             // 
             // pbIcono
             // 
@@ -350,17 +361,17 @@
             BuGuardar.Effect_2 = true;
             BuGuardar.Effect_2_ColorBackground = Color.White;
             BuGuardar.Effect_2_Transparency = 20;
-            BuGuardar.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuGuardar.Font = new Font("Montserrat SemiBold", 11F, FontStyle.Bold);
             BuGuardar.ForeColor = Color.FromArgb(245, 245, 245);
             BuGuardar.Lighting = false;
             BuGuardar.LinearGradient_Background = false;
             BuGuardar.LinearGradientPen = false;
-            BuGuardar.Location = new Point(585, 91);
+            BuGuardar.Location = new Point(599, 79);
             BuGuardar.Name = "BuGuardar";
             BuGuardar.PenWidth = 15;
             BuGuardar.Rounding = true;
             BuGuardar.RoundingInt = 70;
-            BuGuardar.Size = new Size(169, 43);
+            BuGuardar.Size = new Size(155, 40);
             BuGuardar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuGuardar.TabIndex = 34;
             BuGuardar.Tag = "Cyber";
@@ -392,17 +403,17 @@
             BuBuscarPersonas.Effect_2 = true;
             BuBuscarPersonas.Effect_2_ColorBackground = Color.White;
             BuBuscarPersonas.Effect_2_Transparency = 20;
-            BuBuscarPersonas.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuBuscarPersonas.Font = new Font("Montserrat SemiBold", 11F, FontStyle.Bold);
             BuBuscarPersonas.ForeColor = Color.FromArgb(245, 245, 245);
             BuBuscarPersonas.Lighting = false;
             BuBuscarPersonas.LinearGradient_Background = false;
             BuBuscarPersonas.LinearGradientPen = false;
-            BuBuscarPersonas.Location = new Point(585, 42);
+            BuBuscarPersonas.Location = new Point(599, 30);
             BuBuscarPersonas.Name = "BuBuscarPersonas";
             BuBuscarPersonas.PenWidth = 15;
             BuBuscarPersonas.Rounding = true;
             BuBuscarPersonas.RoundingInt = 70;
-            BuBuscarPersonas.Size = new Size(169, 43);
+            BuBuscarPersonas.Size = new Size(155, 40);
             BuBuscarPersonas.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuBuscarPersonas.TabIndex = 33;
             BuBuscarPersonas.Tag = "Cyber";
@@ -412,47 +423,48 @@
             BuBuscarPersonas.Timer_RGB = 300;
             BuBuscarPersonas.Click += BuBuscarPersonas_Click;
             // 
-            // BuCapturarHuella
+            // BuAplicar
             // 
-            BuCapturarHuella.Alpha = 20;
-            BuCapturarHuella.BackColor = Color.Transparent;
-            BuCapturarHuella.Background = true;
-            BuCapturarHuella.Background_WidthPen = 4F;
-            BuCapturarHuella.BackgroundPen = true;
-            BuCapturarHuella.ColorBackground = Color.Green;
-            BuCapturarHuella.ColorBackground_1 = Color.Green;
-            BuCapturarHuella.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            BuCapturarHuella.ColorBackground_Pen = Color.DarkGray;
-            BuCapturarHuella.ColorLighting = Color.DarkGray;
-            BuCapturarHuella.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            BuCapturarHuella.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            BuCapturarHuella.Cursor = Cursors.Hand;
-            BuCapturarHuella.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            BuCapturarHuella.Effect_1 = true;
-            BuCapturarHuella.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            BuCapturarHuella.Effect_1_Transparency = 25;
-            BuCapturarHuella.Effect_2 = true;
-            BuCapturarHuella.Effect_2_ColorBackground = Color.White;
-            BuCapturarHuella.Effect_2_Transparency = 20;
-            BuCapturarHuella.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
-            BuCapturarHuella.ForeColor = Color.FromArgb(245, 245, 245);
-            BuCapturarHuella.Lighting = false;
-            BuCapturarHuella.LinearGradient_Background = false;
-            BuCapturarHuella.LinearGradientPen = false;
-            BuCapturarHuella.Location = new Point(585, 140);
-            BuCapturarHuella.Name = "BuCapturarHuella";
-            BuCapturarHuella.PenWidth = 15;
-            BuCapturarHuella.Rounding = true;
-            BuCapturarHuella.RoundingInt = 70;
-            BuCapturarHuella.Size = new Size(169, 43);
-            BuCapturarHuella.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            BuCapturarHuella.TabIndex = 35;
-            BuCapturarHuella.Tag = "Cyber";
-            BuCapturarHuella.TextButton = "Capturar huella";
-            BuCapturarHuella.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            BuCapturarHuella.Timer_Effect_1 = 5;
-            BuCapturarHuella.Timer_RGB = 300;
-            BuCapturarHuella.Click += BuCapturarHuella_Click;
+            BuAplicar.Alpha = 20;
+            BuAplicar.BackColor = Color.Transparent;
+            BuAplicar.Background = true;
+            BuAplicar.Background_WidthPen = 4F;
+            BuAplicar.BackgroundPen = true;
+            BuAplicar.ColorBackground = Color.Green;
+            BuAplicar.ColorBackground_1 = Color.Green;
+            BuAplicar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            BuAplicar.ColorBackground_Pen = Color.DarkGray;
+            BuAplicar.ColorLighting = Color.DarkGray;
+            BuAplicar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            BuAplicar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            BuAplicar.Cursor = Cursors.Hand;
+            BuAplicar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            BuAplicar.Effect_1 = true;
+            BuAplicar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            BuAplicar.Effect_1_Transparency = 25;
+            BuAplicar.Effect_2 = true;
+            BuAplicar.Effect_2_ColorBackground = Color.White;
+            BuAplicar.Effect_2_Transparency = 20;
+            BuAplicar.Font = new Font("Montserrat SemiBold", 11F, FontStyle.Bold);
+            BuAplicar.ForeColor = Color.FromArgb(245, 245, 245);
+            BuAplicar.Lighting = false;
+            BuAplicar.LinearGradient_Background = false;
+            BuAplicar.LinearGradientPen = false;
+            BuAplicar.Location = new Point(599, 255);
+            BuAplicar.Name = "BuAplicar";
+            BuAplicar.PenWidth = 15;
+            BuAplicar.Rounding = true;
+            BuAplicar.RoundingInt = 70;
+            BuAplicar.Size = new Size(155, 40);
+            BuAplicar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            BuAplicar.TabIndex = 35;
+            BuAplicar.Tag = "Cyber";
+            BuAplicar.TextButton = "Aplicar";
+            BuAplicar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            BuAplicar.Timer_Effect_1 = 5;
+            BuAplicar.Timer_RGB = 300;
+            BuAplicar.Visible = false;
+            BuAplicar.Click += BuAplicar_Click;
             // 
             // BuLimpiar
             // 
@@ -476,17 +488,17 @@
             BuLimpiar.Effect_2 = true;
             BuLimpiar.Effect_2_ColorBackground = Color.White;
             BuLimpiar.Effect_2_Transparency = 20;
-            BuLimpiar.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuLimpiar.Font = new Font("Montserrat SemiBold", 11F, FontStyle.Bold);
             BuLimpiar.ForeColor = Color.FromArgb(245, 245, 245);
             BuLimpiar.Lighting = false;
             BuLimpiar.LinearGradient_Background = false;
             BuLimpiar.LinearGradientPen = false;
-            BuLimpiar.Location = new Point(585, 189);
+            BuLimpiar.Location = new Point(599, 125);
             BuLimpiar.Name = "BuLimpiar";
             BuLimpiar.PenWidth = 15;
             BuLimpiar.Rounding = true;
             BuLimpiar.RoundingInt = 70;
-            BuLimpiar.Size = new Size(169, 43);
+            BuLimpiar.Size = new Size(155, 40);
             BuLimpiar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuLimpiar.TabIndex = 37;
             BuLimpiar.Tag = "Cyber";
@@ -501,7 +513,7 @@
             BuCapturarPIN.BackColor = Color.Transparent;
             BuCapturarPIN.Cursor = Cursors.Hand;
             BuCapturarPIN.ForeColor = Color.Gray;
-            BuCapturarPIN.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            BuCapturarPIN.IconChar = FontAwesome.Sharp.IconChar.EllipsisH;
             BuCapturarPIN.IconColor = Color.Gray;
             BuCapturarPIN.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BuCapturarPIN.IconSize = 50;
@@ -511,6 +523,80 @@
             BuCapturarPIN.TabIndex = 38;
             BuCapturarPIN.TabStop = false;
             BuCapturarPIN.Click += BuCapturarPIN_Click;
+            // 
+            // BuCapturarHuella
+            // 
+            BuCapturarHuella.BackColor = Color.Transparent;
+            BuCapturarHuella.Cursor = Cursors.Hand;
+            BuCapturarHuella.ForeColor = Color.Gray;
+            BuCapturarHuella.IconChar = FontAwesome.Sharp.IconChar.EllipsisH;
+            BuCapturarHuella.IconColor = Color.Gray;
+            BuCapturarHuella.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BuCapturarHuella.IconSize = 50;
+            BuCapturarHuella.Location = new Point(419, 251);
+            BuCapturarHuella.Name = "BuCapturarHuella";
+            BuCapturarHuella.Size = new Size(50, 50);
+            BuCapturarHuella.TabIndex = 39;
+            BuCapturarHuella.TabStop = false;
+            BuCapturarHuella.Click += BuCapturarHuella_Click;
+            // 
+            // GroupBoxEstados
+            // 
+            GroupBoxEstados.BackColor = Color.Transparent;
+            GroupBoxEstados.BodyColorA = Color.FromArgb(41, 63, 86);
+            GroupBoxEstados.BodyColorB = Color.FromArgb(77, 182, 198);
+            GroupBoxEstados.BodyColorC = Color.White;
+            GroupBoxEstados.BodyColorD = Color.LightGray;
+            GroupBoxEstados.Controls.Add(rbCancelada);
+            GroupBoxEstados.Controls.Add(rbInactiva);
+            GroupBoxEstados.Controls.Add(rbActiva);
+            GroupBoxEstados.Font = new Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GroupBoxEstados.ForeColor = Color.WhiteSmoke;
+            GroupBoxEstados.Location = new Point(599, 171);
+            GroupBoxEstados.Name = "GroupBoxEstados";
+            GroupBoxEstados.Size = new Size(155, 80);
+            GroupBoxEstados.TabIndex = 40;
+            GroupBoxEstados.Text = "Estados";
+            GroupBoxEstados.Visible = false;
+            // 
+            // rbCancelada
+            // 
+            rbCancelada.AutoSize = true;
+            rbCancelada.Font = new Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbCancelada.ForeColor = Color.Black;
+            rbCancelada.Location = new Point(11, 49);
+            rbCancelada.Name = "rbCancelada";
+            rbCancelada.Size = new Size(88, 20);
+            rbCancelada.TabIndex = 43;
+            rbCancelada.TabStop = true;
+            rbCancelada.Text = "Cancelada";
+            rbCancelada.UseVisualStyleBackColor = true;
+            // 
+            // rbInactiva
+            // 
+            rbInactiva.AutoSize = true;
+            rbInactiva.Font = new Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbInactiva.ForeColor = Color.Black;
+            rbInactiva.Location = new Point(77, 28);
+            rbInactiva.Name = "rbInactiva";
+            rbInactiva.Size = new Size(73, 20);
+            rbInactiva.TabIndex = 42;
+            rbInactiva.TabStop = true;
+            rbInactiva.Text = "Inactiva";
+            rbInactiva.UseVisualStyleBackColor = true;
+            // 
+            // rbActiva
+            // 
+            rbActiva.AutoSize = true;
+            rbActiva.Font = new Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbActiva.ForeColor = Color.Black;
+            rbActiva.Location = new Point(11, 28);
+            rbActiva.Name = "rbActiva";
+            rbActiva.Size = new Size(63, 20);
+            rbActiva.TabIndex = 41;
+            rbActiva.TabStop = true;
+            rbActiva.Text = "Activa";
+            rbActiva.UseVisualStyleBackColor = true;
             // 
             // ucCuentas
             // 
@@ -524,6 +610,9 @@
             panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
             ((System.ComponentModel.ISupportInitialize)BuCapturarPIN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BuCapturarHuella).EndInit();
+            GroupBoxEstados.ResumeLayout(false);
+            GroupBoxEstados.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -543,10 +632,15 @@
         private ReaLTaiizor.Controls.DungeonTextBox textbIdCuenta;
         private Label label8;
         private ReaLTaiizor.Controls.DungeonTextBox textbHuella;
-        private ReaLTaiizor.Controls.CyberButton BuCapturarHuella;
+        private ReaLTaiizor.Controls.CyberButton BuAplicar;
         private ReaLTaiizor.Controls.CyberButton BuGuardar;
         private ReaLTaiizor.Controls.CyberButton BuBuscarPersonas;
         private ReaLTaiizor.Controls.CyberButton BuLimpiar;
         private FontAwesome.Sharp.IconPictureBox BuCapturarPIN;
+        private FontAwesome.Sharp.IconPictureBox BuCapturarHuella;
+        private ReaLTaiizor.Controls.ThunderGroupBox GroupBoxEstados;
+        private RadioButton rbActiva;
+        private RadioButton rbCancelada;
+        private RadioButton rbInactiva;
     }
 }

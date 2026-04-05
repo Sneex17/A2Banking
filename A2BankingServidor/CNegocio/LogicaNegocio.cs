@@ -51,6 +51,18 @@ namespace CNegocio
             var NuevoNumero = CuentaController.NumeroCuenta();
             return Convert.ToString(NuevoNumero);
         }
+        public static void ActualizarEstado(Cuenta cuenta)
+        {
+            CuentaController.CambiarEstado(cuenta);
+        }
+        public static void ActualizarPin(Cuenta cuenta)
+        {
+            CuentaController.CambiarPIN(cuenta);
+        }
+        public static void ActualizarHuella(Cuenta cuenta)
+        {
+            CuentaController.CambiarHuella(cuenta);
+        }
 
         //Transferencias
         public static List<Transferencia> ListaTransferencias()
