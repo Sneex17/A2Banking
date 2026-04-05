@@ -128,14 +128,14 @@ namespace CPresentacion
             {
                 if (!string.IsNullOrWhiteSpace(textbNCuenta.Text))
                 {
-                    textbNCuenta.Text = textbNCuenta.Text.Remove(textbNCuenta.TextLength - 1);
+                    textbNCuenta.Text = textbNCuenta.Text.Remove(textbNCuenta.Text.Length - 1);
                 }
             }
             if (textbCodigoPin.Focused)
             {
                 if (!string.IsNullOrWhiteSpace(textbCodigoPin.Text))
                 {
-                    textbCodigoPin.Text = textbCodigoPin.Text.Remove(textbCodigoPin.TextLength - 1);
+                    textbCodigoPin.Text = textbCodigoPin.Text.Remove(textbCodigoPin.Text.Length - 1);
                 }
             }   
         }

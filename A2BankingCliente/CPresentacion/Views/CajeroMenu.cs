@@ -140,7 +140,7 @@ namespace CPresentacion.Views
             {
                 if (!string.IsNullOrWhiteSpace(textbCantidad.Text))
                 {
-                    textbCantidad.Text = textbCantidad.Text.Remove(textbCantidad.TextLength - 1);
+                    textbCantidad.Text = textbCantidad.Text.Remove(textbCantidad.Text.Length - 1);
                 }
             }
             if(textbCuentaDestino.Visible == true)
@@ -149,7 +149,7 @@ namespace CPresentacion.Views
                 {
                     if (!string.IsNullOrWhiteSpace(textbCuentaDestino.Text))
                     {
-                        textbCuentaDestino.Text = textbCuentaDestino.Text.Remove(textbCuentaDestino.TextLength - 1);
+                        textbCuentaDestino.Text = textbCuentaDestino.Text.Remove(textbCuentaDestino.Text.Length - 1);
                     }
                 }
             }
@@ -171,7 +171,7 @@ namespace CPresentacion.Views
                         if(Convert.ToDecimal(textbCantidad.Text) > cuenta.Balance)
                         {
                             lbTextDestino.Visible = true;
-                            lbTextDestino.Text = "No puede retirar".ToString();
+                            lbTextDestino.Text = "Balance insuficiente".ToString();
                         }
                     }
                     break;
