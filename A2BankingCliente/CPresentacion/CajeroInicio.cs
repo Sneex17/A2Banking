@@ -155,13 +155,18 @@ namespace CPresentacion
                     NumeroCuenta = Convert.ToInt32(textbNCuenta.Text),
                     CodigoPin = Convert.ToInt32(textbCodigoPin.Text)
                 };
+                var paquete = new Paquetes()
+                {
+                    Mensaje = "Validar Cuenta",
+                    Datos = cuenta 
+                };
 
                 cliente = new TcpClient();
                 await cliente.ConnectAsync("127.0.0.1", 1617);
 
                 NetworkStream network = cliente.GetStream();
 
-                string jsonCuenta = JsonConvert.SerializeObject(cuenta);
+                string jsonCuenta = JsonConvert.SerializeObject(paquete);
                 byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonCuenta);
 
                 //  enviar longitud

@@ -182,12 +182,13 @@ namespace CDatos.Controllers
                         Balance = reader.GetDecimal(1),
                         Titular = new Titular()
                         {
-                            Nombre = reader.GetString(2)
+                            TitularId = reader.GetInt32(2),
+                            Nombre = reader.GetString(3)
                         },
-                        CodigoHuella = reader.GetSqlBytes(3).Value,
+                        CodigoHuella = reader.GetSqlBytes(4).Value,
                         Estado = new CuentaEstado()
                         {
-                            IdEstado = reader.GetInt32(4)
+                            IdEstado = reader.GetInt32(5)
                         }
                     };
                 }

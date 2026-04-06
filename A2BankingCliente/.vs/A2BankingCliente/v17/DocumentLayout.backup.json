@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\cpresentacion\\views\\cajeromenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\cajeromenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\cpresentacion\\views\\cajeromenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\cajeromenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\cpresentacion\\cajeroinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\cajeroinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\cpresentacion\\views\\cajeromenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\cajeromenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\cpresentacion\\cajeroinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\cajeroinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AB64156-091D-4713-9543-AF8E0460EDB0}|CEntidades\\CEntidades.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\centidades\\paquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AB64156-091D-4713-9543-AF8E0460EDB0}|CEntidades\\CEntidades.csproj|solutionrelative:centidades\\paquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AB64156-091D-4713-9543-AF8E0460EDB0}|CEntidades\\CEntidades.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\centidades\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AB64156-091D-4713-9543-AF8E0460EDB0}|CEntidades\\CEntidades.csproj|solutionrelative:centidades\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\cpresentacion\\cajeroinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\cajeroinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +42,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Paquetes.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CEntidades\\Paquetes.cs",
+              "RelativeDocumentMoniker": "CEntidades\\Paquetes.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CEntidades\\Paquetes.cs",
+              "RelativeToolTip": "CEntidades\\Paquetes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T00:06:36.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CEntidades\\Class1.cs",
+              "RelativeDocumentMoniker": "CEntidades\\Class1.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CEntidades\\Class1.cs",
+              "RelativeToolTip": "CEntidades\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T00:03:14.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CajeroInicio.cs",
+              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\CajeroInicio.cs",
+              "RelativeDocumentMoniker": "CPresentacion\\CajeroInicio.cs",
+              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\CajeroInicio.cs",
+              "RelativeToolTip": "CPresentacion\\CajeroInicio.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAowLQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T23:42:56.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CajeroMenu.cs",
               "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\Views\\CajeroMenu.cs",
               "RelativeDocumentMoniker": "CPresentacion\\Views\\CajeroMenu.cs",
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\Views\\CajeroMenu.cs",
               "RelativeToolTip": "CPresentacion\\Views\\CajeroMenu.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAADwv6YAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAAALYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-05T23:24:47.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CajeroMenu.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\Views\\CajeroMenu.cs",
               "RelativeDocumentMoniker": "CPresentacion\\Views\\CajeroMenu.cs",
@@ -59,20 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CajeroInicio.cs",
-              "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\CajeroInicio.cs",
-              "RelativeDocumentMoniker": "CPresentacion\\CajeroInicio.cs",
-              "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\CajeroInicio.cs",
-              "RelativeToolTip": "CPresentacion\\CajeroInicio.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAASwIYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T22:59:53.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CajeroInicio.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\CajeroInicio.cs",
               "RelativeDocumentMoniker": "CPresentacion\\CajeroInicio.cs",

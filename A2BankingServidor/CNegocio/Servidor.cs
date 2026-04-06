@@ -1,5 +1,7 @@
 ﻿using CDatos.Controllers;
+using CEntidades;
 using CEntidades.BuilderPattern;
+using CNegocio.StrategyPattern;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -64,27 +66,72 @@ namespace CNegocio
                     string mensaje =
                         Encoding.UTF8.GetString(dataBuffer);
 
-                    var loginCuenta =
-                        JsonConvert.DeserializeObject<Cuenta>(mensaje);
+                    var loginPaquete =
+                        JsonConvert.DeserializeObject<Paquetes>(mensaje);
 
-                    var respuesta =
-                        CuentaController.LoginCajero(loginCuenta);
+                    switch (loginPaquete.Mensaje)
+                    {
+                        case "Validar Cuenta":
+                            {
+                                var cuenta = new Cuenta()
+                                {
+                                    NumeroCuenta = loginPaquete.Datos.NumeroCuenta,
+                                    CodigoPin = loginPaquete.Datos.CodigoPin
+                                };
 
-                    // ===== RESPUESTA =====
-                    string json =
-                        JsonConvert.SerializeObject(respuesta);
+                                var respuesta =
+                                    CuentaController.LoginCajero(cuenta);
 
-                    byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
-                    byte[] longitud = BitConverter.GetBytes(jsonBytes.Length);
+                                // ===== RESPUESTA =====
+                                string json =
+                                    JsonConvert.SerializeObject(respuesta);
 
-                    await network.WriteAsync(longitud);
-                    await network.WriteAsync(jsonBytes);
+                                byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
+                                byte[] longitud = BitConverter.GetBytes(jsonBytes.Length);
+
+                                await network.WriteAsync(longitud);
+                                await network.WriteAsync(jsonBytes);
+                            }
+                            break;
+                        case "Retiro":
+                            {
+                                ControlOperacion(new WithdrawStrategy(), loginPaquete);
+                            }
+                            break;
+                        case "Deposito":
+                            {
+                                ControlOperacion(new DepositStrategy(), loginPaquete);
+                            }
+                            break;
+                        case "Transferenci":
+                            {
+
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+        }
+
+
+        private void ControlOperacion(IOperacionStrategy strategy, Paquetes datosCuenta)
+        {
+            var cuenta = new Cuenta()
+            {
+                NumeroCuenta = datosCuenta.Datos.NumeroCuenta,
+                Balance = datosCuenta.Datos.Balance,
+                Titular = datosCuenta.Datos.Titular
+            };
+
+            TransaccionContext transaccion = new TransaccionContext(strategy);
+            transaccion.SelecionarOperacion(cuenta, cuenta.Titular.TitularId, cuenta.Titular.Nombre);
         }
     }
 }

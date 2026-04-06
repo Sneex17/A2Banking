@@ -1,11 +1,15 @@
 using CEntidades;
+using Newtonsoft.Json;
 using System.Media;
+using System.Net.Sockets;
+using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CPresentacion.Views
 {
     public partial class CajeroMenu : Form
     {
+        TcpClient cliente;
         int controlValor = 0;
         Cuenta cuenta = new Cuenta();
         public CajeroMenu(Cuenta Cuenta)
@@ -160,12 +164,40 @@ namespace CPresentacion.Views
             SonidoBotones();
             switch (controlValor)
             {
+                //Depositar dinero
                 case 1:
                     {
+                        if (Convert.ToDecimal(textbCantidad.Text) < 1)
+                        {
+                            lbTextDestino.Visible = true;
+                            lbTextDestino.Text = "Cantidad al dépositar invalidad".ToString();
+                        }
+                        else
+                        {
+                            var mensaje = MessageBox.Show($"Desea dépositar: {textbCantidad.Text}?","Déposito de dinero",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                            if(mensaje == DialogResult.Yes)
+                            {
+                                var Cuenta = new Cuenta()
+                                {
+                                    NumeroCuenta = cuenta.NumeroCuenta,
+                                    Balance = Convert.ToDecimal(textbCantidad.Text),
+                                    Titular = cuenta.Titular
+                                };
+
+                                var paquete = new Paquetes()
+                                {
+                                    Mensaje = "Deposito",
+                                    Datos = Cuenta
+                                };
+
+                                EnvioPaquetes(cliente, paquete);
+                            }
+                        }
                     }
                     break;
-
+                //Retirar dinero
                 case 2:
                     {
                         if(Convert.ToDecimal(textbCantidad.Text) > cuenta.Balance)
@@ -173,16 +205,54 @@ namespace CPresentacion.Views
                             lbTextDestino.Visible = true;
                             lbTextDestino.Text = "Balance insuficiente".ToString();
                         }
+                        else
+                        {
+                            var mensaje = MessageBox.Show($"Desea dépositar: {textbCantidad.Text}?", "Déposito de dinero",
+                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                            if(mensaje == DialogResult.Yes)
+                            {
+                                var Cuenta = new Cuenta()
+                                {
+                                    NumeroCuenta = cuenta.NumeroCuenta,
+                                    Balance = Convert.ToDecimal(textbCantidad.Text),
+                                    Titular = cuenta.Titular
+                                };
+
+                                var paquete = new Paquetes()
+                                {
+                                    Mensaje = "Retiro",
+                                    Datos = Cuenta
+                                };
+
+                                EnvioPaquetes(cliente, paquete);
+                            }
+                        }
                     }
                     break;
-
+                //Transferir dinero
                 case 3:
                     {
 
                     }
                     break;
-
             }
+        }
+        private async void EnvioPaquetes(TcpClient cliente, Paquetes paguete)
+        {
+            cliente = new TcpClient();
+            await cliente.ConnectAsync("127.0.0.1", 1617);
+
+            NetworkStream network = cliente.GetStream();
+
+            string jsonCuenta = JsonConvert.SerializeObject(paguete);
+            byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonCuenta);
+
+            //  enviar longitud
+            byte[] longitud = BitConverter.GetBytes(jsonBytes.Length);
+
+            await network.WriteAsync(longitud);
+            await network.WriteAsync(jsonBytes);
         }
 
         private void pbBotonDepositar_Click(object sender, EventArgs e)

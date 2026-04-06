@@ -451,7 +451,7 @@ create or alter proc spCuentaExiste
 as
 set nocount on
 begin
-select c.NumeroCuenta, c.Balance, t.Nombre, c.CodigoHuella, c.EstadoId from Cuenta as c
+select c.NumeroCuenta, c.Balance, t.TitularId, t.Nombre, c.CodigoHuella, c.EstadoId from Cuenta as c
 inner join Titular as t on c.TitularId = t.TitularId
 where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) --and EstadoId = 1
 end
@@ -790,3 +790,7 @@ go
 select * from Titular
 
 select * from Cuenta
+
+select * from Retiro
+
+select * from Deposito
