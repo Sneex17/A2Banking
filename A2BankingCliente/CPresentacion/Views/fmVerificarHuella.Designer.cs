@@ -33,13 +33,13 @@
             label6 = new Label();
             label9 = new Label();
             panelConatiner = new Panel();
-            pictureBox2 = new PictureBox();
+            pbResultado = new PictureBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             lbEstados = new Label();
             panelInfo.SuspendLayout();
             panelConatiner.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbResultado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             // panelConatiner
             // 
             panelConatiner.BackColor = Color.White;
-            panelConatiner.Controls.Add(pictureBox2);
+            panelConatiner.Controls.Add(pbResultado);
             panelConatiner.Controls.Add(label1);
             panelConatiner.Controls.Add(pictureBox1);
             panelConatiner.Controls.Add(lbEstados);
@@ -88,14 +88,14 @@
             panelConatiner.Size = new Size(430, 190);
             panelConatiner.TabIndex = 1;
             // 
-            // pictureBox2
+            // pbResultado
             // 
-            pictureBox2.Location = new Point(176, 49);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(75, 75);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 15;
-            pictureBox2.TabStop = false;
+            pbResultado.Location = new Point(176, 49);
+            pbResultado.Name = "pbResultado";
+            pbResultado.Size = new Size(75, 75);
+            pbResultado.SizeMode = PictureBoxSizeMode.Zoom;
+            pbResultado.TabIndex = 15;
+            pbResultado.TabStop = false;
             // 
             // label1
             // 
@@ -138,11 +138,13 @@
             Name = "fmVerificarHuella";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A2 Banking - Verificar huella";
+            FormClosing += fmVerificarHuella_FormClosing;
+            Load += fmVerificarHuella_Load;
             panelInfo.ResumeLayout(false);
             panelInfo.PerformLayout();
             panelConatiner.ResumeLayout(false);
             panelConatiner.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbResultado).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -155,7 +157,7 @@
         private Label label9;
         private PictureBox pictureBox1;
         private Label lbEstados;
-        private PictureBox pictureBox2;
+        private PictureBox pbResultado;
         private Label label1;
     }
 }

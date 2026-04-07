@@ -15,6 +15,7 @@ namespace CPresentacion.Views
         int controlValor = 0;
         Cuenta cuenta = new Cuenta();
         bool Comprobacion = false;
+        bool Verificacion = false;
         public CajeroMenu(Cuenta Cuenta)
         {
             InitializeComponent();
@@ -171,105 +172,125 @@ namespace CPresentacion.Views
             try
             {
                 SonidoBotones();
-                switch (controlValor)
+                if (controlValor == 0)
                 {
-                    //Depositar dinero
-                    case 1:
-                        {
-                            if (Convert.ToDecimal(textbCantidad.Text) < 1)
-                            {
-                                lbTextDestino.Visible = true;
-                                lbTextDestino.Text = "Cantidad al dépositar invalidad".ToString();
-                            }
-                            else
-                            {
-                                var mensaje = MessageBox.Show($"Desea dépositar: {textbCantidad.Text}?", "Déposito de dinero",
-                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                                if (mensaje == DialogResult.Yes)
-                                {
-                                    var Cuenta = new Cuenta()
-                                    {
-                                        NumeroCuenta = cuenta.NumeroCuenta,
-                                        Balance = Convert.ToDecimal(textbCantidad.Text),
-                                        Titular = cuenta.Titular
-                                    };
-
-                                    var paquete = new Paquetes()
-                                    {
-                                        Mensaje = "Deposito",
-                                        Datos = Cuenta
-                                    };
-
-                                    EnvioPaquetes(cliente, paquete);
-                                }
-                            }
-                        }
-                        break;
-                    //Retirar dinero
-                    case 2:
-                        {
-                            if (Convert.ToDecimal(textbCantidad.Text) > cuenta.Balance)
-                            {
-                                lbTextDestino.Visible = true;
-                                lbTextDestino.Text = "Balance insuficiente".ToString();
-                            }
-                            else
-                            {
-                                var mensaje = MessageBox.Show($"Desea dépositar: {textbCantidad.Text}?", "Déposito de dinero",
-                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                                if (mensaje == DialogResult.Yes)
-                                {
-                                    var Cuenta = new Cuenta()
-                                    {
-                                        NumeroCuenta = cuenta.NumeroCuenta,
-                                        Balance = Convert.ToDecimal(textbCantidad.Text),
-                                        Titular = cuenta.Titular
-                                    };
-
-                                    var paquete = new Paquetes()
-                                    {
-                                        Mensaje = "Retiro",
-                                        Datos = Cuenta
-                                    };
-
-                                    EnvioPaquetes(cliente, paquete);
-                                }
-                            }
-                        }
-                        break;
-                    //Transferir dinero
-                    case 3:
-                        {
-                            if (string.IsNullOrWhiteSpace(textbCantidad.Text))
-                            {
-                                throw new ControlExcepcion("Debe ingresar un monto a transferir");
-                            }
-                            if (string.IsNullOrWhiteSpace(textbCuentaDestino.Text))
-                            {
-                                throw new ControlExcepcion("Debe ingresar una cuenta de destino");
-                            }
-
-                            var transferencia = new Transferencia()
-                            {
-                                Monto = Convert.ToDecimal(textbCantidad.Text),
-                                CuentaOrigenId = this.cuenta.NumeroCuenta,
-                                CuentaDestinoId = Convert.ToInt32(textbCuentaDestino.Text),
-                                Concepto = "Transferencia bancaria",
-                                Fecha = DateTime.Now
-                            };
-
-                            var paquete = new Paquetes()
-                            {
-                                Mensaje = "Transferencia",
-                                Transferir = transferencia
-                            };
-
-                            EnvioPaquetes(cliente, paquete);
-                        }
-                        break;
+                    throw new ControlExcepcion("Debe selecionar una operación del menu");
                 }
+
+                using (var fmVerificarHuella =  new fmVerificarHuella(this.cuenta.CodigoHuella))
+                {
+                    fmVerificarHuella.ShowDialog();
+                    Verificacion = fmVerificarHuella.Resultado;
+                }
+                
+                
+                if(Verificacion)
+                {
+                    switch (controlValor)
+                    {
+                        //Depositar dinero
+                        case 1:
+                            {
+                                if (Convert.ToDecimal(textbCantidad.Text) < 1)
+                                {
+                                    lbTextDestino.Visible = true;
+                                    lbTextDestino.Text = "Cantidad al dépositar invalidad".ToString();
+                                }
+                                else
+                                {
+                                    var mensaje = MessageBox.Show($"Desea dépositar: {textbCantidad.Text}?", "Déposito de dinero",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                    if (mensaje == DialogResult.Yes)
+                                    {
+                                        var Cuenta = new Cuenta()
+                                        {
+                                            NumeroCuenta = cuenta.NumeroCuenta,
+                                            Balance = Convert.ToDecimal(textbCantidad.Text),
+                                            Titular = cuenta.Titular
+                                        };
+
+                                        var paquete = new Paquetes()
+                                        {
+                                            Mensaje = "Deposito",
+                                            Datos = Cuenta
+                                        };
+
+                                        EnvioPaquetes(cliente, paquete);
+                                    }
+                                }
+                            }
+                            break;
+                        //Retirar dinero
+                        case 2:
+                            {
+                                if (Convert.ToDecimal(textbCantidad.Text) > cuenta.Balance)
+                                {
+                                    lbTextDestino.Visible = true;
+                                    lbTextDestino.Text = "Balance insuficiente".ToString();
+                                }
+                                else
+                                {
+                                    var mensaje = MessageBox.Show($"Desea dépositar: {textbCantidad.Text}?", "Déposito de dinero",
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                    if (mensaje == DialogResult.Yes)
+                                    {
+                                        var Cuenta = new Cuenta()
+                                        {
+                                            NumeroCuenta = cuenta.NumeroCuenta,
+                                            Balance = Convert.ToDecimal(textbCantidad.Text),
+                                            Titular = cuenta.Titular
+                                        };
+
+                                        var paquete = new Paquetes()
+                                        {
+                                            Mensaje = "Retiro",
+                                            Datos = Cuenta
+                                        };
+
+                                        EnvioPaquetes(cliente, paquete);
+                                    }
+                                }
+                            }
+                            break;
+                        //Transferir dinero
+                        case 3:
+                            {
+                                if (string.IsNullOrWhiteSpace(textbCantidad.Text))
+                                {
+                                    throw new ControlExcepcion("Debe ingresar un monto a transferir");
+                                }
+                                if (string.IsNullOrWhiteSpace(textbCuentaDestino.Text))
+                                {
+                                    throw new ControlExcepcion("Debe ingresar una cuenta de destino");
+                                }
+
+                                var transferencia = new Transferencia()
+                                {
+                                    Monto = Convert.ToDecimal(textbCantidad.Text),
+                                    CuentaOrigenId = this.cuenta.NumeroCuenta,
+                                    CuentaDestinoId = Convert.ToInt32(textbCuentaDestino.Text),
+                                    Concepto = "Transferencia bancaria",
+                                    Fecha = DateTime.Now
+                                };
+
+                                var paquete = new Paquetes()
+                                {
+                                    Mensaje = "Transferencia",
+                                    Transferir = transferencia
+                                };
+
+                                EnvioPaquetes(cliente, paquete);
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    throw new ControlExcepcion("Debe de verificar que es el propietario de la cuenta con su huella");
+                }
+                
             }
             catch (ControlExcepcion error)
             {
