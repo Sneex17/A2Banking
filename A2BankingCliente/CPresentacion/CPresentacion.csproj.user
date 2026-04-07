@@ -4,5 +4,8 @@
     <Compile Update="CajeroInicio.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\fmVerificarHuella.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
