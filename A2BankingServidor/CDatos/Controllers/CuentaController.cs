@@ -3,6 +3,7 @@ using CEntidades.BuilderPattern;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using CEntidades.StatePattern;
 
 namespace CDatos.Controllers
 {
@@ -103,10 +104,42 @@ namespace CDatos.Controllers
                 int resultado;
                 var comando = new SqlCommand("spCambiarEstadoCuenta", acceso);
                 comando.CommandType = CommandType.StoredProcedure;
-
                 comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
-                comando.Parameters.AddWithValue("@TitularId", cuenta.Titular.TitularId);
                 comando.Parameters.AddWithValue("@EstadoId", cuenta.Estado.cuentaEstado.EstadoID);
+
+                resultado = comando.ExecuteNonQuery();
+                acceso.Close();
+            }
+        }
+
+        public static void CambiarHuella(Cuenta cuenta)
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+
+                int resultado;
+                var comando = new SqlCommand("spCambiarHuellaCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
+                comando.Parameters.AddWithValue("@CodigoHuella", cuenta.CodigoHuella);
+
+                resultado = comando.ExecuteNonQuery();
+                acceso.Close();
+            }
+        }
+
+        public static void CambiarPIN(Cuenta cuenta)
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+
+                int resultado;
+                var comando = new SqlCommand("spCambiarPinCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", cuenta.NumeroCuenta);
+                comando.Parameters.AddWithValue("@CodigoPin", cuenta.CodigoPin);
 
                 resultado = comando.ExecuteNonQuery();
                 acceso.Close();
@@ -149,13 +182,53 @@ namespace CDatos.Controllers
                         Balance = reader.GetDecimal(1),
                         Titular = new Titular()
                         {
-                            Nombre = reader.GetString(2)
+                            TitularId = reader.GetInt32(2),
+                            Nombre = reader.GetString(3),
+                            Correo = reader.GetString(4),
+                        },
+                        CodigoHuella = reader.GetSqlBytes(5).Value,
+                        Estado = new CuentaEstado()
+                        {
+                            IdEstado = reader.GetInt32(6)
                         }
                     };
                 }
                 reader.Close();
             }
             return cuentaExiste;
+        }
+
+        public static Cuenta ComprobarCuenta(Paquetes paquetes)
+        {
+            var cuentaDestino = new Cuenta();
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spComprobarCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", paquetes.Datos.NumeroCuenta);
+
+                var reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cuentaDestino = new Cuenta()
+                    {
+                        NumeroCuenta = reader.GetInt32(0),
+                        Titular = new Titular()
+                        {
+                            TitularId = reader.GetInt32(1),
+                            Nombre = reader.GetString(2)
+                        },
+                        Estado = new CuentaEstado()
+                        {
+                            IdEstado = reader.GetInt32(3)
+                        }
+                    };
+                }
+                reader.Close();
+            }
+            return cuentaDestino;
         }
     }
 }

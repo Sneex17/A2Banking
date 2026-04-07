@@ -54,5 +54,55 @@ namespace CDatos.Controllers
                 acceso.Close();
             }
         }
+
+        public static DataTable ReciboTransferencias()
+        {
+            var tabla = new DataTable();
+
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spReciboTransferencia", acceso);
+                comando.CommandType= CommandType.StoredProcedure;
+                var adapter = new SqlDataAdapter(comando);
+                adapter.Fill(tabla);
+
+                acceso.Close();
+                return tabla;
+            }
+        }
+        public static DataTable ReciboDeposito()
+        {
+            var tabla = new DataTable();
+
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spReciboDeposito", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                var adapter = new SqlDataAdapter(comando);
+                adapter.Fill(tabla);
+
+                acceso.Close();
+                return tabla;
+            }
+        }
+
+        public static DataTable ReciboRetiro()
+        {
+            var tabla = new DataTable();
+
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spReciboRetiro", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                var adapter = new SqlDataAdapter(comando);
+                adapter.Fill(tabla);
+
+                acceso.Close();
+                return tabla;
+            }
+        }
     }
 }

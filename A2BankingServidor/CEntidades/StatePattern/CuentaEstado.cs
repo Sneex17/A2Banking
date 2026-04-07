@@ -8,6 +8,7 @@ namespace CEntidades.StatePattern
 {
     public class CuentaEstado
     {
+        public int IdEstado { get; set; }
         public ICuentaEstados cuentaEstado {  get; private set; }
         public CuentaEstado()
         {

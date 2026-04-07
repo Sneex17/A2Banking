@@ -1,13 +1,21 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.EnviarGmail;
+using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CPresentacion.Plantillas;
+using Microsoft.VisualBasic.ApplicationServices;
+using QuestPDF;
+using QuestPDF.Companion;
+using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +29,7 @@ namespace CPresentacion.ViewsUI.UserControls
         {
             InitializeComponent();
             CargarDatos();
+            
         }
 
         private void CargarDatos()
@@ -55,11 +64,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 
@@ -82,11 +93,13 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 
@@ -107,8 +120,9 @@ namespace CPresentacion.ViewsUI.UserControls
             return listaCuenats[0]["Nombre"].ToString();
         }
 
-        private void BuTransferir_Click(object sender, EventArgs e)
+        private  void BuTransferir_Click(object sender, EventArgs e)
         {
+            Settings.License = LicenseType.Community;
             try
             {
                 if (string.IsNullOrWhiteSpace(textbCantidad.Text))
@@ -147,7 +161,7 @@ namespace CPresentacion.ViewsUI.UserControls
                     LogicaNegocio.ProcesarTransferencia(transferencia);
                     MessageBox.Show($"Transferencia completada con exito!", "Tranferencia bancaria",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    Logger.Instance.Log($"Se realizó una transferencia:\nCuenta: {transferencia.CuentaOrigenId}\nDestino: {transferencia.CuentaDestinoId}");
                     LimpiarTextBox();
 
                     CargarDatos();
@@ -157,12 +171,21 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
+
+
+            /*var bank = new Bank();
+            string ruta = bank.RutaTrasnferencias;
+            var data = LogicaNegocio.DataReciboTransferencia();
+            var recido = new ReciboTransferencia(bank, data);
+            recido.GeneratePdf(ruta);*/
         }
     }
 }

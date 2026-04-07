@@ -1,8 +1,10 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CNegocio.StrategyPattern;
 using CPresentacion.Plantillas;
+using QuestPDF.Fluent;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,6 +67,7 @@ namespace CPresentacion.ViewsUI.UserControls
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 
@@ -98,21 +101,33 @@ namespace CPresentacion.ViewsUI.UserControls
 
                     MessageBox.Show("Déposito realizado con exito!", "Déposito completado", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
+                    Logger.Instance.Log($"El cliente: {textbNombreCliente.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
+
                     CargarCuentas();
                     LimpiarTextbox();
+
+
+                    /*var bank = new Bank();
+                    string ruta = bank.RutaDeposito;
+                    var data = LogicaNegocio.DataReciboDeposito();
+                    var recido = new ReciboDeposito(bank, data);
+                    recido.GeneratePdf(ruta);*/
+
                 }
-                
+
             }
             catch (ControlExcepciones error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
 

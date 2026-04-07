@@ -1,0 +1,8 @@
+[2026-04-05 18:03:29] Usuario sa inició sesión en el sistema
+[2026-04-05 18:03:42] Usuario ma inició sesión en el sistema
+[2026-04-05 18:44:23] Usuario sa inició sesión en el sistema
+[2026-04-05 18:44:38] Se cambio el estado de la cuenta: 100000005
+Estados:
+Anterior: Activa
+Nuevo: Inactiva
+[2026-04-05 21:53:23] Usuario sa inició sesión en el sistema

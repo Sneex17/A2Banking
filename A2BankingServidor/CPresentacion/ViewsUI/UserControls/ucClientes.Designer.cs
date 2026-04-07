@@ -40,13 +40,22 @@
             label2 = new Label();
             textbIdTitular = new ReaLTaiizor.Controls.DungeonTextBox();
             texbSexo = new ReaLTaiizor.Controls.DungeonTextBox();
+            BuCorrero = new FontAwesome.Sharp.IconPictureBox();
+            textbCorreoTitular = new ReaLTaiizor.Controls.DungeonTextBox();
+            label7 = new Label();
+            BuActualizar = new ReaLTaiizor.Controls.CyberButton();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BuCorrero).BeginInit();
             SuspendLayout();
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(BuActualizar);
+            panelContainer.Controls.Add(BuCorrero);
+            panelContainer.Controls.Add(textbCorreoTitular);
+            panelContainer.Controls.Add(label7);
             panelContainer.Controls.Add(texbSexo);
             panelContainer.Controls.Add(label4);
             panelContainer.Controls.Add(textbOcupacion);
@@ -72,6 +81,10 @@
             panelContainer.Controls.SetChildIndex(textbOcupacion, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
             panelContainer.Controls.SetChildIndex(texbSexo, 0);
+            panelContainer.Controls.SetChildIndex(label7, 0);
+            panelContainer.Controls.SetChildIndex(textbCorreoTitular, 0);
+            panelContainer.Controls.SetChildIndex(BuCorrero, 0);
+            panelContainer.Controls.SetChildIndex(BuActualizar, 0);
             // 
             // pbIcono
             // 
@@ -207,7 +220,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(244, 96);
+            label5.Location = new Point(52, 96);
             label5.Name = "label5";
             label5.Size = new Size(53, 22);
             label5.TabIndex = 25;
@@ -221,7 +234,7 @@
             textbEdad.Enabled = false;
             textbEdad.Font = new Font("Tahoma", 12F);
             textbEdad.ForeColor = Color.Black;
-            textbEdad.Location = new Point(244, 121);
+            textbEdad.Location = new Point(52, 121);
             textbEdad.MaxLength = 32767;
             textbEdad.Multiline = false;
             textbEdad.Name = "textbEdad";
@@ -249,7 +262,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(52, 96);
+            label1.Location = new Point(244, 30);
             label1.Name = "label1";
             label1.Size = new Size(78, 22);
             label1.TabIndex = 22;
@@ -263,7 +276,7 @@
             textbNombre.Enabled = false;
             textbNombre.Font = new Font("Tahoma", 12F);
             textbNombre.ForeColor = Color.Black;
-            textbNombre.Location = new Point(52, 121);
+            textbNombre.Location = new Point(244, 55);
             textbNombre.MaxLength = 32767;
             textbNombre.Multiline = false;
             textbNombre.Name = "textbNombre";
@@ -321,6 +334,95 @@
             texbSexo.TextAlignment = HorizontalAlignment.Left;
             texbSexo.UseSystemPasswordChar = false;
             // 
+            // BuCorrero
+            // 
+            BuCorrero.BackColor = Color.Transparent;
+            BuCorrero.Cursor = Cursors.Hand;
+            BuCorrero.ForeColor = Color.Gray;
+            BuCorrero.IconChar = FontAwesome.Sharp.IconChar.EllipsisH;
+            BuCorrero.IconColor = Color.Gray;
+            BuCorrero.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BuCorrero.IconSize = 50;
+            BuCorrero.Location = new Point(419, 115);
+            BuCorrero.Name = "BuCorrero";
+            BuCorrero.Size = new Size(50, 50);
+            BuCorrero.TabIndex = 46;
+            BuCorrero.TabStop = false;
+            BuCorrero.Click += BuCorrero_Click;
+            // 
+            // textbCorreoTitular
+            // 
+            textbCorreoTitular.BackColor = Color.Transparent;
+            textbCorreoTitular.BorderColor = Color.FromArgb(180, 180, 180);
+            textbCorreoTitular.EdgeColor = Color.White;
+            textbCorreoTitular.Enabled = false;
+            textbCorreoTitular.Font = new Font("Tahoma", 12F);
+            textbCorreoTitular.ForeColor = Color.Black;
+            textbCorreoTitular.Location = new Point(244, 121);
+            textbCorreoTitular.MaxLength = 32767;
+            textbCorreoTitular.Multiline = false;
+            textbCorreoTitular.Name = "textbCorreoTitular";
+            textbCorreoTitular.ReadOnly = false;
+            textbCorreoTitular.Size = new Size(169, 30);
+            textbCorreoTitular.TabIndex = 45;
+            textbCorreoTitular.TextAlignment = HorizontalAlignment.Left;
+            textbCorreoTitular.UseSystemPasswordChar = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(244, 96);
+            label7.Name = "label7";
+            label7.Size = new Size(66, 22);
+            label7.TabIndex = 44;
+            label7.Text = "Correo";
+            // 
+            // BuActualizar
+            // 
+            BuActualizar.Alpha = 20;
+            BuActualizar.BackColor = Color.Transparent;
+            BuActualizar.Background = true;
+            BuActualizar.Background_WidthPen = 4F;
+            BuActualizar.BackgroundPen = true;
+            BuActualizar.ColorBackground = Color.DodgerBlue;
+            BuActualizar.ColorBackground_1 = Color.DodgerBlue;
+            BuActualizar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            BuActualizar.ColorBackground_Pen = Color.DarkGray;
+            BuActualizar.ColorLighting = Color.DarkGray;
+            BuActualizar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            BuActualizar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            BuActualizar.Cursor = Cursors.Hand;
+            BuActualizar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            BuActualizar.Effect_1 = true;
+            BuActualizar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            BuActualizar.Effect_1_Transparency = 25;
+            BuActualizar.Effect_2 = true;
+            BuActualizar.Effect_2_ColorBackground = Color.White;
+            BuActualizar.Effect_2_Transparency = 20;
+            BuActualizar.Enabled = false;
+            BuActualizar.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            BuActualizar.ForeColor = Color.FromArgb(245, 245, 245);
+            BuActualizar.Lighting = false;
+            BuActualizar.LinearGradient_Background = false;
+            BuActualizar.LinearGradientPen = false;
+            BuActualizar.Location = new Point(585, 124);
+            BuActualizar.Name = "BuActualizar";
+            BuActualizar.PenWidth = 15;
+            BuActualizar.Rounding = true;
+            BuActualizar.RoundingInt = 70;
+            BuActualizar.Size = new Size(169, 43);
+            BuActualizar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            BuActualizar.TabIndex = 47;
+            BuActualizar.Tag = "Cyber";
+            BuActualizar.TextButton = "Actualizar";
+            BuActualizar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            BuActualizar.Timer_Effect_1 = 5;
+            BuActualizar.Timer_RGB = 300;
+            BuActualizar.Click += BuActualizar_Click;
+            // 
             // ucClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -331,6 +433,7 @@
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BuCorrero).EndInit();
             ResumeLayout(false);
         }
 
@@ -348,5 +451,9 @@
         private ReaLTaiizor.Controls.DungeonTextBox textbNombre;
         private Label label2;
         private ReaLTaiizor.Controls.DungeonTextBox textbIdTitular;
+        private FontAwesome.Sharp.IconPictureBox BuCorrero;
+        private ReaLTaiizor.Controls.DungeonTextBox textbCorreoTitular;
+        private Label label7;
+        private ReaLTaiizor.Controls.CyberButton BuActualizar;
     }
 }

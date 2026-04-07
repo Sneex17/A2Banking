@@ -1,8 +1,10 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CNegocio.StrategyPattern;
 using CPresentacion.Plantillas;
+using QuestPDF.Fluent;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CPresentacion.ViewsUI.UserControls
 {
@@ -112,21 +115,28 @@ namespace CPresentacion.ViewsUI.UserControls
 
                     MessageBox.Show("Retiro realizado con exito!", "Retiro completado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    Logger.Instance.Log($"El cliente: {textbNombreTitular.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
                     viewDatos.DataSource = null;
                     LimpiarTextbox();
-                }
 
+                    /*var bank = new Bank();
+                    string ruta = bank.RutaRetiro;
+                    var data = LogicaNegocio.DataReciboRetiro();
+                    var recido = new ReciboRetiro(bank, data);
+                    recido.GeneratePdf(ruta);*/
+                }
             }
             catch (ControlExcepciones error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
             catch (Exception error)
             {
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
         }
     }

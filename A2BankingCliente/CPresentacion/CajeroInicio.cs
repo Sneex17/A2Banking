@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
+using CNegocio;
 
 namespace CPresentacion
 {
@@ -25,11 +26,11 @@ namespace CPresentacion
         }
         private void AddNumero(int numero)
         {
-            if (textbNCuenta.Focused)
+            if (textbNCuenta.ContainsFocus)
             {
                 textbNCuenta.Text += numero;
             }
-            if (textbCodigoPin.Focused)
+            if (textbCodigoPin.ContainsFocus)
             {
                 textbCodigoPin.Text += numero;
             }
@@ -109,11 +110,11 @@ namespace CPresentacion
         {
             SonidoBotones();
 
-            if (textbNCuenta.Focused)
+            if (textbNCuenta.ContainsFocus)
             {
                 textbNCuenta.Text = string.Empty;
             }
-            if (textbCodigoPin.Focused)
+            if (textbCodigoPin.ContainsFocus)
             {
                 textbCodigoPin.Text = string.Empty;
             }
@@ -123,18 +124,18 @@ namespace CPresentacion
         {
             SonidoBotones();
 
-            if (textbNCuenta.Focused)
+            if (textbNCuenta.ContainsFocus)
             {
                 if (!string.IsNullOrWhiteSpace(textbNCuenta.Text))
                 {
-                    textbNCuenta.Text = textbNCuenta.Text.Remove(textbNCuenta.TextLength - 1);
+                    textbNCuenta.Text = textbNCuenta.Text.Remove(textbNCuenta.Text.Length - 1);
                 }
             }
-            if (textbCodigoPin.Focused)
+            if (textbCodigoPin.ContainsFocus)
             {
                 if (!string.IsNullOrWhiteSpace(textbCodigoPin.Text))
                 {
-                    textbCodigoPin.Text = textbCodigoPin.Text.Remove(textbCodigoPin.TextLength - 1);
+                    textbCodigoPin.Text = textbCodigoPin.Text.Remove(textbCodigoPin.Text.Length - 1);
                 }
             }   
         }
@@ -146,7 +147,7 @@ namespace CPresentacion
             {
                 if(textbNCuenta.Text.Length != 9)
                 {
-                    
+                    throw new ControlExcepcion("Ingrese un numero de cuenta con 9 digitos");
                 }
 
                 var cuenta = new Cuenta()
@@ -154,13 +155,18 @@ namespace CPresentacion
                     NumeroCuenta = Convert.ToInt32(textbNCuenta.Text),
                     CodigoPin = Convert.ToInt32(textbCodigoPin.Text)
                 };
+                var paquete = new Paquetes()
+                {
+                    Mensaje = "Validar Cuenta",
+                    Datos = cuenta 
+                };
 
                 cliente = new TcpClient();
                 await cliente.ConnectAsync("127.0.0.1", 1617);
 
                 NetworkStream network = cliente.GetStream();
 
-                string jsonCuenta = JsonConvert.SerializeObject(cuenta);
+                string jsonCuenta = JsonConvert.SerializeObject(paquete);
                 byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonCuenta);
 
                 //  enviar longitud
@@ -197,6 +203,14 @@ namespace CPresentacion
 
                 if (respuesta != null)
                 {
+                    if(respuesta.Estado.IdEstado == 2)
+                    {
+                        throw new ControlExcepcion($"La cuenta {respuesta.NumeroCuenta} esta inactiva");
+                    }
+                    if (respuesta.Estado.IdEstado == 3)
+                    {
+                        throw new ControlExcepcion($"La cuenta {respuesta.NumeroCuenta} esta cancelada");
+                    }
                     new CajeroMenu(respuesta).Show();
                     this.Hide();
                 }
@@ -206,10 +220,15 @@ namespace CPresentacion
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (ControlExcepcion error)
             {
-
-                throw;
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

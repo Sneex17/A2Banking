@@ -17,6 +17,7 @@ CREATE TABLE Rol (
 );
 GO
 
+
 -- Usuario
 CREATE TABLE Usuario (
     UsuarioId  INT           IDENTITY(1,1) PRIMARY KEY,
@@ -61,7 +62,8 @@ CREATE TABLE Titular (
     Nombre     NVARCHAR(100) NOT NULL,
     Edad       INT           NULL,
     Sexo       CHAR(1)       NULL,        -- 'M' / 'F'
-    Ocupacion  NVARCHAR(100) NULL
+    Ocupacion  NVARCHAR(100) NULL,
+    Correo     NVARCHAR(100) NOT NULL
 );
 GO
 
@@ -166,26 +168,27 @@ select * from Titular
 
 --Miercoles 17/3/26
 
-create proc spInsertarTitular
+create or alter proc spInsertarTitular
 (
 @TitularId int,
 @Nombre nvarchar(100),
 @Edad int,
 @Sexo char(1),
-@Ocupacion nvarchar(100)
+@Ocupacion nvarchar(100),
+@Correo nvarchar(100)
 )
 as
 set nocount on
 begin
-insert into Titular select @TitularId, @Nombre, @Edad, @Sexo, @Ocupacion
+insert into Titular select @TitularId, @Nombre, @Edad, @Sexo, @Ocupacion, @Correo
 end
 go
 
-create proc spVerTitulares
+create or alter proc spVerTitulares
 as
 set nocount on
 begin
-select TitularId, Nombre, Edad, Sexo, Ocupacion from Titular
+select TitularId, Nombre, Edad, Sexo, Ocupacion, Correo from Titular
 end
 go
 
@@ -325,7 +328,7 @@ END
 GO
 
 select * from Cuenta
-
+go
 
 create or alter view vwListaCuenta
 with schemabinding
@@ -337,6 +340,7 @@ from dbo.Cuenta as c
 inner join dbo.Banco as b on c.BancoId = b.BancoId
 inner join dbo.Titular as t on c.TitularId = t.TitularId
 inner join dbo.Estado as e on c.EstadoId = e.EstadoID
+where c.BancoId = 1
 go
 
 create proc spListaCuentas
@@ -450,9 +454,9 @@ create or alter proc spCuentaExiste
 as
 set nocount on
 begin
-select c.NumeroCuenta, c.Balance, t.Nombre from Cuenta as c
+select c.NumeroCuenta, c.Balance, t.TitularId, t.Nombre, t.Correo, c.CodigoHuella, c.EstadoId from Cuenta as c
 inner join Titular as t on c.TitularId = t.TitularId
-where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) and EstadoId = 1
+where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) --and EstadoId = 1
 end
 
 
@@ -690,3 +694,148 @@ as
 
 
  select * from GananciaComision
+ select * from banco
+ go
+
+ --proc para los recibos de las transferencias
+ create or alter proc spReciboTransferencia
+ as
+ set nocount on
+ begin
+ select t.TransferenciaId, ob.Nombre as BancoO, t.CuentaOrigenId, ot.Nombre as NombreO, 
+ db.Nombre as BancoD, t.CuentaDestinoId, dt.Nombre as NombreD, 
+  t.Monto, t.Comision, t.Concepto from Transferencia as t
+  inner join Cuenta as o on t.CuentaOrigenId = o.NumeroCuenta
+  inner join Cuenta as d on t.CuentaDestinoId = d.NumeroCuenta
+  inner join Titular as ot on o.TitularId = ot.TitularId
+  inner join Titular as dt on d.TitularId = dt.TitularId
+  inner join Banco as ob on o.BancoId = ob.BancoId
+  inner join Banco as db on d.BancoId = db.BancoId
+  where t.TransferenciaId = (select max(TransferenciaId) from Transferencia)
+ end
+ go
+
+
+ --proc para los recibos de los depositos
+ create or alter proc spReciboDeposito
+ as
+ set nocount on
+ begin
+ select d.DepositoId, d.ClienteId, d.Nombre as Cliente, 
+ c.NumeroCuenta, b.Nombre as Banco, d.Cantidad as Monto, d.Fecha
+ from Deposito as d
+ inner join Cuenta as c on d.CuentaId = c.CuentaId
+ inner join Banco as b on c.BancoId = b.BancoId
+ where d.DepositoId = (select max(DepositoId) from Deposito)
+ end
+ go
+
+
+  --proc para los recibos de los retiros
+ create or alter proc spReciboRetiro
+ as
+ set nocount on
+ begin
+ select r.RetiroId, r.ClienteId, r.Nombre as cliente, 
+ c.NumeroCuenta, r.Nombre as Banco, r.Cantidad as Monto, r.Fecha
+ from Retiro as r
+ inner join Cuenta as c on r.CuentaId = c.CuentaId
+ inner join Banco as b on c.BancoId = b.BancoId
+ where r.RetiroId = (select max(RetiroId) from Retiro)
+ end
+
+
+ select * from Deposito
+ go
+
+
+
+--Domingo 5/4/26
+--actualizar estado cuenta
+create proc spCambiarEstadoCuenta
+(
+@NumeroCuenta int,
+@EstadoId int
+)
+as set nocount on
+
+begin
+update Cuenta set EstadoId = @EstadoId where NumeroCuenta = @NumeroCuenta
+end
+go
+
+--actualizar Pin cuenta
+create proc spCambiarPinCuenta
+(
+@NumeroCuenta int,
+@CodigoPin int
+)
+as set nocount on
+begin
+update Cuenta set CodigoPin =  @CodigoPin where NumeroCuenta = @NumeroCuenta
+end
+go
+
+--actualizar Huella cuenta
+create proc spCambiarHuellaCuenta
+(
+@NumeroCuenta int,
+@CodigoHuella varbinary(max)
+)
+as set nocount on
+begin
+update Cuenta set CodigoHuella = @CodigoHuella where NumeroCuenta = @NumeroCuenta
+end
+go
+
+
+
+select * from Titular
+
+select * from Cuenta
+
+select * from Retiro
+
+select * from Deposito
+go
+
+--Lunes 6/4/26
+--proc para comprobar la cuenta
+create or alter proc spComprobarCuenta
+(
+@NumeroCuenta int
+)
+as 
+set nocount on
+begin
+select c.NumeroCuenta, c.TitularId, t.Nombre, e.EstadoID  from Cuenta as c
+inner join Estado as e on c.EstadoId = e.EstadoID
+inner join Titular as t on c.TitularId =  t.TitularId
+end
+go
+
+
+--proc titular update
+create or alter proc spActualizarTitular
+(
+@TitularId int,
+@Correo nvarchar(100)
+)
+as
+ set nocount on
+ begin
+ update Titular set Correo = @Correo where TitularId = @TitularId
+ end
+
+ exec spVerTitulares
+
+ select * from Deposito
+ select * from Retiro
+
+ select * from vwListaCuenta
+
+ select * from Cuenta
+
+ select * from Transferencia
+
+ select @@TRANCOUNT

@@ -45,11 +45,12 @@
             pbButton2 = new PictureBox();
             pbButton1 = new PictureBox();
             panel1 = new Panel();
+            label4 = new Label();
+            textbNCuenta = new ReaLTaiizor.Controls.BigTextBox();
+            textbCodigoPin = new ReaLTaiizor.Controls.BigTextBox();
             label3 = new Label();
             label2 = new Label();
-            textbCodigoPin = new TextBox();
             label1 = new Label();
-            textbNCuenta = new TextBox();
             panelContainer.SuspendLayout();
             panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbButtonEnter).BeginInit();
@@ -234,73 +235,100 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(textbNCuenta);
+            panel1.Controls.Add(textbCodigoPin);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textbCodigoPin);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textbNCuenta);
             panel1.Location = new Point(136, 29);
             panel1.Name = "panel1";
             panel1.Size = new Size(443, 350);
             panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Jumper PERSONAL USE ONLY Ex-Bd", 17F, FontStyle.Bold | FontStyle.Italic);
+            label4.ForeColor = Color.Gray;
+            label4.Location = new Point(185, 24);
+            label4.Name = "label4";
+            label4.Size = new Size(167, 28);
+            label4.TabIndex = 7;
+            label4.Text = "Automático";
+            // 
+            // textbNCuenta
+            // 
+            textbNCuenta.BackColor = Color.Transparent;
+            textbNCuenta.Font = new Font("Montserrat SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textbNCuenta.ForeColor = Color.Black;
+            textbNCuenta.Image = null;
+            textbNCuenta.Location = new Point(103, 122);
+            textbNCuenta.MaxLength = 32767;
+            textbNCuenta.Multiline = false;
+            textbNCuenta.Name = "textbNCuenta";
+            textbNCuenta.ReadOnly = false;
+            textbNCuenta.Size = new Size(236, 41);
+            textbNCuenta.TabIndex = 6;
+            textbNCuenta.TextAlignment = HorizontalAlignment.Left;
+            textbNCuenta.UseSystemPasswordChar = false;
+            // 
+            // textbCodigoPin
+            // 
+            textbCodigoPin.BackColor = Color.Transparent;
+            textbCodigoPin.Font = new Font("Montserrat SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textbCodigoPin.ForeColor = Color.DimGray;
+            textbCodigoPin.Image = null;
+            textbCodigoPin.Location = new Point(103, 211);
+            textbCodigoPin.MaxLength = 32767;
+            textbCodigoPin.Multiline = false;
+            textbCodigoPin.Name = "textbCodigoPin";
+            textbCodigoPin.ReadOnly = false;
+            textbCodigoPin.Size = new Size(236, 41);
+            textbCodigoPin.TabIndex = 5;
+            textbCodigoPin.TextAlignment = HorizontalAlignment.Left;
+            textbCodigoPin.UseSystemPasswordChar = true;
+            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label3.Location = new Point(144, 24);
+            label3.Font = new Font("Jumper PERSONAL USE ONLY Ex-Bd", 17F, FontStyle.Bold | FontStyle.Italic);
+            label3.ForeColor = Color.FromArgb(77, 182, 198);
+            label3.Location = new Point(90, 24);
             label3.Name = "label3";
-            label3.Size = new Size(158, 21);
+            label3.Size = new Size(98, 28);
             label3.TabIndex = 4;
-            label3.Text = "Cajero Automático";
+            label3.Text = "Cajero";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label2.Location = new Point(103, 184);
+            label2.Location = new Point(103, 187);
             label2.Name = "label2";
             label2.Size = new Size(99, 21);
             label2.TabIndex = 3;
             label2.Text = "Código PIN";
             // 
-            // textbCodigoPin
-            // 
-            textbCodigoPin.BorderStyle = BorderStyle.FixedSingle;
-            textbCodigoPin.Font = new Font("Montserrat", 12F, FontStyle.Bold);
-            textbCodigoPin.Location = new Point(103, 208);
-            textbCodigoPin.Name = "textbCodigoPin";
-            textbCodigoPin.Size = new Size(236, 27);
-            textbCodigoPin.TabIndex = 2;
-            textbCodigoPin.UseSystemPasswordChar = true;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Montserrat", 11F, FontStyle.Bold);
-            label1.Location = new Point(103, 115);
+            label1.Location = new Point(103, 98);
             label1.Name = "label1";
             label1.Size = new Size(154, 21);
             label1.TabIndex = 1;
             label1.Text = "Número de cuenta";
             // 
-            // textbNCuenta
-            // 
-            textbNCuenta.BorderStyle = BorderStyle.FixedSingle;
-            textbNCuenta.Font = new Font("Montserrat", 12F, FontStyle.Bold);
-            textbNCuenta.Location = new Point(103, 139);
-            textbNCuenta.Name = "textbNCuenta";
-            textbNCuenta.Size = new Size(236, 27);
-            textbNCuenta.TabIndex = 0;
-            // 
-            // Cajero
+            // CajeroInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 661);
             Controls.Add(panelContainer);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Cajero";
+            Name = "CajeroInicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A2 Banking - Cajero automatico";
             panelContainer.ResumeLayout(false);
@@ -341,10 +369,11 @@
         private PictureBox pbButtonEnter;
         private PictureBox pbButtonClear;
         private PictureBox pbButtonCancel;
-        private TextBox textbNCuenta;
         private Label label3;
         private Label label2;
-        private TextBox textbCodigoPin;
         private Label label1;
+        private ReaLTaiizor.Controls.BigTextBox textbCodigoPin;
+        private ReaLTaiizor.Controls.BigTextBox textbNCuenta;
+        private Label label4;
     }
 }

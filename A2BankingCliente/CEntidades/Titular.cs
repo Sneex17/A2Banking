@@ -7,5 +7,6 @@
         public int Edad { get; set; }
         public char Sexo { get; set; }
         public string Ocupacion { get; set; }
+        public string Correo { get; set; }
     }
 }

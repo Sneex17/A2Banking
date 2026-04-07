@@ -25,5 +25,10 @@ namespace CNegocio
         {
             return TitularController.VerTitulares();
         }
+
+        public static void ActualizarTitular(Titular titular)
+        {
+            TitularController.ActualizarDatos(titular);
+        }
     }
 }

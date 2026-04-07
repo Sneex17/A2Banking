@@ -4,6 +4,7 @@ using CEntidades;
 using CEntidades.BuilderPattern;
 using System.Data;
 using System.Xml.Serialization;
+using CInfraestructura.EnviarGmail;
 
 namespace CNegocio
 {
@@ -51,6 +52,26 @@ namespace CNegocio
             var NuevoNumero = CuentaController.NumeroCuenta();
             return Convert.ToString(NuevoNumero);
         }
+        public static void ActualizarEstado(Cuenta cuenta)
+        {
+            CuentaController.CambiarEstado(cuenta);
+        }
+        public static void ActualizarPin(Cuenta cuenta)
+        {
+            CuentaController.CambiarPIN(cuenta);
+        }
+        public static void ActualizarHuella(Cuenta cuenta)
+        {
+            CuentaController.CambiarHuella(cuenta);
+        }
+        public static string ValidarCorreo(string correo)
+        {
+            return ServicioGmail.VerificarCorreo(correo);
+        }
+        public static bool CorreoListo(string codigo, string codigoGmail)
+        {
+            return ServicioGmail.CorreoValido(codigo, codigoGmail);
+        }
 
         //Transferencias
         public static List<Transferencia> ListaTransferencias()
@@ -61,6 +82,18 @@ namespace CNegocio
         public static void ProcesarTransferencia(Transferencia transferencia)
         {
             TransferenciaController.ProcesarTransferencia(transferencia);
+        }
+        public static DataTable DataReciboTransferencia()
+        {
+            return TransferenciaController.ReciboTransferencias();
+        }
+        public static DataTable DataReciboDeposito()
+        {
+            return TransferenciaController.ReciboDeposito();
+        }
+        public static DataTable DataReciboRetiro()
+        {
+            return TransferenciaController.ReciboRetiro();
         }
 
     }
