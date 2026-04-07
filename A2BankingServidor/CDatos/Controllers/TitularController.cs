@@ -22,12 +22,27 @@ namespace CDatos.Controllers
                 comando.Parameters.AddWithValue("@Edad", titular.Edad);
                 comando.Parameters.AddWithValue("@Sexo", titular.Sexo);
                 comando.Parameters.AddWithValue("@Ocupacion", titular.Ocupacion);
+                comando.Parameters.AddWithValue("@Correo", titular.Correo);
                 resultado = comando.ExecuteNonQuery();
 
                 acceso.Close();
             }
         }
+        public static void ActualizarDatos(Titular titular)
+        {
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                int resultado;
+                var comando = new SqlCommand("spActualizarTitular", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@TitularId", titular.TitularId);
+                comando.Parameters.AddWithValue("@Correo", titular.Correo);
+                resultado = comando.ExecuteNonQuery();
 
+                acceso.Close();
+            }
+        }
         public static List<Titular> VerTitulares()
         {
             using (var acceso = new SqlConnection(_conexion))
@@ -46,7 +61,8 @@ namespace CDatos.Controllers
                         Nombre = reader.GetString(1),
                         Edad = reader.GetInt32(2),
                         Sexo = reader.GetString(3)[0],
-                        Ocupacion = reader.GetString(4)
+                        Ocupacion = reader.GetString(4),
+                        Correo = reader.GetString(5)
                     });
                 }
                 reader.Close();

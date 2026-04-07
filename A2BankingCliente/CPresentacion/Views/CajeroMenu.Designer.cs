@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CajeroMenu));
             panelContainer = new Panel();
             pbBotonAyuda = new PictureBox();
+            pbBotonComprobar = new PictureBox();
             pbBotonRetirar = new PictureBox();
             pbBotonDepositar = new PictureBox();
             pbBotonSalir = new PictureBox();
@@ -51,6 +52,8 @@
             pbButton2 = new PictureBox();
             pbButton1 = new PictureBox();
             panel1 = new Panel();
+            lbTitularDestino = new Label();
+            lbComprobar = new Label();
             textbCuentaDestino = new ReaLTaiizor.Controls.BigTextBox();
             textbCantidad = new ReaLTaiizor.Controls.BigTextBox();
             label6 = new Label();
@@ -66,6 +69,7 @@
             label1 = new Label();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBotonAyuda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonComprobar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBotonRetirar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBotonDepositar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbBotonSalir).BeginInit();
@@ -93,6 +97,7 @@
             panelContainer.BackgroundImage = Properties.Resources.Fondo_del_cajero1;
             panelContainer.BackgroundImageLayout = ImageLayout.Stretch;
             panelContainer.Controls.Add(pbBotonAyuda);
+            panelContainer.Controls.Add(pbBotonComprobar);
             panelContainer.Controls.Add(pbBotonRetirar);
             panelContainer.Controls.Add(pbBotonDepositar);
             panelContainer.Controls.Add(pbBotonSalir);
@@ -116,6 +121,18 @@
             pbBotonAyuda.TabIndex = 17;
             pbBotonAyuda.TabStop = false;
             pbBotonAyuda.Click += pbBotonAyuda_Click;
+            // 
+            // pbBotonComprobar
+            // 
+            pbBotonComprobar.BackColor = Color.Transparent;
+            pbBotonComprobar.Cursor = Cursors.Hand;
+            pbBotonComprobar.Location = new Point(65, 233);
+            pbBotonComprobar.Name = "pbBotonComprobar";
+            pbBotonComprobar.Size = new Size(66, 27);
+            pbBotonComprobar.TabIndex = 19;
+            pbBotonComprobar.TabStop = false;
+            pbBotonComprobar.Visible = false;
+            pbBotonComprobar.Click += pbBotonComprobar_Click;
             // 
             // pbBotonRetirar
             // 
@@ -326,6 +343,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lbTitularDestino);
+            panel1.Controls.Add(lbComprobar);
             panel1.Controls.Add(textbCuentaDestino);
             panel1.Controls.Add(textbCantidad);
             panel1.Controls.Add(label6);
@@ -343,6 +362,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(443, 350);
             panel1.TabIndex = 0;
+            // 
+            // lbTitularDestino
+            // 
+            lbTitularDestino.AutoSize = true;
+            lbTitularDestino.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbTitularDestino.Location = new Point(103, 242);
+            lbTitularDestino.Name = "lbTitularDestino";
+            lbTitularDestino.Size = new Size(43, 21);
+            lbTitularDestino.TabIndex = 19;
+            lbTitularDestino.Text = "Text";
+            lbTitularDestino.Visible = false;
+            // 
+            // lbComprobar
+            // 
+            lbComprobar.AutoSize = true;
+            lbComprobar.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbComprobar.Location = new Point(3, 210);
+            lbComprobar.Name = "lbComprobar";
+            lbComprobar.Size = new Size(98, 21);
+            lbComprobar.TabIndex = 18;
+            lbComprobar.Text = "Comprobar";
+            lbComprobar.Visible = false;
             // 
             // textbCuentaDestino
             // 
@@ -450,6 +491,7 @@
             lbTextOpcion.Size = new Size(43, 21);
             lbTextOpcion.TabIndex = 7;
             lbTextOpcion.Text = "Text";
+            lbTextOpcion.Visible = false;
             // 
             // label5
             // 
@@ -503,6 +545,7 @@
             Text = "A2 Banking - Menu";
             panelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbBotonAyuda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbBotonComprobar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbBotonRetirar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbBotonDepositar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbBotonSalir).EndInit();
@@ -564,5 +607,8 @@
         private Label label9;
         private ReaLTaiizor.Controls.BigTextBox textbCantidad;
         private ReaLTaiizor.Controls.BigTextBox textbCuentaDestino;
+        private PictureBox pbBotonComprobar;
+        private Label lbComprobar;
+        private Label lbTitularDestino;
     }
 }

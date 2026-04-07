@@ -6,5 +6,6 @@ namespace CEntidades
     {
         public string Mensaje { get; set; }
         public Cuenta Datos { get; set; }
+        public Transferencia Transferir { get; set; }
     }
 }

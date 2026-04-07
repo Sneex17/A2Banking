@@ -211,7 +211,7 @@ namespace CPresentacion.ViewsUI.UserControls
         /// </param>
         private void ActualizarCuenta(ICuentaBuilder cuentaBuilder)
         {
-            
+
             if (string.IsNullOrWhiteSpace(textbHuella.Text))
             {
                 Cuenta cuenta = cuentaBuilder
@@ -397,11 +397,11 @@ namespace CPresentacion.ViewsUI.UserControls
             }
             catch (Exception errore)
             {
-                MessageBox.Show($"{errore.Message}", "Error en la operación", 
+                MessageBox.Show($"{errore.Message}", "Error en la operación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Logger.Instance.Log($"Error en la operación: {errore.Message}");
             }
-            
+
         }
         /// <summary>
         /// Maneja el evento de clic del botón <c>BuBuscarPersonas</c>.
@@ -448,6 +448,7 @@ namespace CPresentacion.ViewsUI.UserControls
             codigoPin.ShowDialog();
 
             textbCodigoPin.Text = fmCodigoPin.CodigoPIN;
-        }   
+        }
+
     }
 }

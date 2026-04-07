@@ -145,3 +145,4 @@ C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\MailKit.dll
 C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\bin\Debug\net8.0-windows\MimeKit.dll
+C:\Users\xrami\OneDrive\Documentos\A2Banking\A2BankingServidor\CPresentacion\obj\Debug\net8.0-windows\CPresentacion.ViewsUI.fmCorreo.resources

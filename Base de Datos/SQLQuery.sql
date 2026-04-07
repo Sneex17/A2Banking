@@ -17,6 +17,7 @@ CREATE TABLE Rol (
 );
 GO
 
+
 -- Usuario
 CREATE TABLE Usuario (
     UsuarioId  INT           IDENTITY(1,1) PRIMARY KEY,
@@ -61,7 +62,8 @@ CREATE TABLE Titular (
     Nombre     NVARCHAR(100) NOT NULL,
     Edad       INT           NULL,
     Sexo       CHAR(1)       NULL,        -- 'M' / 'F'
-    Ocupacion  NVARCHAR(100) NULL
+    Ocupacion  NVARCHAR(100) NULL,
+    Correo     NVARCHAR(100) NOT NULL
 );
 GO
 
@@ -166,26 +168,27 @@ select * from Titular
 
 --Miercoles 17/3/26
 
-create proc spInsertarTitular
+create or alter proc spInsertarTitular
 (
 @TitularId int,
 @Nombre nvarchar(100),
 @Edad int,
 @Sexo char(1),
-@Ocupacion nvarchar(100)
+@Ocupacion nvarchar(100),
+@Correo nvarchar(100)
 )
 as
 set nocount on
 begin
-insert into Titular select @TitularId, @Nombre, @Edad, @Sexo, @Ocupacion
+insert into Titular select @TitularId, @Nombre, @Edad, @Sexo, @Ocupacion, @Correo
 end
 go
 
-create proc spVerTitulares
+create or alter proc spVerTitulares
 as
 set nocount on
 begin
-select TitularId, Nombre, Edad, Sexo, Ocupacion from Titular
+select TitularId, Nombre, Edad, Sexo, Ocupacion, Correo from Titular
 end
 go
 
@@ -451,7 +454,7 @@ create or alter proc spCuentaExiste
 as
 set nocount on
 begin
-select c.NumeroCuenta, c.Balance, t.TitularId, t.Nombre, c.CodigoHuella, c.EstadoId from Cuenta as c
+select c.NumeroCuenta, c.Balance, t.TitularId, t.Nombre, t.Correo, c.CodigoHuella, c.EstadoId from Cuenta as c
 inner join Titular as t on c.TitularId = t.TitularId
 where (NumeroCuenta = @NumeroCuenta and CodigoPin = @CodigoPin) --and EstadoId = 1
 end
@@ -794,3 +797,45 @@ select * from Cuenta
 select * from Retiro
 
 select * from Deposito
+go
+
+--Lunes 6/4/26
+--proc para comprobar la cuenta
+create or alter proc spComprobarCuenta
+(
+@NumeroCuenta int
+)
+as 
+set nocount on
+begin
+select c.NumeroCuenta, c.TitularId, t.Nombre, e.EstadoID  from Cuenta as c
+inner join Estado as e on c.EstadoId = e.EstadoID
+inner join Titular as t on c.TitularId =  t.TitularId
+end
+go
+
+
+--proc titular update
+create or alter proc spActualizarTitular
+(
+@TitularId int,
+@Correo nvarchar(100)
+)
+as
+ set nocount on
+ begin
+ update Titular set Correo = @Correo where TitularId = @TitularId
+ end
+
+ exec spVerTitulares
+
+ select * from Deposito
+ select * from Retiro
+
+ select * from vwListaCuenta
+
+ select * from Cuenta
+
+ select * from Transferencia
+
+ select @@TRANCOUNT

@@ -26,11 +26,11 @@ namespace CPresentacion
         }
         private void AddNumero(int numero)
         {
-            if (textbNCuenta.Focused)
+            if (textbNCuenta.ContainsFocus)
             {
                 textbNCuenta.Text += numero;
             }
-            if (textbCodigoPin.Focused)
+            if (textbCodigoPin.ContainsFocus)
             {
                 textbCodigoPin.Text += numero;
             }
@@ -110,11 +110,11 @@ namespace CPresentacion
         {
             SonidoBotones();
 
-            if (textbNCuenta.Focused)
+            if (textbNCuenta.ContainsFocus)
             {
                 textbNCuenta.Text = string.Empty;
             }
-            if (textbCodigoPin.Focused)
+            if (textbCodigoPin.ContainsFocus)
             {
                 textbCodigoPin.Text = string.Empty;
             }
@@ -124,14 +124,14 @@ namespace CPresentacion
         {
             SonidoBotones();
 
-            if (textbNCuenta.Focused)
+            if (textbNCuenta.ContainsFocus)
             {
                 if (!string.IsNullOrWhiteSpace(textbNCuenta.Text))
                 {
                     textbNCuenta.Text = textbNCuenta.Text.Remove(textbNCuenta.Text.Length - 1);
                 }
             }
-            if (textbCodigoPin.Focused)
+            if (textbCodigoPin.ContainsFocus)
             {
                 if (!string.IsNullOrWhiteSpace(textbCodigoPin.Text))
                 {

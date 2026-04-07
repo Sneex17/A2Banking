@@ -183,18 +183,52 @@ namespace CDatos.Controllers
                         Titular = new Titular()
                         {
                             TitularId = reader.GetInt32(2),
-                            Nombre = reader.GetString(3)
+                            Nombre = reader.GetString(3),
+                            Correo = reader.GetString(4),
                         },
-                        CodigoHuella = reader.GetSqlBytes(4).Value,
+                        CodigoHuella = reader.GetSqlBytes(5).Value,
                         Estado = new CuentaEstado()
                         {
-                            IdEstado = reader.GetInt32(5)
+                            IdEstado = reader.GetInt32(6)
                         }
                     };
                 }
                 reader.Close();
             }
             return cuentaExiste;
+        }
+
+        public static Cuenta ComprobarCuenta(Paquetes paquetes)
+        {
+            var cuentaDestino = new Cuenta();
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spComprobarCuenta", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@NumeroCuenta", paquetes.Datos.NumeroCuenta);
+
+                var reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cuentaDestino = new Cuenta()
+                    {
+                        NumeroCuenta = reader.GetInt32(0),
+                        Titular = new Titular()
+                        {
+                            TitularId = reader.GetInt32(1),
+                            Nombre = reader.GetString(2)
+                        },
+                        Estado = new CuentaEstado()
+                        {
+                            IdEstado = reader.GetInt32(3)
+                        }
+                    };
+                }
+                reader.Close();
+            }
+            return cuentaDestino;
         }
     }
 }

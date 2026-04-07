@@ -30,7 +30,6 @@
         {
             label4 = new Label();
             textbCodigoPin = new ReaLTaiizor.Controls.DungeonTextBox();
-            label5 = new Label();
             textbNombreTitular = new ReaLTaiizor.Controls.DungeonTextBox();
             label3 = new Label();
             label1 = new Label();
@@ -52,6 +51,7 @@
             rbCancelada = new RadioButton();
             rbInactiva = new RadioButton();
             rbActiva = new RadioButton();
+            label9 = new Label();
             panelInformacion.SuspendLayout();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIcono).BeginInit();
@@ -66,6 +66,7 @@
             // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(label9);
             panelContainer.Controls.Add(GroupBoxEstados);
             panelContainer.Controls.Add(BuCapturarHuella);
             panelContainer.Controls.Add(BuCapturarPIN);
@@ -80,7 +81,6 @@
             panelContainer.Controls.Add(textbNumeroCuenta);
             panelContainer.Controls.Add(label4);
             panelContainer.Controls.Add(textbCodigoPin);
-            panelContainer.Controls.Add(label5);
             panelContainer.Controls.Add(textbNombreTitular);
             panelContainer.Controls.Add(label3);
             panelContainer.Controls.Add(label1);
@@ -95,7 +95,6 @@
             panelContainer.Controls.SetChildIndex(label1, 0);
             panelContainer.Controls.SetChildIndex(label3, 0);
             panelContainer.Controls.SetChildIndex(textbNombreTitular, 0);
-            panelContainer.Controls.SetChildIndex(label5, 0);
             panelContainer.Controls.SetChildIndex(textbCodigoPin, 0);
             panelContainer.Controls.SetChildIndex(label4, 0);
             panelContainer.Controls.SetChildIndex(textbNumeroCuenta, 0);
@@ -110,6 +109,7 @@
             panelContainer.Controls.SetChildIndex(BuCapturarPIN, 0);
             panelContainer.Controls.SetChildIndex(BuCapturarHuella, 0);
             panelContainer.Controls.SetChildIndex(GroupBoxEstados, 0);
+            panelContainer.Controls.SetChildIndex(label9, 0);
             // 
             // pbIcono
             // 
@@ -136,7 +136,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(244, 171);
+            label4.Location = new Point(230, 96);
             label4.Name = "label4";
             label4.Size = new Size(103, 22);
             label4.TabIndex = 25;
@@ -150,7 +150,7 @@
             textbCodigoPin.Enabled = false;
             textbCodigoPin.Font = new Font("Tahoma", 12F);
             textbCodigoPin.ForeColor = Color.Black;
-            textbCodigoPin.Location = new Point(244, 196);
+            textbCodigoPin.Location = new Point(230, 121);
             textbCodigoPin.MaxLength = 32767;
             textbCodigoPin.Multiline = false;
             textbCodigoPin.Name = "textbCodigoPin";
@@ -160,18 +160,6 @@
             textbCodigoPin.TextAlignment = HorizontalAlignment.Left;
             textbCodigoPin.UseSystemPasswordChar = false;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(244, 96);
-            label5.Name = "label5";
-            label5.Size = new Size(78, 22);
-            label5.TabIndex = 23;
-            label5.Text = "Nombre";
-            // 
             // textbNombreTitular
             // 
             textbNombreTitular.BackColor = Color.Transparent;
@@ -180,7 +168,7 @@
             textbNombreTitular.Enabled = false;
             textbNombreTitular.Font = new Font("Tahoma", 12F);
             textbNombreTitular.ForeColor = Color.Black;
-            textbNombreTitular.Location = new Point(244, 121);
+            textbNombreTitular.Location = new Point(410, 55);
             textbNombreTitular.MaxLength = 32767;
             textbNombreTitular.Multiline = false;
             textbNombreTitular.Name = "textbNombreTitular";
@@ -196,7 +184,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(52, 171);
+            label3.Location = new Point(52, 168);
             label3.Name = "label3";
             label3.Size = new Size(67, 22);
             label3.TabIndex = 21;
@@ -268,7 +256,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(244, 30);
+            label7.Location = new Point(230, 30);
             label7.Name = "label7";
             label7.Size = new Size(78, 22);
             label7.TabIndex = 28;
@@ -282,7 +270,7 @@
             textbNumeroCuenta.Enabled = false;
             textbNumeroCuenta.Font = new Font("Tahoma", 12F);
             textbNumeroCuenta.ForeColor = Color.Black;
-            textbNumeroCuenta.Location = new Point(244, 55);
+            textbNumeroCuenta.Location = new Point(230, 55);
             textbNumeroCuenta.MaxLength = 32767;
             textbNumeroCuenta.Multiline = false;
             textbNumeroCuenta.Name = "textbNumeroCuenta";
@@ -300,7 +288,7 @@
             textbEstadoCuenta.Enabled = false;
             textbEstadoCuenta.Font = new Font("Tahoma", 12F);
             textbEstadoCuenta.ForeColor = Color.Black;
-            textbEstadoCuenta.Location = new Point(52, 196);
+            textbEstadoCuenta.Location = new Point(52, 193);
             textbEstadoCuenta.MaxLength = 32767;
             textbEstadoCuenta.Multiline = false;
             textbEstadoCuenta.Name = "textbEstadoCuenta";
@@ -316,7 +304,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(244, 234);
+            label8.Location = new Point(230, 171);
             label8.Name = "label8";
             label8.Size = new Size(127, 22);
             label8.TabIndex = 31;
@@ -327,9 +315,10 @@
             textbHuella.BackColor = Color.Transparent;
             textbHuella.BorderColor = Color.FromArgb(180, 180, 180);
             textbHuella.EdgeColor = Color.White;
+            textbHuella.Enabled = false;
             textbHuella.Font = new Font("Tahoma", 12F);
             textbHuella.ForeColor = Color.Black;
-            textbHuella.Location = new Point(244, 259);
+            textbHuella.Location = new Point(230, 199);
             textbHuella.MaxLength = 32767;
             textbHuella.Multiline = false;
             textbHuella.Name = "textbHuella";
@@ -517,7 +506,7 @@
             BuCapturarPIN.IconColor = Color.Gray;
             BuCapturarPIN.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BuCapturarPIN.IconSize = 50;
-            BuCapturarPIN.Location = new Point(419, 189);
+            BuCapturarPIN.Location = new Point(405, 114);
             BuCapturarPIN.Name = "BuCapturarPIN";
             BuCapturarPIN.Size = new Size(50, 50);
             BuCapturarPIN.TabIndex = 38;
@@ -533,7 +522,7 @@
             BuCapturarHuella.IconColor = Color.Gray;
             BuCapturarHuella.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BuCapturarHuella.IconSize = 50;
-            BuCapturarHuella.Location = new Point(419, 251);
+            BuCapturarHuella.Location = new Point(405, 188);
             BuCapturarHuella.Name = "BuCapturarHuella";
             BuCapturarHuella.Size = new Size(50, 50);
             BuCapturarHuella.TabIndex = 39;
@@ -598,6 +587,18 @@
             rbActiva.Text = "Activa";
             rbActiva.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(410, 30);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 22);
+            label9.TabIndex = 42;
+            label9.Text = "Nombre";
+            // 
             // ucCuentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -623,7 +624,6 @@
         private ReaLTaiizor.Controls.DungeonTextBox textbNumeroCuenta;
         private Label label4;
         private ReaLTaiizor.Controls.DungeonTextBox textbCodigoPin;
-        private Label label5;
         private ReaLTaiizor.Controls.DungeonTextBox textbNombreTitular;
         private Label label3;
         private Label label1;
@@ -642,5 +642,6 @@
         private RadioButton rbActiva;
         private RadioButton rbCancelada;
         private RadioButton rbInactiva;
+        private Label label9;
     }
 }

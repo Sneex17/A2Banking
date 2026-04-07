@@ -4,6 +4,7 @@ using CEntidades;
 using CEntidades.BuilderPattern;
 using System.Data;
 using System.Xml.Serialization;
+using CInfraestructura.EnviarGmail;
 
 namespace CNegocio
 {
@@ -62,6 +63,14 @@ namespace CNegocio
         public static void ActualizarHuella(Cuenta cuenta)
         {
             CuentaController.CambiarHuella(cuenta);
+        }
+        public static string ValidarCorreo(string correo)
+        {
+            return ServicioGmail.VerificarCorreo(correo);
+        }
+        public static bool CorreoListo(string codigo, string codigoGmail)
+        {
+            return ServicioGmail.CorreoValido(codigo, codigoGmail);
         }
 
         //Transferencias

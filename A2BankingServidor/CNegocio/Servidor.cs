@@ -103,9 +103,24 @@ namespace CNegocio
                                 ControlOperacion(new DepositStrategy(), loginPaquete);
                             }
                             break;
-                        case "Transferenci":
+                        case "Comprobar cuenta":
                             {
+                                var cuenta = CuentaController.ComprobarCuenta(loginPaquete);
 
+                                // ===== RESPUESTA =====
+                                string json =
+                                    JsonConvert.SerializeObject(cuenta);
+
+                                byte[] jsonBytes = Encoding.UTF8.GetBytes(json);
+                                byte[] longitud = BitConverter.GetBytes(jsonBytes.Length);
+
+                                await network.WriteAsync(longitud);
+                                await network.WriteAsync(jsonBytes);
+                            }
+                            break;
+                        case "Transferencia":
+                            {
+                                TransferirDinero(loginPaquete);
                             }
                             break;
                         default:
@@ -132,6 +147,20 @@ namespace CNegocio
 
             TransaccionContext transaccion = new TransaccionContext(strategy);
             transaccion.SelecionarOperacion(cuenta, cuenta.Titular.TitularId, cuenta.Titular.Nombre);
+        }
+
+        private void TransferirDinero(Paquetes paquetes)
+        {
+            var transferencia = new Transferencia()
+            {
+                Monto = paquetes.Transferir.Monto,
+                CuentaOrigenId = paquetes.Transferir.CuentaOrigenId,
+                CuentaDestinoId = paquetes.Transferir.CuentaDestinoId,
+                Concepto = paquetes.Transferir.Concepto,
+                Fecha = paquetes.Transferir.Fecha
+            };
+
+            TransferenciaController.ProcesarTransferencia(transferencia);
         }
     }
 }

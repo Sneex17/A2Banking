@@ -38,7 +38,38 @@ namespace CPresentacion.ViewsUI.UserControls
         private void CargarDatos()
         {
             viewDatos.DataSource = GetPersonasServicio.ListaTitulares();
+            viewDatos.CellDoubleClick += ViewDatos_CellDoubleClick;
         }
+
+        private void ViewDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                textbIdTitular.Text = viewDatos.Rows[e.RowIndex].Cells["TitularId"].Value.ToString();
+                textbNombre.Text = viewDatos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                textbEdad.Text = viewDatos.Rows[e.RowIndex].Cells["Edad"].Value.ToString();
+                texbSexo.Text = viewDatos.Rows[e.RowIndex].Cells["Sexo"].Value.ToString();
+                textbOcupacion.Text = viewDatos.Rows[e.RowIndex].Cells["Ocupacion"].Value.ToString();
+                textbCorreoTitular.Text = viewDatos.Rows[e.RowIndex].Cells["Correo"].Value.ToString();
+            }
+            BuActualizar.Enabled = true;
+            BuGuardar.Enabled = false;
+        }
+
+        private void ControlOpciones(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                BuGuardar.TextButton = "Actualizar";
+                BuGuardar.BackColor = Color.DodgerBlue;
+            }
+            else
+            {
+                BuGuardar.TextButton = "Registrar";
+                BuGuardar.BackColor = Color.Green;
+            }
+        }
+
         /// <summary>
         /// Limpia el contenido de todos los campos de texto del formulario,
         /// dejándolos en su estado inicial (cadena vacía).
@@ -50,6 +81,7 @@ namespace CPresentacion.ViewsUI.UserControls
             textbEdad.Text = string.Empty;
             texbSexo.Text = string.Empty;
             textbOcupacion.Text = string.Empty;
+            textbCorreoTitular.Text = string.Empty;
         }
         /// <summary>
         /// Maneja el evento de clic del botón <c>BuBuscarPersonas</c>.
@@ -111,7 +143,8 @@ namespace CPresentacion.ViewsUI.UserControls
                     Nombre = textbNombre.Text,
                     Edad = Convert.ToInt32(textbEdad.Text),
                     Sexo = Convert.ToChar(texbSexo.Text),
-                    Ocupacion = textbOcupacion.Text
+                    Ocupacion = textbOcupacion.Text,
+                    Correo = textbCorreoTitular.Text
                 };
 
                 var mensaje = MessageBox.Show("Desea registar a esta persona como cliente al sistema?", "Registro de clientes",
@@ -124,7 +157,7 @@ namespace CPresentacion.ViewsUI.UserControls
                     MessageBox.Show("Cliente registrado con exito", "Registro de clientes",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Logger.Instance.Log($"Se registró un nuevo cliente al sistema: {titular.Nombre}");
+                    Logger.Instance.Log($"Se registró un nuevo cliente al sistema:\nId: {titular.TitularId} Nombre: {titular.Nombre}");
 
                     CargarDatos();
                     LimpiarTextbox();
@@ -141,7 +174,58 @@ namespace CPresentacion.ViewsUI.UserControls
                 MessageBox.Show($"{error.Message}", "Error en la operación",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Logger.Instance.Log($"Error en la operación: {error.Message}");
-            }  
+            }
+        }
+
+        private void BuCorrero_Click(object sender, EventArgs e)
+        {
+            fmCorreo correo = new fmCorreo();
+            correo.ShowDialog();
+            textbCorreoTitular.Text = string.IsNullOrWhiteSpace(correo.correo)
+                ? textbCorreoTitular.Text : correo.correo;
+        }
+
+        private void BuActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var titular = new Titular()
+                {
+                    TitularId = Convert.ToInt32(textbIdTitular.Text),
+                    Nombre = textbNombre.Text,
+                    Correo = textbCorreoTitular.Text
+                };
+
+                var mensaje = MessageBox.Show("Desea actualizar los datos de este cliente?", "Actualización de datos",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (mensaje == DialogResult.Yes)
+                {
+                    GetPersonasServicio.ActualizarTitular(titular);
+
+                    MessageBox.Show("Datos del cliente actualizados con exito", "Actualización de datos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Logger.Instance.Log($"Se actualizarón los datos del cliente:\nId: {titular.TitularId} Nombre: {titular.Nombre}");
+
+                    CargarDatos();
+                    LimpiarTextbox();
+                    BuGuardar.Enabled = true;
+                    BuActualizar.Enabled = false;
+                }
+            }
+            catch (ControlExcepciones error)
+            {
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"{error.Message}", "Error en la operación",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Instance.Log($"Error en la operación: {error.Message}");
+            }
         }
     }
 }
