@@ -14,7 +14,7 @@ namespace CInfraestructura.EnviarGmail
     {
         private static string _servidor { get; } = "smtp.gmail.com";
         private static int _puerto { get; } = 587;
-        private static string _user { get; } = "";
+        private static string _user { get; } = "roberto15oficial@gmail.com";
         private static string _pass { get; set; } = "pona jlno escw ilny";
 
         public static void EnviarCorreo(string correoCliente, string subject, string ruta)
@@ -44,8 +44,8 @@ namespace CInfraestructura.EnviarGmail
             var letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
             var random = new Random();
-            int num1 = random.Next(0, 27);
-            int num2 = random.Next(0, 27);
+            int num1 = random.Next(0, 26);
+            int num2 = random.Next(0, 26);
             codigo = $"{letras[num1]}{num2}{letras[num2]}{num1}";
 
             var mensaje = new MimeMessage();

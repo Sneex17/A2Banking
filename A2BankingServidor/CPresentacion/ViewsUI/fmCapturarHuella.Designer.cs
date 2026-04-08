@@ -54,8 +54,9 @@
             panelInformacion.Controls.Add(pbIcono);
             panelInformacion.Dock = DockStyle.Top;
             panelInformacion.Location = new Point(0, 0);
+            panelInformacion.Margin = new Padding(3, 4, 3, 4);
             panelInformacion.Name = "panelInformacion";
-            panelInformacion.Size = new Size(602, 72);
+            panelInformacion.Size = new Size(688, 96);
             panelInformacion.TabIndex = 1;
             // 
             // labelTexto
@@ -63,9 +64,9 @@
             labelTexto.AutoSize = true;
             labelTexto.Font = new Font("Montserrat", 19F, FontStyle.Bold);
             labelTexto.ForeColor = Color.White;
-            labelTexto.Location = new Point(107, 19);
+            labelTexto.Location = new Point(122, 25);
             labelTexto.Name = "labelTexto";
-            labelTexto.Size = new Size(256, 36);
+            labelTexto.Size = new Size(318, 44);
             labelTexto.TabIndex = 7;
             labelTexto.Text = "Captura de huella";
             // 
@@ -75,10 +76,11 @@
             pbIcono.IconChar = FontAwesome.Sharp.IconChar.Fingerprint;
             pbIcono.IconColor = Color.White;
             pbIcono.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            pbIcono.IconSize = 50;
-            pbIcono.Location = new Point(51, 11);
+            pbIcono.IconSize = 57;
+            pbIcono.Location = new Point(58, 15);
+            pbIcono.Margin = new Padding(3, 4, 3, 4);
             pbIcono.Name = "pbIcono";
-            pbIcono.Size = new Size(50, 50);
+            pbIcono.Size = new Size(57, 67);
             pbIcono.TabIndex = 6;
             pbIcono.TabStop = false;
             // 
@@ -94,9 +96,10 @@
             panelConatiner.Controls.Add(BuIniciar);
             panelConatiner.Controls.Add(pbImagenHuella);
             panelConatiner.Dock = DockStyle.Fill;
-            panelConatiner.Location = new Point(0, 72);
+            panelConatiner.Location = new Point(0, 96);
+            panelConatiner.Margin = new Padding(3, 4, 3, 4);
             panelConatiner.Name = "panelConatiner";
-            panelConatiner.Size = new Size(602, 448);
+            panelConatiner.Size = new Size(688, 597);
             panelConatiner.TabIndex = 2;
             // 
             // lbCantidadMuestras
@@ -105,9 +108,9 @@
             lbCantidadMuestras.BackColor = Color.Transparent;
             lbCantidadMuestras.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             lbCantidadMuestras.ForeColor = Color.Black;
-            lbCantidadMuestras.Location = new Point(375, 231);
+            lbCantidadMuestras.Location = new Point(429, 308);
             lbCantidadMuestras.Name = "lbCantidadMuestras";
-            lbCantidadMuestras.Size = new Size(87, 22);
+            lbCantidadMuestras.Size = new Size(107, 27);
             lbCantidadMuestras.TabIndex = 26;
             lbCantidadMuestras.Text = "Cantidad";
             // 
@@ -117,11 +120,11 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(375, 156);
+            label4.Location = new Point(429, 208);
             label4.Name = "label4";
-            label4.Size = new Size(85, 22);
+            label4.Size = new Size(105, 27);
             label4.TabIndex = 25;
-            label4.Text = "Probreso";
+            label4.Text = "Progreso";
             // 
             // barraProbreso
             // 
@@ -148,7 +151,8 @@
             barraProbreso.LinearGradient_Background = false;
             barraProbreso.LinearGradient_Value = false;
             barraProbreso.LinearGradientPen = false;
-            barraProbreso.Location = new Point(375, 181);
+            barraProbreso.Location = new Point(429, 241);
+            barraProbreso.Margin = new Padding(3, 4, 3, 4);
             barraProbreso.Maximum = 100;
             barraProbreso.Minimum = 0;
             barraProbreso.Name = "barraProbreso";
@@ -157,7 +161,7 @@
             barraProbreso.RGB = false;
             barraProbreso.Rounding = true;
             barraProbreso.RoundingInt = 70;
-            barraProbreso.Size = new Size(195, 34);
+            barraProbreso.Size = new Size(223, 45);
             barraProbreso.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             barraProbreso.StartDrawingValue = 0;
             barraProbreso.TabIndex = 24;
@@ -172,9 +176,9 @@
             lbEstados.BackColor = Color.Transparent;
             lbEstados.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             lbEstados.ForeColor = Color.Black;
-            lbEstados.Location = new Point(51, 392);
+            lbEstados.Location = new Point(58, 523);
             lbEstados.Name = "lbEstados";
-            lbEstados.Size = new Size(45, 22);
+            lbEstados.Size = new Size(54, 27);
             lbEstados.TabIndex = 23;
             lbEstados.Text = "Text";
             // 
@@ -184,9 +188,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(51, 367);
+            label2.Location = new Point(58, 489);
             label2.Name = "label2";
-            label2.Size = new Size(127, 22);
+            label2.Size = new Size(157, 27);
             label2.TabIndex = 22;
             label2.Text = "Estado actual:";
             // 
@@ -196,9 +200,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(51, 33);
+            label1.Location = new Point(58, 44);
             label1.Name = "label1";
-            label1.Size = new Size(174, 22);
+            label1.Size = new Size(217, 27);
             label1.TabIndex = 21;
             label1.Text = "Imagen de la huella";
             // 
@@ -229,12 +233,13 @@
             BuIniciar.Lighting = false;
             BuIniciar.LinearGradient_Background = false;
             BuIniciar.LinearGradientPen = false;
-            BuIniciar.Location = new Point(401, 71);
+            BuIniciar.Location = new Point(458, 95);
+            BuIniciar.Margin = new Padding(3, 4, 3, 4);
             BuIniciar.Name = "BuIniciar";
             BuIniciar.PenWidth = 15;
             BuIniciar.Rounding = true;
             BuIniciar.RoundingInt = 70;
-            BuIniciar.Size = new Size(169, 50);
+            BuIniciar.Size = new Size(193, 67);
             BuIniciar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             BuIniciar.TabIndex = 5;
             BuIniciar.Tag = "Cyber";
@@ -246,21 +251,23 @@
             // 
             // pbImagenHuella
             // 
-            pbImagenHuella.Location = new Point(51, 71);
+            pbImagenHuella.Location = new Point(58, 95);
+            pbImagenHuella.Margin = new Padding(3, 4, 3, 4);
             pbImagenHuella.Name = "pbImagenHuella";
-            pbImagenHuella.Size = new Size(312, 270);
+            pbImagenHuella.Size = new Size(357, 360);
             pbImagenHuella.SizeMode = PictureBoxSizeMode.Zoom;
             pbImagenHuella.TabIndex = 4;
             pbImagenHuella.TabStop = false;
             // 
             // fmCapturarHuella
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(602, 520);
+            ClientSize = new Size(688, 693);
             Controls.Add(panelConatiner);
             Controls.Add(panelInformacion);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "fmCapturarHuella";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A1 Banking - Capturar Huella";

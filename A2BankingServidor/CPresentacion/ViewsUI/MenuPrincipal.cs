@@ -7,17 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CEntidades;
 using CPresentacion.ViewsUI.UserControls;
 
 namespace CPresentacion.ViewsUI
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal(int rol)
+        Usuario datosUsuario = new Usuario();
+        public MenuPrincipal(Usuario usuario)
         {
             InitializeComponent();
+            datosUsuario = usuario;
             Load += (s, e) => CargarHome();
-            Load += (s, e) => ControlResposabilidades(rol);
+            Load += (s, e) => ControlResposabilidades(datosUsuario.Rol.RolId);
+            CargarMensaje(datosUsuario.Nombre);
         }
 
         private void CargarHome()
@@ -25,12 +29,18 @@ namespace CPresentacion.ViewsUI
             if (controlMenuOpciones.SelectedTab == tabpHome
                 && tabpHome.Controls.Count == 0)
             {
-                ucHome home = new ucHome();
+                ucHome home = new ucHome(datosUsuario);
                 home.Dock = DockStyle.Fill;
                 tabpHome.Controls.Add(home);
             }
         }
 
+        private async void CargarMensaje(string nombre)
+        {
+            await Task.Delay(1000);
+            fmBienvenida Bienvenida = new fmBienvenida(nombre);
+            Bienvenida.ShowDialog();
+        }
         private void ControlResposabilidades(int rol)
         {
             switch (rol)

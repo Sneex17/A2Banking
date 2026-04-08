@@ -85,8 +85,8 @@ namespace CPresentacion
                 Contrasena = textbPassword.Text
             };
 
-            int resultado = LogicaNegocio.UsuarioExiste(usuario);
-            if (resultado > 0)
+            var resultado = LogicaNegocio.UsuarioExiste(usuario);
+            if (resultado != null)
             {
                 Logger.Instance.Log($"Usuario {usuario.NombreUsuario} inició sesión en el sistema");
                 MenuPrincipal menu = new MenuPrincipal(resultado);

@@ -6,14 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CEntidades.BuilderPattern;
 
 namespace CDatos.Controllers
 {
     public class UsuarioController
     {
         private readonly static string _conexion = ConexionAppDB.ConnectionString;
-        public static int ValidarUsuario(Usuario usuario)
+        public static Usuario ValidarUsuario(Usuario usuario)
         {
+            var tabla = new DataTable();
             using (var acceso = new SqlConnection(_conexion))
             {
                 int resultado;
@@ -23,9 +25,31 @@ namespace CDatos.Controllers
                 comando.Parameters.AddWithValue("@NombreUsuario", usuario.NombreUsuario);
                 comando.Parameters.AddWithValue("@Contrasena", usuario.Contrasena);
 
-                resultado = (int)comando.ExecuteScalar();
-                return resultado;
-                
+                var adapter = new SqlDataAdapter(comando);
+                adapter.Fill(tabla);
+
+                var Row = tabla.Select();
+
+                if(Row.Length > 0)
+                {
+                    var datosUsuario = new Usuario()
+                    {
+                        UsuarioId = Convert.ToInt32(Row[0]["UsuarioId"].ToString()),
+                        Rol = new Rol()
+                        {
+                            RolId = Convert.ToInt32(Row[0]["RolId"].ToString()),
+                            Nombre = Row[0]["Rol"].ToString()
+                        },
+                        Nombre = Row[0]["Nombre"].ToString(),
+                        NombreUsuario = Row[0]["NombreUsuario"].ToString(),
+                        Contrasena = Row[0]["Contrasena"].ToString()
+                    };
+                    return datosUsuario;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 

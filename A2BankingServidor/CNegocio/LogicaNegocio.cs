@@ -11,7 +11,7 @@ namespace CNegocio
     public class LogicaNegocio
     {
         //Gestión de usuarios
-        public static int UsuarioExiste(Usuario usuario)
+        public static Usuario UsuarioExiste(Usuario usuario)
         {
             return UsuarioController.ValidarUsuario(usuario);
         }

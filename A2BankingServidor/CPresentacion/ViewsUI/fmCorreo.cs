@@ -25,7 +25,6 @@ namespace CPresentacion.ViewsUI
         private void BuSendCode_Click(object sender, EventArgs e)
         {
             code = LogicaNegocio.ValidarCorreo(textbCorreo.Text);
-
         }
 
         private void BuConfirmar_Click(object sender, EventArgs e)
