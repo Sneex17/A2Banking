@@ -29,3 +29,105 @@ Nuevo: Activa
 [2026-04-08 11:04:17] Usuario sa inició sesión en el sistema
 [2026-04-08 11:05:33] Usuario sa inició sesión en el sistema
 [2026-04-08 11:05:51] Usuario ma inició sesión en el sistema
+[2026-04-08 11:27:37] Usuario ma inició sesión en el sistema
+[2026-04-08 11:38:42] Usuario sa inició sesión en el sistema
+[2026-04-08 11:38:51] Usuario ma inició sesión en el sistema
+[2026-04-08 11:39:20] El cliente: Ned Flanders realizó un retiro en la cuenta: 100000002
+[2026-04-08 11:41:48] Error en la operación: 
+
+
+
+Thank you for choosing QuestPDF 👋
+
+Before you continue, please take a moment to configure your license. This step helps ensure correct license compliance.
+
+QuestPDF requires a Commercial License for production use by organizations with more than $1M USD in annual gross revenue. Individuals, non-profits, open-source projects, and smaller companies qualify for the free Community license.
+
+If you are not the decision-maker for software purchases, please share the licensing and pricing details with your team lead or manager: https://www.questpdf.com/license 
+
+Available license options:
+- Community: free,
+- Evaluation: intended solely for evaluation before choosing an appropriate license; not suitable for production use,
+- Professional: paid, for teams up to 10 developers with dedicated support,
+- Enterprise: paid, for unlimited developers with prioritized dedicated support.
+
+Set the license once at application startup. By doing so, you confirm that the selected tier matches your usage:
+> QuestPDF.Settings.License = LicenseType.Evaluation; // or Community / Professional / Enterprise
+
+No license key or activation is required — we trust you to select the correct option. By choosing the right license, you help ensure QuestPDF remains sustainable and continuously improving for everyone. 
+
+We wish you a great experience! 🚀
+
+
+
+
+[2026-04-08 11:43:45] Usuario ma inició sesión en el sistema
+[2026-04-08 11:44:08] El cliente: Charles Montgomery Burns realizó un retiro en la cuenta: 100000003
+[2026-04-08 11:44:36] Error en la operación: Invalid addr-spec token at offset 0
+[2026-04-08 11:47:39] El cliente: Homer Simpson realizó un retiro en la cuenta: 100000002
+[2026-04-08 11:53:37] Usuario ma inició sesión en el sistema
+[2026-04-08 11:54:04] El cliente: Maggie Simpson realizó un retiro en la cuenta: 100000004
+[2026-04-08 12:21:38] Usuario ma inició sesión en el sistema
+[2026-04-08 12:24:13] Error en la operación: Ocurrió un error al procesar el déposito
+[2026-04-08 12:25:06] Usuario sa inició sesión en el sistema
+[2026-04-08 12:25:32] Usuario ma inició sesión en el sistema
+[2026-04-08 12:25:54] El cliente: Homer Simpson realizó un retiro en la cuenta: 100000003
+[2026-04-08 12:26:40] El cliente: Homer Simpson realizó un retiro en la cuenta: 100000002
+[2026-04-08 12:27:26] Usuario ma inició sesión en el sistema
+[2026-04-08 12:28:32] Error en la operación: Ocurrió un error al procesar el déposito
+[2026-04-08 12:34:40] Usuario ma inició sesión en el sistema
+[2026-04-08 12:35:51] El cliente: Homer Simpson realizó un retiro en la cuenta: 100000001
+[2026-04-08 12:36:03] Error en la operación: 
+
+
+
+Thank you for choosing QuestPDF 👋
+
+Before you continue, please take a moment to configure your license. This step helps ensure correct license compliance.
+
+QuestPDF requires a Commercial License for production use by organizations with more than $1M USD in annual gross revenue. Individuals, non-profits, open-source projects, and smaller companies qualify for the free Community license.
+
+If you are not the decision-maker for software purchases, please share the licensing and pricing details with your team lead or manager: https://www.questpdf.com/license 
+
+Available license options:
+- Community: free,
+- Evaluation: intended solely for evaluation before choosing an appropriate license; not suitable for production use,
+- Professional: paid, for teams up to 10 developers with dedicated support,
+- Enterprise: paid, for unlimited developers with prioritized dedicated support.
+
+Set the license once at application startup. By doing so, you confirm that the selected tier matches your usage:
+> QuestPDF.Settings.License = LicenseType.Evaluation; // or Community / Professional / Enterprise
+
+No license key or activation is required — we trust you to select the correct option. By choosing the right license, you help ensure QuestPDF remains sustainable and continuously improving for everyone. 
+
+We wish you a great experience! 🚀
+
+
+
+
+[2026-04-08 12:36:56] Usuario ma inició sesión en el sistema
+[2026-04-08 12:37:15] El cliente: Apu Nahasapeemapetilon realizó un retiro en la cuenta: 100000003
+[2026-04-08 12:42:22] Usuario ma inició sesión en el sistema
+[2026-04-08 12:42:41] El cliente: Barney Gumble realizó un retiro en la cuenta: 100000004
+[2026-04-08 13:05:16] Usuario ma inició sesión en el sistema
+[2026-04-08 13:06:03] Usuario ma inició sesión en el sistema
+[2026-04-08 13:09:42] Usuario ma inició sesión en el sistema
+[2026-04-08 13:10:50] Se realizó una transferencia:
+Cuenta: 100000001
+Destino: 100000002
+[2026-04-08 13:11:03] Error en la operación: Column 'TransferenciaId' does not belong to table .
+[2026-04-08 13:12:03] Usuario ma inició sesión en el sistema
+[2026-04-08 13:13:58] Usuario ma inició sesión en el sistema
+[2026-04-08 13:14:10] Error en la operación: Cuenta no encontrada.
+Compruebe el número de la cuenta
+[2026-04-08 13:14:52] Se realizó una transferencia:
+Cuenta: 100000002
+Destino: 100000001
+[2026-04-08 13:16:59] Usuario ma inició sesión en el sistema
+[2026-04-08 13:18:08] Se realizó una transferencia:
+Cuenta: 100000002
+Destino: 100000001
+[2026-04-08 13:20:22] Usuario ma inició sesión en el sistema
+[2026-04-08 13:21:09] Se realizó una transferencia:
+Cuenta: 100000002
+Destino: 100000001

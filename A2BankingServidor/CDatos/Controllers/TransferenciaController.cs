@@ -35,7 +35,7 @@ namespace CDatos.Controllers
             }
         }
 
-        public static void ProcesarTransferencia(Transferencia transferencia)
+        public static int ProcesarTransferencia(Transferencia transferencia)
         {
             using (var acceso = new SqlConnection(_conexion))
             {
@@ -50,8 +50,10 @@ namespace CDatos.Controllers
                 comando.Parameters.AddWithValue("@Concepto", transferencia.Concepto);
                 comando.Parameters.AddWithValue("@Fecha", transferencia.Fecha);
 
-                resultado = comando.ExecuteNonQuery();
+                resultado = (int)comando.ExecuteScalar();
                 acceso.Close();
+
+                return resultado;
             }
         }
 

@@ -1,10 +1,12 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.EnviarGmail;
 using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CNegocio.StrategyPattern;
 using CPresentacion.Plantillas;
 using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +22,12 @@ namespace CPresentacion.ViewsUI.UserControls
 {
     public partial class ucRetiros : ucPlantilla
     {
+        int TitularId = 0;
         public ucRetiros()
         {
             InitializeComponent();
             CargarComponentes();
+            QuestPDF.Settings.License = LicenseType.Community;
         }
         private void CargarComponentes()
         {
@@ -36,6 +40,7 @@ namespace CPresentacion.ViewsUI.UserControls
             textbIdCuenta.Text = string.Empty;
             textbNumeroCuenta.Text = string.Empty;
             textbCantidad.Text = string.Empty;
+            textbBalanceActual.Text = string.Empty;
         }
 
         private void BuBuscar_Click(object sender, EventArgs e)
@@ -110,20 +115,36 @@ namespace CPresentacion.ViewsUI.UserControls
                         Balance = Convert.ToDecimal(textbCantidad.Text)
                     };
 
+                    TitularId = Convert.ToInt32(textbIdTitular.Text);
+
                     TransaccionContext transaccion = new TransaccionContext(new WithdrawStrategy());
-                    transaccion.SelecionarOperacion(cuenta, Convert.ToInt32(textbIdTitular.Text), textbNombreTitular.Text);
+                    var resultado = transaccion.SelecionarOperacion(cuenta, Convert.ToInt32(textbIdTitular.Text), textbNombreTitular.Text);
 
-                    MessageBox.Show("Retiro realizado con exito!", "Retiro completado",
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Retiro realizado con exito!", "Retiro completado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Logger.Instance.Log($"El cliente: {textbNombreTitular.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
-                    viewDatos.DataSource = null;
-                    LimpiarTextbox();
+                        Logger.Instance.Log($"El cliente: {textbNombreTitular.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
+                        viewDatos.DataSource = null;
+                        LimpiarTextbox();
 
-                    /*var bank = new Bank();
-                    string ruta = bank.RutaRetiro;
-                    var data = LogicaNegocio.DataReciboRetiro();
-                    var recido = new ReciboRetiro(bank, data);
-                    recido.GeneratePdf(ruta);*/
+                        string correo = LogicaNegocio.ListaTitulares()
+                                        .Where(L => L.TitularId == TitularId)
+                                        .Select(M => M.Correo)
+                                        .FirstOrDefault();
+
+                        var bank = new Bank();
+                        string ruta = bank.RutaRetiro;
+                        var data = LogicaNegocio.DataReciboRetiro();
+                        var recido = new ReciboRetiro(bank, data);
+                        recido.GeneratePdf(ruta);
+
+                        ServicioGmail.EnviarCorreo(correo, "Retiro de dinero", ruta);
+                    }
+                    else
+                    {
+                        throw new ControlExcepciones($"Ocurrió un error al procesar el retiro");
+                    }   
                 }
             }
             catch (ControlExcepciones error)

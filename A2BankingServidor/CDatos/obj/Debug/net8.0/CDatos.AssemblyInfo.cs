@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CDatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d125738fa80aafc4d50144ec4d6d13f8222cc6d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86f49e7c2f7cdb17a0c09396b24ca058312b8a16")]
 [assembly: System.Reflection.AssemblyProductAttribute("CDatos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CDatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

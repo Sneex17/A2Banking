@@ -1,10 +1,12 @@
 ﻿using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.EnviarGmail;
 using CInfraestructura.RecibosServicios;
 using CNegocio;
 using CNegocio.StrategyPattern;
 using CPresentacion.Plantillas;
 using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +22,13 @@ namespace CPresentacion.ViewsUI.UserControls
 {
     public partial class ucDepositos : ucPlantilla
     {
+        int TitularId = 0;
+        
         public ucDepositos()
         {
             InitializeComponent();
             CargarCuentas();
+            QuestPDF.Settings.License = LicenseType.Community;
         }
 
         private void CargarCuentas()
@@ -38,6 +43,7 @@ namespace CPresentacion.ViewsUI.UserControls
                 texbIdCuenta.Text = viewDatos.Rows[e.RowIndex].Cells["CuentaId"].Value.ToString();
                 textbNumeroCuenta.Text = viewDatos.Rows[e.RowIndex].Cells["NumeroCuenta"].Value.ToString();
                 textbTitular.Text = viewDatos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                TitularId = Convert.ToInt32(viewDatos.Rows[e.RowIndex].Cells["TitularId"].Value);
             }
         }
 
@@ -97,23 +103,35 @@ namespace CPresentacion.ViewsUI.UserControls
                     };
 
                     TransaccionContext transaccion = new TransaccionContext(new DepositStrategy());
-                    transaccion.SelecionarOperacion(cuenta, Convert.ToInt32(textbIdCliente.Text), textbNombreCliente.Text);
+                    var resultado = transaccion.SelecionarOperacion(cuenta, Convert.ToInt32(textbIdCliente.Text), textbNombreCliente.Text);
 
-                    MessageBox.Show("Déposito realizado con exito!", "Déposito completado", 
+                    if(resultado > 0)
+                    {
+                        MessageBox.Show("Déposito realizado con exito!", "Déposito completado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Logger.Instance.Log($"El cliente: {textbNombreCliente.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
+                        Logger.Instance.Log($"El cliente: {textbNombreCliente.Text} realizó un retiro en la cuenta: {cuenta.NumeroCuenta}");
 
-                    CargarCuentas();
-                    LimpiarTextbox();
+                        CargarCuentas();
+                        LimpiarTextbox();
 
+                        string correo = LogicaNegocio.ListaTitulares()
+                                        .Where(L => L.TitularId == TitularId)
+                                        .Select(M => M.Correo)
+                                        .FirstOrDefault();
 
-                    /*var bank = new Bank();
-                    string ruta = bank.RutaDeposito;
-                    var data = LogicaNegocio.DataReciboDeposito();
-                    var recido = new ReciboDeposito(bank, data);
-                    recido.GeneratePdf(ruta);*/
+                        var bank = new Bank();
+                        string ruta = bank.RutaDeposito;
+                        var data = LogicaNegocio.DataReciboDeposito();
+                        var recido = new ReciboDeposito(bank, data);
+                        recido.GeneratePdf(ruta);
 
+                        ServicioGmail.EnviarCorreo(correo, "Déposito de dinero", ruta);
+                    }
+                    else
+                    {
+                        throw new ControlExcepciones($"Ocurrió un error al procesar el déposito");
+                    }
                 }
 
             }

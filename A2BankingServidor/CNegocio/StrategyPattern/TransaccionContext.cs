@@ -11,13 +11,13 @@ namespace CNegocio.StrategyPattern
             _operacio = operacion;
         }
 
-        public void SelecionarOperacion(Cuenta cuenta, int ClienteId, string Nombre)
+        public int SelecionarOperacion(Cuenta cuenta, int ClienteId, string Nombre)
         {
             if(_operacio == null)
             {
                 throw new ArgumentNullException();
             }
-            _operacio.Operacion(cuenta, ClienteId,Nombre);
+            return _operacio.Operacion(cuenta, ClienteId, Nombre);
         }
     }
 

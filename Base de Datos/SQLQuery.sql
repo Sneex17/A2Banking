@@ -365,7 +365,8 @@ from Cuenta
 end
 go
 --transaciones
-
+select * from Deposito
+go
 --depositos
 
 create or alter proc spDepositarBalanceCuenta
@@ -381,6 +382,13 @@ set nocount on
 begin
     begin try
         begin tran
+            if @Balance <= 0
+            begin
+                rollback tran
+                select 0;
+                return
+            end
+                
             declare @CuentaId int
 
             set @CuentaId = (select CuentaId from Cuenta where NumeroCuenta = @NumeroCuenta)
@@ -393,9 +401,12 @@ begin
 
             update Cuenta set Balance = @NewBalance where NumeroCuenta = @NumeroCuenta
         commit tran
+        select 1;
     end try
     begin catch
+    if @@TRANCOUNT > 0
         rollback tran
+    select 0;
     end catch
 end
 go
@@ -425,6 +436,13 @@ set nocount on
 begin
     begin try
         begin tran
+            if @Balance <= 0
+            begin
+                rollback tran
+                select 0;
+                return
+            end
+
             declare @CuentaId int
 
             set @CuentaId = (select CuentaId from Cuenta where NumeroCuenta = @NumeroCuenta)
@@ -437,9 +455,12 @@ begin
 
             update Cuenta set Balance = @NewBalance where NumeroCuenta = @NumeroCuenta
         commit tran
+        select 1;
     end try
     begin catch
+        if @@TRANCOUNT > 0
         rollback tran
+    select 0;
     end catch
 end
 go
@@ -626,11 +647,12 @@ begin
          
 
         commit tran
+        select 1;
      end try
      begin catch
+        if @@TRANCOUNT > 0
         rollback tran
-        throw
-        print @@error
+    select 0;
      end catch
  end
  go
@@ -741,7 +763,7 @@ as
  set nocount on
  begin
  select r.RetiroId, r.ClienteId, r.Nombre as cliente, 
- c.NumeroCuenta, r.Nombre as Banco, r.Cantidad as Monto, r.Fecha
+ c.NumeroCuenta, b.Nombre as Banco, r.Cantidad as Monto, r.Fecha
  from Retiro as r
  inner join Cuenta as c on r.CuentaId = c.CuentaId
  inner join Banco as b on c.BancoId = b.BancoId
@@ -849,3 +871,9 @@ as
 
 select * from Deposito
 select * from vwListaCuenta
+
+
+--Miercoles 8/4/26
+select * from Deposito
+select * from Titular
+select * from Transferencia

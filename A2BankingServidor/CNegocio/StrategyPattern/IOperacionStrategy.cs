@@ -10,7 +10,7 @@ namespace CNegocio.StrategyPattern
 {
     public interface IOperacionStrategy
     {
-        void Operacion(Cuenta cuenta, int ClienteId, string Nombre);
+        int Operacion(Cuenta cuenta, int ClienteId, string Nombre);
     }
 
 }

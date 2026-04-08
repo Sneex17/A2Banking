@@ -4,7 +4,7 @@ namespace CNegocio.StrategyPattern
 {
     public class GetBalanceStrategy : IOperacionStrategy
     {
-        public void Operacion(Cuenta cuenta, int ClienteId, string Nombre)
+        public int Operacion(Cuenta cuenta, int ClienteId, string Nombre)
         {
             throw new NotImplementedException();
         }

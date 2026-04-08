@@ -5,9 +5,9 @@ namespace CNegocio.StrategyPattern
 {
     public class WithdrawStrategy : IOperacionStrategy
     {
-        public void Operacion(Cuenta cuenta, int ClienteId, string Nombre)
+        public int Operacion(Cuenta cuenta, int ClienteId, string Nombre)
         {
-            CuentaController.RetirarBalance(cuenta, ClienteId, Nombre);
+            return CuentaController.RetirarBalance(cuenta, ClienteId, Nombre);
         }
     }
 

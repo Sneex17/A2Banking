@@ -79,9 +79,9 @@ namespace CNegocio
             return TransferenciaController.VerTransferencias();
         }
 
-        public static void ProcesarTransferencia(Transferencia transferencia)
+        public static int ProcesarTransferencia(Transferencia transferencia)
         {
-            TransferenciaController.ProcesarTransferencia(transferencia);
+           return TransferenciaController.ProcesarTransferencia(transferencia);
         }
         public static DataTable DataReciboTransferencia()
         {

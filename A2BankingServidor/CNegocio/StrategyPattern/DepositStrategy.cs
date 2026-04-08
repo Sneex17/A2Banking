@@ -5,9 +5,9 @@ namespace CNegocio.StrategyPattern
 {
     public class DepositStrategy : IOperacionStrategy
     {
-        public void Operacion(Cuenta cuenta, int ClienteId, string Nombre)
+        public int Operacion(Cuenta cuenta, int ClienteId, string Nombre)
         {
-            CuentaController.DepositarBalance(cuenta, ClienteId, Nombre);
+            return CuentaController.DepositarBalance(cuenta, ClienteId, Nombre);
         }
     }
 

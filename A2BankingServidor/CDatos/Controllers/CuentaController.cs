@@ -53,7 +53,7 @@ namespace CDatos.Controllers
         }
 
 
-        public static void DepositarBalance(Cuenta cuenta, int ClienteId, string Nombre)
+        public static int DepositarBalance(Cuenta cuenta, int ClienteId, string Nombre)
         {
             using (var acceso = new SqlConnection(_conexion))
             {
@@ -69,12 +69,14 @@ namespace CDatos.Controllers
                 comando.Parameters.AddWithValue("@Balance", cuenta.Balance);
                 comando.Parameters.AddWithValue("@Fecha", DateTime.Now);
                 
-                resultado = comando.ExecuteNonQuery();
+                resultado = (int)comando.ExecuteScalar();
                 acceso.Close();
+
+                return resultado;
             }
         }
 
-        public static void RetirarBalance(Cuenta cuenta, int ClienteId, string Nombre)
+        public static int RetirarBalance(Cuenta cuenta, int ClienteId, string Nombre)
         {
             using (var acceso = new SqlConnection(_conexion))
             {
@@ -90,8 +92,10 @@ namespace CDatos.Controllers
                 comando.Parameters.AddWithValue("@Balance", cuenta.Balance);
                 comando.Parameters.AddWithValue("@Fecha", DateTime.Today);
 
-                resultado = comando.ExecuteNonQuery();
+                resultado = (int)comando.ExecuteScalar();
                 acceso.Close();
+
+                return resultado;
             }
         }
 

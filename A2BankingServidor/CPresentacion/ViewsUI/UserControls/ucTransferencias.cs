@@ -25,11 +25,13 @@ namespace CPresentacion.ViewsUI.UserControls
 {
     public partial class ucTransferencias : ucPlantilla
     {
+        int TitularIdO = 0;
+        int TitularIdD = 0;
         public ucTransferencias()
         {
             InitializeComponent();
             CargarDatos();
-            
+            QuestPDF.Settings.License = LicenseType.Community;
         }
 
         private void CargarDatos()
@@ -58,6 +60,9 @@ namespace CPresentacion.ViewsUI.UserControls
                     var balance = LogicaNegocio.ListaCuentas().Select($"NumeroCuenta = {textbCuentaOrigen.Text}");
                     textbCuentaBalance.Text = balance[0]["Balance"].ToString();
                     textbCuentaDesino.Focus();
+
+                    var titular = LogicaNegocio.ListaCuentas().Select($"NumeroCuenta = {textbCuentaOrigen.Text}");
+                    TitularIdO = Convert.ToInt32(titular[0]["TitularId"].ToString());
                 }
             }
             catch (ControlExcepciones error)
@@ -87,6 +92,9 @@ namespace CPresentacion.ViewsUI.UserControls
                 if (!string.IsNullOrWhiteSpace(textbDestinatario.Text))
                 {
                     textbCuentaDesino.Enabled = false;
+
+                    var titular = LogicaNegocio.ListaCuentas().Select($"NumeroCuenta = {textbCuentaDesino.Text}");
+                    TitularIdD = Convert.ToInt32(titular[0]["TitularId"].ToString());
                 }
             }
             catch (ControlExcepciones error)
@@ -122,7 +130,6 @@ namespace CPresentacion.ViewsUI.UserControls
 
         private  void BuTransferir_Click(object sender, EventArgs e)
         {
-            Settings.License = LicenseType.Community;
             try
             {
                 if (string.IsNullOrWhiteSpace(textbCantidad.Text))
@@ -158,13 +165,46 @@ namespace CPresentacion.ViewsUI.UserControls
 
                 if(acction == DialogResult.Yes)
                 {
-                    LogicaNegocio.ProcesarTransferencia(transferencia);
-                    MessageBox.Show($"Transferencia completada con exito!", "Tranferencia bancaria",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Logger.Instance.Log($"Se realizó una transferencia:\nCuenta: {transferencia.CuentaOrigenId}\nDestino: {transferencia.CuentaDestinoId}");
-                    LimpiarTextBox();
+                    var resultados = LogicaNegocio.ProcesarTransferencia(transferencia);
 
-                    CargarDatos();
+                    if (resultados > 0)
+                    {
+                        MessageBox.Show($"Transferencia completada con exito!", "Tranferencia bancaria",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Logger.Instance.Log($"Se realizó una transferencia:\nCuenta: {transferencia.CuentaOrigenId}\nDestino: {transferencia.CuentaDestinoId}");
+                        LimpiarTextBox();
+
+                        CargarDatos();
+
+                        string correoO = LogicaNegocio.ListaTitulares()
+                                        .Where(L => L.TitularId == TitularIdO)
+                                        .Select(M => M.Correo)
+                                        .FirstOrDefault();
+
+                        var bank = new Bank();
+                        string ruta = bank.RutaTrasnferencias;
+                        var data = LogicaNegocio.DataReciboTransferencia();
+                        var recido = new ReciboTransferencia(bank, data);
+                        recido.GeneratePdf(ruta);
+
+                        ServicioGmail.EnviarCorreo(correoO, "Transferencia de dinero", ruta);
+
+                        string correoD = LogicaNegocio.ListaTitulares()
+                                        .Where(L => L.TitularId == TitularIdD)
+                                        .Select(M => M.Correo)
+                                        .FirstOrDefault();
+
+                        string ruta2 = bank.RutaDeposito;
+                        var data2 = LogicaNegocio.DataReciboDeposito();
+                        var recido2 = new ReciboDeposito(bank, data2);
+                        recido2.GeneratePdf(ruta2);
+
+                        ServicioGmail.EnviarCorreo(correoD, "Déposito de dinero", ruta2);
+                    }
+                    else
+                    {
+                        throw new ControlExcepciones($"Ocurrió un error al procesar la transferencia");
+                    }
                 }
             }
             catch (ControlExcepciones error)
@@ -179,13 +219,6 @@ namespace CPresentacion.ViewsUI.UserControls
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Logger.Instance.Log($"Error en la operación: {error.Message}");
             }
-
-
-            /*var bank = new Bank();
-            string ruta = bank.RutaTrasnferencias;
-            var data = LogicaNegocio.DataReciboTransferencia();
-            var recido = new ReciboTransferencia(bank, data);
-            recido.GeneratePdf(ruta);*/
         }
     }
 }
