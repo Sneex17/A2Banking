@@ -1,0 +1,6 @@
+[2026-04-07 14:06:19] Usuario sa inició sesión en el sistema
+[2026-04-07 14:08:25] Usuario sa inició sesión en el sistema
+[2026-04-07 14:10:26] Usuario sa inició sesión en el sistema
+[2026-04-07 14:17:08] Usuario sa inició sesión en el sistema
+[2026-04-07 14:48:56] Usuario sa inició sesión en el sistema
+[2026-04-07 14:49:21] Usuario ma inició sesión en el sistema

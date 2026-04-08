@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{9AB64156-091D-4713-9543-AF8E0460EDB0}|CEntidades\\CEntidades.csproj|solutionrelative:centidades\\recursos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|c:\\users\\xrami\\onedrive\\documentos\\a2banking\\a2bankingcliente\\cpresentacion\\views\\fmverificarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\cpresentacion\\views\\fmverificarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8E4D0DD7-3D3A-4629-97DB-06223D9B80F5}|CPresentacion\\CPresentacion.csproj|solutionrelative:cpresentacion\\views\\fmverificarhuella.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -46,8 +46,7 @@
               "RelativeToolTip": "CEntidades\\Recursos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T02:57:26.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-07T02:57:26.216Z"
             },
             {
               "$type": "Document",
@@ -70,7 +69,7 @@
               "RelativeDocumentMoniker": "CPresentacion\\Views\\CajeroMenu.cs",
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\Views\\CajeroMenu.cs",
               "RelativeToolTip": "CPresentacion\\Views\\CajeroMenu.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAQwL4AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAK0BAAAAAAAAAAAIwLoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-07T02:41:32.506Z",
               "EditorCaption": ""
@@ -84,8 +83,7 @@
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\Views\\CajeroMenu.cs [Dise\u00F1o]",
               "RelativeToolTip": "CPresentacion\\Views\\CajeroMenu.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T02:06:47.448Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-07T02:06:47.448Z"
             },
             {
               "$type": "Document",
@@ -96,8 +94,7 @@
               "ToolTip": "C:\\Users\\xrami\\OneDrive\\Documentos\\A2Banking\\A2BankingCliente\\CPresentacion\\Views\\fmVerificarHuella.cs [Dise\u00F1o]",
               "RelativeToolTip": "CPresentacion\\Views\\fmVerificarHuella.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T02:05:12.809Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-07T02:05:12.809Z"
             }
           ]
         }

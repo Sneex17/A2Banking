@@ -148,9 +148,13 @@ create or alter proc spExisteUsuario
 as
 set nocount on
 begin
-declare @RolId int = 0
+/*declare @RolId int = 0
 select @RolId = ISNULL(RolId, 0) from usuario where NombreUsuario = @NombreUsuario and Contrasena = @Contrasena
-SELECT @RolId
+SELECT @RolId*/
+select u.UsuarioId, u.RolId, r.Nombre as Rol, u.Nombre, u.NombreUsuario, u.Contrasena 
+from Usuario as u
+inner join Rol as r on u.RolId = r.RolId
+where NombreUsuario = @NombreUsuario and Contrasena = @Contrasena
 end
 go
 
@@ -839,3 +843,9 @@ as
  select * from Transferencia
 
  select @@TRANCOUNT
+
+
+--Martes 7/4/26
+
+select * from Deposito
+select * from vwListaCuenta
