@@ -353,6 +353,7 @@
             BuCuentasCanceladas.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuCuentasCanceladas.Timer_Effect_1 = 5;
             BuCuentasCanceladas.Timer_RGB = 300;
+            BuCuentasCanceladas.Click += BuCuentasCanceladas_Click;
             // 
             // BuCuentasInactivas
             // 
@@ -395,6 +396,7 @@
             BuCuentasInactivas.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuCuentasInactivas.Timer_Effect_1 = 5;
             BuCuentasInactivas.Timer_RGB = 300;
+            BuCuentasInactivas.Click += BuCuentasInactivas_Click;
             // 
             // BuCuentasActivas
             // 
@@ -437,6 +439,7 @@
             BuCuentasActivas.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuCuentasActivas.Timer_Effect_1 = 5;
             BuCuentasActivas.Timer_RGB = 300;
+            BuCuentasActivas.Click += BuCuentasActivas_Click;
             // 
             // BuCuentasGeneral
             // 
@@ -479,6 +482,7 @@
             BuCuentasGeneral.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuCuentasGeneral.Timer_Effect_1 = 5;
             BuCuentasGeneral.Timer_RGB = 300;
+            BuCuentasGeneral.Click += BuCuentasGeneral_Click;
             // 
             // BuCuentas
             // 

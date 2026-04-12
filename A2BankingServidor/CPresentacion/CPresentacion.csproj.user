@@ -56,4 +56,5 @@
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -877,3 +877,69 @@ select * from vwListaCuenta
 select * from Deposito
 select * from Titular
 select * from Transferencia
+go
+--Domingo 12/4/26
+--vistas de los reportes
+
+
+--cuentas 
+create view vwReporteCuentaGeneral
+as
+select NumeroCuenta, TitularId, Nombre, Balance, FechaCreacion, Estado from vwListaCuenta
+go
+
+create proc spVerRCuentaGeneral
+as
+set nocount on
+begin
+select * from vwReporteCuentaGeneral
+end
+go
+
+--activas 
+create view vwReporteCuentaActivas
+as
+select NumeroCuenta, TitularId, Nombre, Balance, FechaCreacion, Estado from vwListaCuenta
+where Estado = (select Nombre from Estado where EstadoID =  1)
+go
+
+create proc spVerRCuentaActivas
+as
+set nocount on
+begin
+select * from vwReporteCuentaActivas
+end
+go
+
+--inactivas 
+create view vwReporteCuentaInactivas
+as
+select NumeroCuenta, TitularId, Nombre, Balance, FechaCreacion, Estado from vwListaCuenta
+where Estado = (select Nombre from Estado where EstadoID =  2)
+go
+
+create proc spVerRCuentaInactivas
+as
+set nocount on
+begin
+select * from vwReporteCuentaInactivas
+end
+go
+
+--canceladas 
+create view vwReporteCuentaCanceladas
+as
+select NumeroCuenta, TitularId, Nombre, Balance, FechaCreacion, Estado from vwListaCuenta
+where Estado = (select Nombre from Estado where EstadoID =  3)
+go
+
+create proc spVerRCuentaCanceladas
+as
+set nocount on
+begin
+select * from vwReporteCuentaCanceladas
+end
+go
+
+
+

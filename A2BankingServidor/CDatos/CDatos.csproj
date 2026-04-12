@@ -15,4 +15,46 @@
     <ProjectReference Include="..\CEntidades\CEntidades.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="DataSets\Cuentas\General\DsCuentasActivas.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsCuentasActivas.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\Cuentas\General\DsCuentasCanceladas.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsCuentasCanceladas.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\Cuentas\General\DsCuentasGeneral.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsCuentasGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\Cuentas\General\DsCuentasInactivas.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsCuentasInactivas.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataSets\Cuentas\General\DsCuentasActivas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCuentasActivas.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\Cuentas\General\DsCuentasCanceladas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCuentasCanceladas.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\Cuentas\General\DsCuentasGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCuentasGeneral.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\Cuentas\General\DsCuentasInactivas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCuentasInactivas.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>
