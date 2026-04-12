@@ -137,6 +137,15 @@ namespace CPresentacion.ViewsUI
                 transferencias.Dock = DockStyle.Fill;
                 tabpTranferencias.Controls.Add(transferencias);
             }
+
+            //Vista para los reportes
+            if(controlMenuOpciones.SelectedTab == tabpReportes 
+                && tabpReportes.Controls.Count ==0)
+            {
+                ucReportes reportes = new ucReportes();
+                reportes.Dock = DockStyle.Fill;
+                tabpReportes.Controls.Add(reportes);
+            }
         }
     }
 }

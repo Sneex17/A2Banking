@@ -43,6 +43,9 @@
     <Compile Update="ViewsUI\UserControls\ucHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ViewsUI\UserControls\ucReportes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ViewsUI\UserControls\ucRetiros.cs">
       <SubType>UserControl</SubType>
     </Compile>

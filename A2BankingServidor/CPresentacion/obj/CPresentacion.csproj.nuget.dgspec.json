@@ -388,6 +388,10 @@
             "ReaLTaiizor": {
               "target": "Package",
               "version": "[3.8.1.5, )"
+            },
+            "ReportViewerCore.WinForms": {
+              "target": "Package",
+              "version": "[15.1.33, )"
             }
           },
           "imports": [
