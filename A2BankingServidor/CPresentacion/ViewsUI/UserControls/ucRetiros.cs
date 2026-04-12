@@ -84,7 +84,7 @@ namespace CPresentacion.ViewsUI.UserControls
             }
         }
 
-        private void BuAplicar_Click(object sender, EventArgs e)
+        private async void BuAplicar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -103,6 +103,11 @@ namespace CPresentacion.ViewsUI.UserControls
 
                 if (mensaje == DialogResult.Yes)
                 {
+                    await Task.Delay(200);
+                    fmProcesar procesar = new fmProcesar("el retiro");
+                    procesar.ShowDialog();
+
+                    await Task.Delay(4000);
                     var cuenta = new Cuenta()
                     {
                         CuentaId = Convert.ToInt32(textbIdCuenta.Text),

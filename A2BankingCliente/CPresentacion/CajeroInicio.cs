@@ -18,6 +18,7 @@ namespace CPresentacion
         {
             InitializeComponent();
         }
+        
         private void SonidoBotones()
         {
             SoundPlayer player = new SoundPlayer();

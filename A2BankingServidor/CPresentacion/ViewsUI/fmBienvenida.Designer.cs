@@ -91,7 +91,7 @@
         #endregion
 
         private PictureBox pbImg;
-        public Label labelTexto;
-        public Label LbNombre;
+        private Label labelTexto;
+        private Label LbNombre;
     }
 }

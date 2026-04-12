@@ -42,7 +42,10 @@ namespace CPresentacion.ViewsUI.UserControls
         {
             Login login = new Login();
             login.Show();
-            this.Hide();
+            var form = Application.OpenForms["MenuPrincipal"];
+
+            if (form != null)
+                form.Close();
         }
 
         private void horaFecha_Tick(object sender, EventArgs e)

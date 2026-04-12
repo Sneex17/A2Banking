@@ -128,7 +128,7 @@ namespace CPresentacion.ViewsUI.UserControls
             return listaCuenats[0]["Nombre"].ToString();
         }
 
-        private  void BuTransferir_Click(object sender, EventArgs e)
+        private async void BuTransferir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -169,6 +169,11 @@ namespace CPresentacion.ViewsUI.UserControls
 
                     if (resultados > 0)
                     {
+                        await Task.Delay(200);
+                        fmProcesar procesar = new fmProcesar("la transferencia");
+                        procesar.ShowDialog();
+
+                        await Task.Delay(4000);
                         MessageBox.Show($"Transferencia completada con exito!", "Tranferencia bancaria",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Logger.Instance.Log($"Se realizó una transferencia:\nCuenta: {transferencia.CuentaOrigenId}\nDestino: {transferencia.CuentaDestinoId}");

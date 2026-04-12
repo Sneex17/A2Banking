@@ -343,6 +343,8 @@
             // 
             // panel1
             // 
+            panel1.BackgroundImage = Properties.Resources.Fondo_de_pantalla1;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(lbTitularDestino);
             panel1.Controls.Add(lbComprobar);
             panel1.Controls.Add(textbCuentaDestino);
@@ -366,7 +368,9 @@
             // lbTitularDestino
             // 
             lbTitularDestino.AutoSize = true;
+            lbTitularDestino.BackColor = Color.Transparent;
             lbTitularDestino.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbTitularDestino.ForeColor = Color.White;
             lbTitularDestino.Location = new Point(103, 242);
             lbTitularDestino.Name = "lbTitularDestino";
             lbTitularDestino.Size = new Size(43, 21);
@@ -377,7 +381,9 @@
             // lbComprobar
             // 
             lbComprobar.AutoSize = true;
+            lbComprobar.BackColor = Color.Transparent;
             lbComprobar.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbComprobar.ForeColor = Color.White;
             lbComprobar.Location = new Point(3, 210);
             lbComprobar.Name = "lbComprobar";
             lbComprobar.Size = new Size(98, 21);
@@ -422,8 +428,9 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Jumper PERSONAL USE ONLY Ex-Bd", 17F, FontStyle.Bold | FontStyle.Italic);
-            label6.ForeColor = Color.Gray;
+            label6.ForeColor = Color.LightGray;
             label6.Location = new Point(185, 24);
             label6.Name = "label6";
             label6.Size = new Size(167, 28);
@@ -433,6 +440,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
             label9.Font = new Font("Jumper PERSONAL USE ONLY Ex-Bd", 17F, FontStyle.Bold | FontStyle.Italic);
             label9.ForeColor = Color.FromArgb(77, 182, 198);
             label9.Location = new Point(90, 24);
@@ -444,7 +452,9 @@
             // lbtextbClienteNombre
             // 
             lbtextbClienteNombre.AutoSize = true;
+            lbtextbClienteNombre.BackColor = Color.Transparent;
             lbtextbClienteNombre.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbtextbClienteNombre.ForeColor = Color.White;
             lbtextbClienteNombre.Location = new Point(43, 55);
             lbtextbClienteNombre.Name = "lbtextbClienteNombre";
             lbtextbClienteNombre.Size = new Size(70, 21);
@@ -454,7 +464,9 @@
             // lbTextDestino
             // 
             lbTextDestino.AutoSize = true;
+            lbTextDestino.BackColor = Color.Transparent;
             lbTextDestino.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbTextDestino.ForeColor = Color.White;
             lbTextDestino.Location = new Point(103, 168);
             lbTextDestino.Name = "lbTextDestino";
             lbTextDestino.Size = new Size(152, 21);
@@ -465,7 +477,9 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label8.ForeColor = Color.White;
             label8.Location = new Point(3, 314);
             label8.Name = "label8";
             label8.Size = new Size(59, 21);
@@ -475,7 +489,9 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(395, 315);
             label7.Name = "label7";
             label7.Size = new Size(45, 21);
@@ -485,7 +501,9 @@
             // lbTextOpcion
             // 
             lbTextOpcion.AutoSize = true;
+            lbTextOpcion.BackColor = Color.Transparent;
             lbTextOpcion.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            lbTextOpcion.ForeColor = Color.White;
             lbTextOpcion.Location = new Point(103, 94);
             lbTextOpcion.Name = "lbTextOpcion";
             lbTextOpcion.Size = new Size(43, 21);
@@ -496,7 +514,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(317, 279);
             label5.Name = "label5";
             label5.Size = new Size(123, 21);
@@ -506,7 +526,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(3, 279);
             label4.Name = "label4";
             label4.Size = new Size(66, 21);
@@ -516,7 +538,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(3, 245);
             label2.Name = "label2";
             label2.Size = new Size(89, 21);
@@ -526,7 +550,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(386, 245);
             label1.Name = "label1";
             label1.Size = new Size(54, 21);

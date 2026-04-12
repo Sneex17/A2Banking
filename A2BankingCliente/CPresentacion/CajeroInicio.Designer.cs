@@ -236,6 +236,8 @@
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
+            panel1.BackgroundImage = Properties.Resources.Fondo_de_pantalla1;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(label4);
             panel1.Controls.Add(textbNCuenta);
             panel1.Controls.Add(textbCodigoPin);
@@ -250,8 +252,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Jumper PERSONAL USE ONLY Ex-Bd", 17F, FontStyle.Bold | FontStyle.Italic);
-            label4.ForeColor = Color.Gray;
+            label4.ForeColor = Color.LightGray;
             label4.Location = new Point(185, 24);
             label4.Name = "label4";
             label4.Size = new Size(167, 28);
@@ -269,7 +272,7 @@
             textbNCuenta.Multiline = false;
             textbNCuenta.Name = "textbNCuenta";
             textbNCuenta.ReadOnly = false;
-            textbNCuenta.Size = new Size(236, 41);
+            textbNCuenta.Size = new Size(236, 47);
             textbNCuenta.TabIndex = 6;
             textbNCuenta.TextAlignment = HorizontalAlignment.Left;
             textbNCuenta.UseSystemPasswordChar = false;
@@ -285,7 +288,7 @@
             textbCodigoPin.Multiline = false;
             textbCodigoPin.Name = "textbCodigoPin";
             textbCodigoPin.ReadOnly = false;
-            textbCodigoPin.Size = new Size(236, 41);
+            textbCodigoPin.Size = new Size(236, 47);
             textbCodigoPin.TabIndex = 5;
             textbCodigoPin.TextAlignment = HorizontalAlignment.Left;
             textbCodigoPin.UseSystemPasswordChar = true;
@@ -293,6 +296,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Jumper PERSONAL USE ONLY Ex-Bd", 17F, FontStyle.Bold | FontStyle.Italic);
             label3.ForeColor = Color.FromArgb(77, 182, 198);
             label3.Location = new Point(90, 24);
@@ -304,7 +308,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(103, 187);
             label2.Name = "label2";
             label2.Size = new Size(99, 21);
@@ -314,7 +320,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Montserrat", 11F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(103, 98);
             label1.Name = "label1";
             label1.Size = new Size(154, 21);

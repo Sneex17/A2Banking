@@ -19,6 +19,9 @@
     <Compile Update="ViewsUI\fmPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewsUI\fmProcesar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ViewsUI\fmTitulares.cs">
       <SubType>Form</SubType>
     </Compile>

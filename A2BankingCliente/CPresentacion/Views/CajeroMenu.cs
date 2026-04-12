@@ -191,6 +191,7 @@ namespace CPresentacion.Views
                         //Depositar dinero
                         case 1:
                             {
+                                Verificacion = false;
                                 if (Convert.ToDecimal(textbCantidad.Text) < 1)
                                 {
                                     lbTextDestino.Visible = true;
@@ -224,6 +225,7 @@ namespace CPresentacion.Views
                         //Retirar dinero
                         case 2:
                             {
+                                Verificacion = false;
                                 if (Convert.ToDecimal(textbCantidad.Text) > cuenta.Balance)
                                 {
                                     lbTextDestino.Visible = true;
@@ -249,7 +251,7 @@ namespace CPresentacion.Views
                                             Datos = Cuenta
                                         };
 
-                                        EnvioPaquetes(cliente, paquete);
+                                        //EnvioPaquetes(cliente, paquete);
                                     }
                                 }
                             }
@@ -257,6 +259,7 @@ namespace CPresentacion.Views
                         //Transferir dinero
                         case 3:
                             {
+                                Verificacion = false;
                                 if (string.IsNullOrWhiteSpace(textbCantidad.Text))
                                 {
                                     throw new ControlExcepcion("Debe ingresar un monto a transferir");
@@ -281,7 +284,7 @@ namespace CPresentacion.Views
                                     Transferir = transferencia
                                 };
 
-                                EnvioPaquetes(cliente, paquete);
+                                //EnvioPaquetes(cliente, paquete);
                             }
                             break;
                     }
@@ -319,6 +322,11 @@ namespace CPresentacion.Views
 
             await network.WriteAsync(longitud);
             await network.WriteAsync(jsonBytes);
+        }
+        private void Limpiartextbx()
+        {
+            textbCantidad.Text = string.Empty;
+            textbCuentaDestino.Text = string.Empty;
         }
 
         private void pbBotonDepositar_Click(object sender, EventArgs e)

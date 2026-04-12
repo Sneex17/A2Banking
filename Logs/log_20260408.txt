@@ -131,3 +131,18 @@ Destino: 100000001
 [2026-04-08 13:21:09] Se realizó una transferencia:
 Cuenta: 100000002
 Destino: 100000001
+[2026-04-08 13:55:53] Usuario sa inició sesión en el sistema
+[2026-04-08 13:57:18] Usuario sa inició sesión en el sistema
+[2026-04-08 13:58:41] Usuario sa inició sesión en el sistema
+[2026-04-08 14:00:09] Usuario sa inició sesión en el sistema
+[2026-04-08 14:00:23] Usuario sa inició sesión en el sistema
+[2026-04-08 14:01:24] Usuario sa inició sesión en el sistema
+[2026-04-08 14:05:17] Usuario sa inició sesión en el sistema
+[2026-04-08 14:09:56] Usuario sa inició sesión en el sistema
+[2026-04-08 14:14:07] Usuario ma inició sesión en el sistema
+[2026-04-08 14:15:38] Usuario sa inició sesión en el sistema
+[2026-04-08 14:15:52] Usuario ma inició sesión en el sistema
+[2026-04-08 14:36:34] Usuario ma inició sesión en el sistema
+[2026-04-08 14:36:48] Usuario sa inició sesión en el sistema
+[2026-04-08 14:37:03] Usuario sa inició sesión en el sistema
+[2026-04-08 14:39:40] Usuario ma inició sesión en el sistema

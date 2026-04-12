@@ -63,6 +63,26 @@ namespace CPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo_de_pantalla {
+            get {
+                object obj = ResourceManager.GetObject("Fondo de pantalla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fondo_de_pantalla1 {
+            get {
+                object obj = ResourceManager.GetObject("Fondo de pantalla1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_del_cajero {
             get {
                 object obj = ResourceManager.GetObject("Fondo del cajero", resourceCulture);
