@@ -8,6 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CDatos.DataSets.Servicios.Depositos;
+using CDatos.DataSets.Servicios.Depositos.DsDepositosTableAdapters;
+using CDatos.DataSets.Servicios.Retiros;
+using CDatos.DataSets.Servicios.Retiros.DsRetirosTableAdapters;
+using CDatos.DataSets.Servicios.Transferencias;
+using CDatos.DataSets.Servicios.Transferencias.DsTransferenciasTableAdapters;
 
 namespace CNegocio
 {
@@ -67,6 +73,49 @@ namespace CNegocio
         public static DsCuentasCanceladas.spVerRCuentaCanceladasDataTable TablaCuentasCanceladas()
         {
             return new DsCuentasCanceladas.spVerRCuentaCanceladasDataTable();
+        }
+
+
+        //Datos reportes de dépositos
+        public static DsDepositos ReporteDepositos()
+        {
+            return new DsDepositos();
+        }
+        public static spReportesDepositosTableAdapter ReportesDepositosTableAdapter()
+        {
+            return new spReportesDepositosTableAdapter();
+        }
+        public static DsDepositos.spReportesDepositosDataTable TablaReportesDepositos()
+        {
+            return new DsDepositos.spReportesDepositosDataTable();
+        }
+
+        //Datos reportes de retiros
+        public static DsRetiros ReporteRetiros()
+        {
+            return new DsRetiros();
+        }
+        public static spReportesRetirosTableAdapter ReportesRetirosTableAdapter()
+        {
+            return new spReportesRetirosTableAdapter();
+        }
+        public static DsRetiros.spReportesRetirosDataTable TablaReportesRetiros()
+        {
+            return new DsRetiros.spReportesRetirosDataTable();
+        }
+
+        //Datos reportes de transferencias
+        public static DsTransferencias ReporteTransferencias()
+        {
+            return new DsTransferencias();
+        }
+        public static spReportesTransferenciasTableAdapter ReportesTransferenciasTableAdapter()
+        {
+            return new spReportesTransferenciasTableAdapter();
+        }
+        public static DsTransferencias.spReportesTransferenciasDataTable TablaReportesTransferencias()
+        {
+            return new DsTransferencias.spReportesTransferenciasDataTable();
         }
 
     }

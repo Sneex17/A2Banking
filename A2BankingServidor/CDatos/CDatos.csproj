@@ -36,6 +36,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DsCuentasInactivas.xsd</DependentUpon>
     </Compile>
+    <Compile Update="DataSets\Servicios\Depositos\DsDepositos.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsDepositos.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\Servicios\Retiros\DsRetiros.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsRetiros.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\Servicios\Transferencias\DsTransferencias.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsTransferencias.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +69,18 @@
     <None Update="DataSets\Cuentas\General\DsCuentasInactivas.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DsCuentasInactivas.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\Servicios\Depositos\DsDepositos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDepositos.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\Servicios\Retiros\DsRetiros.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsRetiros.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\Servicios\Transferencias\DsTransferencias.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsTransferencias.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

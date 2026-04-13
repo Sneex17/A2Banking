@@ -941,5 +941,103 @@ select * from vwReporteCuentaCanceladas
 end
 go
 
+--dépositos
 
+select * from Deposito
+go
+
+create view vwReportesDepositos
+with schemabinding
+as
+select d.DepositoId, c.NumeroCuenta, d.ClienteId, 
+d.Nombre, d.Fecha, d.Cantidad from dbo.Deposito as d
+inner join dbo.Cuenta as c on d.CuentaId = c.CuentaId
+go
+
+
+create or alter proc spReportesDepositos
+(
+@FechaInicio datetime,
+@FechaFin datetime
+)
+as
+set nocount on
+begin
+    if @FechaInicio is null or @FechaFin is null
+        select * from vwReportesDepositos
+    else
+        select * from vwReportesDepositos 
+        where Fecha between @FechaInicio and @FechaFin
+end
+go
+
+
+exec spReportesDepositos '2026-02-03', '2026-03-30'
+exec spReportesDepositos null, '2026-03-03'
+go
+
+--retiros
+
+create view vwReportesRetiros
+with schemabinding
+as
+select r.RetiroId, c.NumeroCuenta, r.ClienteId, 
+r.Nombre, r.Fecha, r.Cantidad from dbo.Retiro as r
+inner join dbo.Cuenta as c on r.CuentaId = c.CuentaId
+go
+
+
+create or alter proc spReportesRetiros
+(
+@FechaInicio datetime,
+@FechaFin datetime
+)
+as
+set nocount on
+begin
+    if @FechaInicio is null or @FechaFin is null
+        select * from vwReportesRetiros
+    else
+        select * from vwReportesRetiros
+        where Fecha between @FechaInicio and @FechaFin
+end
+go
+
+
+exec spReportesRetiros '2026-02-03', '2026-03-30'
+exec spReportesRetiros null, '2026-03-03'
+go
+
+
+--transferencias
+select * from Transferencia
+go
+
+create view vwReportesTransferencias
+with schemabinding
+as
+select t.TransferenciaId, t.CuentaOrigenId, bo.Nombre as BancoOrigen, 
+t.CuentaDestinoId, bd.Nombre as BancoDestino, t.Monto, t.Comision, t.Fecha from dbo.Transferencia as t
+inner join dbo.Cuenta as co on co.NumeroCuenta = t.CuentaOrigenId
+inner join dbo.Cuenta as cd on cd.NumeroCuenta = t.CuentaOrigenId
+inner join dbo.Banco as bo on co.BancoId =  bo.BancoId
+inner join dbo.Banco as bd on cd.BancoId =  bd.BancoId
+go
+
+
+create or alter proc spReportesTransferencias
+(
+@FechaInicio datetime,
+@FechaFin datetime
+)
+as
+set nocount on
+begin
+    if @FechaInicio is null or @FechaFin is null
+        select * from vwReportesTransferencias
+    else
+        select * from vwReportesTransferencias
+        where Fecha between @FechaInicio and @FechaFin
+end
+go
 

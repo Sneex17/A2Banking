@@ -14,5 +14,14 @@
     <None Update="DataSets\Cuentas\General\DsCuentasInactivas.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="DataSets\Servicios\Depositos\DsDepositos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="DataSets\Servicios\Retiros\DsRetiros.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="DataSets\Servicios\Transferencias\DsTransferencias.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

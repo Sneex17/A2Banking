@@ -29,11 +29,18 @@
         private void InitializeComponent()
         {
             panelInformacion = new Panel();
+            dateTimeFin = new ReaLTaiizor.Controls.PoisonDateTime();
+            LbFechaFin = new Label();
+            dateTimeInicio = new ReaLTaiizor.Controls.PoisonDateTime();
+            LbFechaInicio = new Label();
             labelTexto = new Label();
             pbIcono = new FontAwesome.Sharp.IconPictureBox();
             label1 = new Label();
             panelBotones = new Panel();
             panelReportesServicios = new Panel();
+            rbNoFecha = new RadioButton();
+            rbYesFecha = new RadioButton();
+            label2 = new Label();
             BuTransferencias = new ReaLTaiizor.Controls.CyberButton();
             BuRetiros = new ReaLTaiizor.Controls.CyberButton();
             BuDepositos = new ReaLTaiizor.Controls.CyberButton();
@@ -58,6 +65,10 @@
             // panelInformacion
             // 
             panelInformacion.BackColor = Color.FromArgb(77, 182, 198);
+            panelInformacion.Controls.Add(dateTimeFin);
+            panelInformacion.Controls.Add(LbFechaFin);
+            panelInformacion.Controls.Add(dateTimeInicio);
+            panelInformacion.Controls.Add(LbFechaInicio);
             panelInformacion.Controls.Add(labelTexto);
             panelInformacion.Controls.Add(pbIcono);
             panelInformacion.Dock = DockStyle.Top;
@@ -65,6 +76,52 @@
             panelInformacion.Name = "panelInformacion";
             panelInformacion.Size = new Size(801, 72);
             panelInformacion.TabIndex = 2;
+            // 
+            // dateTimeFin
+            // 
+            dateTimeFin.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            dateTimeFin.Location = new Point(569, 33);
+            dateTimeFin.MinimumSize = new Size(0, 29);
+            dateTimeFin.Name = "dateTimeFin";
+            dateTimeFin.Size = new Size(200, 29);
+            dateTimeFin.TabIndex = 18;
+            dateTimeFin.Visible = false;
+            // 
+            // LbFechaFin
+            // 
+            LbFechaFin.AutoSize = true;
+            LbFechaFin.BackColor = Color.Transparent;
+            LbFechaFin.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            LbFechaFin.ForeColor = Color.White;
+            LbFechaFin.Location = new Point(569, 11);
+            LbFechaFin.Name = "LbFechaFin";
+            LbFechaFin.Size = new Size(55, 22);
+            LbFechaFin.TabIndex = 19;
+            LbFechaFin.Text = "Inicio";
+            LbFechaFin.Visible = false;
+            // 
+            // dateTimeInicio
+            // 
+            dateTimeInicio.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            dateTimeInicio.Location = new Point(362, 33);
+            dateTimeInicio.MinimumSize = new Size(0, 29);
+            dateTimeInicio.Name = "dateTimeInicio";
+            dateTimeInicio.Size = new Size(200, 29);
+            dateTimeInicio.TabIndex = 0;
+            dateTimeInicio.Visible = false;
+            // 
+            // LbFechaInicio
+            // 
+            LbFechaInicio.AutoSize = true;
+            LbFechaInicio.BackColor = Color.Transparent;
+            LbFechaInicio.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            LbFechaInicio.ForeColor = Color.White;
+            LbFechaInicio.Location = new Point(362, 11);
+            LbFechaInicio.Name = "LbFechaInicio";
+            LbFechaInicio.Size = new Size(55, 22);
+            LbFechaInicio.TabIndex = 17;
+            LbFechaInicio.Text = "Inicio";
+            LbFechaInicio.Visible = false;
             // 
             // labelTexto
             // 
@@ -119,15 +176,55 @@
             // panelReportesServicios
             // 
             panelReportesServicios.BackColor = Color.WhiteSmoke;
+            panelReportesServicios.Controls.Add(rbNoFecha);
+            panelReportesServicios.Controls.Add(rbYesFecha);
+            panelReportesServicios.Controls.Add(label2);
             panelReportesServicios.Controls.Add(BuTransferencias);
             panelReportesServicios.Controls.Add(BuRetiros);
             panelReportesServicios.Controls.Add(BuDepositos);
             panelReportesServicios.Dock = DockStyle.Top;
             panelReportesServicios.Location = new Point(0, 257);
             panelReportesServicios.Name = "panelReportesServicios";
-            panelReportesServicios.Size = new Size(161, 117);
+            panelReportesServicios.Size = new Size(161, 171);
             panelReportesServicios.TabIndex = 5;
             panelReportesServicios.Visible = false;
+            // 
+            // rbNoFecha
+            // 
+            rbNoFecha.AutoSize = true;
+            rbNoFecha.Font = new Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbNoFecha.Location = new Point(83, 137);
+            rbNoFecha.Name = "rbNoFecha";
+            rbNoFecha.Size = new Size(43, 20);
+            rbNoFecha.TabIndex = 19;
+            rbNoFecha.TabStop = true;
+            rbNoFecha.Text = "No";
+            rbNoFecha.UseVisualStyleBackColor = true;
+            // 
+            // rbYesFecha
+            // 
+            rbYesFecha.AutoSize = true;
+            rbYesFecha.Font = new Font("Montserrat SemiBold", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rbYesFecha.Location = new Point(41, 137);
+            rbYesFecha.Name = "rbYesFecha";
+            rbYesFecha.Size = new Size(36, 20);
+            rbYesFecha.TabIndex = 18;
+            rbYesFecha.TabStop = true;
+            rbYesFecha.Text = "Sí";
+            rbYesFecha.UseVisualStyleBackColor = true;
+            rbYesFecha.CheckedChanged += rbYesFecha_CheckedChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(7, 108);
+            label2.Name = "label2";
+            label2.Size = new Size(147, 22);
+            label2.TabIndex = 17;
+            label2.Text = "Rango de fechas";
             // 
             // BuTransferencias
             // 
@@ -170,6 +267,7 @@
             BuTransferencias.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuTransferencias.Timer_Effect_1 = 5;
             BuTransferencias.Timer_RGB = 300;
+            BuTransferencias.Click += BuTransferencias_Click;
             // 
             // BuRetiros
             // 
@@ -212,6 +310,7 @@
             BuRetiros.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuRetiros.Timer_Effect_1 = 5;
             BuRetiros.Timer_RGB = 300;
+            BuRetiros.Click += BuRetiros_Click;
             // 
             // BuDepositos
             // 
@@ -254,6 +353,7 @@
             BuDepositos.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             BuDepositos.Timer_Effect_1 = 5;
             BuDepositos.Timer_RGB = 300;
+            BuDepositos.Click += BuDepositos_Click;
             // 
             // BuReportesServicios
             // 
@@ -569,6 +669,7 @@
             ((System.ComponentModel.ISupportInitialize)pbIcono).EndInit();
             panelBotones.ResumeLayout(false);
             panelReportesServicios.ResumeLayout(false);
+            panelReportesServicios.PerformLayout();
             panelReportesCuentas.ResumeLayout(false);
             panelInfo.ResumeLayout(false);
             panelInfo.PerformLayout();
@@ -596,5 +697,12 @@
         private ReaLTaiizor.Controls.CyberButton BuTransferencias;
         private ReaLTaiizor.Controls.CyberButton BuRetiros;
         private ReaLTaiizor.Controls.CyberButton BuDepositos;
+        private RadioButton rbNoFecha;
+        private RadioButton rbYesFecha;
+        public Label label2;
+        private ReaLTaiizor.Controls.PoisonDateTime dateTimeFin;
+        public Label LbFechaFin;
+        private ReaLTaiizor.Controls.PoisonDateTime dateTimeInicio;
+        public Label LbFechaInicio;
     }
 }
