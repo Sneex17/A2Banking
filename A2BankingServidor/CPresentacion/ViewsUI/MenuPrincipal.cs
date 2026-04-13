@@ -146,6 +146,15 @@ namespace CPresentacion.ViewsUI
                 reportes.Dock = DockStyle.Fill;
                 tabpReportes.Controls.Add(reportes);
             }
+
+            //Vista para las estadisticas
+            if (controlMenuOpciones.SelectedTab == tabpEstadisticas
+                && tabpEstadisticas.Controls.Count == 0)
+            {
+                ucEstadisticas estadisticas = new ucEstadisticas();
+                estadisticas.Dock = DockStyle.Fill;
+                tabpEstadisticas.Controls.Add(estadisticas);
+            }
         }
     }
 }

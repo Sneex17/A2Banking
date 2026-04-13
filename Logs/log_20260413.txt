@@ -1,0 +1,25 @@
+[2026-04-13 08:10:15] Usuario sa inició sesión en el sistema
+[2026-04-13 08:56:06] Usuario sa inició sesión en el sistema
+[2026-04-13 08:58:03] Usuario sa inició sesión en el sistema
+[2026-04-13 08:58:43] Usuario sa inició sesión en el sistema
+[2026-04-13 08:59:30] Usuario sa inició sesión en el sistema
+[2026-04-13 09:01:06] Usuario sa inició sesión en el sistema
+[2026-04-13 09:01:54] Usuario ma inició sesión en el sistema
+[2026-04-13 09:02:22] Error en la operación: Cuenta no encontrada.
+Compruebe el número de la cuenta
+[2026-04-13 09:03:04] Se realizó una transferencia:
+Cuenta: 100000001
+Destino: 100000004
+[2026-04-13 09:16:56] Usuario sa inició sesión en el sistema
+[2026-04-13 09:39:01] Usuario sa inició sesión en el sistema
+[2026-04-13 09:40:03] Usuario ma inició sesión en el sistema
+[2026-04-13 09:40:39] El cliente: Ned Flanders realizó un retiro en la cuenta: 100000003
+[2026-04-13 09:40:57] Usuario sa inició sesión en el sistema
+[2026-04-13 10:10:39] Usuario sa inició sesión en el sistema
+[2026-04-13 10:37:02] Usuario sa inició sesión en el sistema
+[2026-04-13 10:42:30] Usuario sa inició sesión en el sistema
+[2026-04-13 10:43:12] Usuario sa inició sesión en el sistema
+[2026-04-13 10:44:31] Usuario sa inició sesión en el sistema
+[2026-04-13 10:58:22] Usuario sa inició sesión en el sistema
+[2026-04-13 10:59:41] Usuario sa inició sesión en el sistema
+[2026-04-13 11:01:13] Usuario sa inició sesión en el sistema

@@ -234,5 +234,119 @@ namespace CDatos.Controllers
             }
             return cuentaDestino;
         }
+
+
+        public static List<Deposito> ListaDepositos()
+        {
+            var lista = new List<Deposito>();
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spListaDepositos", acceso);
+                comando.CommandType= CommandType.StoredProcedure;
+
+                var reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Deposito()
+                    {
+                        DepositoId = reader.GetInt32(0),
+                        CuentaId = reader.GetInt32(1),
+                        ClienteId = reader.GetInt32(2),
+                        Nombre = reader.GetString(3),
+                        Fecha = reader.GetDateTime(4),
+                        Cantidad = reader.GetDecimal(5)
+                    });
+                }
+                reader.Close();
+                acceso.Close();
+            }
+            return lista;
+        }
+
+        public static List<Retiro> ListaRetiros()
+        {
+            var lista = new List<Retiro>();
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spListaRetiros", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                var reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Retiro()
+                    {
+                        RetiroId = reader.GetInt32(0),
+                        CuentaId = reader.GetInt32(1),
+                        ClienteId = reader.GetInt32(2),
+                        Nombre = reader.GetString(3),
+                        Fecha = reader.GetDateTime(4),
+                        Cantidad = reader.GetDecimal(5)
+                    });
+                }
+                reader.Close();
+                acceso.Close();
+            }
+            return lista;
+        }
+
+        public static List<Cuenta> CountCuentas()
+        {
+            var lista = new List<Cuenta>();
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spCountCuentas", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                var reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Cuenta()
+                    {
+                        CuentaId = reader.GetInt32(0),
+                        Banco = new Banco()
+                        { 
+                            BancoId = reader.GetInt32(1)
+                        },
+                        NumeroCuenta = reader.GetInt32(2),
+                        Titular = new Titular()
+                        {
+                            TitularId = reader.GetInt32(3)
+                        },
+                        Balance =  reader.GetDecimal(4),
+                        FechaCreacion = reader.GetDateTime(5),
+                        Estado = new CuentaEstado()
+                        {
+                            IdEstado = reader.GetInt32(6)
+                        }
+                    });
+                }
+                reader.Close();
+                acceso.Close();
+            }
+            return lista;
+        }
+
+        public static decimal CountGanancias()
+        {
+            decimal ganancia;
+            using (var acceso = new SqlConnection(_conexion))
+            {
+                acceso.Open();
+                var comando = new SqlCommand("spCountGanancia", acceso);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                ganancia = (decimal)comando.ExecuteScalar();
+
+                acceso.Close();
+            }
+            return ganancia;
+        }
     }
 }

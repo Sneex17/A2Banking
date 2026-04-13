@@ -38,6 +38,7 @@
             tabpClientes = new TabPage();
             tabpUsuarios = new TabPage();
             tabpReportes = new TabPage();
+            tabpEstadisticas = new TabPage();
             controlMenuOpciones.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             controlMenuOpciones.Controls.Add(tabpClientes);
             controlMenuOpciones.Controls.Add(tabpUsuarios);
             controlMenuOpciones.Controls.Add(tabpReportes);
+            controlMenuOpciones.Controls.Add(tabpEstadisticas);
             controlMenuOpciones.Dock = DockStyle.Fill;
             controlMenuOpciones.Font = new Font("Montserrat SemiBold", 9.5F, FontStyle.Bold);
             controlMenuOpciones.ItemSize = new Size(30, 125);
@@ -145,6 +147,15 @@
             tabpReportes.TabIndex = 7;
             tabpReportes.Text = "Reportes";
             // 
+            // tabpEstadisticas
+            // 
+            tabpEstadisticas.BackColor = Color.White;
+            tabpEstadisticas.Location = new Point(129, 4);
+            tabpEstadisticas.Name = "tabpEstadisticas";
+            tabpEstadisticas.Size = new Size(801, 603);
+            tabpEstadisticas.TabIndex = 8;
+            tabpEstadisticas.Text = "Estadísticas";
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -170,5 +181,6 @@
         private TabPage tabpClientes;
         private TabPage tabpUsuarios;
         private TabPage tabpReportes;
+        private TabPage tabpEstadisticas;
     }
 }

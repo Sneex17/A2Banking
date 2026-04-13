@@ -1,10 +1,11 @@
 ﻿using CDatos;
 using CDatos.Controllers;
+using CDatos.DataSets.Servicios.Retiros;
 using CEntidades;
 using CEntidades.BuilderPattern;
+using CInfraestructura.EnviarGmail;
 using System.Data;
 using System.Xml.Serialization;
-using CInfraestructura.EnviarGmail;
 
 namespace CNegocio
 {
@@ -72,6 +73,14 @@ namespace CNegocio
         {
             return ServicioGmail.CorreoValido(codigo, codigoGmail);
         }
+        public static List<Cuenta> CountCuentas()
+        {
+            return CuentaController.CountCuentas();
+        }
+        public static decimal CountGanancias()
+        {
+            return CuentaController.CountGanancias();
+        }
 
         //Transferencias
         public static List<Transferencia> ListaTransferencias()
@@ -94,6 +103,19 @@ namespace CNegocio
         public static DataTable DataReciboRetiro()
         {
             return TransferenciaController.ReciboRetiro();
+        }
+
+
+        //Dépositos
+        public static List<Deposito> ListaDeposito()
+        {
+            return CuentaController.ListaDepositos();
+        }
+
+        //Retiros
+        public static List<Retiro> ListaRetiro()
+        {
+            return CuentaController.ListaRetiros();
         }
 
     }

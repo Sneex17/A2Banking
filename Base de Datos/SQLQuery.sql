@@ -580,6 +580,7 @@ BancoId int not null,
 Ganacia decimal(18,2) not null
 constraint FK_GananciaBanco foreign key (BancoId) references Banco(BancoId)
 )
+go
 
 --proc para las trasferencias
 create or alter proc spTransferencias
@@ -617,12 +618,8 @@ begin
          set @NombreTitular = (select c.Nombre from vwListaCuenta as c where NumeroCuenta = @CuentaOrigen)
          set @Balance = (select c.Balance from vwListaCuenta as c where NumeroCuenta = @CuentaOrigen)
 
-
-         --exec spRetirarBalanceCuenta @CuentaOrigen, @ClienteId, @NombreTitular, @Fecha, @MontoFinal
-
          insert into Retiro select @CuentaId, @ClienteId, @NombreTitular, @Fecha, @MontoFinal
          update Cuenta set Balance = (@Balance - @MontoFinal) where NumeroCuenta =  @CuentaOrigen
-
 
          --Transferencia del dinero
          insert into Transferencia select @CuentaOrigen, @CuentaDestino, @Monto, (@Monto * @Comision), @Fecha, @Concepto
@@ -634,8 +631,6 @@ begin
          set @NombreTitular = (select c.Nombre from vwListaCuenta as c where NumeroCuenta = @CuentaDestino)
          set @Balance = (select c.Balance from vwListaCuenta as c where NumeroCuenta = @CuentaDestino)
 
-         --exec spDepositarBalanceCuenta @CuentaDestino, @ClienteId, @NombreTitular, @Fecha, @Monto
-
          insert into Deposito select @CuentaId, @ClienteId, @NombreTitular, @Fecha, @Monto
          update Cuenta set Balance = (@Balance + @Monto) where NumeroCuenta = @CuentaDestino
 
@@ -644,7 +639,6 @@ begin
          set @BancoId = (select BancoId from Cuenta where NumeroCuenta = @CuentaDestino)
 
          insert into GananciaComision select @BancoId, (@Monto * @Comision)
-         
 
         commit tran
         select 1;

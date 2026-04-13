@@ -40,6 +40,9 @@
     <Compile Update="ViewsUI\UserControls\ucDepositos.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ViewsUI\UserControls\ucEstadisticas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ViewsUI\UserControls\ucHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
